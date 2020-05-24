@@ -1,0 +1,221 @@
+
+.table {
+  width: 910px;
+  margin: 0 auto;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+      padding: 26px;
+      text-align: center;
+      color: #4A4E67;
+}
+
+.table-bordered>thead>tr>th, .table-bordered>thead>tr>td {
+  text-align: center;
+  padding: 16px;
+  color: #4A4E67;
+}
+.modal-body {
+  text-align: left;
+  padding: 20px 100px;
+}
+.control-label {
+  margin-bottom: 10px!important;
+}
+
+.card-sub-title {
+  position: relative;
+  left: -15px;
+  width: 997px;
+  height: 52px;
+  background: #E2E6EF;
+}
+
+.card-sub-title-left {
+  position: relative;
+  padding: 0;
+  margin-left: 45px;
+}
+.card-sub-title-right2 {
+  float: right; 
+  cursor: pointer;
+  margin-right: 30px;
+  line-height: 52px;
+  font-size:14px; 
+  color:rgba(36,80,133,1);
+}
+.inp-search {
+  margin: 6px 0; 
+  padding: 12px 35px;
+  font-size: 14px;
+  height: 40px;
+  margin-bottom: 0;
+}
+.inp-search-img {
+  position: absolute;
+  top: 19px;
+  left: 11px;
+}
+.reg_ul {
+  min-height: 700px;
+}
+
+.panel-default>.panel-heading {
+  padding: 0;
+  padding-left: 15px;
+  line-height: 36px;
+  position: relative;
+  background: #E2E6EF;
+}
+
+.drop-text { 
+  text-align: left;
+}
+
+.drop-icon {
+  position: absolute;
+  right: 15px;
+  top: 16px;
+}
+.dropdown-menu-right {
+  text-align: center;
+}
+
+.games{
+  margin-top: 30px;
+}
+.game-sec {
+  padding: 0;
+  height: 58px;
+}
+.game-left {
+  float: left;
+  height: 58px;
+  width: 58px;
+  padding: 7px;
+  border: 1px solid #ddd;
+}
+.game-img {
+  width: 44px;
+  height: 44px;
+}
+.game-right {
+  padding: 10px;
+}
+.game-text {
+  margin-left: 59px;
+  text-align: left;
+  font-size: 14px;
+}
+.game-text2 {
+  margin-top: 5px;
+}
+.game-btn {
+  display: inline-block;
+  font-weight: 100;
+  padding: 5px 15px;
+  border-radius: 3px;
+  background-color: #ffa651;
+  color: #fff;
+}
+
+.title-sec {
+  position: relative;
+  width: 140px;
+  margin: 0 auto;
+  text-align: left;
+}
+.title-text {
+  position: absolute;
+  font-size: 20px;
+  top: 5px;
+  left: 40px;
+}
+
+.title-img {
+  width: 30px;
+  height: 30px;
+}
+
+.modal-body p {
+  line-height: 1.5;
+}
+.modal-header {
+  background:rgba(250,251,253,1);
+  border: 0;
+}
+
+.modal {
+  color: #4A4E67;
+}
+
+
+
+/*提示性modal*/
+.modal-dialog {
+  width: 550px;
+}
+
+.modal-header {
+  border-radius: 6px 6px 0 0;
+  height: 70px;
+  padding: 19px;
+}
+.title-sec {
+  /*height: 20px;*/
+}
+.title-text {
+
+font-size:20px; 
+color:rgba(74,78,103,1); 
+}
+
+.modal-body {
+  width: 361px;
+  margin: 40px auto;
+
+  padding: 0;
+}
+
+.modal-body p {
+  
+font-size:14px;
+font-family:MicrosoftYaHei;
+font-weight:400;
+color:rgba(74,78,103,1);
+}
+.modal-footer-diy {
+  border-top: 0;
+  margin: 0 auto;
+  width: 361px;
+  height: 40px;
+  margin-bottom: 40px;
+}
+
+.btn-modal-no {
+  position: relative;
+  float: left;
+    width:144px;
+  height:40px;
+  background: #98A0B2;
+  border-radius:6px;
+  color: #fff;
+}
+.btn-modal-yes {
+  position: relative;
+  float: right;
+    width:144px;
+  height:40px;
+}
+
+#myModalLabel {
+  line-height: 32px;
+
+font-size:20px; 
+color:rgba(74,78,103,1)
+}
+
+.form-group {
+  margin-left: 0;
+  margin-right: 0;
+}

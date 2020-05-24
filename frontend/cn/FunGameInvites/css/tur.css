@@ -1,0 +1,136 @@
+html,
+body {
+	margin: 0;
+}
+
+body {
+	background-color: #F6F7F9;
+	background: url(../img/passBg.png) no-repeat;
+	background-size: 100%;
+}
+
+.con {
+	margin: 6.1rem 2% 0;
+	width: 96%;
+}
+
+.pw {
+	background: url(../img/passBg1.png) no-repeat;
+	background-size: 100%;
+	height: 5.3rem;
+}
+
+.pwTip {
+	color: #FB4A4A;
+	font-size: 0.35rem;
+	font-weight: bolder;
+	text-align: center;
+	padding-top: 0.77rem;
+}
+
+#pwTxt{
+	margin-top: -0.2rem;
+}
+
+.pwTxt {
+	padding: 0;
+	margin: 0 10%;
+	width: 80%;
+	height: 1.1rem;
+	background: url(../img/pass.png) no-repeat;
+	background-size: 100%;
+	border: none;
+	outline: none;
+	text-align:center;
+}
+
+input::-webkit-input-placeholder {
+	/* WebKit browsers */
+	text-align: center;
+	color: #873A00;
+	font-size: 0.28rem;
+	font-weight: bolder;
+}
+
+input:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	text-align: center;
+	color: #873A00;
+	font-size: 0.28rem;
+	font-weight: bolder;
+}
+
+input::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	text-align: center;
+	color: #873A00;
+	font-size: 0.28rem;
+	font-weight: bolder;
+}
+
+input:-ms-input-placeholder {
+	/* Internet Explorer 10+ */
+	text-align: center;
+	color: #873A00;
+	font-size: 0.28rem;
+	font-weight: bolder;
+}
+
+.valBtn {
+	margin: 1rem 7% 0 7%;
+	width: 86%;
+	height: 1rem;
+	background: url(../img/valiBtn.png) no-repeat;
+	background-size: 100%;
+	border: none;
+	outline: none;
+	color: #FFFFFF;
+	font-size: 0.33rem;
+}
+
+.tur {
+	background: url(../img/passBg2.png) no-repeat;
+	background-size: 100%;
+	height: 21rem;
+}
+
+.turTit {
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 0.35rem;
+	padding: 0.55rem 0;
+	font-weight: bold;
+}
+
+.turCon {
+	width: 76%;
+	margin-left: 12%;
+	margin-top: 0.2rem;
+}
+
+.turTxt {
+	font-size: 0.28rem;
+	line-height: 0.45rem;
+	color: #31373F;
+}
+
+.turTxt font {
+	color: #B72009;
+	font-size: 0.45rem;
+	font-weight: bolder;
+}
+
+.tur1Img {
+	width: 100%;
+	margin: 0.378rem 0 0.522rem;
+}
+
+.tur2Img {
+	width: 50%;
+	margin: 0.27rem 0 0.594rem;
+}
+
+.tur3Img {
+	width: 100%;
+	margin-top: 0.27rem;
+}

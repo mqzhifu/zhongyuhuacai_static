@@ -1,0 +1,303 @@
+body,
+button,
+input,
+select,
+textarea {
+	font: 100%/1 "Helvetica Neue", Helvetica, STHeiTi, "Microsoft YaHei";
+	border-radius: 0;
+}
+
+select {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+a,
+input,
+textarea {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	outline: none;
+	-webkit-font-smoothing: antialiased
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="text"],
+textarea,
+button {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+th,
+td,
+p,
+blockquote,
+pre,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+article,
+aside,
+footer,
+header,
+hgroup,
+nav,
+section,
+menu {
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+em,
+i,
+strong {
+	font-style: normal;
+	font-weight: normal;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	border: 0;
+}
+
+input,
+img {
+	vertical-align: middle;
+}
+
+article,
+aside,
+footer,
+header,
+hgroup,
+nav,
+section,
+menu {
+	display: block;
+}
+
+a {
+	text-decoration: none;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+html,
+body {
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	color: #333;
+	min-width: 320px;
+	margin: auto;
+	padding: 0px;
+	background-color: #fff;
+	font-size: 9.25925926vw;/*对应1080px设计图*/
+}
+
+a,
+input,
+textarea {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	outline: none;
+	-webkit-font-smoothing: antialiased
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="text"],
+button {
+	-webkit-appearance: none;
+}
+
+.hide {
+	display: none;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+*,
+:after,
+:before {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+@media (min-width: 560px) {
+  	html {
+    	font-size: 54px;
+  	}	
+}
+.gameList{
+	display: block;
+	width: 100%;
+	height: auto;
+	padding-bottom: 2.58rem;
+}
+.gameList .recommend{
+	font-size: 0.38rem;
+	height: 0.78rem;
+	line-height: 0.78rem;
+	padding-left: 0.3rem;
+	margin-top: 0.3rem;
+	color: #31373f;
+}
+.gameList .gameUl{
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-bottom: 0.3rem;
+}
+.gameList .gameUl li{
+	display: block;
+	width: 3.2rem;
+	height: auto;
+	border-radius: 0.2rem;
+	overflow: hidden;
+	margin:0.3rem 0 0 0.3rem;
+	float: left;
+}
+.gameList .gameUl li a{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.gameList .gameUl li img{
+	display: block;
+	width: 3.2rem;
+	height: 3.2rem;
+}
+.gameList .gameUl li dl{
+	display: block;
+	width: 3.2rem;
+	height: auto;
+	padding: 0.08rem 0.2rem;
+}
+.gameList .gameUl li dl dt{
+	display: block;
+	width: 100%;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	font-size: 0.3rem;
+	color: #fff;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.gameList .gameUl li dl dd{
+	display: block;
+	width: 100%;
+	height: 0.36rem;
+	line-height: 0.45rem;
+	font-size: 0.15rem;
+	color: #fff;
+	padding-left: 0.4rem;
+	background: url(../img/player_icon.png) no-repeat left center/0.3rem;
+}
+.fixDowload{
+    display: block;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    padding: 0.62rem 0.4rem 0;
+    height: 2.58rem;
+    z-index: 9;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    /* box-shadow: 0px 0px 20px 5px #e7e7e7; */
+}
+.fixDowload .logoBox{
+	width: 7rem;
+	float: left;
+}
+
+.fixDowload .logoBox .logo_m{
+	display: block;
+	width: 1.22rem;
+	height: 1.22rem;
+	float: left;
+	margin-top: 0.03rem;
+}
+.fixDowload .logoBox dl{
+	display: block;
+	float: left;
+	margin-left: 0.5rem;
+	width: 5rem;
+}
+.fixDowload .logoBox dl dt{
+	display: block;
+	width: 100%;
+	line-height: 0.72rem;
+	font-size: 0.43rem;
+	color: #31373f;
+}
+.fixDowload .logoBox dl dd{
+	display: block;
+	width: 100%;
+	line-height: 0.6rem;
+	font-size: 0.35rem;
+	color: #999999;
+}
+.fixDowload .btn-download{
+	display: block;
+	float: right;
+	width: 2.8rem;
+	text-align: center;
+	height: 1rem;
+	background-image: -webkit-linear-gradient(top, #f14f59, #d9353f);
+    background-image: linear-gradient(to bottom, #f14f59, #d9353f);
+    color: #fff;
+    border-radius: 0.5rem;
+    font-size: 0.34rem;
+    line-height: 1rem;
+    margin-top: 0.17rem;
+}
+.fixDowload .closeBtn {
+    position: absolute;
+    width: 14px;
+    top: 5px;
+    right: 10px;
+}

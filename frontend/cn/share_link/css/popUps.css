@@ -1,0 +1,295 @@
+body,
+button,
+input,
+select,
+textarea {
+	font: 100%/1 "Helvetica Neue", Helvetica, STHeiTi, "Microsoft YaHei";
+	border-radius: 0;
+}
+
+select {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+a,
+input,
+textarea {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	outline: none;
+	-webkit-font-smoothing: antialiased
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="text"],
+textarea,
+button {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+th,
+td,
+p,
+blockquote,
+pre,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+article,
+aside,
+footer,
+header,
+hgroup,
+nav,
+section,
+menu {
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+em,
+i,
+strong {
+	font-style: normal;
+	font-weight: normal;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	border: 0;
+}
+
+input,
+img {
+	vertical-align: middle;
+}
+
+article,
+aside,
+footer,
+header,
+hgroup,
+nav,
+section,
+menu {
+	display: block;
+}
+
+a {
+	text-decoration: none;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+html,
+body {
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	color: #333;
+	min-width: 320px;
+	margin: auto;
+	padding: 0px;
+	background-color: #fff;
+	font-size: 9.25925926vw;/*对应1080px设计图*/
+}
+
+a,
+input,
+textarea {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	outline: none;
+	-webkit-font-smoothing: antialiased
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="text"],
+button {
+	-webkit-appearance: none;
+}
+
+.hide {
+	display: none;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+*,
+:after,
+:before {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+@media (min-width: 560px) {
+  	html {
+    	font-size: 54px;
+  	}	
+}
+.popUps{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.popUps .popUpsBg{
+	display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.popUps .popUpsLogin{
+	width: 8.54rem;
+	height: 8rem;
+	background: rgba(255,255,255,1);
+    box-shadow: 0px 0px 6px 0px rgba(180,178,177,0.18);
+    border-radius: 0.2rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;	
+}
+.popUps .popUpsLogin h1{
+	font-weight: normal;
+	font-size: 0.5rem;
+	height: 1.2rem;
+	line-height: 1.2rem;
+	text-align: center;
+	margin-top: 0.34rem;
+}
+.popUps .popUpsLogin ul{
+	display: block;
+	width: 6.1rem;
+	height: auto;
+	margin: 0 auto;
+}
+.popUps .popUpsLogin ul li{
+	display: block;
+	width: 100%;
+	height: 1.3rem;
+	position: relative;
+}
+.popUps .popUpsLogin ul li input{
+	display: block;
+	width: 100%;
+	border: none;
+	outline: none;
+	height: 1.3rem;
+	border-bottom: 1px solid #dddddd;
+	font-size: 0.36rem;
+	padding: 0 0.4rem;
+}
+.popUps .popUpsLogin ul li input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #999999;
+}
+.popUps .popUpsLogin ul li input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #999999;
+}
+.popUps .popUpsLogin ul li input::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #999999;
+}
+.popUps .popUpsLogin ul li input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #999999;
+}
+.popUps .popUpsLogin ul li .phoneCode{
+	display: block;
+	width: 2.3rem;
+	height: 0.84rem;
+	font-size: 0.36rem;
+	border: none;
+	outline: none;
+	background-color: #fff;
+	color: #d7073b;
+	position: absolute;
+	right: -0.1rem;
+	text-align: center;
+	top: 0.24rem;
+	border-left: 1px solid #dddddd;
+}
+.popUps .popUpsLogin ul li .disabled {
+    color:    #999999;
+}
+.popUps .popUpsLogin .loginButton{
+	width: 5.9rem;
+	height: 1rem;
+	line-height: 1rem;
+	text-align: center;
+	color: #fff;
+	background-image: -webkit-linear-gradient(top, #f14f59, #d9353f);
+    background-image: linear-gradient(to bottom, #f14f59, #d9353f);
+    border-radius: 0.5rem;
+    font-size: 0.34rem;
+    margin: 0.5rem auto;
+}
+.tripartite{
+	width: 5.9rem;
+	height: 1rem;
+	margin: 0.5rem auto;
+	overflow: hidden;
+	font-size: 0.34rem;
+	color: #fff;
+}
+.tripartite .wechartBtn{
+	display: block;
+	float: left;
+	width: 2.8rem;
+	height: 1rem;
+	line-height: 1rem;
+	background: url(../img/wechartBg.png) no-repeat center/100%;
+	padding-left: 1.08rem;
+}
+.tripartite .QQBtn{
+	display: block;
+	float: right;
+	width: 2.8rem;
+	height: 1rem;
+	line-height: 1rem;
+	background: url(../img/qqBg.png) no-repeat center/100%;
+	padding-left: 1.08rem;
+}

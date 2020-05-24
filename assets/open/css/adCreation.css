@@ -1,0 +1,430 @@
+body,html{
+	background-color: #f8f8f8;
+}
+.gameManage{
+	display: block;
+	width: 1208px;
+	height: auto;
+	margin: 23px auto 0;
+    min-height: calc(100vh - 250px);
+}
+.nav-list{
+	float: left;
+	width:203px;
+	height:auto;
+	
+}
+.nav-list .levelLi{
+	display: block;
+	width: 100%;
+	height: auto;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 0px 4px 0px rgba(207,206,206,0.2);
+	border-radius:4px;
+	margin-bottom: 16px;
+	padding: 7px 0;
+}
+.nav-list .levelLi .first-level{
+	display: block;
+	width: 100%;
+	height: 52px;
+	line-height: 52px;
+	font-size: 18px;
+	cursor: pointer;
+	padding-left: 60px;
+	position: relative;
+}
+.nav-list .levelLi .first-level .level-icon{
+	position: absolute;
+	left: 24px;
+	top: 50%;
+	transform:translateY(-50%);
+	-ms-transform:translateY(-50%); 	/* IE 9 */
+	-moz-transform:translateY(-50%); 	/* Firefox */
+	-webkit-transform:translateY(-50%); /* Safari 和 Chrome */
+	-o-transform:translateY(-50%); 	/* Opera */
+	display: inline-block;
+	width: 28px;
+}
+.nav-list .levelLi .first-level .level-click{
+	display: inline-block;
+	width: 14px;
+    right: 24px;
+    top: 23px;
+    position: absolute;
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;	/* Firefox 4 */
+	-webkit-transition: all 0.5s ease-in-out;	/* Safari 和 Chrome */
+	-o-transition: all 0.5s ease-in-out;	/* Opera */
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); 	/* IE 9 */
+	-moz-transform:rotate(180deg); 	/* Firefox */
+	-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+	-o-transform:rotate(180deg); 	/* Opera */
+}
+.nav-list .levelLi .first-level .up{
+	transform:rotate(0deg);
+	-ms-transform:rotate(0deg); 	/* IE 9 */
+	-moz-transform:rotate(0deg); 	/* Firefox */
+	-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+	-o-transform:rotate(0deg); 	/* Opera */
+}
+.nav-list .levelLi .first-level .down{
+	
+}
+.nav-list .levelLi .second-level{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.nav-list .levelLi .second-level li{
+	display: block;
+	width: 100%;
+	line-height: 50px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.nav-list .levelLi .second-level li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding-left: 60px;
+}
+.nav-list .levelLi .second-level li.active,.nav-list .levelLi .second-level li.active a{
+	color: #ff4a55;
+}
+.iframeBox{
+	display: block;
+	width: 986px;
+	float: left;
+	margin-left: 9px;
+	
+	border-radius:4px;
+}
+.manageHead{
+	display: block;
+	width: 1208px;
+	height: auto;
+	margin-bottom: 15px;
+	position: relative;
+}
+.manageHead .gameSelect{
+	display: block;
+	float: left;
+	width:203px;
+	height:56px;
+	line-height: 56px;
+	background:rgba(255,255,255,1) url(../img/game_select.png) no-repeat 164px center;
+	box-shadow:0px 0px 4px 0px rgba(207,206,206,0.2);
+	border-radius:4px;
+	font-size:16px;
+	color: #31373F;
+	cursor: pointer;
+}
+.manageHead .gameSelectUl{
+	border: none;
+    width: 203px;
+}
+.manageHead .gameSelectUl li{
+	display: block;
+	width: 100%;
+    cursor: pointer;
+}
+.manageHead .dropdown-menu>li>a{
+	padding: 10px 0 10px 24px;
+}
+.manageHead .gameSelectUl li img{
+	display: inline-block;
+	margin-right: 16px;
+	width: 20px;
+	height: 20px;
+}
+.manageHead .gameSelectUl li span{
+	display: inline-block;
+	line-height: 20px;
+	width: 140px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+    vertical-align: middle;
+}
+.manageHead .gameSelect img{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 0 16px 4px 24px;
+	    vertical-align: middle;
+}
+.manageHead .gameSelect span{
+	display: inline-block;
+	width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+    vertical-align: middle;
+}
+.manageHead .game_number{
+	float: left;
+	width:986px;
+	height:56px;
+	line-height: 56px;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 0px 6px 0px rgba(180,178,177,0.18);
+	border-radius:4px;
+	margin-left: 9px;
+	padding-left: 32px;
+}
+.iframeBox .section{
+	width: 986px;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 0px 3px 0px rgba(180,178,177,0.18);
+	border-radius:2px;
+	position: relative;
+	margin-bottom: 16px;
+	box-shadow:0px 0px 6px 0px rgba(180,178,177,0.18);
+	overflow: hidden;
+}
+.iframeBox .section .title{
+	padding: 0 34px;
+	line-height: 68px;
+	font-size: 16px;
+}
+.iframeBox .section .basicMessage{
+	display: block;
+	width: 550px;
+	height: auto;
+	margin-left: 25px;
+	float: left;
+}
+.iframeBox .section .adBox{
+	overflow: hidden;
+}
+.iframeBox .section .adBox .fr{
+	width: 295px;
+	float: left;
+	display: none;
+}
+.iframeBox .section .adBox .fr .verticalAd {
+    width: 276px;
+    height: 513px;
+}
+.iframeBox .section .horizontalAd{
+	width:100%;
+}
+.basicMessage li{
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	margin: 10px 0;
+	color: #31373F;
+}
+.basicMessage li.settLi{
+	display: none;
+}
+.basicMessage li span{
+	display: block;
+	float: left;
+	width: 120px;
+	text-align: right;
+	height: 40px;
+	line-height: 40px;
+}
+.basicMessage li div{
+	display: block;
+	width: 400px;
+	line-height: 40px;
+	float: left;
+	margin-left: 25px;
+	position: relative;
+	color: #999999;
+}
+.basicMessage li div input{
+	display: inline-block;
+	width:208px;
+	height:40px;
+	border:1px solid #E8DFDF;
+	padding: 0 17px;
+	border-radius:4px;
+	line-height: normal;
+}
+.basicMessage li div i{
+	
+}
+input:disabled{border:1px solid #DDD;background-color:#F5F5F5;color:#ACA899;}
+.basicMessage li div select{
+	width:339px;
+	height:40px;
+	border:1px solid rgba(232,223,223,1);
+	border-radius:4px;
+	padding: 0 10px;
+	outline: none;
+}
+.basicMessage li .redioGroup{
+	margin-left: 0;
+}
+
+.basicMessage li .redioGroup .radioBox{
+	display: inline-block;
+    vertical-align: middle;
+    line-height: 40px;
+    margin-right: 18px;
+    width: auto;
+}
+.basicMessage li .redioGroup .radioBox.disabled,
+.basicMessage li .redioGroup .radioBox.disabled label{
+	cursor: not-allowed!important;
+}
+.basicMessage li .redioGroup .radioBox:last-child{
+	margin: 0;
+}
+.basicMessage li .redioGroup .radioBox .input_check {
+	position: absolute;
+	visibility: hidden;
+	height: auto;
+	position: fixed;
+	left: 9999px;
+	top: 9999px;
+}
+
+.basicMessage li .redioGroup .radioBox .input_check+label {
+	font-weight: normal;
+	display: inline-block;
+	color: #4a3021;
+	float: left;
+    height: 0;
+    line-height: 0;
+    padding: 20px 0;
+	font-size: 14px;
+	padding-left: 24px;
+	background: url(../img/radio.png) no-repeat left center;
+	background-size: 16px;
+	cursor: pointer;
+	text-align: left;
+}
+
+.basicMessage li .redioGroup .radioBox .input_check:checked+label {
+	background: url(../img/radio-s.png) no-repeat left center;
+	background-size: 16px;
+   
+}
+.butClup{
+	width: 380px;
+	margin: 26px auto 40px;
+	overflow: hidden;
+}
+.butClup .btn-modal-no{
+	width:144px;
+	height:40px;
+	border:1px solid rgba(239,77,87,1);
+	border-radius:4px;
+	float: left;
+	outline: none;
+	background-color: #fff;
+	color: rgba(239,77,87,1);
+	cursor: pointer;
+}
+.butClup .btn-modal-yes{
+	width:144px;
+	height:40px;
+	background:linear-gradient(0deg,#d9353f,#f14f59);
+	/* Webkit: Safari 4-5, Chrome 1-9 */ 
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d9353f), to(#f14f59)); 
+	/* Webkit: Safari 5.1+, Chrome 10+ */ 
+	background: -webkit-linear-gradient(top, #d9353f, #f14f59); 
+	/* Firefox 3.6+ */ 
+	background: -moz-linear-gradient(top, #d9353f, #f14f59); 
+	/* Opera 11.10+ */ 
+	background: -o-linear-gradient(top, #d9353f, #f14f59); 
+	/* IE 10 */ 
+	background: -ms-linear-gradient(top, #d9353f, #f14f59); 
+	/* IE < 10 */ 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#d9353f, endColorStr=#f14f59);
+	border-radius:4px;
+	border: none;
+	outline: none;
+	float: right;
+	color: #fff;
+	cursor: pointer;
+}
+.horizontalBox{
+	display: none;
+	float: right;
+    width: 400px;
+    margin-right: 11px;
+}
+
+.warn-outBox .warn-inner .redioGroup{
+	overflow: hidden;
+	margin: 20px 0;
+}
+.warn-outBox .warn-inner .redioGroup .radioBox{
+	display: inline-block;
+    float: left;
+    vertical-align: middle;
+    line-height: 40px;
+    width: auto;
+    margin: 0;
+    margin-right: 18px;
+}
+.redioGroup .radioBox.disabled,
+.redioGroup .radioBox.disabled label{
+	cursor: not-allowed!important;
+}
+.redioGroup .radioBox .input_check {
+	position: absolute;
+	visibility: hidden;
+	height: auto;
+	position: fixed;
+	left: 9999px;
+	top: 9999px;
+}
+.redioGroup .radioBox .input_check+label {
+	font-weight: normal;
+	display: inline-block;
+	color: #4a3021;
+	float: left;
+    height: 0;
+    line-height: 0;
+    padding: 20px 0;
+	font-size: 14px;
+	padding-left: 24px;
+	background: url(../img/radio.png) no-repeat left center;
+	background-size: 16px;
+	cursor: pointer;
+	text-align: left;
+	margin: 0;
+}
+.redioGroup .radioBox .input_check:checked+label {
+	background: url(../img/radio-s.png) no-repeat left center;
+	background-size: 16px;
+   
+}
+.settUl dt div input {
+    display: inline-block;
+    width: 208px;
+    height: 40px;
+    border: 1px solid #E8DFDF;
+    padding: 0 17px;
+    border-radius: 4px;
+    line-height: normal;
+}
+.settUl dt div input+em{
+	color: #999999;
+	margin-left: 5px;
+}
+.settNotice{
+	display: block;
+	color: #999999;
+	float: left;
+	margin-top: 5px;
+}
+.settUl{
+	margin: 0;
+}
+.settUl dt{
+	display: none;
+	font-weight: normal;
+}
+.settUl dt div{
+	margin: 0;
+} 

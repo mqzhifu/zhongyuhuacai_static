@@ -1,0 +1,27 @@
+ul,li{
+	text-decoration: none;
+	list-style: none
+}
+
+.pictureSlider {
+	transform: rotate(90deg) translateY(25%) translateX(-25%);
+}
+
+.poster-item {
+	transition: all 0.5s;
+	cursor: default;
+	-moz-transition: all 0.5s;
+	cursor: default;
+	-webkit-transition: all 0.5s;
+	cursor: default;
+	-o-transition: all 0.5s;
+	cursor: default;
+	transform: rotate(-90deg);
+	overflow: hidden;
+}
+
+.for_btn {
+	position: relative;
+	height: 17rem;
+	overflow: hidden
+}

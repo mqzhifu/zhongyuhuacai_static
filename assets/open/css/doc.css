@@ -1,0 +1,199 @@
+.panel {
+  margin: 0 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  /*min-height: 211px;*/
+}
+
+.game-btn{
+  font-size: 14px;
+  display: inline-block;
+  font-weight: lighter;
+  padding: 10px 30px; 
+  border-radius:3px;
+  cursor: pointer;
+  color: #fff;
+  /*background: linear-gradient(0deg,#d9353f,#f14f59)!important; */
+}
+
+
+.title-sec {
+  position: relative;
+  width: 200px;
+  margin: 0 auto;
+}
+.title-text {
+  position: absolute;
+  font-size: 20px;
+  top: 5px;
+  left: 40px;
+}
+
+.title-img {
+  width: 30px;
+  height: 30px;
+}  
+.modal-body {
+  text-align: center;
+  padding: 30px 200px;
+}
+.modal-body p {
+  line-height: 1.5;
+}
+.modal-header {
+  background:rgba(250,251,253,1);
+  border: 0;
+}
+.modal-footer { 
+  border: 0;
+}
+.modal-title {
+  font-size:20px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(74,78,103,1);
+  text-align: center;
+}
+
+.v-sec {
+  margin-top: 5px;
+  font-size:14px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(74,78,103,1);
+
+  border:1px solid rgba(158,172,202,1);
+}
+
+.v-top {
+  padding: 12px 0;
+  text-align: center;
+  border-bottom:1px solid rgba(158,172,202,1);
+}
+.v-bottom {
+  padding: 12px 0;
+  text-align: center; 
+}
+.v-sec-selected {
+  border-color: rgba(158,172,202,1);
+  background-color: #E2E6EF;
+}
+
+.v-sec-selected .v-bottom{
+  border-color: rgba(158,172,202,1); 
+}
+
+#myModal2 {
+  text-align: center;
+}
+
+.login-verify {
+  position: relative; 
+}
+.verify-btn {
+  width: 28%;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 100;  
+  color: #fff;
+  background-color: #FEC34D;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.password-info {
+  margin-top: 39px;
+  font-size:14px; 
+  font-weight:400;
+  color:rgba(74,78,103,1);
+}
+
+.password-forgot {
+  color: #245085;
+margin-left: 23px;
+font-size:14px; 
+color:rgba(36,80,133,1);
+}
+
+
+.card-sub-title-left2 {  
+  display: inline-block;
+} 
+
+.member-sec {
+
+}
+.member-avator {
+  float: left;
+  width:40px;
+height:40px;
+border-radius:100%;
+}
+.member-id {
+  margin-left: 12px;
+  line-height: 40px;
+  float: left;
+
+}
+.member-del {
+  cursor: pointer;
+  margin-top: 13px;  
+  width:14px;
+height:14px;
+line-height: 13px;
+  text-align: center;
+background:rgba(226,230,239,1);
+  margin-left: 14px; 
+  float: left;
+
+}
+
+.panel-heading {
+  background-color: #e2e6ee!important;
+}
+.member-sec-mod {
+  display: inline-block;
+  margin-bottom: 24px;
+  width: 130px; 
+}
+
+.reg_ul {
+  text-align: left; 
+  /*height: 600px;*/
+  padding: 27.5px;
+}
+.card-sub-title {
+  height: 60px;
+  border-bottom: 1px solid rgba(226,230,239,1);
+}
+
+.card-sub-title-left {
+
+font-size:20px; 
+color:rgba(74,78,103,1);
+}
+
+.card-sub-title-right2 {
+       padding: 13px 20px; 
+     margin: 10px 0;  
+    cursor: pointer; 
+    float: right;
+font-size:14px;   
+color:rgba(74,78,103,1);
+}
+
+.content-text {
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.sec-left .item {
+  padding: 10px 5px;
+  font-size: 14px;
+}

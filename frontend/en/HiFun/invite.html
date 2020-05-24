@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no,minimal-ui">
+		<title></title>
+		<link rel="stylesheet" href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/HiFun/css/inivite.css" />
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/HiFun/js/http.js"></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/HiFun/js/common.js"></script>
+		<script>
+			C.setInitFontSize();
+		</script>
+	</head>
+
+	<body>
+		<div class="inivite">
+			<button id="inviteBtn" onclick="inviteFri()">Invite Friends</button>
+			<div class="iniviteId">
+				<div class="cont">
+					<div class="code">
+						<font>My Invitation Code:&nbsp;</font>
+						<font id="copyId"></font>
+						<button id="copyBtn" data-clipboard-target="#copyId" data-clipboard-action="copy"  onclick="">Copy</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="myFri" id="myFri">
+			<div class="info">
+				<div class="infoCont">
+					<div class="income" id="income">
+						<div id="inviteTxt">
+							<span id="invited">Invite</span>
+						</div>
+						<div class="headImg">
+							<img id="fri1" />
+							<img id="fri2" />
+							<img id="fri3" />
+						</div>
+						<div>
+							<span id="friendNums">34</span>
+						</div>
+						<div id="inviteTxt" style="margin-left: 5px;">
+							people
+						</div>
+					</div>
+					<div class="totalIncome">
+						<p>
+							<span>cumulative income of&nbsp;</span>
+							<span id="getMoney">3.39</span>
+							<span style='color:#EF1819;'>&nbsp;tokens</span>
+						</p>
+					</div>	
+					<div class="total" style="margin:0">
+						<p>
+							<span id="invited">In-transit income of&nbsp;</span>
+							<span id="allMoney">435</span>
+							<span style='color:#EF1819;'>&nbsp;tokens<span>
+						</p>
+					</div>
+					<div class="total" style="margin:0">
+						<p>
+							<span>Go check it out!<span>
+						</p>
+					</div>
+					<div style="margin-top: 5px;margin-top: 0.0915rem;width: 100%;">
+						<button id="seeBtn" onclick="window.location='#HTTP_PROTOCOL#://#STATIC_URL#/frontend/HiFun/friends.html?token='+C.token">Detail</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rule">
+			<div class="ruleLine">
+				Guide
+			</div>
+			<div class="ruleCont">
+				<p style="margin-top: 13px;">
+					1.Once a friend receives tokens reward in the game every day, you can get 5% of your friend game income.
+				<p style="margin-top: 13px;">
+					2.There is no limit on rewards,The more invitations, the more rewards
+				</p>
+
+			</div>
+		</div>
+		<div id="copyInfo">Copy Success</div>
+		<div id="log"></div>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/HiFun/js/clipboard.min.js"></script>
+		<script>
+			window.onload=function(){
+				C.getToken();
+				G.incomeTotal(C.token);
+				C.copyCode();
+				
+			}
+			function inviteFri() {
+				invite.showWindow();
+			}
+//			document.getElementById("log").innerText=C.token;
+		</script>
+	</body>
+
+</html>

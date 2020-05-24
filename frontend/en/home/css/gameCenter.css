@@ -1,0 +1,877 @@
+body,
+button,
+input,
+select,
+textarea {
+	font: 100%/1 "Helvetica Neue", Helvetica, STHeiTi, "Microsoft YaHei";
+	border-radius: 0;
+}
+
+select {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+a,
+input,
+textarea {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	outline: none;
+	-webkit-font-smoothing: antialiased
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="text"],
+textarea,
+button {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+th,
+td,
+p,
+blockquote,
+pre,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+article,
+aside,
+footer,
+header,
+hgroup,
+nav,
+section,
+menu {
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+em,
+i,
+strong {
+	font-style: normal;
+	font-weight: normal;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	border: 0;
+}
+
+input,
+img {
+	vertical-align: middle;
+}
+
+article,
+aside,
+footer,
+header,
+hgroup,
+nav,
+section,
+menu {
+	display: block;
+}
+
+a {
+	text-decoration: none;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+html,
+body {
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	color: #333;
+	font-size:16px;
+	min-width: 320px;
+	height: 100%;
+	margin: auto;
+	padding: 0px;
+	background-color: #fff;
+	overflow: hidden;
+}
+
+a,
+input,
+textarea {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	outline: none;
+	-webkit-font-smoothing: antialiased
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="text"],
+button {
+	-webkit-appearance: none;
+}
+
+.hide {
+	display: none;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+*,
+:after,
+:before {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.scroll{
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	position: relative;
+}
+::-webkit-scrollbar
+{
+    width: 0px;
+    height: 0px;
+}
+.head {
+	height: 70px;
+	width: 100%;
+	/*background-image: -webkit-linear-gradient(top, #f14f59, #d9353f);
+	background-image: linear-gradient(to bottom, #f14f59, #d9353f);*/
+	background-color: #fff;
+	box-shadow:0px 0px 20px 10px rgba(81,81,81,0.1);
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 10;
+}
+
+.header {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.logoBox {
+	display: inline-block;
+	float: left;
+}
+
+.logoBox img {
+	width: 55px;
+	margin-top: 7px;
+	float: left;
+}
+
+.logoBox dl {
+	display: inline-block;
+	margin-top: 20px;
+	margin-left: 18px;
+}
+
+.logoBox dl dt {
+	font-size: 20px;
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	color: #48404F;
+}
+
+.logoBox dl dd {
+	font-size: 14px;
+	color: #A5B2CD;
+}
+.paddingTop{
+	display: block;
+	height: 70px;
+}
+.nav{
+	display: block;
+	float: right;
+}
+.nav li{
+	display: block;
+	width: 136px;
+	line-height: 70px;
+	text-align: center;
+	color: #999999;
+	float: left;
+	text-align: right;
+}
+
+.nav li a{
+	color: #999999;
+	font-size: 16px;
+	display: inline-block;
+	height: 100%;
+}
+.nav li.active a{
+	color: #333333;
+}
+.section{
+	width: 1000px;
+	margin: 0 auto 60px;
+	overflow: hidden;
+}
+.section .listTitle{
+	display: block;
+	width: 100%;
+	height: 90px;
+	line-height: 90px;
+	text-align: left;
+	font-size: 18px;
+	color: #333333;
+	margin-top: 23px;
+}
+.section .listTitle span{
+	display: inline-block;
+	width:4px;
+	height:14px;
+	background:rgba(255,128,128,1);
+	border-radius:2px 2px 2px 2px;
+	vertical-align: middle;
+	margin-right: 20px;
+	margin-bottom: 3px;
+}
+.googlePlay{
+	display: block;
+	float: right;
+	width: 160px;
+}
+.googlePlay span{
+	display: block;
+	width: 100%;
+	color: #333333;
+	font-size: 18px;
+	margin-bottom: 29px;
+}
+.googlePlay .googleImg{
+	display: block;
+	width: 100%;
+	margin-bottom: 13px;
+}
+.googlePlay .codeImg{
+	display: block;
+	width:160px;
+	height:160px;
+	background:rgba(0,0,0,1);
+	border-radius:4px;
+	overflow: hidden;
+}
+.googlePlay .codeImg img{
+	display: block;
+	width: 140px;
+	height: 140px;
+	margin: 10px;
+}
+.gameList{
+	display: block;
+	width: 810px;
+	float: left;
+	overflow: hidden;
+}
+.gameList li{
+	display: block;
+	float: left;
+	width: 250px;
+	height: 370px;
+	margin: 0 18px 18px 0;
+	position: relative;
+	border-radius: 8px;
+	overflow: hidden;
+}
+.gameList li a{
+	display: none;
+}
+.gameList li .gameHome{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-position: top center;
+    background-size: cover;
+}
+.gameList li .bottom{
+	display: block;
+	width: 100%;
+	height: 144px;
+	background: url(../img/zoomBg.png) no-repeat center bottom;
+	background-size: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding-top: 88px;
+}
+.gameList li .bottom .gameIcon{
+	display: block;
+	float: left;
+	width: 42px;
+	height: 42px;
+	border: 2px solid #fff;
+	border-radius: 9px;
+	margin-left: 16px;
+}
+.gameList li .bottom  .fr{
+	display: block;
+	width: 186px;
+	float: right;
+}
+.gameList li .bottom  .fr p{
+	color: #fff;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 14px;
+	height: 14px;
+	line-height: 14px;
+	margin-bottom: 10px;
+	margin-top: 2px;
+}
+.gameList li .bottom  .fr span{
+	display: block;
+	width: 100%;
+	overflow: hidden;
+}
+.gameList li .bottom  .fr span em{
+	display: block;
+	width: 12px;
+	height: 12px;
+	background: url(../img/star.png) no-repeat center;
+	background-size: 100%;
+	float: left;
+	margin-right: 6px;
+}
+.outBox{
+	background-color: #f9fafc;
+    overflow: hidden;
+}
+.contact{
+	display: block;
+	width: 1200px;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.contact dt{
+	margin:200px 0 50px;
+	overflow: hidden;
+}
+.contact dt p{
+	display: block;
+	width: 33.33%;
+	float: left;
+	text-align: center;
+	border-right: 3px solid #9eacca;
+	font-size: 26px;
+}
+.contact dt p:last-child{
+	border: none;
+}
+.contact dt,.contact dd{
+	display: block;
+	width: 100%;
+}
+.contact dd span{
+	display: block;
+	width: 33.33%;
+	float: left;
+	padding: 0 50px;
+	text-align: center;
+	color: #48404f;
+	line-height: 36px;
+}
+.contact dd span em{
+	display: block;
+	width: 100%;
+	text-align: left;
+}
+.contact dd span:first-child em{
+	text-align: center;
+}
+.scan{
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 60px 0 40px;
+}
+.scan img{
+	display: block;
+	width: 170px;
+	height: 170px;
+	border: 1px solid #9eacca;
+	margin: 0 auto;
+}
+.scan span{
+	display: block;
+	width: 100%;
+	font-size: 16px;
+	color: #9eacca;
+	text-align: center;
+	margin-top: 16px;
+}
+.foot-m,.m_navBtn,.m_navBox{
+	display: none;
+}
+.gameWin{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 11;
+}
+.gameWin .gameWinBg{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.95);
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+.gameWin .gameWinClose{
+	display: block;
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	right: 15px;
+	top: 14px;
+	cursor: pointer;
+}
+.gameWin .verticalScreen{
+	display: none;
+	width: 480px;
+	height: 852px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%); 	/* IE 9 */
+	-moz-transform:translate(-50%,-50%); 	/* Firefox */
+	-webkit-transform:translate(-50%,-50%); /* Safari 和 Chrome */
+	-o-transform:translate(-50%,-50%); 	/* Opera */
+	background-color: #000;
+}
+.gameWin .verticalScreen .googlePlay{
+    position: absolute;
+    right: -210px;
+    bottom: 0;
+}
+.gameWin .verticalScreen .googlePlay .codeImg{
+	border:2px solid rgba(255, 255, 255, 0.17);
+	border-radius:4px;
+}
+.gameWin .horizontalScreen{
+	display: none;
+	width: 1152px;
+	height: 650px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%); 	/* IE 9 */
+	-moz-transform:translate(-50%,-50%); 	/* Firefox */
+	-webkit-transform:translate(-50%,-50%); /* Safari 和 Chrome */
+	-o-transform:translate(-50%,-50%); 	/* Opera */
+	background-color: #000;
+}
+.gameWin .horizontalScreen .googlePlay{
+    position: absolute;
+    right: -210px;
+    bottom: 0;
+}
+.gameWin .horizontalScreen .googlePlay .codeImg{
+	border:2px solid rgba(255, 255, 255, 0.17);
+	border-radius:4px;
+}
+@media screen and (min-width: 750px){
+	.btn-download{
+		display: block;
+		width: 90px;
+		height:32px;
+		line-height: 34px;
+		text-align: center;
+		/*background-color: #ffffff;
+		color: #e03d47;*/
+		background-image: -webkit-linear-gradient(top, #f14f59, #d9353f);
+		background-image: linear-gradient(to bottom, #f14f59, #d9353f);
+		color: #fff;
+		border-radius: 16px;
+		float: right;
+		margin-top: 19px;	
+	}
+	.contact{
+		display: block;
+		width: 100%;
+		background-color: #F9FAFC;
+	}
+	.contact .contacter{
+		display: block;
+		width: 1000px;
+		margin: 0 auto;
+		height: 178px;
+		overflow: hidden;
+	}
+	.contact .contacter h1{
+		font-size: 20px;
+		margin: 50px 0 20px;
+		font-weight: normal;
+	}
+	.contact .contacter p{
+		font-size: 12px;
+		color: #333333;
+		margin-bottom: 20px;
+	}
+	.contact .contacter p span{
+		color: #439BFF;
+	}
+	.foot{
+		width:100%;
+		height:34px;
+		line-height: 34px;
+		background:rgba(255,255,255,1);
+		text-align: center;
+		color: #B6B5BA;
+		font-size: 14px;
+	    text-align: left;
+	    width: 1000px;
+	    margin: 0 auto;
+	}
+	.foot-m{
+		display: none;
+	}
+}
+@media screen and (max-width: 1300px){
+	.playGame{
+		width: 190px;
+		margin-top: -180px;
+	}
+}
+
+@media screen  and (max-width: 750px){
+	html, body{
+		font-size: 9.25925926vw;
+	}
+	.head {
+		background-color: #fff;
+		background-image: none;
+		height: 1.6rem;
+		/*position: initial;*/
+		box-shadow:0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+	}
+	.header{
+		width: 100%;
+		height: auto;
+		text-align: center;
+	}
+	.logoBox{
+		float:none;
+		
+	}
+	.logoBox img {
+		width: 1.2rem;
+		height: 1.2rem;
+		margin-top: 0.2rem;
+		float: left;
+	}
+	.logoBox .logo_m{
+		display: inline-block;
+	}
+	.logoBox dl{
+		margin-top: 0.58rem;
+		color: #333333;
+	}
+	.logoBox dl dt {
+		color: #333333;
+		height: 0.44rem;
+		line-height: 0.44rem;
+		font-size: 0.44rem;
+		text-align: left;
+	}
+	.header .logoBox dl dd {
+		display: none;
+	}
+	.logoBox dl dd {
+		
+		color: #999999;
+		line-height: 16px;
+		font-size: 12px;
+		text-align: left;
+	}
+	.nav{
+		display: none;
+	}
+	.googlePlay{
+		display: none;
+	}
+	.section{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.contact{
+		background-color: #F9FAFC;
+	}
+	.contact .contacter{
+		display: block;
+		width: 9.6rem;
+		margin: 0 auto 1.6rem;
+		height: 6.43rem;
+		overflow: hidden;
+	}
+	.contact .contacter h1{
+		font-weight: normal;
+		font-size: 0.44rem;
+		color: #333333;
+		margin: 1rem 0 0.9rem;
+	}
+	.contact .contacter  p{
+		font-size: 0.34rem;
+		color: #333333;
+		line-height: 0.69rem;
+		margin-bottom: 0.5rem;
+	}
+	.contact .contacter  p em{
+		display: block;
+	}
+	.contact .contacter  p span{
+		color: #439BFF;
+	}
+	.paddingTop{
+		height: 1.6rem;
+	}
+	.section .listTitle{
+		width: 10.2rem;
+		margin: 0 auto;
+		height: 2rem;
+    	line-height: 2rem;
+    	font-size: 0.38rem;
+	}
+	.gameList{
+		width: 10.2rem;
+		margin:  0rem auto 0.9rem;
+		float: unset;
+	}
+	.gameList li{
+		width: 4.5rem;
+		height: 6.65rem;
+	    margin: 0 0.3rem 0.4rem;
+	}
+	.gameList li a{
+		display: block;
+		width: 4.5rem;
+		height: 6.65rem;
+		position: absolute;
+	}
+	.gameList li .bottom{
+		height: 2.68rem;
+	    padding-top: 1.4rem;
+	}
+	.gameList li .bottom .gameIcon{
+		width: 1rem;
+		height: 1rem;
+		margin-left: 0.3rem;
+	}
+	.gameList li .bottom .fr{
+		width: 64%;
+	}
+	.gameList li .bottom .fr p{
+		margin-bottom: 0.17rem;
+		font-size: 0.36rem;
+	}
+	.gameList li .bottom .fr span em{
+		width: 0.31rem;
+		height: 0.3rem;
+	}
+	.m_navBtn{
+		display: block;
+		width: 0.5rem;
+		height: 0.48rem;
+		background: url(../img/navBtn.png) no-repeat center;
+		background-size: 100%;
+		position: absolute;
+		right: 0.29rem;
+		top: 0.56rem;
+	}
+	.m_navBox{
+		display: none;
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 10;
+	}
+	.m_navBox .winBg{
+		display: block;
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		left: 0;
+		top: 0;
+		background: rgba(0,0,0,0.7);
+	}
+	.m_navBox .m_navUl{
+		display: block;
+		width: 100%;
+		height: 4.4rem;
+		background: url(../img/mNavBg.png) no-repeat center;
+		background-size: 100%;
+	    position: absolute;
+        padding-top: 0.7rem;
+	}
+	.m_navBox .m_navUl li{
+		display: block;
+		width: 100%;
+		height: 0.8rem;
+		line-height: 0.8rem;
+		font-size: 0.44rem;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	.m_navBox .m_navUl li a{
+		display: block;
+		width: 100%;
+		height: 100%;
+		color: #999999;
+	}
+	.m_navBox .m_navUl li.active a{
+		color: #333333;
+	}
+	.m_navBox .m_navUl li.active a:after{
+		content: "";
+	    display: block;
+	    width: 0.6rem;
+	    height: 0.06rem;
+	    background-color: #ff0000;
+	    margin: 0 auto;
+	}
+	
+	.contact{
+		width: 100%;	
+	}
+	.contact dt{
+		margin: 90px 0 25px;
+	}
+	.contact dt p{
+		font-size: 16px;
+		border-width: 2px;
+	}
+	.contact dd span,.contact dd span em{
+		width: 100%;
+		text-align: center;
+		font-size: 12px;
+		line-height: 30px;
+		color: #9eacca;
+	}
+	.scan{
+		margin: 30px 0 100px;
+	}
+	.scan img{
+		width: 140px;
+		height: 140px;
+	}
+	.scan span{
+		font-size: 12px;
+	}
+	.foot{
+		display: none;
+	}
+	.foot-m{
+		display: block;
+		width: 100%;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		background-color: #646465;
+		padding: 0 0.7rem;
+		height: 1.6rem;
+		z-index: 9;
+	}
+	.foot-m .logoBox {
+		display: inline-block;
+		float: left;
+	}
+	
+	.foot-m .logoBox img {
+		width: 1.2rem;
+		margin-top: 0.2rem;
+		float: left;
+	}
+	
+	.foot-m .logoBox dl {
+		display: inline-block;
+		color: #fff;
+		margin-top: 0.35rem;
+		margin-left: 0.3rem;
+	}
+	
+	.foot-m .logoBox dl dt {
+		font-size: 0.44rem;
+		display: block;
+		height: 0.44rem;
+		line-height: 0.44rem;
+		color: #fff;
+	}
+	.foot-m .logoBox dl dd {
+		margin-top: 0.1rem;
+		font-size: 0.28rem;
+		color: #fff;
+	}
+	.foot-m .btn-download{
+		display: block;
+		width: 2.2rem;
+		height:0.8rem;
+		line-height: 0.9rem;
+		text-align: center;
+		background-color: #ffffff;
+		color: #e03d47;
+		border-radius:0.4rem;
+		float: right;
+		margin-top: 0.4rem;
+	    font-size: 0.4rem;	
+	}
+}

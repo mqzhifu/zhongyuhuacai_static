@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=0.5, minimum-scale=0.5, maximum-scale=3, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/realname.css" />
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/realname.js"></script>
+
+	</head>
+
+	<body >
+		<div class="fangkuai">
+	        <img src="img/people.png" height="200" width="200"/>
+	       	
+	   <div class="help" >
+						<span id="he"><img src="img/wenhao.png"style='width:35px'/></span>
+						<div id="lp"> <a id ='zheng'href="help.html" target="" title="" style="color:#999999;text-decoration:none;">为什么要认证？</a> </div>
+						
+						</div>
+		<div class="fangshi">你可以通过填写有效身份证件信息或者绑定手机号码两种方式来完成实名认证	
+		</div>
+		</div>	
+			
+		<div class="fangkuai">
+			<div id='tuijian'><span><img style='width:80px'src="img/tuijian.png"/>
+			</span>
+			</div>
+		<div class ='fangshi0'>
+	   <div class='fangshi1'>
+	   	<div>方法一：绑定手机号认证</div>
+	   	<div id='bdcgsj'>您已绑定手机号178*******56</div>
+	   	<div id='shoujirzgc'>
+	   	<div id="shoujihao">手机号 ：<input id='biaodan'name='shouji'style="width:300px" placeholder="请输入手机号"></div>
+	   	<div id="shoujihao">验证码 ：<input id='biaodan' name='yanzhengxinxi'maxlength="10"style="width:230px"placeholder="请输入验证码">
+	   	<button id='yanzheng'>获取验证码</div>
+	   		 	<div id ='tijiao1'> <input  id="tijiaoshouji" type="image" src="img/zhidaole.png" style="width:400px" onclick="R.tijiao1()">
+	   		 	   <div id='tijiaotest'>提交资料</div>
+	   		 	</div>
+	   </div>
+	   </div>
+	  
+	   </div>
+	   </div>
+	   
+	   	<div class="fangkuai">
+	   	<div class ='fangshi0'>
+	 	
+	   <div class='fangshi2'>
+	   	<div>方法二：使用有效身份证信息认证</div>
+	   	<div id='bdcgsfz'>您已认证证件号14************29</div>
+	   	<div id='shenfenrzgc'>
+	   	<div id="shoujihao">真实姓名 ：<input name='zsname'id='biaodan'style="width:300px"placeholder="请输入真实姓名"></div>
+	   	<div id="shoujihao">证件号码 ：<input id='biaodan'name='shenfenzhenghao'style="width:300px"placeholder="请输入身份证号"></div>
+	   	<div id='ceshi'style='display:none'>测试数据 </div>
+	    <div id ='tijiao1'> <input type="image" src="img/zhidaole.png" style="width:400px"onclick="popBox()">
+	    <div id='tijiaotest'>提交资料</div>
+	    </div>
+	   </div>
+	      </div>
+	    </div>
+	   </div>
+
+	
+	   
+
+
+    <div id="popLayer"></div>
+     <div id="popBox">
+     <div id='shenfenjiachat'>
+     	<img src="img/people.png" height="200" width="200"/>
+     	 </div>
+     	<p id='hedui'>所填写信息一经提交不得修改,为了保证信息安全和正常游戏,请认真核对以下信息是否准确无误</p>
+     	<div id='xinxit'>真实姓名：<span id='xinxis'></span></div>
+     	<div id='xinxit'>身份证号码：<span id='shenfens'></span></div>
+     	<div id='chongxintianxie'onclick="closeBox()">重新填写</div>
+     	<div id='querentijiao'onclick="R.tijiao2()">确认提交</span>
+     
+     </div>
+       </div>
+     </div>
+ 
+        <div id="piaozitishit">
+	     	<span id='piaozitishi'></span>
+	     </div>
+	     
+	      <div id='shimingjieguo'>
+     	<div id='cuowuduihou'><img id ='cuoduitupian'src="img/bacha.png" width="150"/></div>
+     	<p id='cuoduitishi'>您输入的证件信息有误，请重新输入</p>
+        <div id='zhidaole' onclick="closeBox1()"> <img src="img/zhidaole.png"width="400"></img>
+        	
+        	 <div id='tijiaotest'>知道了</div>
+        </div>
+      </div>
+	 
+	</body>
+		<script>
+			C.getToken();
+            R.getToken(C.token);
+            R.getyonghuxinxi(C.token);
+            R.ifshenfenzheng(C.token);
+		
+		</script>
+</html>

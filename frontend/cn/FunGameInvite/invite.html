@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no,minimal-ui">
+		<title></title>
+		<link rel="stylesheet" href="css/inivite.css" />
+		<script type="text/javascript" src="js/http.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script>
+			C.getToken();
+			G.incomeTotal(C.token);
+			C.setInitFontSize();
+		</script>
+	</head>
+
+	<body>
+		<div class="inivite">
+			<button id="inviteBtn" onclick="inviteFri()">邀 请 好 友</button>
+			<div class="iniviteId">
+				<div class="cont">
+					<div class="code">
+						<font>我的邀请码&nbsp;:&nbsp;</font>
+						<font id="copyId"></font>
+						<button id="copyBtn" data-clipboard-target="#copyId" data-clipboard-action="copy">复制</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="myFri" id="myFri">
+			<div class="info">
+				<div class="infoCont">
+					<div class="income" id="income">
+						<div id="inviteTxt">
+							<span id="invited">已邀请</span>
+						</div>
+						<div class="headImg">
+							<img id="fri1" />
+							<img id="fri2" />
+							<img id="fri3" />
+						</div>
+						<div>
+							<span id="friendNums">34</span>
+							<span>人</span>
+						</div>						
+					</div>
+					<div class="totalIncome">
+						<p style="margin-bottom: 0;">
+							<span>获得累计收益</span>
+							<span id="getMoney">3.39</span>
+							<span>元</span>
+						</p>
+					</div>	
+					<div class="total" style="margin:0">
+						<p>
+							<span id="invited">在途收益</span>
+							<span id="allMoney">435</span>
+							<span>元，还不快去看看!<span>
+						</p>
+					</div>
+					<div style="margin:0;width: 100%;">
+						<button id="seeBtn" onclick="window.location='friends.html?token='+C.token">去看看</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rule">
+			<div class="ruleLine">
+				邀请规则
+			</div>
+			<div class="ruleCont">
+				<p style="margin-top: 25px;">
+					1.好友每天在游戏中领取金币奖励后，你可以获得好友玩游戏收益的5%，最高分成30元。
+				</p>
+				<p>
+					2.邀请好友数量无上限，邀请越多奖励越多。
+				</p>
+
+			</div>
+		</div>
+		<div id="copyInfo">复制成功</div>
+		<div id="log"></div>
+		<script type="text/javascript" src="js/clipboard.min.js"></script>
+		<script>
+//			C.token = "sre6YoB4qtmH34qTftup2bN2x2l-yXRx";
+			C.copyCode();
+			function inviteFri() {
+				invite.showWindow();
+			}
+//			document.getElementById("log").innerText=C.token;
+		</script>
+	</body>
+
+</html>

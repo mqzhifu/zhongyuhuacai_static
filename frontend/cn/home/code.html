@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		 <script type="text/javascript">
+	        /*  
+	         * 智能机浏览器版本信息:  
+	         *  
+	         */
+	        var type=GetQueryString('from');
+	        var u = navigator.userAgent;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+			if(isiOS==true){
+				alert("IOS版本正在开发中，敬请期待....");
+			}else{
+				if(type=='h5'){
+					window.open(" //mgres.kaixin001.com.cn/xyx/static/downLoad/android/kaixin_xyx_h5.apk");
+				}else{
+					window.open(" //mgres.kaixin001.com.cn/xyx/static/downLoad/android/kaixin_xyx.apk");
+				}
+				
+			}
+	        function GetQueryString(name)
+			{
+			     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			     var r = window.location.search.substr(1).match(reg);
+			     if(r!=null)return  unescape(r[2]); return null;
+			}
+	    </script>
+	</body>
+</html>
+<html>

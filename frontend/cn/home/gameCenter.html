@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="keywords" content="开心小游戏,开心小游戏大全,在线小游戏,单人游戏,单机游戏,双人对战,双人游戏,红包游戏,赚钱小游戏,2019红包,赚钱,好玩游戏,传奇游戏" />
+		<meta name="description" content="开心小游戏大全收录国内外单人游戏,单人游戏大全,单人小游戏闯关,单人冒险小游戏,单人小游戏大全无敌版,单人闯关小游戏大全,网络游戏大全,单机游戏大全,连连看游戏大全,益智游戏大全,转圈游戏,红包游戏,邀请朋友们一起边玩边赚钱!" />
+		<link rel="stylesheet" href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/css/home.css" />
+		<link rel="stylesheet" href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/css/swiper-3.3.1.min.css" />
+		<title>开心小游戏,小游戏大全,红包游戏,赚钱小游戏 - xyx.kaixin001.com</title>
+		
+	</head>
+
+	<body>
+		<script>
+			var docEl = document.documentElement,
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function() {
+					//docEl.style.fontSize = (docEl.clientWidth / 960) * 10 + 'px';
+					docEl.style.fontSize = (docEl.clientWidth / 960) * 10 + 'px';
+				};
+
+			//绑定浏览器缩放与加载时间
+			window.addEventListener(resizeEvt, recalc, false);
+			document.addEventListener('DOMContentLoaded', recalc, false);
+		</script>
+		<!--<div class="head">
+			<div class="header">
+				<a class="logoBox" href="index.html" title="开心小游戏">
+					<img class="logo_m" src="//mgres.kaixin001.com.cn/xyx/static/frondend/home/img/logo.png" alt="开心小游戏" />
+					<dl>
+						<dt>开心小游戏</dt>
+						<dd>A股上市公司 信誉有保障</dd>
+					</dl>
+				</a>
+				<div style="cursor: pointer;" onclick="downLoad()" class="btn-download" title="开心小游戏">下载</div>
+			</div>
+		</div>-->
+		<div class="head">
+			<div class="header">
+				<a class="logoBox" href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/index.html" title="开心小游戏">
+					<img class="logo_m" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/logo.png" alt="开心小游戏" />
+					<dl>
+						<dt>开心小游戏</dt>
+						<dd>A股上市公司 信誉有保障</dd>
+					</dl>
+				</a>
+				<ul class="nav">
+					<li><a href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/index.html">首页</a></li>
+					<li class="active"><a href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/gameCenter.html">下载</a></li>
+					<li><a href="#contact">联系</a></li>
+				</ul>
+			</div>
+			<div class="m_navBtn"></div>
+			<div class="m_navBox">
+				<div class="winBg"></div>
+				<ul class="m_navUl">
+					<li><a href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/index.html">首页</a></li>
+					<li class="active"><a href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/gameCenter.html">下载</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="paddingTop"></div>
+		<div class="banner">
+			<img class="banner-p" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/banner_p.png" />
+			<img class="banner-m" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/banner_m.png" />
+			<div class="playGame">
+				<img class="play_p" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/play_p.png" />
+				<div class="codeBg">
+					<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/qrCode.png" />
+					<p>快来扫一扫 开始赚钱吧</p>
+				</div>
+				<div class="android-download" style="cursor: pointer;"><img title="开心小游戏" alt="开心小游戏" onclick="downLoad()" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/androidDownload.png" /></div>
+			</div>
+		</div>
+		<div class="section">
+			<div class="fl">
+				<dl class="s-title">
+					<dt>边玩边赚、赢取红包</dt>
+					<dd>
+						<p>零投入，纯赚钱，提现超给力。</p>
+					</dd>
+				</dl>
+				<div id="withdraw-box">
+					<ul class="userList" id="userList">
+						<li class="userLi">
+							<img class="avatar" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/avatar.png" />
+							<p><em>一个小朋友</em>&nbsp;&nbsp;完成任务首次提现&nbsp;&nbsp; 赚了<span>0.50</span>元</p>
+						</li>
+						<li class="userLi">
+							<img class="avatar" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/avatar2.png" />
+							<p><em>小黑</em>&nbsp;&nbsp;完成任务首次提现&nbsp;&nbsp; 赚了<span>0.50</span>元</p>
+						</li>
+						<li class="userLi">
+							<img class="avatar" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/avatar3.png" />
+							<p><em>晨邀</em>&nbsp;&nbsp;完成任务首次提现&nbsp;&nbsp; 赚了<span>0.50</span>元</p>
+						</li>
+						<li class="userLi">
+							<img class="avatar" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/avatar2.png" />
+							<p><em>南风</em>&nbsp;&nbsp;完成任务首次提现&nbsp;&nbsp; 赚了<span>0.50</span>元</p>
+						</li>
+						<li class="userLi">
+							<img class="avatar" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/avatar.png" />
+							<p><em>心若浮尘</em>&nbsp;&nbsp;完成任务首次提现&nbsp;&nbsp; 赚了<span>0.50</span>元</p>
+						</li>
+						<li class="userLi">
+							<img class="avatar" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/avatar3.png" />
+							<p><em>星狮美达</em>&nbsp;&nbsp;完成任务首次提现&nbsp;&nbsp; 赚了<span>0.50</span>元</p>
+						</li>
+					</ul>
+				</div>
+				<div class="s-foot">以上为开心小游戏实时数据，每天都有大量用户边玩边赚钱</div>
+			</div>
+			<div class="fr">
+				<img class="redE" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/redEnvelope.png" />
+				<img class="star star1" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/star3.png" />
+				<img class="star star2" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/star2.png" />
+				<img class="star star3" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/star1.png" />
+				<img class="star star4" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/star2.png" />
+				<img class="star star5" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/star3.png" />
+			</div>
+			<div class="clearfloat"></div>
+		</div>
+		<div class="outBox">
+			<div class="section2">
+				<div class="fr">
+					<dl class="s-title">
+						<dt>海量游戏、简单有趣</dt>
+						<dd>
+							<p>多款经典、热门游戏，简单易上手；</p>
+							<p>无需下载游戏 随时随地想玩就玩；</p>
+							<p>玩得越多赚得越多。</p>
+						</dd>
+					</dl>
+				</div>
+				<div class="fl">
+					<div id="lubobox">
+						<ul>
+							<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/lun3.png" class="flash flash3" ondragstart="return false;" /></li>
+							<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/lun2.png" class="flash flash4" ondragstart="return false;" /></li>
+							<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/lun1.png" class="flash flash5" ondragstart="return false;" /></li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfloat"></div>
+			</div>
+		</div>
+
+		<div class="section3">
+			<div class="fl">
+				<dl class="s-title">
+					<dt>交友互动 在线PK</dt>
+					<dd>
+						<p>随机匹配，线上邀请，实时分享好游戏； </p>
+						<p>寻找好看的外表，寻找有趣的灵魂； </p>
+						<p>与你志同道合的人都在这里。</p>
+					</dd>
+				</dl>
+			</div>
+			<div class="examples">
+				<img class="hand1" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/hand1.png" />
+				<div class="exampleCon">
+					<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/exampleImg.png" class="exampleImg">
+					<div class="match">
+						<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/match1.png" class="match1 matchImgAni1">
+						<div class="matchTxt" style="visibility: visible;">匹配成功</div>
+						<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/match2.png" class="match2 matchImgAni1">
+					</div>
+					<div id="user1" class="">
+						<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/user1.png" class="">
+						<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/user2.png" class="">
+						<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/user3.png" class="active">
+						<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/user4.png" class="">
+						<div id="name1">
+							<font class="">吖莉</font>
+							<font class="">邓云峰峰峰</font>
+							<font>阿青青青</font>
+							<font class="">不优雅先生</font>
+						</div>
+					</div>
+					<div id="user2" class="">
+						<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/user20.png" class="">
+						<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/user19.png" class="">
+						<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/user18.png" class="active">
+						<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/user17.png" class="">
+
+						<div id="name2">
+							<font class="">艺术大亨</font>
+							<font class="">少女美芽</font>
+							<font>王润泽</font>
+							<font class="">柠檬水</font>
+						</div>
+					</div>
+				</div>
+				<img class="hand2" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/hand2.png" />
+			</div>
+		</div>
+		<div class="outBox"  id="contact">
+			<dl class="contact">
+				<dt>
+					<p>关注我们</p>
+					<p>联系我们</p>
+					<p>商务洽谈</p>
+				</dt>
+				<dd>
+					<span>
+						<em>公众号：开心网开心小游戏</em>
+					</span>
+					<span>
+						<em>联系客服：kxxyx-kefu@kaixin-inc.com</em>
+						<em>侵权投诉：kxxyx-fawu@kaixin-inc.com</em>
+					</span>
+					<span>邮箱：kxxyx-shangwu@kaixin-inc.com</span>
+				</dd>
+			</dl>
+			<div class="scan">
+				<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/qrCode.png" />
+				<span>扫描二维码下载</span>
+			</div>
+			<!--<div class="foot">
+				北京开心人信息技术有限公司： 京网文[2018]10698-965号 京ICP证080482号 京公网安备11010802014447号 (京)-非经营性-2014-0010 未成年家长监护
+			</div>-->
+			<div class="foot-m">
+				<div class="logoBox">
+					<img class="logo_m" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/logo.png" />
+					<dl>
+						<dt>开心小游戏</dt>
+						<dd>A股上市公司 信誉有保障</dd>
+					</dl>
+				</div>
+				<div onclick="downLoad()" class="btn-download">下载</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/js/home.js"></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/js/swiper-3.3.1.min.js"></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/js/Tween.js"></script>
+		<script>
+
+			C.init();
+			//var speed = 50;
+			$(document).ready(function() {
+				var area = $("#userList");
+				area[0].innerHTML += area[0].innerHTML;
+
+				var top = area.scrollTop();
+				console.log(top)
+				function scroll() {
+					if(top >= area[0].scrollHeight / 2) {
+						top = 0;
+						area.scrollTop(top);
+					} else {
+						area.scrollTop(++top);
+					}
+					window.requestAnimationFrame(scroll);
+				}
+				window.requestAnimationFrame(scroll);
+				//setInterval(scroll, speed);
+				var type=GetQueryString('from');
+				if(type=='h5'){
+					//$(".codeBg img,.scan img").attr("src"," //mgres.kaixin001.com.cn/xyx/static/frondend/home/img/qrH5Code.png");
+					$(".codeBg img,.scan img").attr("src","#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/qrH5Code.png");
+				}else{
+					//$(".codeBg img,.scan img").attr("src"," //mgres.kaixin001.com.cn/xyx/static/frondend/home/img/qrCode.png");
+					$(".codeBg img,.scan img").attr("src","#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/img/qrCode.png");
+				}
+				$(".nav li").click(function(){
+					$(this).addClass("active").siblings("li").removeClass("active");
+				});
+				$(".m_navBtn").click(function(){
+					$(".m_navBox").show()
+				});
+				$(".m_navBox .winBg").click(function(){
+					$(".m_navBox").hide()
+				});
+			});
+				
+			function downLoad() {
+				var type=GetQueryString('from');
+				var u = navigator.userAgent;
+				var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+				var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+				if(isiOS==true){
+					alert("IOS版本正在开发中，敬请期待....");
+				}else{
+					if(type=='h5'){
+						window.open("//mgres.kaixin001.com.cn/xyx/static/downLoad/android/kaixin_xyx_h5.apk");
+					}else{
+						window.open("//mgres.kaixin001.com.cn/xyx/static/downLoad/android/kaixin_xyx.apk");
+					}
+					
+				}
+			}
+			function GetQueryString(name)
+			{
+			     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			     var r = window.location.search.substr(1).match(reg);
+			     if(r!=null)return  unescape(r[2]); return null;
+			}
+			
+		</script>
+	</body>
+
+</html>

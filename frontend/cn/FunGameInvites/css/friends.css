@@ -1,0 +1,315 @@
+html{
+	margin: 0;
+	/*width: 100%;
+	height: 100%;*/
+}
+
+body{
+	background:#ffc92b url(../img/friendsBj.png) no-repeat;
+	margin: 0;
+	background-size: 100%;
+	/*width: 100%;
+	height: 100%;*/
+}
+::-webkit-scrollbar
+{
+    width: 0px;
+    height: 0px;
+}
+#head{
+	display: inline-block;
+	-moz-box-sizing: border-box;  
+    -webkit-box-sizing: border-box; 
+    -o-box-sizing: border-box; 
+    -ms-box-sizing: border-box; 
+    box-sizing: border-box; 
+	border-radius:50%;
+	width: 0.9rem;
+	height:0.9rem;
+	border:0.04rem solid #fff;
+}
+
+.invitelist{
+	background: url(../img/kbg.png) no-repeat center;
+	background-size: 100%;
+    text-align: center;
+    margin:0 auto 0;
+    width:6.67rem;
+    height: 1.65rem;	  	
+}
+.invite {
+	font-size:0.28rem;
+    width: 50%;	
+    height: 100%;
+	text-align: center;
+	display:block;
+	color: #34317B;
+	float: left;
+	padding: 0.22rem 0 0.28rem; 
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box; 
+}
+.line{
+	display: block;
+	height: 100%;
+	border-right: solid #ffe5dc 1px;
+}
+.invite #name{
+	padding-bottom: 0.15rem;
+}
+#znumber,#innumber,#pnumber{
+	font-size:0.48rem;
+    color: #FF365E;
+    font-weight: 800;
+}
+#unit{
+	font-size:0.21rem;
+	vertical-align:bottom;
+	color: #441200;
+}
+#listitem{
+	width:100%;
+}
+
+#listitem1{
+	width:100%;
+	height:5.2rem;
+	overflow-y:scroll; 
+}
+#listitem #aaa{
+	width:6.2rem;
+	float: right;
+	background-color: #fff;
+    border-radius: 0.14rem;
+    margin-bottom: 0.16rem;
+    padding: 0.13rem 0;
+}
+#listitem #aaa #ouu{
+	font-size: 0.24rem;
+	 color: #3e1600;
+	 line-height: 0.9rem;
+	 color: #C4C4C4;	
+}
+#listitem #aaa #four #buttonf{
+	display: inline-block;
+	width: 70px;
+	padding: 0 10px;
+	height: 0.5rem;
+	line-height: 0.55rem;
+	text-align: center;
+	background-color: #FF5C42;
+	font-size: 12px;
+	color: #ffffff;
+	border-width: 0px;
+	border-radius: 0.25rem;
+	margin: 0.16rem auto;
+	outline: none;
+}
+#gmoney {
+    color: red;
+    margin-right: 5px;
+    font-size: 0.3rem;
+}
+#listitem #namep,#getnump,#txbutton{
+	color: #8C3F07;
+	font-size: 0.25rem;
+	margin: 0;
+	width:33%;
+	float:left;
+	text-align: center;
+	margin: 0.22rem 0;
+	/*display:inline-block;*/
+}
+#one{
+	display: block;
+	height: 0.9rem;
+	color: #3e1600;
+	font-size: 28px;
+	width:17%;
+	float:left;
+	margin-left: -0.46rem;
+}
+#three{
+	color: #3e1600;
+	font-size: 0.22rem;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	margin: 0;
+	width:28%;
+	float:left;
+	text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+
+#listitem #aaa #two,#four{
+	color: #3e1600;
+	font-size: 0.22rem;
+	height: 0.9rem;
+	line-height: 0.9rem;
+	margin: 0;
+	width:29%;
+	float:left;
+	text-align: center;
+}
+#listitem #aaa #two{
+	text-align: left;
+}
+#listitem #aaa #two img{
+	display: inline-block;
+	width: 0.47rem;
+    vertical-align: middle;
+    margin:0 5px 0.06rem 0;
+}
+#friend {
+	margin: 0;
+	font-size: 56px;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 45px;
+}
+
+#friend number {
+	color: #FFFF00;
+}
+
+.get {
+	width: 80%;
+	height: 150px;
+	text-align: center;
+	background-color: #ffffff;
+	margin: 0 auto;
+}
+
+#id1 {
+	margin: 0;
+	font-size: 30px;
+	color: #dbab4c;
+	text-align: center;
+}
+
+#id1 number {
+	font-size: 40px;
+	color: red;
+	text-align: center;
+}
+
+#number {
+	margin: 0;
+	font-size: 30px;
+	color: #FB5D30;
+	text-align: center;
+}
+
+#money {
+	margin: 0;
+	font-size: 53px;
+	color: #FFFFFF;
+	text-align: center;
+	padding-top: 34px;
+}
+
+#money strong {
+	font-size: 96px;
+	color: #FFFF00;
+}
+.list{
+	margin:0 auto;
+    width:6.7rem;	
+}
+/*好有列表的图片*/
+#myf{
+	margin:-70px auto -30px ;
+	text-align: center;
+	width:323px;
+	height:93px;
+	background: url(../img/juan.png) no-repeat;
+	padding-top: 10px;
+	
+}
+#bartext{
+	font-size: 40px;
+	color:#ffffff;
+}
+.bg2{
+  	height: 487px;
+    border-width:1px 1px 1px 1px;
+     border-color:#fddfd0;
+      border-style:solid solid solid solid;
+}
+#inviteBtn {
+	display: block;
+	margin: 2.69rem auto 0;
+	width: 4.54rem;
+	height: 1.14rem;
+	line-height: 1rem;
+	font-size: 0.26rem;
+	background: url(../img/inviteBtnBg.png) no-repeat center 0.04rem;
+	background-size: 100%;
+	border: none;
+	outline: none;
+	color: #fff;
+}
+
+.iniviteId {
+	margin: 50px 12.5% 0;
+	width: 75%;
+	height: 60px;
+}
+
+.iniviteId font {
+	float: left;
+	margin: 0;
+	color: #FFFFFF;
+	font-size: 30px;
+	line-height: 60px;
+	vertical-align: middle;
+}
+
+.iniviteId #copyBtn {
+	float: right;
+	width: 135px;
+	height: 60px;
+	background-color: #FB6C44;
+	font-size: 30px;
+	color: #FFFFFF;
+	border-radius: 30px;
+	border-width: 1px;
+	border-color: #FFFFFF;
+}
+
+/*-----我的好友-----*/
+
+.myFri {
+	margin-top: 70px;
+	margin-left: 6%;
+	width: 88%;
+}
+
+.myFri .friTitleCir {
+	margin-top: 13.5px;
+	float: left;
+	width: 8px;
+	height: 8px;
+	background-color: #FF9200;
+	border-radius: 50%;
+}
+
+.myFri font {
+	margin-left: 1%;
+	font-size: 34px;
+	line-height: 35px;
+	vertical-align: middle;
+}
+
+.myFri .info {
+	margin-top: 60px;
+	width: 100%;
+	height: 330px;
+	border-radius: 20px;
+	box-shadow: 10px 10px 5px #F3F3F3;
+	box-shadow: #F3F3F3 0px 0px 5px 10px;
+}
+
+

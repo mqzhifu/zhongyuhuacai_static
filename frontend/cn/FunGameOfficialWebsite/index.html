@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--<script type="text/javascript">
+			document.write("<link rel='stylesheet' type='text/css' href='http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/css/style.css?random="+Math.random()+"' / > ");
+		</script>-->
+		<link rel='stylesheet' href='http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/css/style.css' />
+		<!--<link rel="stylesheet" href="css/style.css" />-->
+		<link rel="stylesheet" href="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/css/carousel.css" />
+	</head>
+
+	<body>
+		<script type="text/javascript" src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/js/jquery.min .js"></script>
+		<script type="text/javascript" src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/js/carousel.js"></script>
+		<!--<script type="text/javascript">
+			 document.write("<script type='text/javascript' src='http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/js/common.js?random="+Math.random()+"'></s"+"cript>");
+		</script>-->
+		<script type="text/javascript" src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/js/common.js"></script>
+		<!--<script type="text/javascript" src="js/common.js"></script>-->
+		<script>
+			var docEl = document.documentElement,
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function() {
+					docEl.style.fontSize = (docEl.clientWidth / 960) * 10 + 'px';
+				};
+
+			//绑定浏览器缩放与加载时间
+			window.addEventListener(resizeEvt, recalc, false);
+			document.addEventListener('DOMContentLoaded', recalc, false);
+		</script>
+		<div class="top">
+			<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/logo.png" class="logo" />
+			<div class="topTxt">
+				<p class="txt1">开心小游戏</p>
+				<p class="txt2">A股上市公司 信誉有保障</p>
+			</div>
+			<button class="topDown" onclick="downLoad()">下载</button>
+		</div>
+		<div class="cont">
+			<div class="down">
+				<div class="downCon">
+					<img class="downtxt" src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/downTxt.png">
+					<img class="downCode" src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/downCode.png?r=0.3">
+					<div class="downTip">
+						<font>快来扫一扫 开始赚钱吧</font>
+					</div>
+					<button class="downBtn"  onclick="downLoad()"></button>
+				</div>
+			</div>
+			<div class="user">
+				<div class="users">
+					<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/li.png" class="li" />
+					<div class="userTit">边玩边赚、赢取红包</div>
+					<br/>
+					<div class="userTip1">零投入，纯赚钱，提现超给力。</div>
+					<div class="userList" id="userList">
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user6.png" class="userListImg" />
+							<div class="userListTxt">一个小朋友完成任务首次提现 赚了
+								<font>1.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user7.png" class="userListImg" />
+							<div class="userListTxt">小黑-完成任务首次提现 赚了
+								<font>5.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user8.png" class="userListImg" />
+							<div class="userListTxt">晨邀完成任务首次提现 赚了
+								<font>5.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user9.png" class="userListImg" />
+							<div class="userListTxt"> 南风完成任务首次提现 赚了
+								<font>1.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user10.png" class="userListImg" />
+							<div class="userListTxt">心若浮尘完成任务首次提现 赚了
+								<font>1.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user11.png" class="userListImg" />
+							<div class="userListTxt">星狮美达完成任务首次提现 赚了
+								<font>5.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user12.png" class="userListImg" />
+							<div class="userListTxt">邓里航完成任务首次提现 赚了
+								<font>1.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user13.png" class="userListImg" />
+							<div class="userListTxt">文思儿思儿完成任务首次提现 赚了
+								<font>5.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user14.png" class="userListImg" />
+							<div class="userListTxt">左铭顺-完成任务首次提现 赚了
+								<font>5.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user15.png" class="userListImg" />
+							<div class="userListTxt">野原新完成任务首次提现 赚了
+								<font>1.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user16.png" class="userListImg" />
+							<div class="userListTxt">子 完成任务首次提现 赚了
+								<font>1.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user17.png" class="userListImg" />
+							<div class="userListTxt">雨婷R完成任务首次提现 赚了
+								<font>5.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user18.png" class="userListImg" />
+							<div class="userListTxt">熊梦吉完成任务首次提现 赚了
+								<font>10.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user1.png" class="userListImg" />
+							<div class="userListTxt">钟玉完成任务首次提现 赚了
+								<font>1.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user2.png" class="userListImg" />
+							<div class="userListTxt">小军完成任务首次提现 赚了
+								<font>5.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user3.png" class="userListImg" />
+							<div class="userListTxt">王初一完成任务首次提现 赚了
+								<font>5.00</font>元</div>
+							<br />
+						</div>
+						<div class="userLi">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user4.png" class="userListImg" />
+							<div class="userListTxt">琪在神马上完成任务首次提现 赚了
+								<font>5.00</font>元</div>
+							<br />
+						</div>
+					</div>
+					<div class="userTip2">以上为开心小游戏实时数据，每天都有大量用户边玩边赚钱</div>
+				</div>
+				<div class="userImg">
+					<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/userImg.png" class="redPocket" />
+					<div class="stars">
+						<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/star1.png" class="star1" />
+						<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/star1.png" class="star2" />
+						<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/star1.png" class="star3" />
+						<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/star1.png" class="star4" />
+						<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/star1.png" class="star5" />
+					</div>
+				</div>
+				<div class="clearfloat"></div>
+			</div>
+			<div class="game">
+				<div class="gameList">
+					<div class="pictureSlider poster-main">
+						<ul id="zturn">
+							<li class="poster-item  zturn-item">
+								<div class="for_btn">
+									<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/lun1.png">
+								</div>
+
+							</li>
+
+							<li class="poster-item zturn-item">
+								<div class="for_btn">
+									<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/lun2.png">
+								</div>
+
+							</li>
+
+							<li class="poster-item zturn-item">
+								<div class="for_btn">
+									<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/lun3.png">
+								</div>
+
+							</li>
+						</ul>
+
+					</div>
+				</div>
+				<div class="gameInfo">
+					<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/li.png" class="li" />
+					<div class="gameTit">海量游戏、简单有趣</div>
+					<br/>
+					<div class="gameTip1">多款经典、热门游戏，简单易上手；<br/>无需下载游戏 随时随地想玩就玩；<br/>玩得越多赚得越多。</div>
+				</div>
+			</div>
+			<div class="example">
+				<div class="exampleInfo">
+					<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/li.png" class="li" />
+					<div class="gameTit">交友互动 在线PK</div>
+					<br/>
+					<div class="gameTip1">随机匹配，线上邀请，实时分享好游戏；<br/>寻找好看的外表，寻找有趣的灵魂；<br/>与你志同道合的人都在这里。</div>
+				</div>
+				<div class="examples">
+					<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/hand1.png" class="hand1" />
+					<div class="exampleCon">
+						<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/exampleImg.png" class="exampleImg" />
+						<div class="match">
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/match1.png" class="match1" />
+							<div class="matchTxt">匹配成功</div>
+							<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/match2.png" class="match2" />
+						</div>
+						<div id="user1" class="user1">
+							<script>
+								var user1 = document.getElementById("user1");
+								for(var i = 0; i < 4; i++) {
+									var img = document.createElement("img");
+									img.src = "http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user" + (i + 1) + ".png";
+									if(i == 0) {
+										img.className = "active";
+									}
+									user1.appendChild(img);
+								}
+							</script>
+							<div id="name1">
+								<script>
+									var name1 = document.getElementById("name1");
+									for(var i = 0; i < 4; i++) {
+										var userName = document.createElement("font");
+										userName.innerText = C.createName(i + 1);
+										if(i == 0) {
+											userName.className = "nameActive";
+										}
+										name1.appendChild(userName);
+									}
+								</script>
+							</div>
+						</div>
+						<div id="user2" class="user2">
+							<script>
+								var user2 = document.getElementById("user2");
+								for(var i = 20; i > 16; i--) {
+									var img2 = document.createElement("img");
+									img2.src = "http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/user" + (i) + ".png";
+									if(i == 20) {
+										img2.className = "active";
+									}
+									user2.appendChild(img2);
+								}
+							</script>
+
+							<div id="name2">
+								<script>
+									var name2 = document.getElementById("name2");
+									for(var i = 20; i > 16; i--) {
+										var userName2 = document.createElement("font");
+										userName2.innerText = C.createName(i);
+										if(i == 20) {
+											userName2.className = "nameActive";
+										}
+										name2.appendChild(userName2);
+									}
+								</script>
+							</div>
+						</div>
+					</div>
+					<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/hand2.png" class="hand2">
+				</div>
+				<div class="clearfloat"></div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="info">
+				<div class="attention">
+					<div class="infoTit">关注我们</div>
+					<div class="infoTxt" style="text-align: center;">公众号：开心网开心小游戏</div>
+				</div>
+				<div class="line">|</div>
+				<div class="contact">
+					<div class="infoTit">联系我们</div>
+					<div class="infoTxt">
+						联系客服：kxxyx-kefu@kaixin-inc.com<br />
+						侵权投诉：kxxyx-fawu@kaixin-inc.com
+					</div>
+				</div>
+				<div class="line">|</div>
+				<div class="foreign">
+					<div class="infoTit">商务洽谈</div>
+					<div class="infoTxt">邮箱：kxxyx-shangwu@kaixin-inc.com</div>
+				</div>
+				<div class="clearfloat"></div>
+			</div>
+			<div class="footOther">
+				<img src="http://mgres.kaixin001.com.cn/xyx/static/frondend/OfficialWebsite/img/footCode.png" class="footCode" />
+				<div class="footTip">扫描二维码下载</div>
+			</div>
+		</div>
+		<div class="copyright">北京开心人信息技术有限公司： 京网文[2018]10698-965号 京ICP证080482号 京公网安备11010802014447号 (京)-非经营性-2014-0010 未成年家长监护</div>
+
+		<script type="text/javascript">
+			var aa = new zturn({
+				id: "zturn",
+				opacity: 0.2,
+				width: 10,
+				Awidth: 13,
+				scale: 0.8,
+				auto: true, //是否轮播 默认5000
+				turning: 5000 //轮播时长
+			})
+		</script>
+		<script>
+			C.init();
+			var speed = 50;
+
+			$(document).ready(function() {
+				var area = $("#userList");
+				area[0].innerHTML += area[0].innerHTML;
+
+				var top = area.scrollTop();
+
+				function scroll() {
+					if(top >= area[0].scrollHeight / 2) {
+						top = 0;
+						area.scrollTop(top);
+					} else {
+						area.scrollTop(++top);
+					}
+					//					console.log(area.scrollTop)
+				}
+				setInterval(scroll, speed);
+			});
+			function downLoad(){
+				window.open("http://mgres.kaixin001.com.cn/xyx/static/downLoad/android/kaixin_xyx.apk?r="+Math.random());
+			}
+		</script>
+
+	</body>
+
+</html>

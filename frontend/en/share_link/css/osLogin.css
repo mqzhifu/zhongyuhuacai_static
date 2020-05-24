@@ -1,0 +1,243 @@
+body,
+button,
+input,
+select,
+textarea {
+	font: 100%/1 "Helvetica Neue", Helvetica, STHeiTi, "Microsoft YaHei";
+	border-radius: 0;
+}
+
+select {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+a,
+input,
+textarea {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	outline: none;
+	-webkit-font-smoothing: antialiased
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="text"],
+textarea,
+button {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+th,
+td,
+p,
+blockquote,
+pre,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+article,
+aside,
+footer,
+header,
+hgroup,
+nav,
+section,
+menu {
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+em,
+i,
+strong {
+	font-style: normal;
+	font-weight: normal;
+}
+
+li {
+	list-style: none;
+}
+
+img {
+	border: 0;
+}
+
+input,
+img {
+	vertical-align: middle;
+}
+
+article,
+aside,
+footer,
+header,
+hgroup,
+nav,
+section,
+menu {
+	display: block;
+}
+
+a {
+	text-decoration: none;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+html,
+body {
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	color: #333;
+	min-width: 320px;
+	margin: auto;
+	padding: 0px;
+	background-color: #fff;
+	font-size: 9.25925926vw;/*对应1080px设计图*/
+}
+
+a,
+input,
+textarea {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	tap-highlight-color: rgba(0, 0, 0, 0);
+	outline: none;
+	-webkit-font-smoothing: antialiased
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="text"],
+button {
+	-webkit-appearance: none;
+}
+
+.hide {
+	display: none;
+}
+
+.strong {
+	font-weight: bold;
+}
+
+*,
+:after,
+:before {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+@media (min-width: 560px) {
+  	html {
+    	font-size: 54px;
+  	}	
+}
+.popUps{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.popUps .popUpsBg{
+	display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.popUps .popUpsLogin{
+	width: 100%;
+	height: 7.14rem;
+	background: rgba(255,255,255,1);
+    box-shadow: 0px 0px 6px 0px rgba(180,178,177,0.18);
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;	
+}
+.popUps .popUpsLogin .closeBtn{
+	position: absolute;
+	top: 0.60rem;
+	right: 0.51rem;
+	display: block;
+	width: 0.36rem;
+}
+.popUps .popUpsLogin h1{
+	font-weight: normal;
+	font-size: 0.5rem;
+	color: #2A2A2A;
+	text-align: center;
+	margin-top: 0.6rem;
+    white-space: pre-line;
+    line-height: 0.7rem;
+}
+.popUps .popUpsLogin p{
+	font-size:0.34rem;
+	color: #C7C7C7;
+	text-align: center;
+	white-space: pre-line;
+	line-height: 0.45rem;
+}
+.tripartite{
+	width: 4.9rem;
+	margin: 1.3rem auto 0.9rem;
+	overflow: hidden;
+	font-size: 0.44rem;
+	color: #fff;
+}
+.tripartite .FacebookBtn{
+	display: block;
+	float: left;
+	width: 1.6rem;
+	height: 1.6rem;
+	background:url(../img/facebook_icon.png) no-repeat center;
+	background-size: 100%;
+}
+.tripartite .GoogleBtn{
+	display: block;
+	float: right;
+	width: 1.6rem;
+	height: 1.6rem;
+	background:url(../img/google_icon.png) no-repeat center;
+	background-size: 100%;
+}

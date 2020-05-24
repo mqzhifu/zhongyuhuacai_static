@@ -1,0 +1,231 @@
+body,
+html {
+	background-color: #f8f8f8;
+}
+
+.gameManage {
+	display: block;
+	width: 1208px;
+	height: auto;
+	margin: 23px auto 0;
+	min-height: calc(100vh - 250px);
+}
+
+.nav-list {
+	float: left;
+	width: 203px;
+	height: auto;
+	display: none;
+}
+
+.nav-list .levelLi {
+	display: block;
+	width: 100%;
+	height: auto;
+	background: rgba(255, 255, 255, 1);
+	box-shadow: 0px 0px 4px 0px rgba(207, 206, 206, 0.2);
+	border-radius: 4px;
+	margin-bottom: 16px;
+	padding: 7px 0;
+}
+
+.nav-list .levelLi .first-level {
+	display: block;
+	width: 100%;
+	height: 52px;
+	line-height: 52px;
+	font-size: 18px;
+	cursor: pointer;
+	padding-left: 60px;
+	position: relative;
+}
+
+.nav-list .levelLi .first-level .level-icon {
+	position: absolute;
+	left: 24px;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	/* IE 9 */
+	-moz-transform: translateY(-50%);
+	/* Firefox */
+	-webkit-transform: translateY(-50%);
+	/* Safari 和 Chrome */
+	-o-transform: translateY(-50%);
+	/* Opera */
+	display: inline-block;
+	width: 28px;
+}
+
+.nav-list .levelLi .first-level .level-click {
+	display: inline-block;
+	width: 14px;
+	right: 24px;
+	top: 23px;
+	position: absolute;
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	/* Firefox 4 */
+	-webkit-transition: all 0.5s ease-in-out;
+	/* Safari 和 Chrome */
+	-o-transition: all 0.5s ease-in-out;
+	/* Opera */
+	transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	/* IE 9 */
+	-moz-transform: rotate(180deg);
+	/* Firefox */
+	-webkit-transform: rotate(180deg);
+	/* Safari 和 Chrome */
+	-o-transform: rotate(180deg);
+	/* Opera */
+}
+
+.nav-list .levelLi .first-level .up {
+	transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	/* IE 9 */
+	-moz-transform: rotate(0deg);
+	/* Firefox */
+	-webkit-transform: rotate(0deg);
+	/* Safari 和 Chrome */
+	-o-transform: rotate(0deg);
+	/* Opera */
+}
+
+.nav-list .levelLi .first-level .down {}
+
+.nav-list .levelLi .second-level {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.nav-list .levelLi .second-level li {
+	display: block;
+	width: 100%;
+	line-height: 50px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.nav-list .levelLi .second-level li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding-left: 60px;
+}
+
+.nav-list .levelLi .second-level li.active,
+.nav-list .levelLi .second-level li.active a {
+	color: #ff4a55;
+}
+
+.iframeBox {
+	display: block;
+	width: 100%;
+	float: left;
+	/*margin-left: 9px;*/
+	border-radius: 4px;
+}
+.statisticsLi .section{
+	display: block;
+	width: 986px;
+	margin: 0 auto 16px;
+	overflow: hidden;
+ 	background: rgba(255,255,255,1);
+    box-shadow: 0px 0px 6px 0px rgba(180,178,177,0.18);
+}
+.statisticsLi  .section .title{
+	display: block;
+	margin-top: 30px;
+	font-size: 16px;
+	color: #31373F;
+	padding-left: 40px;
+}
+.noticeUl{
+	display: block;
+	width: 100%;
+}
+.noticeUl li{
+	display: block;
+	overflow: hidden;
+	
+	cursor: pointer;
+	
+}
+.noticeUl li .inner{
+	width: 856px;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 36px 0;
+	border-bottom: 1px solid #F2F2F2;
+}
+.noticeUl li .fl{
+	display: block;
+	width: 750px;
+	float: left;
+}
+.noticeUl li .fl .noticeTitle{
+	display: block;
+	width: 100%;
+	color: #31373F;
+	font-size: 14px;
+	line-height: 20px;
+}
+.noticeUl li .fl .noticeMain{
+	display: none;
+	font-size: 14px;
+	color: #C1C1C1;
+	margin: 20px 0;
+}
+.noticeUl li .fl .noticeMain p{
+	line-height: 20px;
+}
+.noticeUl li .fr{
+	width: 106px;
+	float: left;
+	line-height: 20px;
+	color: #C1C1C1;
+}
+.noticeUl li .fr img{
+	display: inline-block;
+    width: 10px;
+    right: 24px;
+    margin:0 0 2px 14px;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.noticeUl li.active{
+	box-shadow:0px 5px 18px 0px rgba(180,178,177,0.19);
+}
+.noticeUl li.active .noticeMain{
+}
+.noticeUl li.active .fr img{
+	transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+#pageClup{
+	display: block;
+	width: 856px;
+	margin: 0 auto;
+	padding: 30px 0;
+	text-align: right;
+}
+#pageClup .layui-laypage .layui-laypage-curr .layui-laypage-em{
+	background-color: #FF4A55;
+}
+#pageClup .layui-laypage a:hover{
+	color: #FF4A55;
+}

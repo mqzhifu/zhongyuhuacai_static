@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no,minimal-ui">
+		<title></title>
+		<link rel="stylesheet" href="css/pro.css" />
+	</head>
+
+	<body>
+		<div>
+			<div class="pro1">
+				<div class="pro1Tit" onclick="showOrHide(1);">
+					<font>1、如何提现？</font>
+					<img src="img/proHide.png" id="pro1Img">
+					<div id="pro1Line"></div>
+				</div>
+				<div id="pro1Txt">
+					<font>1.提现须<font color="red">绑定微信号并关注微信公众号“开心小游戏”</font>，在公众号中获取提现口令验证提现；微信账号需要实名认证；</font><br />
+   					<font>2.可在微信钱包中查询提现到账详情，如有名称为“<font color="red">企业付款-开心小游戏</font>”的数据，即为提现到账。<font>
+				</div>
+			</div>
+			<div class="pro2">
+				<div class="pro2Tit" onclick="showOrHide(2);">
+					<font>2、提现多久到账？</font>
+					<img src="img/proHide.png" id="pro2Img">
+					<div id="pro2Line"></div>
+				</div>
+				<div id="pro2Txt">
+					<font>1.首次提现急速到账，后续提现5元及以上需 审核，您的提现将在<font color="red">1-3</font>个工作日内审核到账；</font><br />
+   					<font>2.提现如遇高峰期，可能会延迟到账，请耐心等待。</font>
+   					<img src="img/pro2Img1.png">
+   					<img src="img/pro2Img2.jpg" style="margin-left: 10%;">
+				</div>
+			</div>
+			<div class="pro3">
+				<div class="pro3Tit"  onclick="showOrHide(3);">
+					<font>3、怎么完成微信实名认证？</font>
+					<img src="img/proHide.png" id="pro3Img">
+					<div id="pro3Line"></div>
+				</div>
+				<div id="pro3Txt">
+					<font>微信未实名认证会受到“收款失败”的通知，请前往微信【我】->【支付】->右上角"..."->【实名认证】完成实名认证。</font>
+				</div>
+			</div>
+			<div class="pro4">
+				<div class="pro4Tit" onclick="showOrHide(4);">
+					<font>4、提现失败怎么办？</font>
+					<img src="img/proHide.png" id="pro4Img">
+					<div id="pro4Line"></div>
+				</div>
+				<div id="pro4Txt">
+					<font>可能是您输入验证码错误或多次频繁获取验证码，首先请确保输入正确的验证码；如获取验证码操作过于频繁，请勿着急，可稍后再试。</font>
+				</div>
+			</div>
+			<div class="pro5">
+				<div class="pro5Tit" onclick="showOrHide(5);">
+					<font>5、其他提现失败问题</font>
+					<img src="img/proHide.png" id="pro5Img">
+				</div>
+				<div id="pro5Txt">
+					<font>1.<font color="red">提现失败（提现功能已经升级，请前往应用宝更新版本后重试）</font><br />您可前往应用市场下载安装最新的版本；或在【我的】-【检查更新】升级版本</font><br />
+   					<font>2.<font color="red">提现失败（当前提现火爆，请稍后再试或联系客服）</font><br />当前小游戏提现人数过多，您可以稍后再试。避开高峰期提现成功率会更高。</font><br />
+   					<font>3.<font color="red">提现失败（提现异常，请稍后再试或联系客服解决）</font><br />
+   						<font style="margin-left: 10px;">1.添加开心小游戏客服QQ：2033140853；</font><br />
+   						<font style="margin-left: 10px;">2.也可在【我的】-【帮助反馈】，反馈您的问题。</font>
+   					</font>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			function showOrHide(proNum){
+				var proImg = document.getElementById("pro" + proNum + "Img");
+				var proTxt = document.getElementById("pro" + proNum + "Txt");
+				var proLine;
+				if(proNum != 5){
+					proLine = document.getElementById("pro" + proNum + "Line");
+				}
+				if(proTxt.style.display != "block"){
+					proTxt.style.display = "block";
+					proImg.src = "img/proShow.png";
+					if(proNum != 5){
+						proLine.style.display ="none";
+					}
+				}else{
+					proTxt.style.display = "none";
+					proImg.src = "img/proHide.png";
+					if(proNum != 5){
+						proLine.style.display ="block";
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

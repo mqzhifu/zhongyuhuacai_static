@@ -1,0 +1,48 @@
+@font-face{
+	font-family:"Roboto-Regular";
+	src:url("../fonts/Roboto-Regular.ttf");
+}
+html,
+body {
+	/*font-family: "Roboto-Regular";*/
+	margin: 0;
+}
+
+body {
+	margin-top: 8px;
+	background-color: #F6F7F9;
+}
+
+.pro1Tit,.pro2Tit,.pro3Tit,.pro4Tit,.pro5Tit{
+	color: #31373F;
+	background-color: #FFFFFF;
+	font-size: 13px;
+	padding-left: 21px;
+	height: 53px;
+	line-height: 52px;
+}
+
+#pro1Txt,#pro2Txt,#pro3Txt,#pro4Txt,#pro5Txt{
+	display: none;
+	padding: 19px 27px;
+	font-size: 11px;
+	line-height: 19px;
+}
+
+#pro1Line,#pro2Line,#pro3Line,#pro4Line{
+	height:1px;
+	margin:0 10px 0 -11px;
+	background-color:#EAEAEA;
+}
+
+#pro1Img,#pro2Img,#pro3Img,#pro4Img,#pro5Img{
+	margin: 20px 24px 0 0;
+	float: right;
+	width: 13px;
+	height: 7px;
+}
+
+#pro2Txt img{
+	margin-top: 15px;
+	width: 40%;
+}

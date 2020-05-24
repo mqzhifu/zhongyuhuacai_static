@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/js/jquery-1.12.4.min.js" ></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/home/js/gameCenter.js" ></script>
+		<script>
+			function getQueryString(name) { 
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+				var r = window.location.search.substr(1).match(reg); 
+				if (r != null) return unescape(r[2]); 
+				return null; 
+			}
+			
+			var isSdkGame = false;
+			var gameUrl;
+			var gameId;
+			var env;
+			var gameOrient;//游戏横竖屏, portrait, landscape
+			var inviteCode;//邀请码
+			var thirdType;//登陆类型, 4:微信.6:facebook.9:qq
+			var sharePath;//分享路径
+			var protocol;//协议
+			
+			window.onload = function(){
+				
+				if(getQueryString("type") == "sdk"){
+					isSdkGame = true;
+				}
+				
+				gameUrl = decodeURI(getQueryString("url"));
+				gameId = getQueryString("gameId");
+				env = getQueryString("env");
+				gameOrient = getQueryString("orient");
+				inviteCode = getQueryString("kxcode");
+				thirdType = getQueryString("thirdType");
+				sharePath = getQueryString("sharePath");
+				
+				if(gameUrl.indexOf("https") == 0){
+					protocol = "https";
+				}else{
+					protocol = "http";
+				}
+				libInit(gameId, env, inviteCode, thirdType, sharePath, protocol);
+			}
+			
+			function gotoGame(){
+				if(isSdkGame){
+					var tempUrl = gameUrl+"?type=link&gameId="+gameId+"&env="+env;
+					//window.location.href=tempUrl;
+					window.location.replace(tempUrl);
+					//document.getElementById("gameFrame").src= tempUrl;
+				}else{
+					//window.location.href=gameUrl;
+					window.location.replace(gameUrl);
+					//document.getElementById("gameFrame").src = gameUrl;
+				}
+			}
+		</script>
+		
+	</body>
+</html>

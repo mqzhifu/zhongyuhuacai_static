@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="keywords" content="开心小游戏,开心小游戏大全,在线小游戏,单人游戏,单机游戏,双人对战,双人游戏,红包游戏,赚钱小游戏,2019红包,赚钱,好玩游戏,传奇游戏" />
+		<meta name="description" content="开心小游戏大全收录国内外单人游戏,单人游戏大全,单人小游戏闯关,单人冒险小游戏,单人小游戏大全无敌版,单人闯关小游戏大全,网络游戏大全,单机游戏大全,连连看游戏大全,益智游戏大全,转圈游戏,红包游戏,邀请朋友们一起边玩边赚钱!" />
+		<meta property="og:title" content="Hifun">
+		<meta property="og:description" content="It's an interesting way to meet new friends by enjoying games.What's more,playing games on Hifun will get opportunities to win the rewards!">
+		<meta property="og:image" content="https://mgres.kaixin001.com.cn/xyx/static/frondend/Hifun.png">
+		
+		<link rel="stylesheet" href="css/osLogin.css" />
+		<link rel="stylesheet" href="css/footer.css" />
+		<title>Hifun</title>
+		
+		
+		<script src="https://apis.google.com/js/api:client.js"></script>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js" ></script>
+		<script type="text/javascript" src="js/lib.js?ver=131"></script>
+		
+		<style>
+			
+			html, body
+			{
+				margin: 0rem;
+				width: 100%;
+				height: 100%;
+			}
+			
+			
+			
+			iframe{
+				width:1px;
+				min-width: 100%;
+				*width:100%;
+				height: 1px;
+				min-height: 100%;
+				*height:100%;
+			}
+			
+			.download-box {
+				position: absolute;
+				left:0rem;
+				bottom: 0rem;
+				width: 100%;
+				height: 2rem;
+				border-radius: 0.325rem 0.325rem 0rem 0rem;
+				background-color: #FFFFFF;
+			}
+			
+			.download-box-land {
+				position: absolute;
+				left:0rem;
+				bottom: 0rem;
+				width: 2rem;
+				height: 100%;
+				border-radius: 0rem 0.325rem 0.325rem 0rem;
+				background-color: #FFFFFF;
+			}
+			
+			.rotate90{
+				-webkit-transform: rotate(90deg);
+				-moz-transform: rotate(90deg);
+				-o-transform: rotate(90deg);
+				-ms-transform: rotate(90deg);
+				transform: rotate(90deg);
+				
+				left:-40%;
+				top: 40%;
+				width: 100%;
+				height: 2rem;
+			}
+			
+			.download-content{
+				float: left;
+				margin-left: 0.5rem;
+				margin-top: 0.4rem;
+			}
+			
+			.kaixin-icon {
+				width: 1.2rem;
+				height: 1.2rem;
+				float: left;
+			}
+			
+			.download-text-div{
+				float: left;
+				margin-left: 0.3125rem;
+				margin-top: 0.125rem;
+			}
+			
+			.download-text-name{
+				font-size: 0.4rem;
+				color: #31373F;
+			}
+			
+			.download-text-desc{
+				font-size: 0.3rem;
+				color: #999999;
+				margin-top: 0.25rem;
+			}
+			
+			.download-btn {
+				float: right;
+				margin-right: 0.875rem;
+				margin-top: 0.5rem;
+				background-image: url(img/download.png);
+				font-size: 0.36rem;
+				color: white;
+				width: 2.5rem;
+				height: 0.8rem;
+				background-size: 2.5rem 0.8rem;
+				text-align: center;
+				line-height: 0.8rem;
+				justify-content: center;
+			}
+			
+			.close-btn{
+				position: absolute;
+				right: 0.2rem;
+				top: -0.2rem;
+			}
+			
+			.close-btn img{
+				width: 0.4rem;
+				height: 0.4rem;
+			}
+
+			.loginDialog {
+				position: absolute;
+				top: 0rem;
+				left: 0res;
+				width: 100%;
+				height:100%;
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body scroll="no">
+		<iframe id="gameFrame" name="gameFrame" frameborder="0" scrolling="no">
+		
+		</iframe>
+		
+		<img id="gameCover" style="width: 100%; height: 100%; position: absolute;top: 0px; left: 0px;"><img />
+		
+		<div id="downloadBox" class="fixDowload rotate90" style="display: none;">
+			<div class="logoBox">
+				<img class="logo_m" src="img/logo.png">
+				<dl>
+					<dt>Hifun</dt>
+					<dd>Say Hi and have Funs</dd>
+				</dl>
+			</div>
+			<div onclick="downLoad()" class="btn-download" onclick="downLoad();">More games</div>
+			<img class="closeBtn" src="img/closeBtn.png" onclick="closeHandler();">
+		</div>
+
+		<div class="loginDialog">
+			<div class="popUps">
+			<div class="popUpsBg"></div>
+			<div class="popUpsLogin">
+				<img class="closeBtn" src="img/closeBtn2.png" />
+				<h1>You must have a Hifun 
+account to continue</h1>
+				<div class="tripartite">
+					<div class="FacebookBtn" onclick="fbLogin()"></div>
+					<div class="GoogleBtn" id="googleBtn"></div>
+				</div>
+				<p>By signing up，you agree to our 
+Agreements & Privacy Policies</p>
+			</div>
+		</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			//sdk game:https://mgres.kaixin001.com.cn/xyx/pro/games/10042/41/
+			//link game:http://szhong.4399.com/4399swf/upload_swf/ftp27/gamehwq/20190304/12/index.htm
+			
+			//本地测试
+			//http://localhost?url=https://cdn-heyshell-com.akamaized.net/xyxnew/dev/open/games/10250/1/&type=sdk&gameId=10250&env=0&orient=portrait&kxcode=12345&sharePath=74
+			//http://localhost?url=http://szhong.4399.com/4399swf/upload_swf/ftp27/gamehwq/20190304/12/index.htm&type=link&gameId=10085&env=0&orient=portrait&kxcode=12345&sharePath=74
+			
+			//测试环境
+			//https://cdn-heyshell-com.akamaized.net/xyx/static/frondend/share_link/index.html?url=https://cdn-heyshell-com.akamaized.net/xyxnew/dev/open/games/10221/1/&type=sdk&gameId=10221&env=0&orient=portrait&kxcode=12345&sharePath=74
+			
+			//正式环境
+			//https://cdn-heyshell-com.akamaized.net/xyx/static/frondend/share_link/index.html?url=https://cdn-heyshell-com.akamaized.net/xyxnew/dev/open/games/10221/1/&type=sdk&gameId=10221&env=0&orient=portrait&kxcode=12345&sharePath=74
+				
+			function getQueryString(name) { 
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+				var r = window.location.search.substr(1).match(reg); 
+				if (r != null) return unescape(r[2]); 
+				return null; 
+			}
+			
+			var isSdkGame = false;
+			var gameUrl;
+			var gameId;
+			var env;
+			var gameOrient;//游戏横竖屏, portrait, landscape
+			var inviteCode;//邀请码
+			var thirdType;//登陆类型, 4:微信.6:facebook.9:qq
+			var sharePath;//分享路径
+			var protocol;//协议
+			
+			window.onload = function(){
+				
+				if(getQueryString("type") == "sdk"){
+					isSdkGame = true;
+				}
+				
+				gameUrl = decodeURI(getQueryString("url"));
+				gameId = getQueryString("gameId");
+				env = getQueryString("env");
+				gameOrient = getQueryString("orient");
+				inviteCode = getQueryString("kxcode");
+				thirdType = getQueryString("thirdType");
+				sharePath = getQueryString("sharePath");
+				
+				if(gameUrl.indexOf("https") == 0){
+					protocol = "https";
+				}else{
+					protocol = "http";
+				}
+				
+				try{
+					document.getElementById("gameFrame").onload = function(){
+						var platformTokenObj = {};
+						platformTokenObj.type = "platform_token";
+						platformTokenObj.msg = platform_token;
+						document.getElementById('gameFrame').contentWindow.postMessage(platformTokenObj, "*");
+						
+						document.getElementById("gameFrame").contentWindow.alert = function(data, callback){
+							console.log(data);
+						}
+					}
+					
+				}catch(e){
+					console.log(e);
+				}
+				
+				document.getElementById("downloadBox").style.display = "block";
+// 				if(gameOrient == "landscape"){
+// 					document.getElementById("downloadBox").style.display = "none";
+// 					alert("当前游戏为横屏，请锁定屏幕旋转，游戏体验更佳！", function(){
+// 						document.getElementById("downloadBox").style.display = "block";
+// 					});
+// 				}
+				$("#downloadBox").hide();
+				setOrient();
+				
+				initGoogle();
+				
+				libInit(gameId, env, inviteCode, thirdType, sharePath, protocol);
+			}
+			
+			function gotoGame(){
+				if(isSdkGame){
+					var tempUrl = gameUrl+"?type=link&gameId="+gameId+"&env="+env;
+					document.getElementById("gameFrame").src= tempUrl;
+				}else{
+					document.getElementById("gameFrame").src = gameUrl;
+				}
+				
+			}
+			
+			function setOrient(){
+				if(gameOrient == "landscape"){
+					if(window.orient == "portrait"){
+						document.getElementById("downloadBox").setAttribute('class','fixDowload rotate90');
+					}else if(window.orient == "landscape"){
+						document.getElementById("downloadBox").setAttribute('class','fixDowload');
+					}
+				}else{
+					document.getElementById("downloadBox").setAttribute('class','fixDowload');
+				}
+			}
+			
+			function downLoad() {
+				var u = navigator.userAgent;
+				var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+				var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+				if(isiOS) {
+					alert("IOS version will coming soon...");
+				}else{
+					shareStat(3);
+					// window.open("https://mgres.kaixin001.com.cn/xyx/static/downLoad/android/kaixin_xyx_h5.apk","_blank");
+					window.open("https://play.google.com/store/apps/details?id=com.kaixin.hifun", "_blank");
+				}
+				
+// 				var ttt = setTimeout(function(){
+// 					window.open("http://xyx.kaixin001.com/?from=h5","_self");
+// 					clearTimeout(ttt);
+// 				}, 2000)
+				
+			}
+			
+			function closeHandler(){
+				document.getElementById("downloadBox").style = "display:none";
+			}
+			
+			(function(){
+				
+				var supportOrientation = (typeof window.orientation === 'number' &&
+						typeof window.onorientationchange === 'object');
+			 
+				var init = function(){
+					var updateOrientation = function(){
+						if(supportOrientation){
+							orientation = window.orientation;
+							switch(orientation){
+								case 90:
+								case -90:
+									window.orient = 'landscape';
+									break;
+								default:
+									window.orient = 'portrait';
+									break;
+							}
+						}else{
+							window.orient = (window.innerWidth > window.innerHeight) ? 'landscape' : 'portrait';
+						}
+						setOrient();
+					};
+			 
+					if(supportOrientation){
+						window.addEventListener('orientationchange',updateOrientation,false);
+					}else{
+						//监听resize事件
+						window.addEventListener('resize',updateOrientation,false);
+					}
+			 
+					updateOrientation();
+				};
+			 
+				window.addEventListener('DOMContentLoaded',init,false);
+				
+				function css(targetObj, cssObj) {
+					var str = targetObj.getAttribute("style") ? targetObj.getAttribute('style') : '';
+					for (var i in cssObj) {
+						str += i + ':' + cssObj[i] + ';';
+					}
+					targetObj.style.cssText = str;
+				}
+			})();
+			
+			$(function(){
+				$(".closeBtn").click(function(){
+					$(".loginDialog").hide();
+				});
+			})
+			
+			function setLoginVisibel(value){
+				if(value){
+					$(".loginDialog").show();
+					$("#downloadBox").hide();
+				}else{
+					$(".loginDialog").hide();
+					$("#downloadBox").show();
+				}
+			}
+			
+			function showGameCover(vis, url){
+				if(vis){
+					$("#gameCover").show();
+					$("#gameCover")[0].setAttribute("src", url);
+				}else{
+					$("#gameCover").hide();
+				}
+			}
+			
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no,minimal-ui">
+		<title></title>
+		<link rel="stylesheet" href="css/landing.css" />
+		<script type="text/javascript" src="js/http.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script>
+			C.setInitFontSize();
+			var timeStamp = Math.floor(Math.random() * (3 * 60 * 60)) + (16 * 60 * 60);
+		</script>
+	</head>
+
+	<body>
+		<div class="scroll" id="scroll">
+			<div class="award">
+				<p class="p1">
+					<font id="name"></font>&nbsp;给你发了一个红包</p>
+				<p class="p2">
+					<font>18</font>元</p>
+				<p class="p3">新人任务奖励</p>
+				<div class="iniviteId">
+					<font>我的邀请码:</font>
+					<font id="copyId"></font>
+					<button id="copyBtn" data-clipboard-target="#copyId" data-clipboard-action="copy">复制</button>
+				</div>
+				<div id="copyInfo">复制成功</div>
+				<button id="downBtn" onclick="down();">立刻下载提现</button>
+				<div class="time">
+					<font>奖励过期:</font>
+					<div id="hours">00</div>
+					<font>:</font>
+					<div id="minutes">00</div>
+					<font>:</font>
+					<div id="seconds">00</div>
+				</div>
+			</div>
+			<div id="toOther">
+				<img src="img/downTip.png"/>
+			</div>
+		</div>
+		<script type="text/javascript" charset="UTF-8" src="//www.shareinstall.com.cn/js/page/jshareinstall.min.js"></script>
+		<script type="text/javascript" src="js/clipboard.min.js"></script>
+		<script>
+			C.setTime(timeStamp);
+			C.copyCode();
+
+			//记录是否阻止滚动
+        	var disableScroll = false;
+ 
+       		//如果弹出对话框时，底层的视图就不让滚动了
+        	document.addEventListener('touchmove', function(e) {
+          		if(disableScroll){
+            		e.preventDefault();
+          		}
+        	}, {passive:false});
+
+//			var info = document.getElementById("toOther");
+//			var scroll = document.getElementById("scroll"); 
+//			function down() {
+//				var ua = navigator.userAgent.toLocaleLowerCase();
+//				if(ua.match(/MicroMessenger/i) == "micromessenger"){
+//					disableScroll = true;
+//					info.style.display = "block"; //显
+//				}else{
+//					disableScroll = false;
+//					window.location = "https://a.app.qq.com/o/simple.jsp?pkgname=com.kaixin.instantgame";
+//				}
+//			}
+			
+			C.setCodeAndName();
+			
+			var memo = "{'name':"+ C.name + "'code':"+ C.inviteCode+ "}";
+			G.getInviteLog(C.token,1,memo);
+    		var data = ShareInstall.parseUrlParams();//shareinstall.js中提供的工具函数，解析url中的所有查询参数
+    		new ShareInstall({
+        		appKey : 'KABKK7BE6BKA7A',
+       	 		/*可选参数，是否优先考虑下载app，以牺牲唤醒为代价*/
+        		//preferInstall:true,
+        		/*可选参数，是否优先考虑拉起app，以牺牲下载体验为代价*/
+        		//preferWakeup:true,
+        		/*可选参数，微信中直接跳下载*/
+        		//weChatdownload:true,
+        		onready : function() {
+           			//shareinstall已成功回调
+            		var m = this, button = document.getElementById("downBtn");
+
+            		/*用户点击某个按钮时(假定按钮id为downloadButton)，安装app*/
+            		button.onclick = function() {
+                		m.wakeupOrInstall();
+            		}
+       			}
+    		}, data);
+		</script>
+	</body>
+
+</html>

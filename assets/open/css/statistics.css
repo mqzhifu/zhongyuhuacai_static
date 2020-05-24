@@ -1,0 +1,589 @@
+.panel {
+    margin: 0 30px;
+    margin-bottom: 14px;
+    text-align: left;
+    min-height: 211px;
+    border-radius: 0;
+}
+
+.panel-default>.panel-heading {
+    background-color: #E2E6EF;
+    position: relative;
+}
+
+.panel-heading-right {
+    font-size: 14px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+.game-btn {
+    font-size: 14px;
+    display: inline-block;
+    font-weight: lighter;
+    padding: 8px 29px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+    margin-bottom: 8px;
+    /*background: linear-gradient(0deg,#d9353f,#f14f59)!important; */
+}
+
+.title-sec {
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.title-text {
+    position: absolute;
+    font-size: 20px;
+    top: 5px;
+    left: 40px;
+}
+
+.title-img {
+    width: 30px;
+    height: 30px;
+}
+
+.modal-body p {
+    line-height: 1.5;
+}
+
+.modal-header {
+    border-radius: 6px 6px 0 0;
+    background: rgba(250, 251, 253, 1);
+    border: 0;
+}
+
+.modal-footer {
+    border: 0;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(74, 78, 103, 1);
+    text-align: center;
+}
+
+.v-sec {
+    margin-top: 5px;
+    font-size: 14px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(74, 78, 103, 1);
+    border: 1px solid rgba(158, 172, 202, 1);
+}
+
+.v-top {
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(158, 172, 202, 1);
+}
+
+.v-bottom {
+    padding: 12px 0;
+    text-align: center;
+}
+
+.v-sec-selected {
+    border-color: rgba(158, 172, 202, 1);
+    background-color: #E2E6EF;
+}
+
+.v-sec-selected .v-bottom {
+    border-color: rgba(158, 172, 202, 1);
+}
+
+#myModal2 {
+    text-align: center;
+}
+
+.login-verify {
+    position: relative;
+}
+
+.verify-btn {
+    width: 28%;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 100;
+    color: #fff;
+    background-color: #FEC34D;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.password-info {
+    margin-top: 39px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(74, 78, 103, 1);
+}
+
+.password-forgot {
+    color: #245085;
+    margin-left: 23px;
+    font-size: 14px;
+    color: rgba(36, 80, 133, 1);
+}
+
+.modal-dialog {
+    width: 550px;
+}
+
+.panel-body {
+    padding: 10px 15px;
+}
+
+.btn-group-group {
+    text-align: left;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+
+.report-sel-btn-left {
+    padding: 7px 16px;
+    border-radius: 0;
+}
+
+.report-sel-btn-right {
+    border-radius: 0;
+    padding: 7px 14px!important;
+}
+
+
+/*table*/
+
+.table-1-sec {
+    padding: 10px 30px;
+}
+
+.table-1>thead>tr>th,
+.table-1>tbody>tr>th,
+.table-1>tfoot>tr>th,
+.table-1>thead>tr>td,
+.table-1>tbody>tr>td,
+.table-1>tfoot>tr>td {
+    text-align: center;
+}
+
+.table-1>thead>tr>th {
+    background-color: #E2E6EF;
+    /*border-color: #fff;*/
+}
+
+.table-bordered>thead>tr>th,
+.table-bordered>thead>tr>td {
+    text-align: center;
+    /*padding: 16px;*/
+    color: #4A4E67;
+    background-color: #E2E6EF;
+    border-right-color: #fff;
+}
+
+.table-bordered>thead>tr>td {
+    border-right-color: #E2E6EF;
+}
+
+
+/* 我的样式 */
+
+.off_p {
+    padding: 0!important;
+}
+
+.table_head {
+    width: 100%;
+    height: 52px;
+    line-height: 52px;
+    text-align: center;
+    display: flex;
+}
+
+.table_head li {
+    width: 25% !important;
+    text-align: center !important;
+    background: #E2E6EF;
+}
+
+.table_head li a {
+    font-size: 14px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(36, 80, 133, 1);
+}
+
+.table_head li.active {
+    width: 25% !important;
+    text-align: center !important;
+    background: #fff;
+}
+
+
+/* 第一个列表 */
+
+* {
+    list-style: none;
+}
+
+.list_content {
+    width: 100%;
+}
+
+.list_content>li {
+    margin-top: 22px;
+}
+
+.list_content>li>span {
+    width: 25%;
+    display: inline-block;
+    text-align: center;
+}
+
+.list_content .list_fist span {
+    font-size: 14px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(74, 78, 103, 1);
+}
+
+.list_content .list_second span {
+    display: inline-block;
+    width: 25%;
+    font-size: 24px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(74, 78, 103, 1);
+}
+
+.list_third {
+    width: 100%;
+    display: flex;
+    margin-top: 14px;
+    padding-bottom: 19px;
+}
+
+.list_third .list_data {
+    width: 25%;
+}
+
+.list_third .list_data li i {
+    color: #EF4D57;
+}
+
+.list_third .list_data li b {
+    color: #EF4D57;
+}
+
+.list_third .list_data>li:nth-child(2) i {
+    color: #21B808;
+}
+
+.list_third .list_data>li:nth-child(2) b {
+    color: #21B808;
+}
+
+.list_third .list_data li {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.list_third .list_data li i {
+    margin-right: 5px;
+    display: inline-block;
+    width: 14px;
+}
+
+.list_third .list_data li b {
+    display: inline-block;
+    width: 57px;
+    font-size: 14px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+}
+
+.container_count {
+    width: 871px;
+    padding: 0!important;
+    margin: 0 auto;
+    padding-bottom: 100px!important;
+}
+
+.container_count .summary_head {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 14px;
+    background: #E2E6EF;
+    height: 39px;
+    line-height: 39px;
+}
+
+.container_count .summary_head span:nth-child(1) {
+    color: #4A4E67;
+    font-size: 14px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+}
+
+.summary_first_list {
+    height: 177px;
+    border: 1px solid rgba(226, 230, 239, 1);
+}
+
+.choose_btn {
+    margin-top: 10px;
+    float: left;
+}
+
+.client_count {
+    width: 171px;
+    height: 39px;
+    border: 1px solid rgba(226, 230, 239, 1);
+    padding-left: 30px;
+}
+
+.client_count option {
+    text-align: center;
+    width: 171px;
+    height: 40px;
+    line-height: 40px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.btn_02 {
+    width: 224px;
+    height: 39px;
+    border: 1px solid rgba(226, 230, 239, 1);
+}
+
+
+/* 第二个图表 */
+
+#chart_second {
+    width: 871px;
+    height: 312px;
+    margin-bottom: 65px;
+}
+
+
+/* 第三个图表 */
+
+#chart_third {
+    width: 871px;
+    height: 312px;
+}
+
+
+/* 实时统计 */
+
+.choose_data {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.choose_data .choose_left .hours_choose1 {
+    width: 156px;
+    height: 39px;
+    border: 1px solid rgba(226, 230, 239, 1);
+    margin-right: 20px;
+    padding-left: 22px;
+}
+
+.choose_data .choose_left .hours_choose1 option {
+    width: 156px;
+    text-align: center;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.choose_data .choose_right .hours_choose2 {
+    width: 122px;
+    height: 39px;
+    border: 1px solid rgba(226, 230, 239, 1);
+    margin-left: 15px;
+    padding-left: 21px;
+}
+
+.choose_data .choose_right .hours_draw {
+    width: 156px;
+    height: 39px;
+    border: 1px solid rgba(226, 230, 239, 1);
+}
+
+.choose_data .choose_right .hours_draw option {
+    width: 156px;
+    text-align: center;
+}
+
+.choose_data .choose_right .hours_choose2 option {
+    width: 122px;
+    text-align: center;
+}
+
+
+/* 实时统计图表 */
+
+.real_time_list {
+    width: 100%;
+}
+
+#real_time_charts {
+    width: 871px;
+    height: 322px;
+}
+
+
+/* ----------------------------------------------------- */
+
+
+/* 访问分析 */
+
+.analyse_btn span {
+    width: 114px;
+    height: 32px;
+    background: rgba(254, 196, 39, 1);
+    border-radius: 3px;
+    color: #fff;
+    line-height: 32px;
+    display: block;
+}
+
+#analyse_charts_first {
+    width: 871px;
+    height: 255px;
+}
+
+.analyse .choose_data_01 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.analyse .choose_data .choose_left .analyse_hours_choose1 {
+    width: 156px;
+    height: 39px;
+    border: 1px solid rgba(226, 230, 239, 1);
+    margin-right: 20px;
+    padding-left: 22px;
+}
+
+.analyse .choose_data .choose_left .analyse_hours_choose1 option {
+    width: 156px;
+    text-align: center;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+
+/* 访问页面 */
+
+#analyse_html {
+    width: 871px;
+    height: 376px;
+    border: 1px solid rgba(226, 230, 239, 1);
+    margin-top: 10px;
+}
+
+
+/* 新增用户留存 */
+
+#analyse_newUser_charts {
+    width: 839px;
+    height: 276px;
+    border: 1px solid rgba(226, 230, 239, 1);
+    margin-top: 10px;
+}
+
+
+/* 收入分析 */
+
+#income_charts {
+    height: 306px;
+    width: 871px;
+}
+
+
+/* 用户画像 */
+
+.choose_data_draw {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.draw_age {
+    width: 871px;
+    height: 370px;
+    border: 1px solid rgba(226, 230, 239, 1);
+    margin-top: 10px;
+    display: flex;
+}
+
+#sex_charts {
+    width: 331px;
+    height: 279px;
+    margin-top: 32px;
+    margin-left: 69px;
+    margin-right: 46px;
+}
+
+#age_charts {
+    width: 390px;
+    height: 279px;
+    margin-top: 23px;
+}
+
+.earth {
+    width: 871px;
+    height: 824px;
+    border: 1px solid rgba(226, 230, 239, 1);
+    margin-top: 10px;
+}
+
+.mode {
+    width: 871px;
+    height: 457px;
+    border: 1px solid rgba(226, 230, 239, 1);
+    margin-top: 10px;
+}
+
+#mode_charts {
+    width: 841px;
+    height: 444px;
+}
+
+
+/* 表格 */
+
+#table_user {
+    width: 871px;
+    margin-top: 9px;
+}
+
+#table_newUser {
+    width: 871px;
+    margin-top: 10px;
+}
+
+#table_pay {
+    width: 871px;
+    margin-top: 10px;
+}

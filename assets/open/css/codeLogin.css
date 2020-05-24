@@ -1,0 +1,230 @@
+.head{
+	width: 100%;
+	height: 70px;
+	box-shadow: 0px 0px 25px 10px #e7e7e7;
+}
+.head .header{
+	width: 100%;
+	padding: 0 100px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	height: 70px;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+}
+.header .fl{
+	position: absolute;
+	left: 100px;
+	top: 0;
+	font-weight: bold;
+	color: #ef4d57;
+	font-size: 22px;
+	line-height: 70px;
+}
+.header .fr{
+	position: absolute;
+	right: 100px;
+	top: 0;
+	overflow: hidden;
+	padding-top: 15px;
+}
+.header .fr .register{
+	display: inline-block;
+	width: 118px;
+	height: 36px;
+	line-height: 36px;
+	border: 1px solid #ef4d57;
+	color: #ef4d57;
+	border-radius: 5px;
+	font-size: 20px;
+}
+.header .fr .login{
+	display: inline-block;
+	width: 118px;
+	height: 36px;
+	line-height: 36px;
+	border: 1px solid #ef4d57;
+	color: #fff;
+	background-color: #ef4d57;
+	border-radius: 5px;
+	font-size: 20px;
+	margin-left: 15px;
+}
+.header .fc{
+	display: inline-block;
+}
+.header .fc li{
+	display: inline-block;
+	width: 190px;
+}
+.header .fc li a{
+	display: inline-block;
+	padding-top: 15px;
+	line-height: 38px;
+	color: #999999;
+	font-size: 20px;
+}
+.header .fc li.active a{
+	color: #31373f;
+}
+.header .fc li.active a:after{
+	content: "";
+	display: block;
+	width: 70%;
+	height: 2px;
+	background-color: #ff0000;
+	margin: 0 auto;
+}
+
+.regMain{
+    margin: 132px auto 0;
+    width: 900px;
+    border-radius: 5px;
+    background:url(../img/regBg.png) no-repeat;
+    background-size: cover;
+    box-shadow: 0px 0px 25px 10px #e7e7e7;
+    overflow: hidden;
+    height: 450px;
+}
+.regMain .fl{
+	float: left;
+	display: block;
+	height: 590px;
+}
+.regMain .fr{
+	float: right;
+	width: 400px;
+	box-sizing: border-box;
+    padding: 0 35px 0 25px;
+}
+.regMain .fr .loginType{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 16px;
+	margin: 50px 0 36px;
+	overflow: hidden;
+	font-size: 16px;
+}
+.regMain .fr .loginType .codeLogin{
+	float: left;
+	color: #31373f;
+}
+.regMain .fr .loginType .passLogin{
+	float: right;
+	color: #bebdbd;
+}
+.regMain .fr .formUl{
+	width: 100%;
+	height: auto;
+}
+.regMain .fr .formUl li{
+	display: block;
+	width: 100%;
+	border-radius: 5px;
+	overflow: hidden;
+	height: auto;
+	position: relative;
+}
+.regMain .fr .formUl li input{
+	display: block;
+	width: 100%;
+	height: 44px;
+	font-size: 14px;
+	border: 1px solid #f0eaea;
+	box-sizing: border-box;
+	padding: 0 19px;
+	border-radius: 5px;
+}
+.regMain .fr .formUl li input::-webkit-input-placeholder {
+  color: #bebdbd;
+}
+.regMain .fr .formUl li input:focus{
+	border-color: #f05962;
+}
+.regMain .fr .formUl li input+span{
+	display: block;
+	height: 24px;
+	line-height: 24px;
+}
+.regMain .fr .formUl li .code{
+	display: inline-block;
+	height: 42px;
+	position: absolute;
+    z-index: 1;
+    top: 1px;
+    right: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.regMain .fr .formUl li img{
+	display: block;
+	height: 44px;
+
+}
+.regMain .fr .formUl li .phoneCode{
+	width: 110px;
+    height: 32px;
+    line-height: 32px;
+    position: absolute;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    right: 1px;
+    top: 6px;
+    text-align: center;
+    color: #ef4d57;
+    font-size: 14px;
+}
+.regMain .fr .formUl li .phoneCode.disabled{
+	color: #ccc;
+}
+.regMain .fr .reg-forget{
+	width: 100%;
+	box-sizing: border-box;
+	margin-top: 25px;
+	overflow: hidden;
+	font-size: 16px;
+	color: #31373f;
+}
+.regMain .fr .reg-forget .register{
+	float: left;
+}
+.regMain .fr .reg-forget .forget{
+	float: right;
+}
+.regMain .fr .login_button{
+	display: block;
+	width: 100%;
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	color: #fff;
+	background-color: #ef4d57;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	border-radius: 5px;
+}
+.footer {
+	text-align: center;
+  	margin-top: 150px; 
+  	font-size: 14px;
+  	border-bottom: 3px #EA4554 solid;
+}
+.qq {
+	font-weight: 400;
+	color: #4a4e67;
+}
+.company {
+	margin-top: .4rem;
+  	font-weight:400;
+  	color:#4a4e67;
+}
+.copyright {
+	margin-top: .4rem;
+	margin-bottom: 56px; 
+	font-family:MicrosoftYaHei;
+	font-weight:400;
+	color:rgba(158,172,202,1);
+}

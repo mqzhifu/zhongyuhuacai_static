@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no,minimal-ui">
+		<title></title>
+		<link rel="stylesheet" href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/HiFun/css/friends.css" />
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/HiFun/js/common.js" ></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/HiFun/js/http.js"></script>
+		<script>
+//			var token = "sre6Yn-IrtuIuYaTftut2LN2pax_yXRx";
+//
+//			function getToken() {
+//				token = "sre6Yn-IrtuIuYaTftut2LN2pax_yXRx";
+//			}	
+
+         	C.getToken();
+			G.myfriends(C.token);
+			G.incomeT(C.token);
+			C.setInitFontSize();
+		</script>
+	</head>
+
+	<body>
+		<div class='invitelist'>
+			<div class="invite">
+				<div class="line">
+					<div id="name">
+						<font>Invited friends</font>
+					</div>
+					<div id="pnumber">
+						<font>4</font>
+					</div>
+					<span id="unit">
+						<font>Person</font>
+					</span>
+				</div>
+			</div>
+			<div class="invite">
+				<div class='line'>
+					<div id="name">
+						<font>My income</font>
+					</div>
+					<div id="innumber">
+						<font>500</font>
+					</div>
+					<span id="unit">
+						<font>Tokens</font>
+					</spandiv>
+				</div>
+			</div>
+			<div class="invite">
+				<div id="name">
+					<font>In-transit income</font>
+				</div>
+				<div id="znumber">
+					<font>2330</font>
+				</div>
+				<span id="unit">
+					<font>Tokens</font>
+					</span>
+		     </div>
+		</div>
+		<div class='list'> 
+			<!--<div id='myf'>
+				<font id='bartext'>我的好友</font>
+			</div>-->
+		    <div id= 'listitem'>
+			<span  id="namep">
+				<font>My Friends</font>
+				</span >
+					<span id="getnump">
+					<font>Current income</font>
+				</span>
+					<!--<span id="cannump">
+						<font>预计收益</font>
+				</span>-->
+					<span id="txbutton">
+						<font>Operate</font>
+				</span>
+		     	<div id= 'listitem1'>
+		
+				</div>
+			</div>
+		</div>
+		     <div class="inivitebtn">
+			<button id="inviteBtn" onclick="inviteFri()">Invite Friends</button>
+			</div>
+ 	    <script>
+			function inviteFri() {
+				invite.showWindow();
+			}
+		</script>
+	</body>
+
+</html>

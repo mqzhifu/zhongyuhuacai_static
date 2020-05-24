@@ -1,0 +1,84 @@
+html,body{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+body{
+	background: url(../img/login_bg.png) no-repeat center;
+	background-size: cover;
+}
+.loginBox{
+	width:510px;
+	height:343px;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 0px 49px 0px rgba(211,208,208,1);
+	border-radius:6px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+  	transform:translate(-50%,-50%);
+	-ms-transform:translate(-50%,-50%); 	/* IE 9 */
+	-moz-transform:translate(-50%,-50%); 	/* Firefox */
+	-webkit-transform:translate(-50%,-50%); /* Safari 和 Chrome */
+	-o-transform:translate(-50%,-50%); 	/* Opera */
+}
+.loginBox h1{
+	width: 450px;
+	line-height: 98px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #31373F;
+	text-align: center;
+	border-bottom: 1px solid #EAE4E4;
+	margin: 0 auto;
+}
+.loginBox .FacebookBtn{
+	width:333px;
+	height:52px;
+	background:#3B5998;
+	border-radius:6px;
+	margin: 40px auto 0;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	line-height: 52px;
+	cursor: pointer;
+}
+.loginBox .FacebookBtn img{
+	display: inline-block;
+	width: 27px;
+	vertical-align: middle;
+	margin:0 20px 2px 0;
+}
+.loginBox .GoogleBtn{
+	width:333px;
+	height:52px;
+	background:#4285F4;
+	border-radius:6px;
+	margin: 0px auto 0;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	line-height: 52px;
+	cursor: pointer;
+}
+.loginBox .GoogleBtn img{
+	display: inline-block;
+	width: 27px;
+	vertical-align: middle;
+	margin:0 20px 2px 0;
+}
+.loginBox p{
+	display: block;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	color: #31373F;
+	font-size: 14px;
+}
+body .header .fl{
+	color: #4285F4;
+}
+.header .fc li.active a:after{
+	background-color: #4285F4;
+}

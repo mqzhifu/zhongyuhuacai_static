@@ -1,0 +1,331 @@
+body,html{
+	background-color: #f8f8f8;
+}
+
+.mainBox{
+	width:1200px;
+	height:800px;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 0px 6px 0px rgba(180,178,177,0.18);
+	border-radius:4px;
+	margin: 24px auto 0;
+	overflow: hidden;
+}
+.mainBox .main-head{
+	display: block;
+	margin: 20px auto 30px;
+}
+.mainBox  .mainInner{
+	display: block;
+	width: 800px;
+	margin-left: 410px;
+}
+.mainInner dl{
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0;
+}
+.mainInner dl dt{
+	display: block;
+	height: 56px;
+	line-height: 56px;
+	font-weight: normal;
+}
+.mainInner dl dd{
+	display: block;
+	width: 100%;
+	height: auto;
+	line-height: 40px;
+}
+.mainInner dl dd select{
+	display: inline-block;
+	float: left;
+	width:116px;
+	height:40px;
+	border:1px solid rgba(232,223,223,1);
+	border-radius:4px;
+	outline: none;
+	padding: 0 30px 0 10px;
+    -webkit-appearance: none;
+	background: url(../img/select-bg.png) no-repeat 90% center/10px;
+}
+.mainInner dl dd>span{
+	margin: 0 15px;
+}
+.mainInner dl dd input{
+	width:200px;
+	height:40px;
+	line-height: 1px;
+	border:1px solid rgba(232,223,223,1);
+	border-radius:4px;
+	padding-left:16px;
+}
+.mainInner dl dd .input-code{
+	width:255px;
+}
+.mainInner dl dd .verify-btn{
+	width:381px;
+	height:50px;
+	line-height: 50px;
+	border:1px solid rgba(232,223,223,1);
+	border-radius:4px;
+	cursor: pointer;
+	position: relative;
+}
+.mainInner dl dd .verify-btn>img,.mainInner dl dd .success-btn>img{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin: 0 16px 0 17px;
+	margin-bottom: 3px;
+	vertical-align: middle;
+}
+.mainInner dl dd .success-btn{
+	display: none;
+	width:381px;
+	height:50px;
+	line-height: 50px;
+	border:1px solid rgba(82,196,18,1);
+	border-radius:4px;
+	color: #52C412;
+}
+.mainInner dl dd .phoneCode{
+	border: none;
+	outline: none;
+	width:110px;
+	height:40px;
+	background:rgba(254,196,39,1);
+	border-radius:4px;
+	color: #fff;
+	margin-left: 10px;
+}
+.mainInner dl dd .prompt{
+	display: none;
+	color: #f43f4c;
+	margin-left: 10px;
+}
+.mainInner dl dd .disabled{
+	background:rgba(190,190,190,1);
+}
+.btn-clup{
+	width: 380px;
+	overflow: hidden;
+	margin-top: 20px;
+}
+.btn-clup .next-step{
+	width:160px;
+	height:40px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	background:linear-gradient(0deg,#d9353f,#f14f59);
+	/* Webkit: Safari 4-5, Chrome 1-9 */ 
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d9353f), to(#f14f59)); 
+	/* Webkit: Safari 5.1+, Chrome 10+ */ 
+	background: -webkit-linear-gradient(top, #d9353f, #f14f59); 
+	/* Firefox 3.6+ */ 
+	background: -moz-linear-gradient(top, #d9353f, #f14f59); 
+	/* Opera 11.10+ */ 
+	background: -o-linear-gradient(top, #d9353f, #f14f59); 
+	/* IE 10 */ 
+	background: -ms-linear-gradient(top, #d9353f, #f14f59); 
+	/* IE < 10 */ 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#d9353f, endColorStr=#f14f59);
+	border-radius:4px;
+	float: left;
+	cursor: pointer;
+}
+.btn-clup .prev-step{
+	width:160px;
+	height:40px;
+	line-height: 40px;
+	text-align: center;
+	border:1px solid rgba(239,77,87,1);
+	border-radius:4px;
+	color: rgba(239,77,87,1);
+	float: right;
+	cursor: pointer;
+}
+.footer {
+	text-align: center;
+  	margin-top: 50px; 
+  	font-size: 14px;
+  	border-bottom: 3px #EA4554 solid;
+}
+.qq {
+	font-weight: 400;
+	color: #4a4e67;
+}
+.company {
+	margin: 20px 0;
+  	font-weight:400;
+  	color:#4a4e67;
+}
+.copyright {
+	margin-bottom: 40px; 
+	font-weight:400;
+	color:#9eacca;
+}
+.verBox{
+	position: absolute;
+	top: -84px;
+    left: 44px;
+}
+.slider-btn {
+	position: absolute;
+	width: 44px;
+	height: 44px;
+	left: 0;
+	top: -7px;
+	z-index: 12;
+	cursor: pointer;
+	background-image: url(../img/sprite.png);
+	background-position: 0 0;
+	transition: inherit
+}
+
+.ver-tips {
+	position: absolute;
+	left: 0;
+	bottom: -22px;
+	background: rgba(255, 255, 255, .9);
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	width: 100%;
+	margin: 0;
+	text-align: left;
+	padding: 0 8px;
+	transition: all .4s
+}
+
+.slider-tips {
+	bottom: 0
+}
+
+.ver-tips i {
+	display: inline-block;
+	width: 22px;
+	height: 22px;
+	vertical-align: top;
+	background-image: url(../img/sprite.png);
+	background-position: -4px -88px
+}
+
+.ver-tips span {
+	display: inline-block;
+	vertical-align: top;
+	line-height: 22px;
+	color: #455
+}
+
+.active-tips {
+	display: block
+}
+
+.hidden {
+	display: none
+}
+.verBox{
+	display: none;
+}
+#imgVer{
+
+    background: rgba(255,255,255,1);
+    box-shadow: 0px 0px 6px 0px rgba(180,178,177,0.18);
+    border: 1px solid #dadada;
+}
+.re-btn {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 36px;
+	padding: 0 10px
+}
+.re-btn em{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin: 10px 0;
+	background-image: url(../img/sprite.png);
+	background-position: 0 -154px;
+}
+.re-btn a {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin: 10px 0 10px 8px;
+	background-image: url(../img/sprite.png);
+	background-position: 0 -134px;
+	cursor: pointer
+}
+.mainInner-title{
+	width:100%;
+	text-align: center;
+	text-align: center;
+	height:20px;
+	font-size:20px;
+	font-weight:400;
+	color:rgba(49,55,63,1);
+	margin-bottom: 30px;
+}
+.mainInner-title span{
+	color: #f43f4c;
+}
+.mainInner dl dt.phoneNum,.mainInner dl dt.codeTitle{
+	height: 34px;
+	line-height: 34px;
+}
+.mainInner dl dt.codeTitle{
+	margin-bottom: 10px;
+}
+.mainInner dl dt.phoneNum em{
+	margin-left: 35px;
+}
+.mainInner .resetDl dd input
+{
+	width: 380px;
+}
+.successBox{
+	display: block;
+}
+.successBox .success-icon{
+	display: block;
+	width:128px;
+	height:128px;
+	margin: 35px auto 50px;
+}
+.successBox p{
+	text-align: center;
+	font-size:20px;
+	font-weight:400;
+	color:rgba(49,55,63,1);
+}
+.successBox span{
+	display: block;
+	width: 100%;
+	text-align: center;
+	height:14px;
+	font-size:14px;
+	font-weight:400;
+	color: #31373F;
+
+}
+.successBox span em{
+	display: inline-block;
+	width: 18px;
+	text-align: right;
+	color:rgba(244,63,76,1);
+}
+.successBox .go-login{
+	display: block;
+	margin: 20px auto 0;
+	text-align: center;
+	line-height: 40px;
+	color: #fff;
+	width:160px;
+	height:40px;
+	background:linear-gradient(0deg,rgba(217,53,63,1),rgba(241,79,89,1));
+	border-radius:4px;
+}

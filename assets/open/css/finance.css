@@ -1,0 +1,384 @@
+body,html{
+	background-color: #f8f8f8;
+}
+.gameManage{
+	display: block;
+	width: 1208px;
+	height: auto;
+	margin: 23px auto 0;
+    min-height: calc(100vh - 250px);
+}
+.nav-list{
+	float: left;
+	width:203px;
+	height:auto;
+	
+}
+.nav-list .levelLi{
+	display: block;
+	width: 100%;
+	height: auto;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 0px 4px 0px rgba(207,206,206,0.2);
+	border-radius:4px;
+	margin-bottom: 16px;
+	padding: 7px 0;
+}
+.nav-list .levelLi .first-level{
+	display: block;
+	width: 100%;
+	height: 52px;
+	line-height: 52px;
+	font-size: 18px;
+	cursor: pointer;
+	padding-left: 60px;
+	position: relative;
+}
+.nav-list .levelLi .first-level .level-icon{
+	position: absolute;
+	left: 24px;
+	top: 50%;
+	transform:translateY(-50%);
+	-ms-transform:translateY(-50%); 	/* IE 9 */
+	-moz-transform:translateY(-50%); 	/* Firefox */
+	-webkit-transform:translateY(-50%); /* Safari 和 Chrome */
+	-o-transform:translateY(-50%); 	/* Opera */
+	display: inline-block;
+	width: 28px;
+}
+.nav-list .levelLi .first-level .level-click{
+	display: inline-block;
+	width: 14px;
+    right: 24px;
+    top: 23px;
+    position: absolute;
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;	/* Firefox 4 */
+	-webkit-transition: all 0.5s ease-in-out;	/* Safari 和 Chrome */
+	-o-transition: all 0.5s ease-in-out;	/* Opera */
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); 	/* IE 9 */
+	-moz-transform:rotate(180deg); 	/* Firefox */
+	-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+	-o-transform:rotate(180deg); 	/* Opera */
+}
+.nav-list .levelLi .first-level .up{
+	transform:rotate(0deg);
+	-ms-transform:rotate(0deg); 	/* IE 9 */
+	-moz-transform:rotate(0deg); 	/* Firefox */
+	-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+	-o-transform:rotate(0deg); 	/* Opera */
+}
+.nav-list .levelLi .first-level .down{
+	
+}
+.nav-list .levelLi .second-level{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.nav-list .levelLi .second-level li{
+	display: block;
+	width: 100%;
+	line-height: 50px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.nav-list .levelLi .second-level li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding-left: 60px;
+}
+.nav-list .levelLi .second-level li.active,.nav-list .levelLi .second-level li.active a{
+	color: #ff4a55;
+}
+.iframeBox{
+    display: block;
+    width: 986px;
+    float: left;
+    margin-left: 9px;
+    border-radius: 4px;
+}
+.statisticsBody{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.statisticsLi{
+	display: none;
+	width: 100%;
+	height: auto;
+}
+.statisticsBody .active{
+	display: block;
+}
+.statisticsLi .section,.statisticsBody .section{
+	display: block;
+	width: 986px;
+	padding: 0 23px 30px;
+	margin: 0 auto 16px;
+	overflow: hidden;
+ 	background: rgba(255,255,255,1);
+    box-shadow: 0px 0px 6px 0px rgba(180,178,177,0.18);
+    position: relative;
+}
+.statisticsLi  .section .title{
+	display: block;
+	margin-top: 30px;
+	font-size: 16px;
+	color: #31373F;
+	padding-left: 14px;
+}
+
+.grandTotal{
+	margin: 40px auto 0;
+    overflow: hidden;
+}
+.grandTotal,.page{
+    width: 885px;
+    
+}
+.grandTotal .emptyP{
+	display: block;
+	text-align: center;
+	line-height: 140px;
+	color: #999999;
+}
+.grandTotal table>tbody>tr>th{
+	width:885px;
+	height:30px;
+	line-height: 30px;
+	color: #999999;
+	background:rgba(248,249,251,1);
+	
+}
+.grandTotal table>tbody>tr>td,
+.grandTotal table>tbody>tr>th{
+	
+	border: none;
+	padding: 0;
+	font-size: 14px;
+	font-weight: normal;
+	text-align: center;
+}
+.grandTotal table>tbody>tr>th{
+	font-size: 16px;
+}
+.grandTotal table>tbody>tr>td{
+	border-bottom: 1px solid #F2F2F2;
+	height: 50px;
+	line-height: 50px;
+	color: #666666;
+}
+.grandTotal .table .Td:nth-child(odd){
+	background-color: #fcfcfc;$00e8faff
+}
+.page{
+	height: 30px;
+	line-height: 30px;
+	text-align: right;
+    margin-bottom: 30px;
+    float: right;
+}
+.page .prevpage,.page .nextpage{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #F3F3F3;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+    margin: 0 4px 3px 4px;
+}
+.page .prevpage:after{
+    content: "";
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-width: 6px;
+    border-style: solid;
+    border-color:  transparent #B5B5B5 transparent transparent;
+    position: absolute;
+	left: 50%;
+    top: 50%;
+    margin-top: -6px;
+    margin-left: -9px;
+}
+.page .nextpage:after{
+    content: "";
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-width: 6px;
+    border-style: solid;
+    border-color:  transparent  transparent transparent #B5B5B5;
+    position: absolute;
+	left: 50%;
+    top: 50%;
+    margin-top: -6px;
+    margin-left: -2px;
+}
+.page .pageInput{
+	display: inline-block;
+	width:50px;
+	height:20px;
+	background:rgba(255,255,255,1);
+	border:1px solid rgba(243, 243, 243, 1);
+	vertical-align: middle;
+	margin-bottom: 2px;
+	text-align: center;
+}
+.page .pageRun{
+	width:46px;
+	height:20px;
+	line-height: 18px;
+	font-size: 12px;
+	color: #666666;
+	background:rgba(252,252,252,1);
+	border:1px solid rgba(243, 243, 243, 1);
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+.section .dateInterval{
+	display: inline-block;
+	color: #999999;
+	font-size: 14px;
+	margin:0 30px 0 30px;
+}
+.section .dateInterval .laydateInput{
+	width: 110px;
+	padding: 0 10px;
+	height: 34px;
+	border:1px solid rgba(242, 242, 242, 1)
+}
+.section .searchBtn{
+	display: inline-block;
+	text-align: center;
+	line-height: 34px;
+	width:80px;
+	height:34px;
+	background:linear-gradient(0deg,rgba(217,53,63,1),rgba(241,79,89,1));
+	border-radius:6px;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+}
+.section .gameBox{
+	overflow: hidden;
+	padding-bottom: 40px;
+}
+.section .gameBox .fl{
+	float: left;
+	width: 530px;
+}
+.section .gameBox .fr{
+	width: 400px;
+	float: left;
+}
+.financeTitle{
+	display: block;
+	overflow: hidden;
+	margin: 22px 0;
+}
+.financeTitle li{
+	display: block;
+	float: left;
+	width:90px;
+	text-align: center;
+	height:30px;
+	line-height: 30px;
+	background:#fff;
+	border-radius:15px;
+	color: #999999;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.financeTitle li.active{
+	background: #FF4A55;
+	color: #fff;
+}
+.section .incomeUl{
+	display: block;
+	width: 100%;
+	padding: 0 50px;
+	overflow: hidden;
+}
+.section .incomeUl li{
+	display: block;
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+.section .incomeUl li p{
+	color: #31373F;
+	font-size: 12px;
+	color: #31373F;
+	margin-top: 50px;
+}
+.section .incomeUl li span{
+	display: block;
+	width: 100%;
+	color: #54B97F;
+	font-size: 20px;
+}
+.section .incomeUl li span.emptyNum{
+	color: #999999;
+}
+.section .prompt{
+	font-size: 12px;
+	color: #FF4A55;
+	position: absolute;
+	right: 25px;
+	bottom: 29px;
+}
+.settlementUl{
+	display: block;
+	width: 885px;
+	margin: 30px auto 0;
+}
+.settlementUl li{
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin: 10px 0;
+}
+.settlementUl li span{
+	padding-left: 10px;
+	display: block;
+	width: 120px;
+	text-align: left;
+	float: left;
+	font-size: 14px;
+	line-height: 28px;
+}
+.settlementUl li div{
+	display: block;
+	width: 685px;
+	float: left;
+	font-size: 14px;
+	line-height: 28px;
+	white-space: pre-line;
+}
+.settlementUl li div a{
+	color: #7ab6ef;
+	margin-left: 15px;
+}
+.settlementEmpty{
+	font-size: 14px;
+	color: #999999;
+	width:530px;
+	height:170px;
+	line-height: 170px;
+	text-align: center;
+	margin: 59px auto 0;
+	background:rgba(248,249,250,1);
+	border:1px solid rgba(237,237,237,1);
+}
+.settlementEmpty img{
+	display: inline-block;
+	width: 45px;
+	margin: 0 11px 2px 0;
+}

@@ -1,0 +1,179 @@
+html,
+body {
+	margin: 0;
+}
+
+body {
+	background-color: #901341;
+	background: url(../img/landingBg.jpg) no-repeat fixed;
+	background-position: left top;
+	background-size: 100%;
+	overflow: hidden;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.scroll {
+	overflow-y: scroll;
+	height: 720px;
+}
+
+.award {
+	margin-top: 145px;
+	margin-top: 2.6rem;
+	background: url(../img/pocket.png) no-repeat;
+	background-size: 100%;
+	width: 93%;
+    margin-left: 3.5%;
+}
+
+.award .p1 {
+	margin-bottom: 0px;
+	padding-top: 34px;
+	color: #FFFFFF;
+	font-size: 12px;
+	padding-top: 0.65rem;
+	font-size: 0.23rem;
+	text-align: center;
+}
+
+.award .p1 font {
+	color: #FFEB55;
+}
+
+.iniviteId {
+	display: block;
+	margin: 222px auto 0;
+	width: 75%;
+	height: 30px;
+	margin: 3.7rem auto 0;
+	height: 1rem;
+}
+
+.iniviteId font {
+	float: left;
+	margin: 0;
+	color: #FFE5ED;
+	font-size: 13px;
+	line-height: 30px;
+	font-size: 0.28rem;
+	line-height: 0.50rem;
+	margin-top: 0.27rem;
+}
+
+.iniviteId #copyBtn {
+	float: right;
+	width: 60px;
+	height: 30px;
+	background-color: rgba(0, 0, 0, 0.2);
+	font-size: 15px;
+	color: #FFE5ED;
+	border-radius: 13px;
+	border-width: 0px;
+	width: 1.1rem;
+	height: 0.50rem;
+	font-size: 0.30rem;
+	border-radius: 0.22rem;
+	margin-top: 0.27rem;
+}
+
+
+/*复制成功或失败*/
+
+#copyInfo {
+	display: none;
+	position: absolute;
+	top: 400px;
+	margin-left: 31%;
+	width: 30%;
+	height: 110px;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 20px;
+	font-size: 30px;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 110px;
+	top: 8rem;
+	height: 1rem;
+	line-height: 1rem;
+	border-radius: 0.2rem;
+	font-size: 0.3rem;
+}
+
+#iconBox {
+	text-align: center;
+	margin: 20px 0 0;
+	margin: 0.15rem 0 0;
+	width: 100%;
+}
+#icon {
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+	width: 1.8rem;
+	height: 1.8rem;
+}
+
+#downBtn {
+	display: block;
+	background: url(../img/down.png) no-repeat;
+	background-size: 100%;
+	border: none;
+	outline: none;
+	margin: 25px auto 0;
+	height: 43px;
+	width: 247px;
+	font-size: 18px;
+	color: #CD4D00;
+	margin: 0.25rem auto 0;
+	border-radius: 0.35rem;
+	width: 4.5rem;
+	height: 0.8rem;
+	font-size: 0.35rem;
+}
+
+.time {
+	width: 270px;
+	display: block;
+	margin: 30px auto 0;
+	padding-bottom: 30px;
+	color: #FFFFFF;
+	font-size: 24px;
+	line-height: 40px;
+	width: 100%;
+	margin: 0.3rem auto 0;
+	font-size: 0.3rem;
+	line-height: 0.50rem;
+	text-align: center;
+}
+
+.time div {
+	color: #000000;
+    display: inline-block;
+    font-size: 19px;
+    background: url(../img/time.png) no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: 0.30rem;
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+#toOther {
+	overflow: hidden;
+	display: none;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+#toOther img {
+	margin: 20px 35% 0;
+	width: 60%;
+}

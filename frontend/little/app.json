@@ -1,0 +1,58 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/product/index",
+    "pages/cart/index",
+    "pages/user/index",
+    "pages/agent/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+
+
+"tabBar": {
+   "color": "#a9b7b7",
+   "selectedColor": "#11cd6e",
+   "borderStyle": "black" ,
+   "list": [{
+     "pagePath": "pages/index/index",
+     "text": "首页",
+     "iconPath": "img/nouser.png",
+     "selectedIconPath": "img/nouser.png"
+   }, {
+    
+     "pagePath": "pages/product/index",
+     "text": "全部商品",
+     "iconPath": "img/nouser.png",
+     "selectedIconPath": "img/nouser.png"
+   },{
+    
+     "pagePath": "pages/cart/index",
+     "text": "购物车",
+     "iconPath": "img/nouser.png",
+     "selectedIconPath": "img/nouser.png"
+     
+   },
+   {
+    
+    "pagePath": "pages/user/index",
+    "text": "我的",
+    "iconPath": "img/nouser.png",
+     "selectedIconPath": "img/nouser.png"
+  },{
+    "pagePath": "pages/agent/index",
+    "text": "成为代理",
+    "iconPath": "img/nouser.png",
+     "selectedIconPath": "img/nouser.png"
+  }
+   ]
+ }
+}
+

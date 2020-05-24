@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="keywords" content="开心小游戏,开心小游戏大全,在线小游戏,单人游戏,单机游戏,双人对战,双人游戏,红包游戏,赚钱小游戏,2019红包,赚钱,好玩游戏,传奇游戏" />
+		<meta name="description" content="开心小游戏大全收录国内外单人游戏,单人游戏大全,单人小游戏闯关,单人冒险小游戏,单人小游戏大全无敌版,单人闯关小游戏大全,网络游戏大全,单机游戏大全,连连看游戏大全,益智游戏大全,转圈游戏,红包游戏,邀请朋友们一起边玩边赚钱!" />
+		<link rel="stylesheet" href="css/gameCenter.css" />
+		<title>开心网开心小游戏</title>
+		<title></title>
+	</head>
+	<body>
+		<div class="gameList">
+			<div class="recommend">推荐游戏</div>
+			<ul class="gameUl">
+				
+			</ul>
+		</div>
+		<div class="fixDowload">
+			<div class="logoBox">
+				<img class="logo_m" src="img/logo.png">
+				<dl>
+					<dt>开心小游戏</dt>
+					<dd>玩小游戏，还可以赚钱哦~</dd>
+				</dl>
+			</div>
+			<div onclick="downLoad()" class="btn-download">玩更多游戏</div>
+			<img class="closeBtn" src="img/closeBtn.png">
+		</div>
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js" ></script>
+		<script>
+			//测试环境:http://isstatic-test.feidou.com/frondend/share_link/gameCenter.html
+			//https://mgres.kaixin001.com.cn/xyxnew/dev/static/frontend/share_link/gameCenter.html
+			//正式环境:https://mgres.kaixin001.com.cn/xyx/static/frondend/share_link/gameCenter.html
+			//https://mgres.kaixin001.com.cn/xyxnew/pro/static/frontend/share_link/gameCenter.html
+			
+			var isTest = false;
+			var domain = "#HTTP_PROTOCOL#://#API_URL#";
+// 			if(isTest){
+// 				domain = "https://api-kxxyx-dev.kaixin001.com/";
+// 			}else{
+// 				domain = "https://is-api.kaixin001.com/";
+// 			}
+			
+			function downLoad() {
+				var u = navigator.userAgent;
+				var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+				var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+				if(isiOS==true){
+					alert("IOS版本正在开发中，敬请期待....");
+				}else{
+					window.open("https://mgres.kaixin001.com.cn/xyx/static/downLoad/android/kaixin_xyx_h5.apk","_blank");
+					var ttt = setTimeout(function(){
+						window.open("http://xyx.kaixin001.com/?from=h5","_self");
+						clearTimeout(ttt);
+					}, 2000)
+					
+				}
+			}
+			var page=1;
+			var dateFlag=true;
+			pageLoad(page);
+			function checkScrollDirector() { //判断滚动条是否滑到底部  
+				var flag = 0;
+				var offBottom=$(".gameUl").offset().top+$(".gameUl").height();
+				if($(document).scrollTop() + $(window).height() >= offBottom) {
+					flag = 1;
+				}
+				return flag;
+			}
+			function pageLoad(idnexPage){
+				var indexPage=page||1;
+				$.ajax({
+			        type: "POST",
+			        url: domain+"/game/getList/page="+indexPage,
+					dataType:"json",
+			        success: function(data) {
+			        	var games= data.msg.list;
+			        	var nextpage=data.msg.pageInfo.nextPage;
+			        	for(var i = 0; i < games.length; i++) {
+							var playUrl;
+							var orient = games[i].screen == 1 ? "landscape" : "portrait";
+							var gameType;
+							if(games[i].url_type == 1){
+								gameType = "sdk";
+							}else{
+								gameType = "link";
+							}
+							var env = isTest ? 0 : 1; 
+							var urlparam = "?url="+encodeURI(games[i].play_url)+"&type="+ gameType + "&gameId="+games[i].id+"&env="+env+"&orient="+orient+"&r=20195201050";
+							var protocol;
+							if(games[i].play_url.indexOf("https")==0){
+								protocol = "https://";
+							}else{
+								protocol = "http://";
+							}
+							
+							playUrl = protocol+"#STATIC_URL#/frontend/share_link/index.html" + urlparam; 
+							
+							var html ="<li><a href='"+playUrl+"'><img src="+games[i].list_img+" />"+
+										"<dl style='background-color: "+games[i].background_color+";'>"+
+											"<dt>"+games[i].name+"</dt>"+
+											"<dd>"+games[i].played_num+"</dd>"+
+										"</dl></a></li>"
+							$(".gameUl").append(html);
+						}
+						if (indexPage<nextpage) {
+							page=nextpage;
+							loadList();
+							dateFlag=true;
+						}
+			        }
+				});
+			}
+			function loadList(){
+				window.onscroll = function() { //滚动条滚动执行  
+					if(checkScrollDirector()) {
+						if(dateFlag){
+							dateFlag=false;
+							pageLoad(page);
+						}
+						
+					}
+				}
+				
+			}
+
+			$(function(){
+				$(".closeBtn").click(function(){
+					$(".fixDowload").hide();
+					$(".gameList").css("padding",0);
+				});
+			});
+		</script>
+	</body>
+</html>

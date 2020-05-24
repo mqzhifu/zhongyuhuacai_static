@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no,minimal-ui">
+		<title></title>
+		<link rel="stylesheet" href="css/tur.css" />
+	</head>
+
+	<body>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script>
+			C.getToken();
+			C.setInitFontSize();
+		</script>
+		<div class="con">
+			<div class="pw">
+				<div class="pwTip">首次提现，请输入提现口令</div>
+				<div id="pwTxt">
+					<input type="text" class="pwTxt" placeholder="# # # #" onfocus="focusInput();" onblur="blurInput();" />
+				</div>
+				<button class="valBtn" onclick="submit()">验&nbsp;&nbsp;证</button>
+			</div>
+			<div class="tur">
+				<div class="turTit">怎么提现？</div>
+				<div class="turCon">
+					<div class="tur1">
+						<div class="turTxt">
+							<font class="li">1. </font>打开【微信公众号】，搜索“开心网开心小游戏”并关注</div>
+						<img class="tur1Img" src="img/tutorial1.png" />
+					</div>
+					<div class="tur2">
+						<div class="turTxt">
+							<font class="li">2. </font>在【微信公众号】中回复“提现”，获取提现码</div>
+						<img class="tur2Img" src="img/tutorial2.png" />
+					</div>
+					<div class="tur3">
+						<div class="turTxt">
+							<font class="li">3. </font>点击“提现”按钮，将在公众号中获取的提现口令输入框内，点击“验证”完成提现</div>
+						<img class="tur3Img" src="img/tutorial3.png" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/http.js"></script>
+		<script type="text/javascript" src="js/tutorialHttp.js"></script>
+		<script>
+			var moneyToken = document.getElementsByClassName("pwTxt")[0];
+
+			function focusInput() {
+				moneyToken.placeholder = "";
+			}
+
+			function blurInput() {
+				if(moneyToken.value == "") {
+					moneyToken.placeholder = "# # # #";
+				} else {
+					moneyToken.placeholder = "";
+				}
+			}
+
+			function submit() {
+				if(moneyToken.value == "") {
+					withdrawPassword.showErrorToast("口令不能为空")
+				} else {
+					TU.bindMoney(C.token, moneyToken.value);
+				}
+			}
+		</script>
+	</body>
+
+</html>

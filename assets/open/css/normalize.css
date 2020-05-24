@@ -1,0 +1,481 @@
+﻿html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, button { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu!important; text-decoration: none; color: #4A4E67; }
+body { min-width: 1200px; }
+a:hover { text-decoration: none; }
+input { outline: none; }
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+/*reset*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+ 
+div,p {
+  color: #4A4E67;
+}
+html {
+    font-size : 40px; 
+    font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+    color: #4A4E67;
+}
+
+/*@media only screen and (min-width: 960px){
+    html {
+        font-size: 20px !important;
+    }
+}
+@media only screen and (min-width: 1120px){
+    html {
+        font-size: 24px !important;
+    }
+}
+@media only screen and (min-width: 1280px){
+    html {
+        font-size: 27px !important; 
+    }
+}
+@media only screen and (min-width: 1440px){
+    html {
+        font-size: 31px !important; 
+    }
+}
+@media only screen and (min-width: 1600px){
+    html {
+        font-size: 34px !important; 
+    }
+}
+@media only screen and (min-width: 1760px){
+    html {
+        font-size: 37px !important; 
+    }
+} 
+@media only screen and (min-width: 1920px){
+    html {
+        font-size: 40px !important; 
+    }
+} */
+a {
+  color: #555;
+  text-decoration: none; }
+
+input, textarea {
+  border: 1px solid #ddeafb; }
+
+input[type=submit],
+input[type=button] {
+  cursor: pointer; }
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  outline: none;
+  margin-bottom: 5px;
+  /*border-radius: 6px; */
+  /*border-color: #c4c4c4 #d1d1d1 #d4d4d4;*/
+      padding: 0 10px;
+    width: 200px;
+    height: 40px;
+    color: #404040;
+    background: white;
+    border: 1px solid #b5c0d4;
+    /* border-color: #c4c4c4 #d1d1d1 #d4d4d4; */
+    border-radius: 6px;
+        font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+td, th {
+  font-size: 14px;
+}
+.header {
+  width: 100%;
+  border-top: .1rem #EA4554 solid;
+  height: 1.75rem;
+  background-color: #fff;
+
+}
+
+.header .center {
+  width: 1200px;
+  margin: auto;
+  height: 1.75rem; 
+
+  position: relative;
+
+
+
+    align-items: center;
+
+    position: relative;
+    text-align: right;
+}
+.header .left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0; 
+  margin: auto 0;
+    font-size: .5rem;
+    line-height: .5rem;
+    height: .5rem;
+    color: #F14D5C; 
+}
+
+.container-fluid {
+  padding: 0;
+  height: 42px;
+  background-color: #fff;
+  border:1px solid rgba(158,172,202,1);
+}
+.navbar-collapse {
+  padding: 0;
+}
+.game-pick-btn {
+  width: 200px;
+  border-right:1px solid rgba(158,172,202,1);
+}
+.game-dropdown-menu {
+  width: 201px;
+  border:1px solid rgba(158,172,202,1);
+  left: -1px;
+}
+.center .right {
+    font-size: 14px;
+    line-height: .45rem; 
+    color: #4F5150;
+    margin-left: 30px;
+}
+.right4 {
+  position: absolute;
+    right: 0px;
+    top: 15px;
+}
+.right3 {
+  position: absolute;
+    right: 70px;
+    top: 27px;
+}
+.right2 {
+  position: absolute;
+    right: 156px;
+    top: 27px;
+}
+.right1 {
+  position: absolute;
+    right: 218px;
+    top: 27px;
+}
+
+.avator {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+/*
+.r1 {
+
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0; 
+  margin: auto 0;
+}
+
+.r2 {
+
+}
+
+.r3 {
+
+}
+.r4*/
+body {
+  overflow-y:scroll;
+  margin: 0;
+  color: #555;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+  font-size: 15px; 
+  background-color: #FAFBFD;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 35px; 
+  font-size: 14px;
+  background-color: #fff;
+  border-bottom: .1rem #EA4554 solid;
+}
+.qq {
+ 
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(74,78,103,1);
+}
+.company {
+      margin-top: .4rem;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(74,78,103,1);
+}
+.copyright {
+  margin-top: .4rem;
+  margin-bottom: 56px; 
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(158,172,202,1);
+}
+ 
+.navbar {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 0;
+}
+
+.navbar-nav>li>a {
+  padding: 8px 0;
+  padding-right: 0px;
+}
+.navbar-right {
+  margin-right: 16px;
+}
+
+.game-sel-search {
+  width: 15px;
+  height: 15px; 
+}
+.game-sel-search-sec {
+  margin-top: -5px;
+  float: left;
+  padding: 12px;
+  background-color: #9EACCA;
+}
+.game-sel-input {
+  position: absolute;
+  width: 161px;
+  height: 42px;
+  right: -1px;
+  top: -6px;
+  border-radius: 0;
+  padding-left: 24px;
+}
+.game-sel-img-1 {
+  position: absolute;
+  left: 8px; 
+  width: 26px;
+  height: 26px;
+  border-radius: 0;
+  display: inline-block;
+}
+/*改过*/
+.game-sel-li { 
+  padding: 5px 0 ;
+}
+/*改过*/
+.game-sel-img { 
+  position: absolute;
+  left: 8px; 
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+}
+/*改过*/
+.game-sel-name {
+     margin-left: 40px;
+    text-align: left;
+    width: 133px;
+    font-size: 14px;
+    color: #4A4E67;
+    line-height: 24px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+/*改过*/
+.game-sel-name-2 {
+      margin-left: 22px;
+    text-align: left;
+    width: 140px;
+    line-height: 24px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.game-number {
+  line-height: 40px;
+  margin-left: 34px;
+}
+.navbar {
+  min-height: 40px;
+}
+.switch-danger {
+  background-image: linear-gradient(to bottom, #f14f59, #d9343f)!important; 
+}
+/*改过*/
+.nav-caret {
+    display: inline-block;
+}
+  
+.reg_div{
+  position: relative;
+  margin: 20px auto;
+  margin-bottom: 20px;
+  width: 1200px; 
+  /*border:1px solid #333;*/
+  /*border-radius: 5px;*/
+  text-align: center; 
+  background-color: #ffffff;
+  /*box-shadow:0px 10px 25px 10px #eeeeee;*/
+  /*padding: 30px 0px;*/
+  /*height: 100px;*/
+
+  
+  border:1px solid rgba(158,172,202,1);
+
+
+
+}
+   
+
+
+
+.sec-left { 
+  width: 200px; 
+  padding: 0!important; 
+  /*border-top:1px solid rgba(158,172,202,1);*/
+  /*background-color: #000;*/
+}
+
+.sec-right {
+  min-height: 577px;  
+  width: 996px; 
+  border-left:1px solid rgba(158,172,202,1);
+}
+
+.sec-left .item {
+  padding: 10px;
+}
+.a-item{
+  background-color: #E2E6EE;
+  margin-bottom: 10px;
+}
+.b-item {
+  color: #9EACCA;
+}
+.b-item-active{
+  color: #4A4E67;
+}
+
+.card-title { 
+  text-align: left;
+  margin: 30px;
+  font-size:20px; 
+  font-weight:400;
+  color:rgba(158,172,202,1);
+
+}
+
+#triangle-down{
+
+width:0;
+
+height:0;
+
+border-left:5px solid transparent;
+
+border-right:5px solid transparent;
+
+border-top:7px solid black;
+
+}
+
+
+.card-sub-title {
+  width: 910px;
+  margin: 0 auto;
+}
+.card-sub-title-left{
+  padding: 20px 0;
+  float: left;
+}
+.card-sub-title-right{
+  padding: 9px 30px;
+  margin: 10px 0;
+  border-radius:3px;
+  cursor: pointer;
+  color: #fff;
+      background: linear-gradient(0deg,#d9353f,#f14f59)!important;
+  float: right;
+}
+
+.pagination {
+  margin: 40px 0;
+}
+
+.pagination>li>a, .pagination>li>span {
+  padding: 0;
+  border: 0;
+  margin: 0 10px;
+  /*border-bottom: 1px #4A4E67 solid;*/
+  color: #9EACCA;
+  /*border-radius: 0;*/
+} 
+.pagination>li:first-child>a, .pagination>li:first-child>span { 
+  border-bottom: 1px #4A4E67 solid; 
+  border-radius:0; 
+}
+
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+  border-radius:0; 
+}
+
+
+/*table*/
+.table-bordered {
+  border-color: #E2E6Ef;
+}
+
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td { 
+  border-color: #E2E6Ef;
+}
+
+/*sec-left*/
+.a-item {
+  margin-top: 10px;
+}
+.a-item:first-child {
+  margin-top: 0;
+  /*margin-bottom: 20px;*/
+}
+.panel-body {
+  font-size: 14px;
+}
+
+.panel-default>.panel-heading {
+  font-size: 14px;
+  color: #4A4E67;
+}
+
+
+.game-btn{
+  font-size: 14px;
+  display: inline-block;
+  font-weight: lighter;
+  padding: 8px 29px; 
+  border-radius:3px;
+  cursor: pointer;
+  color: #fff;
+  margin-bottom: 8px;
+  /*background: linear-gradient(0deg,#d9353f,#f14f59)!important; */
+}

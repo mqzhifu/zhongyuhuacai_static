@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="keywords" content="开心小游戏,开心小游戏大全,在线小游戏,单人游戏,单机游戏,双人对战,双人游戏,红包游戏,赚钱小游戏,2019红包,赚钱,好玩游戏,传奇游戏" />
+		<meta name="description" content="开心小游戏大全收录国内外单人游戏,单人游戏大全,单人小游戏闯关,单人冒险小游戏,单人小游戏大全无敌版,单人闯关小游戏大全,网络游戏大全,单机游戏大全,连连看游戏大全,益智游戏大全,转圈游戏,红包游戏,邀请朋友们一起边玩边赚钱!" />
+		<link rel="stylesheet" href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/css/lottery.css" />
+		<title>开心网开心小游戏</title>
+		<title></title>
+		<style>
+			html,body{
+				background-color: #f5f5f5;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="my_coupon">我的提现券：<i class="couponNum">0</i>张<span>(只展示近三个月中奖记录)</span></div>
+		<div class="emptyDiv">
+			<img src="img/empty.png">
+			<p>还没有提现券哦~</br>快去玩游戏抽奖！</p>
+			<div class="goLottery goLucky"></div>
+		</div>
+		<div class="my_coupon_box ">
+			<div class="go_lottery">立即抽奖 ></div>
+			<ul class="current_coupon">
+				<!--<p class="date_title">2019年4月</p>
+				<li class="voucher_1" voucher-num="1" can-use="1" voucher-id="1">
+					<div class="fl">￥1</div>
+					<dl class="fr">
+						<dt>1元提现券</dt>
+						<dd>有效期：2019.04.20-2019.05.12</dd>
+					</dl>
+				</li>
+				<li class="voucher_5" voucher-num="0.5" can-use="1" voucher-id="2">
+					<div class="fl">￥0.5</div>
+					<dl class="fr">
+						<dt>0.5元提现券</dt>
+						<dd>有效期：2019.04.20-2019.05.12</dd>
+					</dl>
+				</li>
+				<li class="voucher_0.3" voucher-num="0.3" can-use="0" voucher-id="3">
+					<div class="fl">￥0.3</div>
+					<dl class="fr">
+						<dt>0.3元提现券</dt>
+						<dd>有效期：2019.04.20-2019.05.12</dd>
+					</dl>
+				</li>
+				<p class="date_title">2019年3月</p>
+				<li class="invalid">
+					<div class="fl">￥0.3</div>
+					<dl class="fr">
+						<dt>0.3元提现券</dt>
+						<dd>有效期：2019.04.20-2019.05.12</dd>
+					</dl>
+				</li>
+				<p class="date_title">2019年2月</p>
+				<li class="invalid">
+					<div class="fl">￥0.3</div>
+					<dl class="fr">
+						<dt>0.3元提现券</dt>
+						<dd>有效期：2019.04.20-2019.05.12</dd>
+					</dl>
+				</li>-->
+			</ul>
+		</div>
+		<div class="voucherWin">
+			<div class="winBg"></div>
+			<div class="voucherWinBox">
+				<img class="voucherImg show" src="">
+				<!--<img class="voucherImg voucher_5" src="img/voucher_0.5.png">
+				<img class="voucherImg voucher_1" src="img/voucher_1.png">-->
+				<span>恭喜获得<i>0.5</i>元提现券</span>
+				<p>使用本劵可获得<i>0.5</i>元提现机会，获得后 次日生效，一天最多使用1张</p>
+				<button class="useBtn" voucher-num='' voucher-id=""></button>
+				<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/winClose.png" class="winClose" />
+			</div>
+		</div>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/js/jquery-1.12.4.min.js" ></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/js/http.js" ></script>
+		<script>
+			function getMyDate(str){  
+	            var oDate = new Date(str),  
+	            oYear = oDate.getFullYear(),  
+	            oMonth = oDate.getMonth()+1,  
+	            oDay = oDate.getDate(),   
+	            oTime = oYear +'.'+ getzf(oMonth) +'.'+ getzf(oDay);//最后拼接时间
+	            return oTime;  
+	        }; 
+	        //补0操作
+		    function getzf(num){  
+		      	if(parseInt(num) < 10){  
+		          	num = '0'+num;  
+		      	}  
+		      	return num;  
+		  	}
+	       	function p(s) {
+		    	return s < 10 ? '0' + s: s;
+			}
+	      	function getlastmonth(date) {
+		      	var myDate = new Date(date);
+				var currentYear=myDate.getFullYear();
+				var currentMonth=myDate.getMonth();  
+				var currentDate=myDate.getDate();
+			    var prevCurrentYear=0;
+			    var prevCurrentMonth=0;
+			    var lastObj={};
+			    if(currentMonth==0){
+			        prevCurrentYear=currentYear-1;
+			        prevCurrentMonth=12;
+			    }else{
+			        prevCurrentYear=currentYear;
+			        prevCurrentMonth=currentMonth;
+			    }
+			    var lastmonth=prevCurrentYear+"-"+prevCurrentMonth+"-"+p(currentDate)
+			    lastObj.lastYear=prevCurrentYear;
+			    lastObj.lastMonth=prevCurrentMonth;
+			    return lastObj;
+			}
+			function ajaxVoucher(token){
+				var myDate = new Date();
+				var myYear=myDate.getFullYear();
+				var myMonth=myDate.getMonth()+1;
+				var nowYearMonth=myYear+"年"+myMonth+"月";
+				var nowDate=myYear+"-"+myMonth+"-01";
+				var nowTimes=new Date(nowDate).getTime();
+				
+				var lastYearMonth=getlastmonth(nowDate).lastYear+"年"+getlastmonth(nowDate).lastMonth+"月";
+				var lastDate=getlastmonth(nowDate).lastYear+"-"+getlastmonth(nowDate).lastMonth+"-01";
+				var lastTimes=new Date(lastDate).getTime();
+				
+				var lasterYearMonth=getlastmonth(lastDate).lastYear+"年"+getlastmonth(lastDate).lastMonth+"月";
+				var lasterDate=getlastmonth(lastDate).lastYear+"-"+getlastmonth(lastDate).lastMonth+"-01";
+				var lasterTimes=new Date(lasterDate).getTime();
+				ajaxType({
+			        method: "POST",
+			        url: "#HTTP_PROTOCOL#://#API_URL#/user/getCouponList/token="+token,
+			        success: function(voucher) {
+			        	var voucherList = JSON.parse(voucher);
+			        	var vouchers= voucherList.msg;
+			        	if(voucherList.code==200){
+			        		if(!vouchers.length){
+				        		$(".my_coupon_box").hide();
+				        		$(".couponNum").html(0);
+				        	}else{
+				        		$(".couponNum").html(vouchers.length);
+				        		$(".emptyDiv").hide();
+				        		$(".my_coupon_box").show();
+				        	}
+				        	var html1="",html2="",html3="";
+				        	
+				        	for(var i = 0; i < vouchers.length; i++) {
+				        		var timestamp = (new Date()).getTime();
+								var can_use=timestamp>vouchers[i].valid_time*1000?1:0;
+								var expired=timestamp>vouchers[i].expire_time*1000?'invalid':'';
+								var timeBegin=getMyDate(vouchers[i].valid_time*1000);
+								var timeEnd=getMyDate(vouchers[i].expire_time*1000);
+								var classEnd;
+								if(vouchers[i].money==0.3){
+									classEnd=3;
+								}else if(vouchers[i].money==0.5){
+									classEnd=5;
+								}else{
+									classEnd=1;
+								}
+								
+								if(!vouchers[i].use_time){
+									if(vouchers[i].a_time*1000>=nowTimes){
+										html1+="<li class='voucher_"+classEnd+" "+expired+"' voucher-num='"+vouchers[i].money+"' can-use='"+can_use+"' voucher-id='"+vouchers[i].id+"'>"+
+											"<div class='fl'>￥"+vouchers[i].money+"</div>"+
+											"<dl class='fr'>"+
+												"<dt>"+vouchers[i].money+"元提现券</dt>"+
+												"<dd>有效期："+timeBegin+"-"+timeEnd+"</dd>"+
+											"</dl>"+
+										"</li>";
+									}else if(vouchers[i].a_time*1000>=lastTimes&&vouchers[i].a_time*1000<nowTimes){
+										html2+="<li class='voucher_"+classEnd+" "+expired+"' voucher-num='"+vouchers[i].money+"' can-use='"+can_use+"' voucher-id='"+vouchers[i].id+"'>"+
+											"<div class='fl'>￥"+vouchers[i].money+"</div>"+
+											"<dl class='fr'>"+
+												"<dt>"+vouchers[i].money+"元提现券</dt>"+
+												"<dd>有效期："+timeBegin+"-"+timeEnd+"</dd>"+
+											"</dl>"+
+										"</li>";
+									}else if(vouchers[i].a_time*1000>=lasterTimes&&vouchers[i].a_time*1000<lastTimes){
+										html3+="<li class='voucher_"+classEnd+" "+expired+"' voucher-num='"+vouchers[i].money+"' can-use='"+can_use+"' voucher-id='"+vouchers[i].id+"'>"+
+											"<div class='fl'>￥"+vouchers[i].money+"</div>"+
+											"<dl class='fr'>"+
+												"<dt>"+vouchers[i].money+"元提现券</dt>"+
+												"<dd>有效期："+timeBegin+"-"+timeEnd+"</dd>"+
+											"</dl>"+
+										"</li>"
+									}
+								}
+							}
+				        	if(html1){
+				        		$(".current_coupon").append("<p class='date_title'>"+nowYearMonth+"</p>");
+				        		$(".current_coupon").append(html1);
+								
+				        	}
+				        	if(html2){
+				        		$(".current_coupon").append("<p class='date_title'>"+lastYearMonth+"</p>");
+				        		$(".current_coupon").append(html2);
+								
+				        	}
+				        	if(html3){
+				        		$(".current_coupon").append("<p class='date_title'>"+lasterYearMonth+"</p>");
+				        		$(".current_coupon").append(html3);
+				        	}
+			        	}
+			        	
+			        }
+				});
+			}
+			function GetQueryString(name)
+			{
+			     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			     var r = window.location.search.substr(1).match(reg);
+			     if(r!=null)return  unescape(r[2]); return null;
+			}
+			$(function(){
+				//doThis();
+				var token=GetQueryString('token');
+			    ajaxVoucher(token);
+				$(".current_coupon").on("click","li",function(){
+					if(!$(this).hasClass("invalid")){
+						var thisNUm=$(this).attr("voucher-num"),
+							thisId=$(this).attr("voucher-id"),
+							can_use=parseInt($(this).attr("can-use"));
+						$(".voucherWinBox .voucherImg").attr("src","#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/voucher_"+thisNUm+".png");
+						$(".voucherWinBox .useBtn").attr("voucher-num",thisNUm);
+						$(".voucherWinBox .useBtn").attr("voucher-id",thisId);
+						$(".voucherWinBox span i,.voucherWinBox p i").html(thisNUm);
+						if(!can_use){
+							$(".voucherWinBox .useBtn").addClass("disabled");
+							$(".voucherWinBox .useBtn").attr("disabled",true);
+						}else{
+							$(".voucherWinBox .useBtn").removeClass("disabled");
+							$(".voucherWinBox .useBtn").attr("disabled",false);
+						}
+						$(".voucherWin").fadeIn(100);
+					}
+				});
+				$(".voucherWinBox .winClose").click(function(){
+					$(".voucherWin").fadeOut(100);
+				});
+				$(".useBtn").click(function(){
+					var num=parseInt($(this).attr("voucher-id"));
+					my_prop.useProp(num);
+					$(".voucherWin").hide();
+				});
+				$(".goLottery").click(function(){
+					if($(this).hasClass("goLucky")){
+						my_prop.goToWithdrawLottery();
+					}
+				});
+				$(".go_lottery").click(function(){
+					my_prop.goToWithdrawLottery();
+				});				
+			});
+			function reloadList(token){
+				var token=token;
+				window.location.href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/myCoupon.html?token="+token;
+			}
+		</script>
+	</body>
+</html>

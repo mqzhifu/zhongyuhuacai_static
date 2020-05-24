@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+		<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+		<meta http-equiv="expires" content="0">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no,minimal-ui">
+		<title></title>
+		<link rel="stylesheet" href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/css/inivite.css" />
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/js/http.js"></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/js/common.js"></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/js/jquery.min.js" ></script>
+		<script> 
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?5cdb21c3076903f417805017878c128d";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+		<script>
+			var protocolStr = document.location.protocol;
+			if(protocolStr == "http:")
+			{
+				console.log(1);
+				var script=document.createElement("script");
+				script.type="text/javascript";
+				script.src="http://sdk.talkingdata.com/app/h5/v1?appid=A65A9728F8CE4CFCB01109F6BB78EB3B&vn=pro&vc=1.0.1";
+				document.getElementsByTagName('head')[0].appendChild(script); 
+			}
+			else if(protocolStr == "https:")
+			{
+				console.log(2);
+				var script=document.createElement("script");
+				script.type="text/javascript";
+				script.src="https://jic.talkingdata.com/app/h5/v1?appid=A65A9728F8CE4CFCB01109F6BB78EB3B&vn=pro&vc=1.0.1";
+				document.getElementsByTagName('head')[0].appendChild(script); 
+			}
+			else
+			{
+			   console.log("other protocol");
+			}
+		</script>
+		<script>
+			C.getToken();
+			G.invite(C.token);
+			G.incomeTotal(C.token);
+			C.setInitFontSize();
+		</script>
+	</head>
+
+	<body>
+		<div class="innerBox">
+			<div class="inivite">
+				<p>复制邀请码给好友，邀TA一起享福利</p>
+				<div class="iniviteId">
+					<div class="cont">
+						<div class="code">
+							<span>我的邀请码</span>
+							<font id="copyId"></font>
+							<button id="copyBtn" data-clipboard-target="#copyId" data-clipboard-action="copy">复制</button>
+						</div>
+					</div>
+				</div>
+				<button id="inviteBtn" onclick="inviteFri()">邀请好友</button>
+			</div>
+			<div class="myFri" id="myFri">
+				<div class="income" id="income"  onclick="window.location='friends.html?token='+C.token">
+					已邀请
+					<div class="headImg">
+						<img id="fri1" onerror="this.src='img/touxiang.jpg'" />
+						<img id="fri2" onerror="this.src='img/touxiang.jpg'" />
+						<img id="fri3" onerror="this.src='img/touxiang.jpg'" />
+					</div>
+					<span id="friendNums"></span>
+					人，获得累计收益 <p><span id="getMoney"></span> 元</p>
+					<button id="seeBtn"></button>
+				</div>
+				<!--div class="total" style="margin:0">
+					<p>
+						<span id="invited">在途收益</span>
+						<span id="allMoney">435</span>
+						<span>元，还不快去看看!<span>
+					</p>
+				</div>-->
+			</div>
+		</div>
+		
+		<div class="rule">
+			<div class="ruleLine">
+				<p>活动规则</p>
+			</div>
+			<div class="ruleCont">
+				<p>1.好友每天在游戏中领取金币奖励后，你可以获得好友玩游戏收益的5%。      
+				</p>
+				<p>2.邀请好友数量无上限，邀请越多奖励越多。</p>
+			</div>
+		</div>
+		<div id="copyInfo">复制成功</div>
+		<div id="log"></div>
+		<script type="text/javascript" src="js/clipboard.min.js"></script>
+		<script>
+//			C.token = "sre6YoB4qtmH34qTftup2bN2x2l-yXRx";
+			C.copyCode();
+			function inviteFri() {
+				invite.showWindow();
+			}
+			$(function(){
+				$(".inviteBtn").on("click",function(){
+					TDAPP.onEvent ('邀请页邀请好友');
+				});
+			})
+//			document.getElementById("log").innerText=C.token;
+		</script>
+	</body>
+
+</html>

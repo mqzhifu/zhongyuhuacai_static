@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=0.5, minimum-scale=0.5, maximum-scale=3, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="css/friends.css" />
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/http.js"></script>
+		<script>
+//			var token = "sre6Yn-IrtuIuYaTftut2LN2pax_yXRx";
+//
+//			function getToken() {
+//				token = "sre6Yn-IrtuIuYaTftut2LN2pax_yXRx";
+//			}	
+             C.getToken();
+			G.myfriends(C.token);
+			G.incomeT(C.token);
+		</script>
+	</head>
+
+	<body>
+		<div class='invitelist'>
+				<div class="invite">
+					<div class="line">
+						<div id="name">
+							<font>邀请好友</font>
+						</div>
+						<span id="pnumber">
+							<font>4</font>
+						</span>
+						<span id="unit">
+							<font>人</font>
+						</span>
+					</div>
+				</div>
+				<div class="invite">
+					<div class='line'>
+						<div id="name">
+							<font>我的收益</font>
+						</div>
+						<span id="innumber">
+							<font>500</font>
+						</span>
+						<span id="unit">
+							<font>元</font>
+						</span>
+					</div>
+				</div>
+				<div class="invite">
+					<div id="name">
+						<font>在途收益</font>
+					</div>
+					<span id="znumber">
+						<font>2330</font>
+					</span>
+					<span id="unit">
+						<font>元</font>
+			      <span>
+		     </div>
+		</div>
+		<div class='list'>
+			<!--<div id='myf'>
+				<font id='bartext'>我的好友</font>
+			</div>-->
+		    <div id= 'listitem'>
+			<span  id="namep">
+				<font>我的好友</font>
+				</span >
+					<span id="getnump">
+					<font>当前收益</font>
+				</span>
+					<!--<span id="cannump">
+						<font>预计收益</font>
+				</span>-->
+					<span id="txbutton">
+						<font>操作</font>
+				</span>
+		     <div id= 'listitem1'>
+		
+				</div>
+			</div>
+		</div>
+		     <div class="inivitebtn">
+			<button id="inviteBtn" onclick="inviteFri()">邀请好友</button>
+			</div>
+ 	    <script>
+			function inviteFri() {
+				invite.showWindow();
+			}
+		</script>
+	</body>
+
+</html>

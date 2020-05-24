@@ -1,0 +1,276 @@
+html,
+body {
+	margin: 0;
+	height: 100%;
+}
+
+body{
+	background: #711844 url(../img/inviteBg.png) no-repeat;
+    background-size: 100%;
+    padding-bottom: 2rem;
+    height: 100%;
+    padding-top: 1px;
+}
+
+.inivite {
+	margin: 270px 0 0;
+	margin: 5.3rem 0 0;
+}
+
+#inviteBtn {
+	display: block;
+	margin: 0px auto 0;
+	width: 245px;
+	height: 38px;
+	background-color: #F74B59;
+	font-size: 15px;
+	color: #FFFFFF;
+	/*font-weight: bolder;*/
+	border-width: 0px;
+	border-radius: 19px;
+	font-size: 0.2745rem;
+	width: 4.4835rem;
+	height: 0.7rem;
+	border-radius: 0.35rem;
+}
+
+.iniviteId{
+	margin: 15px 3%;
+	background: url(../img/codeBg.png) no-repeat;
+	background-size: 100%;
+	height: 91px;
+	width: 94%;
+	height: 1.65rem;
+	margin: 0.2745rem 3%;
+}
+
+.iniviteId .cont{
+	width: 100%;
+	height: 100%;
+	border-radius: 0.091rem;
+}
+
+.iniviteId .cont .code{
+	display: block;
+	width: 296px;
+	height: 60px;
+	margin: auto;	
+	width: 5.4rem;
+	height: 1.098rem;
+}
+
+.iniviteId font{
+	float: left;
+	margin: 0;
+	color: #571000;
+	font-size: 16px;
+	line-height: 88px;
+	vertical-align: middle;	
+	font-size: 0.29rem;
+	line-height: 1.61rem;
+	/*font-weight: bold;*/
+}
+
+#copyId{
+	font-size: 16px;
+	font-size: 0.29rem;
+	/*font-weight: bolder;*/
+}
+
+.iniviteId #copyBtn{
+	float: right;
+	margin-top: 34px;
+	width: 60px;
+	height: 20px;
+	background-color: #FF4160;
+	font-size: 13px;
+	color: #FFFFFF;
+	border-radius: 10px;
+	border-width: 0px;
+	margin-left: 0.091rem;
+	margin-top: 0.61rem;
+	width: 1.098rem;
+	height: 0.366rem;
+	font-size: 0.2379rem;
+	border-radius: 0.183rem;
+}
+
+/*复制成功或失败*/
+#copyInfo{
+	display: none;
+	position: absolute;
+	top: 370px;
+	margin-left: 35%;;
+	width:30%;
+	height: 110px;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 20px;
+	font-size: 30px;
+	color: #FFFFFF;
+	text-align: center;
+	line-height: 110px;
+	top: 6.73rem;
+	height: 1rem;
+	line-height: 1rem;
+	border-radius: 0.2rem;
+	font-size: 0.3rem;
+}
+
+/*-----我的好友-----*/
+.myFri{
+	display: none;
+	margin: 20px 8.5%;
+	background: url(../img/friBg.png) no-repeat;
+	background-size: 100%;
+	height: 198px;
+	width: 94%;
+	margin: 0.366rem 3%;
+	height: 3.59rem;
+}
+
+.myFri .info{
+	color: #571000;
+	width: 100%;
+	height: 100%;
+	border-radius: 0.091rem;
+	/*margin: 0.091rem 1%;
+	height: 2.3241rem;*/
+	font-size: 15px;
+	font-size: 0.2745rem;
+	/*font-weight: bold;*/
+}
+
+.myFri .info .infoCont{
+	padding-top: 15px;
+	width: 100%;
+	padding-top: 0.2745rem;
+}
+
+.myFri .info .infoCont span{
+	margin: 0;
+}
+
+.myFri .info .infoCont div{
+	line-height: 25px;
+	margin: 5px 0 0;
+	line-height: 0.4575rem;
+	margin: 0.0915rem 0 0;
+	/*float: left;*/
+}
+
+.myFri .info .infoCont .income{
+	margin: 0;
+	width: 100%;
+	text-align: center;
+}
+.myFri .info .infoCont .income div{
+	display: inline-block;
+	vertical-align: middle;
+}
+#fri1,#fri2,#fri3{
+	display: none;
+	border-radius: 50%;
+	border-width: 0;
+	width: 25px;
+	height: 25px;
+	width: 0.4575rem;
+	height: 0.4575rem;
+	float: left;
+}
+
+#fri1{
+	margin-left: 2px;
+	margin-left: 0.0366rem;
+}
+
+#fri2{
+	margin-left: -12.5px;
+	margin-left: -0.22875rem;
+}
+
+#fri3{
+	margin-left: -12.5px;
+	margin-left: -0.22875rem;
+}
+
+#friendNums,#getMoney,#allMoney{
+	color: #EF1819;
+}
+
+#invited {
+	margin-right: 5px;
+	margin-right: 0.1rem;
+}
+
+#friendNums {
+	margin-left: 5px;
+	margin-left: 0.1rem;
+}
+
+
+.total,.totalIncome{
+	width: 100%;
+}
+.total p,.totalIncome P{
+	margin-top: 5px;
+	margin-top: 0.0915rem;
+	margin-bottom:0;
+	text-align: center;
+}
+
+.myFri .info #seeBtn{
+	display: block;
+	margin: 0px auto 0;
+	/*margin: 0 118px;*/
+	width: 60px;
+	height: 20px;
+	background-color: #FFCC00;
+	font-size: 11px;
+	color: #CD4D00;
+	border-radius: 10px;
+	border-width: 0px;
+	/*margin: 0 2.45rem 0;*/
+	width: 1.281rem;
+	height: 0.366rem;
+	font-size: 0.2013rem;
+	border-radius: 0.183rem;
+	/*font-weight: bold;*/
+} 
+
+/*-----规则-----*/
+.rule{
+	margin-top: 22px;
+	color: #FFFFFF;
+	margin-top: 0.4rem;
+}
+
+.rule .ruleLine{
+	background: url(../img/rule.png) no-repeat;
+	background-position-y: 11px;
+	background-size: contain;
+	font-size: 17px;
+	text-align: center;
+	transform: scale(0.9);
+	/*缩放比例*/
+	transform-origin: center/*缩放基点*/
+	-ms-transform:0.9;
+	/* IE 9 */
+	-ms-transform-origin: center;
+	-moz-transform: 0.9;
+	/* Firefox */
+	-moz-transform-origin: center;
+	-webkit-transform: scale(0.9);
+	/* Safari 和 Chrome */
+	-webkit-transform-origin: center;
+	background-position-y: 0.2013rem;
+	font-size: 0.3111rem;
+}
+
+.rule .ruleCont{
+	width: 88%;
+	margin: 0 6%;
+}
+.rule p{
+	font-size: 15px;
+	font-size: 0.2745rem;
+}

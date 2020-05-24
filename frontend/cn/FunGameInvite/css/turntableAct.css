@@ -1,0 +1,378 @@
+html,
+body {
+	margin: 0;
+}
+
+body {
+	background-color: #FD3656;
+	background: url(../img/turntable/bg.png) no-repeat;
+	background-size: 100%;
+}
+
+.cont {
+	width: 100%;
+	height: 100%;
+	margin-top: 2rem;
+}
+
+.coinList {
+	width: 72%;
+	height: 0.6rem;
+	background: url(../img/turntable/coinList.png) no-repeat;
+	background-size: 100%;
+	margin: 0 14%;
+}
+
+.list {
+	height: 0.3rem;
+	padding: 0.15rem 0 0;
+}
+
+.coinLi {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	height: 0.3rem;
+	overflow: hidden;
+}
+
+.coinLi li {
+	list-style-type: none;
+	text-align: center;
+	font-size: 0.26rem;
+	color: #FFFFFF;
+	line-height: 0.4rem;
+}
+
+.turn {
+	width: 99%;
+	height: 6.3rem;
+	background: url(../img/turntable/turnBg.png) no-repeat;
+	background-size: 100%;
+	margin: 0 0.5%;
+}
+
+#turnCon {
+	width: 76%;
+	position: relative;
+	left: 12%;
+	top: 13.5%;
+}
+
+.turnDiv {
+	width: 32%;
+	height: 1.25rem;
+	background: url(../img/turntable/turnDivBg.png) no-repeat;
+	background-size: 100%;
+	float: left;
+	margin-left: 1%;
+	position: relative;
+	z-index: 1;
+}
+
+#selectDiv {
+	position: relative;
+	z-index: 2;
+	width: 32%;
+	height: 1.25rem;
+	background: url(../img/turntable/select.png) no-repeat;
+	background-size: 100%;
+	top: 0rem;
+	left: 0.05rem;
+}
+
+.turnTxt {
+	width: 100%;
+	color: #541C00;
+	font-size: 0.25rem;
+	text-align: center;
+}
+
+.moneyDiv {
+	width: 41%;
+	height: 0.65rem;
+	background: url(../img/turntable/moneyBg.png) no-repeat;
+	background-size: 100%;
+	margin: 0.1rem 29% 0;
+	font-size: 0.2rem;
+	color: #541C00;
+	text-align: center;
+	line-height: 0.35rem;
+}
+
+.coinDiv1 {
+	/*120金币*/
+	width: 49%;
+	height: 0.6rem;
+	background: url(../img/turntable/coin120.png) no-repeat;
+	background-size: 100%;
+	margin: 0.15rem 25.5% 0;
+}
+
+.phoneDiv {
+	/*120金币*/
+	width: 28%;
+	height: 0.67rem;
+	background: url(../img/turntable/phone.png) no-repeat;
+	background-size: 100%;
+	margin: 0.08rem 36% 0;
+}
+
+.coinDiv2 {
+	/*400金币*/
+	width: 52%;
+	height: 0.8rem;
+	background: url(../img/turntable/coin400.png) no-repeat;
+	background-size: 100%;
+	margin: 0.1rem 24% 0;
+}
+
+.startDiv {
+	width: 32%;
+	height: 1.25rem;
+	background: url(../img/turntable/startDivBg.png) no-repeat;
+	background-size: 100%;
+	float: left;
+	margin-left: 1%;
+}
+
+.startTxt {
+	color: #A61715;
+	font-size: 0.55rem;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.1rem;
+}
+
+.turnNumsDiv {
+	display: none;
+	margin-top: -0.25rem;
+	width: 74%;
+	height: 0.4rem;
+	margin-left: 13%;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 0.1rem;
+	line-height: 0.36rem;
+	background: url(../img/turntable/numsBg.png) no-repeat;
+	background-size: 100%;
+}
+
+.coinDiv3 {
+	/*40金币*/
+	width: 52%;
+	height: 0.55rem;
+	background: url(../img/turntable/coin40.png) no-repeat;
+	background-size: 100%;
+	margin: 0.2rem 24% 0;
+}
+
+.coinDiv4 {
+	/*200金币*/
+	width: 58%;
+	height: 0.65rem;
+	background: url(../img/turntable/coin200.png) no-repeat;
+	background-size: 100%;
+	margin: 0.1rem 21% 0;
+}
+
+#myCoin {
+	display: inline-block;
+	width: 100%;
+	font-size: 0.35rem;
+	color: #FFFFFF;
+	text-align: center;
+	margin-top: 1.15rem;
+}
+
+.multiple {
+	width: 69%;
+	height: 1.6rem;
+	background: url(../img/turntable/multipleBg.png) no-repeat;
+	background-size: 100%;
+	margin: -0.45rem 15.5%;
+}
+
+.mulTip {
+	width: 100%;
+	text-align: center;
+	font-size: 0.27rem;
+	color: #31373F;
+	padding-top: 0.25rem;
+}
+
+.mulPro {
+	width: 91%;
+	height: 0.5rem;
+	padding: 0.1rem 4.5% 0;
+}
+
+.mulPro .pro {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 0.1rem;
+	background-color: #FFEDC2;
+	border-radius: 0.05rem;
+	margin-top: 0.1rem;
+}
+
+.mul2,
+.mul5,
+.mul10,
+.mul20,
+.mulDyn2,
+.mulDyn5,
+.mulDyn10,
+.mulDyn20 {
+	position: absolute;
+	width: 0.21rem;
+	height: 0.21rem;
+	background-color: #FFEDC2;
+	border-radius: 50%;
+	margin-top: -0.06rem;
+	z-index: 2;
+}
+
+.mul2,
+.mulDyn2 {
+	left: 5.7%;
+}
+
+.mul5,
+.mulDyn5 {
+	left: 17.1%;
+}
+
+.mul10,
+.mulDyn10 {
+	left: 39.9%;
+}
+
+.mul20,
+.mulDyn20 {
+	left: 94%;/*98.8*/
+}
+
+.proDynamic {
+	position: relative;
+	z-index: 3;
+	width: 0%;
+	height: 0.1rem;
+	background-color: #FFD900;
+	border-radius: 0.05rem;
+}
+
+.mulDyn2,
+.mulDyn5,
+.mulDyn10,
+.mulDyn20 {
+	display: none;
+	background-color: #FFD900;
+}
+
+.mulNum {
+	margin-top: 0.1rem;
+	color: #D7063B;/*999999*/
+	font-size: 0.25rem;
+}
+
+.num2 {
+	float: left;
+	margin-left: 3%;
+}
+
+.num5,
+.num10,
+.num20 {
+	float: left;
+	/*color: #D7063B;*/
+}
+
+.num5 {
+	margin-left: 4%;
+}
+
+.num10 {
+	margin-left: 12%;
+}
+
+.num20 {
+	float: right;
+	/*margin-left: 41%;*/
+}
+
+.exchange {
+	width: 94%;
+	height: 3.2rem;
+	background: url(../img/turntable/exchangeBg.png) no-repeat;
+	background-size: 100%;
+	margin: 1.1rem 3%;
+}
+
+.exchangeTit {
+	position: relative;
+	width: 50%;
+	height: 1rem;
+	background: url(../img/turntable/exchangeTit.png) no-repeat;
+	background-size: 100%;
+	margin: 0 25%;
+	top: -0.3rem;
+	color: #E24D41;
+	font-size: 0.35rem;
+	text-align: center;
+	line-height: 0.75rem;
+	font-weight: bold;
+}
+
+#exchangeList {
+	width: 80%;
+	padding: 0 11%;
+	margin-top: -0.3rem;
+	height: 2.2rem;
+	overflow-y: scroll;
+}
+
+.liDiv {
+	float: left;
+	width: 17%;
+	height: 1.1rem;
+	margin-right: 3%;
+	background: url(../img/turntable/exchangeLi.png) no-repeat;
+	background-size: 100%;
+	font-size: 0.22rem;
+	color: #D7063B;
+	text-align: center;
+}
+
+.exCoin40{
+	width: 66%;
+    height: 0.4rem;
+    background: url(../img/turntable/coin40.png) no-repeat;
+    background-size: 100%;
+    margin: 0.2rem 17% 0;
+}
+
+.exCoin120{
+	width: 66%;
+    height: 0.45rem;
+    background: url(../img/turntable/coin120.png) no-repeat;
+    background-size: 100%;
+    margin: 0.15rem 17% 0;
+}
+
+.exCoin200{
+	width: 70%;
+    height: 0.4rem;
+    background: url(../img/turntable/coin200.png) no-repeat;
+    background-size: 100%;
+    margin: 0.2rem 15% 0;
+}
+
+.exCoin400{
+	width: 70%;
+    height: 0.55rem;
+    background: url(../img/turntable/coin400.png) no-repeat;
+    background-size: 100%;
+    margin: 0.05rem 15% 0;
+}

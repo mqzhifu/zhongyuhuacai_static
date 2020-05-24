@@ -1,0 +1,179 @@
+.panel {
+  margin: 0 30px;
+  margin-bottom: 14px;
+  text-align: left;
+  min-height: 211px;
+  border-radius: 0;
+}
+
+.panel-default>.panel-heading {
+  background-color: #E2E6EF;
+  position: relative;
+}
+.panel-heading-right {
+
+font-size:14px;
+font-family:MicrosoftYaHei;
+font-weight:400; 
+position: absolute;
+right: 15px;
+top: 10px;
+}
+
+.game-btn{
+  font-size: 14px;
+  display: inline-block;
+  font-weight: lighter;
+  padding: 8px 29px; 
+  border-radius:3px;
+  cursor: pointer;
+  color: #fff;
+  margin-bottom: 8px;
+  /*background: linear-gradient(0deg,#d9353f,#f14f59)!important; */
+}
+
+
+.title-sec {
+  position: relative;
+  width: 200px;
+  margin: 0 auto;
+}
+.title-text {
+  position: absolute;
+  font-size: 20px;
+  top: 5px;
+  left: 40px;
+}
+
+.title-img {
+  width: 30px;
+  height: 30px;
+} 
+
+.modal-body p {
+  line-height: 1.5;
+}
+.modal-header {
+  border-radius: 6px 6px 0 0;
+  background:rgba(250,251,253,1);
+  border: 0;
+}
+.modal-footer { 
+  border: 0;
+}
+.modal-title {
+  font-size:20px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(74,78,103,1);
+  text-align: center;
+}
+
+.v-sec {
+  margin-top: 5px;
+  font-size:14px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(74,78,103,1);
+
+  border:1px solid rgba(158,172,202,1);
+}
+
+.v-top {
+  padding: 12px 0;
+  text-align: center;
+  border-bottom:1px solid rgba(158,172,202,1);
+}
+.v-bottom {
+  padding: 12px 0;
+  text-align: center; 
+}
+.v-sec-selected {
+  border-color: rgba(158,172,202,1);
+  background-color: #E2E6EF;
+}
+
+.v-sec-selected .v-bottom{
+  border-color: rgba(158,172,202,1); 
+}
+
+#myModal2 {
+  text-align: center;
+}
+
+.login-verify {
+  position: relative; 
+}
+.verify-btn {
+  width: 28%;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 100;  
+  color: #fff;
+  background-color: #FEC34D;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.password-info {
+  margin-top: 39px;
+  font-size:14px; 
+  font-weight:400;
+  color:rgba(74,78,103,1);
+}
+
+.password-forgot {
+  color: #245085;
+margin-left: 23px;
+font-size:14px; 
+color:rgba(36,80,133,1);
+}
+
+
+.modal-dialog {
+  width: 550px;
+}
+
+.panel-body {
+  padding: 10px 15px;
+}
+
+.btn-group-group {
+  text-align: left;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  padding-left: 30px;
+}
+
+.report-sel-btn-left {
+  padding: 7px 16px;
+  border-radius: 0;
+}
+.report-sel-btn-right {
+
+  border-radius: 0;
+  padding: 7px 14px!important;
+}
+/*table*/
+
+.table-1-sec {
+  padding: 10px 30px;
+}
+
+.table-1>thead>tr>th,
+.table-1>tbody>tr>th,
+.table-1>tfoot>tr>th,
+.table-1>thead>tr>td,
+.table-1>tbody>tr>td,
+.table-1>tfoot>tr>td {
+  text-align: center;
+}
+.table-1>thead>tr>th {
+  background-color: #E2E6EF;
+  border-color: #fff;

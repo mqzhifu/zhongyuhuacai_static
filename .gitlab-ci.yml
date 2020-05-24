@@ -1,0 +1,158 @@
+image: centos_kxgame:latest
+variables:
+  CN_CDN_HOST: mgres.kaixin001.com.cn
+  CN_CDN_RSYNC_IP: 10.10.7.223
+  
+  CN_DEV_API_HOST: api-kxxyx-dev.kaixin001.com
+  CN_DEV_SDK_HOST: sdk-kxxyx-dev.kaixin001.com
+  CN_DEV_ADM_HOST: admin.kxxyx-dev.kaixin001.com
+  CN_DEV_OPT_HOST: open.kxxyx-dev.kaixin001.com
+  
+  CN_PRO_API_HOST: is-api.kaixin001.com
+  CN_PRO_SDK_HOST: is-sdk.kaixin001.com
+  CN_PRO_ADM_HOST: is-admin.kaixin001.com
+  CN_PRO_OPT_HOST: open.kaixin001.com
+  
+  
+  
+  EN_CDN_HOST: cdn-heyshell-com.akamaized.net
+  EN_CDN_RSYNC_IP: 49.51.252.214
+  EN_CDN_INNNER_HOST: 10.13.4.16 
+  
+  EN_DEV_API_HOST: hifunapi-test.kaixin001.com
+  EN_DEV_SDK_HOST: hifunsdk-test.kaixin001.com
+  EN_DEV_ADM_HOST: admin-test.hifundev.kaixin001.com
+  EN_DEV_OPT_HOST: hifunopen-test.kaixin001.com
+
+  EN_PRO_API_HOST: hifunapi.kaixin001.com
+  EN_PRO_SDK_HOST: hifunsdk.kaixin001.com
+  EN_PRO_ADM_HOST: hifunadmin.kaixin001.com
+  EN_PRO_OPT_HOST: hifunopen.kaixin001.com 
+
+  RSYNC_DIR1: assets
+  RSYNC_DIR2: frontend
+  RSYNC_DIR3: download
+ 
+ ########################################################
+ 
+ 
+  CN_DEV_NEW_API_HOST: wzapi.kxxyx-dev.kaixin001.com
+  CN_DEV_NEW_SDK_HOST: wzapi.kxxyx-dev.kaixin001.com
+
+  RSYNC_NEW_DIR1: assets_new
+  RSYNC_NEW_DIR2: frontend_new
+  RSYNC_NEW_DIR3: download_new 
+ 
+  
+before_script:
+  - ls -l
+  
+cn_new_dev:
+  when: manual
+  stage: deploy
+  script:
+    - export APP_ENV=dev
+    - export AREA=cn
+    - echo $CI_PROJECT_DIR
+    - ls -l
+    
+    - chmod 777 $CI_PROJECT_DIR/init.sh
+    - $CI_PROJECT_DIR/init.sh $RSYNC_NEW_DIR2 $CN_CDN_HOST/xyxnew/$APP_ENV/static http $APP_ENV $CI_PROJECT_DIR $CN_CDN_RSYNC_IP $AREA $CN_DEV_NEW_API_HOST $CN_DEV_NEW_SDK_HOST
+
+    - echo 'done.'
+
+cn_dev:
+  stage: deploy
+  script:
+    - export APP_ENV=dev
+    - export AREA=cn
+    - echo $CI_PROJECT_DIR
+    - ls -l
+    
+    - chmod 777 $CI_PROJECT_DIR/init.sh
+    - $CI_PROJECT_DIR/init.sh $RSYNC_DIR2 $CN_CDN_HOST/xyxnew/$APP_ENV/static https $APP_ENV $CI_PROJECT_DIR $CN_CDN_RSYNC_IP $AREA $CN_DEV_API_HOST $CN_DEV_SDK_HOST
+
+    - echo 'done.'
+    
+    
+    
+cn_pro:
+  stage: deploy
+  when: manual
+  script:
+    - export APP_ENV=pro
+    - export AREA=cn
+    - echo $CI_PROJECT_DIR
+    - ls -l
+    
+    - chmod 777 $CI_PROJECT_DIR/init.sh
+    - $CI_PROJECT_DIR/init.sh $RSYNC_DIR2 $CN_CDN_HOST/xyxnew/$APP_ENV/static https $APP_ENV $CI_PROJECT_DIR $CN_CDN_RSYNC_IP $AREA $CN_PRO_API_HOST $CN_PRO_SDK_HOST
+
+    - echo 'done.'
+    
+cn_new_pro:
+  stage: deploy
+  when: manual
+  script:
+    - export APP_ENV=pro
+    - export AREA=cn
+    - echo $CI_PROJECT_DIR
+    - ls -l
+    
+    - chmod 777 $CI_PROJECT_DIR/init.sh
+    - $CI_PROJECT_DIR/init.sh $RSYNC_NEW_DIR2 $CN_CDN_HOST/xyxnew/$APP_ENV/static http $APP_ENV $CI_PROJECT_DIR $CN_CDN_RSYNC_IP $AREA $CN_DEV_NEW_API_HOST $CN_DEV_NEW_SDK_HOST
+
+    - echo 'done.'
+    
+    
+    
+en_dev:
+  stage: deploy
+  when: manual
+  script:
+    - export APP_ENV=dev
+    - export AREA=en
+    - echo $CI_PROJECT_DIR
+    - ls -l
+    
+    - chmod 777 $CI_PROJECT_DIR/init.sh
+    - $CI_PROJECT_DIR/init.sh $RSYNC_DIR2 $EN_CDN_HOST/xyxnew/$APP_ENV/static https $APP_ENV $CI_PROJECT_DIR $EN_CDN_RSYNC_IP $AREA $EN_DEV_API_HOST $EN_DEV_SDK_HOST
+    
+    - mkdir -p /root/.ssh
+    - echo "$KNOWN_HOST_EN_DEV" >> /root/.ssh/known_hosts
+    - echo "$PRIVATE_KEY_FOR_DEPLOY" > /root/.ssh/id_rsa
+    - chmod 600 /root/.ssh/id_rsa && chmod 700 /root/.ssh
+    - cat /root/.ssh/id_rsa
+    - cat /root/.ssh/known_hosts
+
+
+    - ssh root@"$EN_CDN_INNNER_HOST" "chmod -R 777     /data1/www/xyxnew/$APP_ENV"
+    - ssh root@"$EN_CDN_INNNER_HOST" "chown -R www:www /data1/www/xyxnew"
+    - echo 'done.'    
+    
+en_pro:
+  stage: deploy
+  when: manual
+  script:
+    - export APP_ENV=pro
+    - export AREA=en
+    - echo $CI_PROJECT_DIR
+    - ls -l
+    
+    - chmod 777 $CI_PROJECT_DIR/init.sh
+    - $CI_PROJECT_DIR/init.sh $RSYNC_DIR2 $EN_CDN_HOST/xyxnew/$APP_ENV/static https $APP_ENV $CI_PROJECT_DIR $EN_CDN_RSYNC_IP $AREA $EN_PRO_API_HOST $EN_PRO_SDK_HOST
+    
+    - mkdir -p /root/.ssh
+    - echo "$KNOWN_HOST_EN_DEV" >> /root/.ssh/known_hosts
+    - echo "$PRIVATE_KEY_FOR_DEPLOY" > /root/.ssh/id_rsa
+    - chmod 600 /root/.ssh/id_rsa && chmod 700 /root/.ssh
+    - cat /root/.ssh/id_rsa
+    - cat /root/.ssh/known_hosts
+
+
+    - ssh root@"$EN_CDN_INNNER_HOST" "chmod -R 777     /data1/www/xyxnew/$APP_ENV"
+    - ssh root@"$EN_CDN_INNNER_HOST" "chown -R www:www /data1/www/xyxnew"
+    - echo 'done.'    
+       
+    
+    

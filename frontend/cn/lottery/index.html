@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="keywords" content="开心小游戏,开心小游戏大全,在线小游戏,单人游戏,单机游戏,双人对战,双人游戏,红包游戏,赚钱小游戏,2019红包,赚钱,好玩游戏,传奇游戏" />
+		<meta name="description" content="开心小游戏大全收录国内外单人游戏,单人游戏大全,单人小游戏闯关,单人冒险小游戏,单人小游戏大全无敌版,单人闯关小游戏大全,网络游戏大全,单机游戏大全,连连看游戏大全,益智游戏大全,转圈游戏,红包游戏,邀请朋友们一起边玩边赚钱!" />
+		<link rel="stylesheet" href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/css/lottery.css" />
+		<title>开心网开心小游戏</title>
+		<title></title>
+	</head>
+	<body>
+		<div class="lotteryGame">
+			<!--<img class="lotteryBg" src="img/bg.png" />-->
+			<div class="lotteryOutBox">
+				<img class="lotteryMachine" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/lottertMachine.png" />
+				<div class="ruleTop">玩游戏5分钟即可触发一次</div>
+				<div class="lotteryBox">
+					<img class="lotteryMask" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/lotteryMask.png"  />
+					<ul class="lotteryUl">
+						<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/coupon_0.3.png"></li>
+						<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/coupon_0.5.png"></li>
+						<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/coupon_1.png"></li>
+						<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/gold_50.png"></li>
+						<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/gold_100.png"></li>
+						<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/gold_200.png"></li>
+					</ul>
+	 			</div>
+	 			<div class="winningList"><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/lotteryBag.png" /></div>
+	 			<div class="lotteryBtnBox cant">
+	 				<img class="lotteryBtn canClick" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/lotteryBtn.png" />
+	 				<img class="lotteryBtn clickAfter" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/lotteryBtnClick.png" />
+	 				<img class="lotteryBtn cantClick" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/lotteryDisabled.png">
+	 			</div>
+	 			<div class="rulBtnBox">
+	 				<img class="rulBtn show" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/ruleBtn.png" />
+	 				<img class="rulBtnClick" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/ruleBtnClick.png" />
+	 			</div>
+	 			<div class="newTime">百万金币 超多提现劵 等你来抢！<i></i></div>
+	 			<!--<div class="prizeTitle"><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/lotteryStar.png" />奖品列表<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/lotteryStar.png" /></div>
+	 			<ul class="prizeList">
+	 				<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/coupon_1.png"><span>1元提现券</span></li>
+	 				<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/coupon_0.5.png"><span>0.5元提现券</span></li>
+	 				<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/coupon_0.3.png"><span>0.3元提现券</span></li>
+	 				<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/gold_200.png"><span>200金币</span></li>
+	 				<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/gold_100.png"><span>100金币</span></li>
+	 				<li><img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/gold_50.png"><span>50金币</span></li>
+	 			</ul>-->
+	 			<div class="progressBox">
+	 				<span>0%</span>
+	 				<div class="progressInner" style="width: 0;"></div>
+	 			</div>
+	 			<img src="img/iconBg.png" class="iconBg">
+			</div>
+		</div>
+		<div class="ruleWin">
+			<div class="winBg"></div>
+			<div class="ruleWinBox">
+				<span class="winTitle">活动规则</span>
+				<p>1.玩游戏达到5分钟后可触发一次轮盘效果，次数不限 </p>
+				<p>2.玩家触发一次轮盘100%中奖 </p>
+				<p>3.中奖玩家可在开始按钮左侧福袋中查看获得的提现劵</p>
+				<p>4.使用提现劵可获得提现机会，金币满足的条件下，不同金额的提现劵可提取对应的现金。</p>
+				<p>5.获得提现劵后次日生效，一天内最多使用一张提现劵。</p>
+				<p>6.拒绝一切作弊行为，发现后拒绝发放一切奖品</p>
+				<img src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/img/winClose.png" class="winClose" />
+			</div>
+		</div>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/js/jquery-1.12.4.min.js" ></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/js/easing.js" ></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/lottery/js/http.js" ></script>
+		<script>
+			var lotteryFlag;
+			var area1 = $(".lotteryUl");
+			var top1 = area1.scrollTop();
+	    	var length=$(".lotteryUl li").length;
+			area1[0].innerHTML += area1[0].innerHTML+= area1[0].innerHTML+= area1[0].innerHTML+= area1[0].innerHTML+= area1[0].innerHTML;
+			var unitLength= area1[0].scrollHeight/6/length;
+			var token=GetQueryString('token');
+			
+			var globalID; 
+			function scroll() {
+				if(top1 >= area1[0].scrollHeight / 2) {
+					top1 = 0;
+					area1.scrollTop(top1);
+				} else {
+					area1.scrollTop(++top1);
+				}
+				globalID=requestAnimationFrame(scroll);
+			}
+			globalID=requestAnimationFrame(scroll);
+			
+		    function Lottery(winningNum,type,num) {
+		    	var type=parseInt(type);
+		    	var lotteryNum=String(num);
+		    	cancelAnimationFrame(globalID);//结束
+		    	$(".lotteryUl").scrollTop(0);
+		        var num=winningNum;
+		        var finshedTop=unitLength*length*3+unitLength*(num-1);
+	            var _num = $(".lotteryUl");
+                _num.animate({
+                    scrollTop:finshedTop
+                },{
+                    duration: 5000,
+                    easing: "easeInOutCirc",
+                    complete: function () { 
+                    	$(".progressBox span").text('0%');
+                        $(".progressBox .progressInner").css("width",0);
+                        //globalID=requestAnimationFrame(scroll);
+                        lottery_draw.showResultWindow(parseInt(type),String(lotteryNum)); //抽奖结束，显示抽奖结果
+                        
+                    }
+                });
+		    }
+			function authority(){		
+				
+			}
+			
+			/*安卓回调获取广告id*/
+			function lotteryAdId(id){
+				$(".lotteryBtnBox").addClass("cant");
+				var adId=id;
+				var winningNum;
+				ajaxType({
+			        method: "POST",
+			        url: "#HTTP_PROTOCOL#://#API_URL#/lottery/happyDoing/id="+adId+"&token="+token,
+			        success: function(data) {
+			        	var res = JSON.parse(data);
+			        	var lotteryData= res.msg;		        	
+			        	if(lotteryData.type==1){
+			        		if(lotteryData.num=='50'){
+			        			winningNum=4;
+			        		}else if(lotteryData.num=='100'){
+			        			winningNum=5;
+			        		}else if(lotteryData.num=='200'){
+			        			winningNum=6;
+			        		}
+			        	}else if(lotteryData.type==2){
+			        		if(lotteryData.num=='1'){
+			        			winningNum=3;
+			        		}else if(lotteryData.num=='0.5'){
+			        			winningNum=2;
+			        		}else if(lotteryData.num=='0.3'){
+			        			winningNum=1;
+			        		}
+			        	}
+			        	Lottery(winningNum,lotteryData.type,lotteryData.num);//抽奖
+			        	//var lotteryData={type: 1, num: '100'};
+			        }
+				});
+			}
+			function GetQueryString(name)
+			{
+			     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			     var r = window.location.search.substr(1).match(reg);
+			     if(r!=null)return  unescape(r[2]); return null;
+			}
+			window.onload=function(){
+				$(".winningList").click(function(){
+					lottery_draw.goToMyProp();
+				});
+				//$(".winningList").attr("href","myCoupon.html?token="+token);
+				$(".lotteryBtnBox").click(function(){
+					console.log(1,$(".canClick").is(":visible"));
+					if($(".canClick").is(":visible")){
+						//lotteryFlag=false;
+						$(".lotteryBtnBox").addClass("hasClick");
+						setTimeout(function () {
+					        $(".lotteryBtnBox").removeClass("hasClick");
+					        //alert("调用安卓播放广告");
+					        lottery_draw.playAd();//android播放广告
+					        
+					    }, 300);
+					}
+					if($(".cantClick").is(":visible")){
+						//alert("游戏时间未能触发抽奖，快去玩游戏吧～");
+						lottery_draw.noEnoughTime();
+					}
+				});
+				$(".rulBtnBox").click(function(){
+					if($(".rulBtn").is(":visible")){
+						$(".rulBtnBox").addClass("hasClick");
+						$(".ruleWin").fadeIn(100);
+						setTimeout(function () {
+					        $(".rulBtnBox").removeClass("hasClick");
+					       
+					    }, 300);
+					}
+				});
+				$(".ruleWinBox .winClose").click(function(){
+					$(".ruleWin").fadeOut(100);
+				});
+				ajaxType({
+			        method: "POST",
+			        url: "#HTTP_PROTOCOL#://#API_URL#/lottery/getHappyLotteryPlayTime/token="+token,
+			        success: function(data) {
+			        	var res = JSON.parse(data);
+			        	var gameTimes= res.msg;
+			        	if(res.code==200){
+			        		
+			        		var gameTime=parseFloat(gameTimes/60).toFixed(2);
+			        		if(gameTime>=5){
+			        			gameTime=5;
+			        			$(".lotteryBtnBox").removeClass("cant");
+			        		}else if(gameTime<5){
+			        			$(".lotteryBtnBox").addClass("cant");
+			        			//$(".lotteryBtnBox").removeClass("cant");
+			        		}
+			        		var progressNum=Math.floor(gameTime/5*100)+'%';
+			        		$(".progressBox span").text(progressNum);
+			        		$(".progressBox .progressInner").css("width",progressNum);
+			        	}else{
+			        		$(".lotteryBtnBox").addClass("cant");
+			        	}
+			        }
+				});
+			
+				/*var resizeWaiter = false;
+				$(window).resize(function() {
+				    if(!resizeWaiter){
+				        resizeWaiter = true;
+				        setTimeout(function(){
+				            window.location.reload();
+				            resizeWaiter = false;
+				        }, 500);
+				    }
+				});*/
+			}
+		</script>
+	</body>
+</html>

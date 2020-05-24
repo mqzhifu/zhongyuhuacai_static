@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no,minimal-ui">
+		<title></title>
+		<link rel="stylesheet" href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/css/turntableAct.css" />
+	</head>
+
+	<body>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/js/common.js"></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/js/turnable.js"></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/js/http.js"></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/js/turnableHttp.js"></script>
+		<script>
+			C.getToken();
+			C.setInitFontSize();
+		</script>
+		<div class="cont">
+			<div class="coinList">
+				<div class="list">
+					<ul class="coinLi" id="coinLi"></ul>
+				</div>
+			</div>
+			<div class="turn">
+				<div id="turnCon">
+					<script>
+						T.createTurn();
+					</script>
+					<div id="selectDiv"></div>
+				</div>
+				<div id="myCoin"></div>
+			</div>
+			<div class="multiple">
+				<div class="mulTip">再抽
+					<font id="nums"></font>次可获得
+					<font id="mul"></font>倍翻倍卡</div>
+				<div class="mulPro">
+					<div class="pro">
+						<div class="mul2"></div>
+						<div class="mul5"></div>
+						<div class="mul10"></div>
+						<div class="mul20"></div>
+						<div class="mulDyn2"></div>
+						<div class="mulDyn5"></div>
+						<div class="mulDyn10"></div>
+						<div class="mulDyn20"></div>
+						<div class="proDynamic"></div>
+					</div>
+
+					<div class="mulNum">
+						<div class="num2">2倍</div>
+						<div class="num5">5倍</div>
+						<div class="num10">10倍</div>
+						<div class="num20">20倍</div>
+					</div>
+				</div>
+			</div>
+			<div class="exchange">
+				<div class="exchangeTit">兑换区</div>
+				<div id="exchangeList">
+					<!--<script>
+						T.createList([40,120,400,200,40,120,400,200,40,120,400,200,40,120,400,200]);
+					</script>-->
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script>
+//						C.token = "sre6YoB4qtmH34qTftup2bN2x2l-yXRx";
+//			C.token = "sre6YoB4yJSHuX6Xf6Wp2bOGpax-yXRx";
+
+			function start() {
+				if(T.goldNums >= 100||T.isFree==1) {
+					TH.turn(C.token);
+				} else {
+					turnable.showToast("金币不足");//调用安卓的方法
+					var startDiv = document.getElementsByClassName("startDiv")[0];
+					var startTxt = document.getElementsByClassName("startTxt")[0];
+
+					startDiv.style.backgroundImage = "url(#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/img/turntable/noStart.png)";
+					startTxt.style.color = "#666666";
+					startDiv.setAttribute("onclick", ""); 					
+				}
+			}
+
+			$(document).ready(function() {
+				var select = document.getElementById("selectDiv");
+				select.style.left = T.getSelectLeft() + "rem";
+				select.style.top = T.getSelectTop(false) + "rem";
+				T.getElements();
+				updateInfo();
+			});
+
+			function updateInfo() {
+				TH.getCarnivalLog(C.token);
+				TH.getBulletin(C.token);
+				TH.getCarnivalInfo(C.token);
+				TH.getGoldInfo(C.token,false);
+			}
+
+			function restart() {
+				TH.getCarnivalLog(C.token);
+				TH.getBulletin(C.token);
+				TH.getCarnivalInfo(C.token);
+				TH.getGoldInfo(C.token,true);
+//				start();
+			}
+		</script>
+	</body>
+
+</html>

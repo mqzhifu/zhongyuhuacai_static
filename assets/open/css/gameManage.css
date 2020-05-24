@@ -1,0 +1,376 @@
+body,html{
+	background-color: #f8f8f8!important;
+}
+.gameManage{
+	display: block;
+	width: 1208px;
+	height: auto;
+	margin: 23px auto 0;
+    min-height: calc(100vh - 250px);
+}
+.nav-list{
+	float: left;
+	width:203px;
+	height:auto;
+	
+}
+.nav-list .levelLi{
+	display: block;
+	width: 100%;
+	height: auto;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 0px 4px 0px rgba(207,206,206,0.2);
+	border-radius:4px;
+	margin-bottom: 16px;
+	padding: 7px 0;
+}
+.nav-list .levelLi .first-level{
+	display: block;
+	width: 100%;
+	height: 52px;
+	line-height: 52px;
+	font-size: 18px;
+	cursor: pointer;
+	padding-left: 60px;
+	position: relative;
+}
+.nav-list .levelLi .first-level .level-icon{
+	position: absolute;
+	left: 24px;
+	top: 50%;
+	transform:translateY(-50%);
+	-ms-transform:translateY(-50%); 	/* IE 9 */
+	-moz-transform:translateY(-50%); 	/* Firefox */
+	-webkit-transform:translateY(-50%); /* Safari 和 Chrome */
+	-o-transform:translateY(-50%); 	/* Opera */
+	display: inline-block;
+	width: 28px;
+}
+.nav-list .levelLi .first-level .level-click{
+	display: inline-block;
+	width: 14px;
+    right: 24px;
+    top: 23px;
+    position: absolute;
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;	/* Firefox 4 */
+	-webkit-transition: all 0.5s ease-in-out;	/* Safari 和 Chrome */
+	-o-transition: all 0.5s ease-in-out;	/* Opera */
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); 	/* IE 9 */
+	-moz-transform:rotate(180deg); 	/* Firefox */
+	-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+	-o-transform:rotate(180deg); 	/* Opera */
+}
+.nav-list .levelLi .first-level .up{
+	transform:rotate(0deg);
+	-ms-transform:rotate(0deg); 	/* IE 9 */
+	-moz-transform:rotate(0deg); 	/* Firefox */
+	-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+	-o-transform:rotate(0deg); 	/* Opera */
+}
+.nav-list .levelLi .first-level .down{
+	
+}
+.nav-list .levelLi .second-level{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.nav-list .levelLi .second-level li{
+	display: block;
+	width: 100%;
+	line-height: 50px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.nav-list .levelLi .second-level li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding-left: 60px;
+}
+.nav-list .levelLi .second-level li.active,.nav-list .levelLi .second-level li.active a{
+	color: #ff4a55;
+}
+.iframeBox{
+	display: block;
+	width: 1004px;
+	float: left;
+}
+.iframeBox .game-head{
+	width:986px;
+	height:68px;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 0px 6px 0px rgba(180,178,177,0.18);
+	border-radius:4px;
+	margin-left: 9px;
+	padding: 0 16px;
+}
+.iframeBox .game-head .searchBox{
+	width:280px;
+	height:34px;
+	border:1px solid rgba(221,221,221,1);
+	border-radius:17px;
+	padding: 0 0 0 17px;
+	overflow: hidden;
+	float: left;
+	margin: 18px 0 0;
+}
+.iframeBox .game-head .searchBox input{
+	display: block;
+	width: 200px;
+	height: 100%;
+	border: none;
+	outline: none;
+	float: left;
+}
+.iframeBox .game-head .searchBox .searchBtn{
+	display: block;
+	width:40px;
+	height:22px;
+	padding-right: 17px;
+	background: url(../img/search_btn.png) no-repeat center center;
+	float: right;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	margin: 5px 0;
+}
+.iframeBox .game-head .add_game{
+    display: block;
+    float: right;
+    font-size: 14px;
+    width: 100px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    border-radius: 4px;
+    color: #fff;
+    margin-top: 17px;
+    cursor: pointer;
+    background: linear-gradient(0deg,#EF4D57,#DB3741);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EF4D57), to(#DB3741));
+    background: -webkit-linear-gradient(top, #EF4D57, #DB3741);
+    background: -moz-linear-gradient(top, #EF4D57, #DB3741);
+    background: -o-linear-gradient(top, #EF4D57, #DB3741);
+    background: -ms-linear-gradient(top, #EF4D57, #DB3741);
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#EF4D57,, endColorStr=#DB3741);
+}
+.iframeBox .game-head .add_game:hover{
+	background-color: #EF4D57;
+	color: #fff;
+}
+.iframeBox .game_ul{
+	display: block;
+	width: 1004px;
+}
+.iframeBox .game_ul>li{
+	float: left;
+	width:233px;
+	height:232px;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 0px 6px 0px rgba(180,178,177,0.18);
+	border-radius:4px;
+	margin: 16px 9px 0;
+	position: relative;
+}
+.iframeBox .game_ul>li .dropdown-menu{
+	right: 12px;
+	left: auto;
+	top: 40px;
+	border-radius: 0;
+	border: none;
+	width: 130px;
+	height: 55px;
+	line-height: 55px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	cursor: pointer;
+}
+.iframeBox .game_ul>li .controlBtn{
+	display: none;
+	width: 30px;
+	height: 46px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: url(../img/control.png) no-repeat center;
+	cursor: pointer;
+}
+.iframeBox .game_ul>li .dropdown-menu img{
+    display: inline-block;
+    margin: 0 10px 2px 0;
+}
+.iframeBox .game_ul .game_li .game_icon{
+	display: block;
+	width:92px;
+	height:92px;
+	border-radius:50%;
+	margin: 18px auto;
+}
+.iframeBox .game_ul .game_li .game_name{
+	display: block;
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	font-size:16px;
+	font-weight:400;
+	color:rgba(49,55,63,1);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.iframeBox .game_ul .game_li .game_num{
+	display: block;
+	text-align: center;
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	font-size:14px;
+	font-weight:400;
+	color:rgba(49,55,63,1);
+	margin: 0;
+}
+.iframeBox .game_ul .game_li .game_state{
+	display: block;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color:rgba(49,55,63,1);
+	font-size: 14px;
+}
+.iframeBox .game_ul .game_li .game_state i{
+	display: inline-block;
+	padding: 0 15px;
+	height:20px;
+	line-height: 20px;
+	color: #fff;
+	
+	border-radius:3px;
+}
+.iframeBox .game_ul .game_li .game_state .test{
+	background:rgba(255,167,59,1);
+}
+.iframeBox .game_ul .game_li .game_state .notPass{
+	background:rgba(239,77,87,1);
+}
+.iframeBox .game_ul .game_add{
+	cursor: pointer;
+}
+.iframeBox .game_ul .game_add img{
+	width:93px;
+	height:93px;
+	margin: 37px auto 50px;
+}
+.iframeBox .game_ul .game_add span{
+	display: block;
+	width: 100%;
+	font-size:20px;
+	font-weight:400;
+	color:rgba(49,55,63,1);
+	text-align: center;
+}
+.del_win .warn-inner{
+	height: 366px;
+}
+.add_win .warn-inner{
+	height: 315px;
+}
+.del_win .del_main,
+.add_win .del_main{
+	width: 360px;
+	margin: 0 auto;
+}
+.del_win .del_head,
+.add_win .del_head{
+	width:630px;
+	height:70px;
+	line-height: 70px;
+	background:rgba(248,248,248,1);
+	border-radius:4px;
+	text-align: center;
+	font-size: 20px;
+	color: #4A4E67;
+}
+.del_win .del_head img{
+	display: inline-block;
+	width:29px;
+	height:29px;
+	margin-right: 18px;
+	margin-bottom: 3px;
+}
+.del_win .warn-inner p{
+	display: block;
+	width: 100%;
+	text-align: left;
+	color: #4A4E67;
+	margin: 0 auto;
+	line-height: 20px;
+	height: auto;
+}
+.del_win .btn-modal-no,.add_win .btn-modal-no{
+	width:144px;
+	height:40px;
+	border:1px solid rgba(239,77,87,1);
+	border-radius:4px;
+	float: left;
+	outline: none;
+	background-color: #fff;
+	color: rgba(239,77,87,1);
+	cursor: pointer;
+}
+.del_win .btn-modal-yes,.add_win .btn-modal-yes{
+	width:144px;
+	height:40px;
+	background:linear-gradient(0deg,#d9353f,#f14f59);
+	/* Webkit: Safari 4-5, Chrome 1-9 */ 
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d9353f), to(#f14f59)); 
+	/* Webkit: Safari 5.1+, Chrome 10+ */ 
+	background: -webkit-linear-gradient(top, #d9353f, #f14f59); 
+	/* Firefox 3.6+ */ 
+	background: -moz-linear-gradient(top, #d9353f, #f14f59); 
+	/* Opera 11.10+ */ 
+	background: -o-linear-gradient(top, #d9353f, #f14f59); 
+	/* IE 10 */ 
+	background: -ms-linear-gradient(top, #d9353f, #f14f59); 
+	/* IE < 10 */ 
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#d9353f, endColorStr=#f14f59);
+	border-radius:4px;
+	border: none;
+	outline: none;
+	float: right;
+	color: #fff;
+	cursor: pointer;
+}
+.add_win .game_name{
+	display: block;
+	width: 100%;
+	font-size: 14px;
+	color: #4A4E67;
+	line-height: 40px;
+	margin-top: 15px;
+}
+.add_win .name_input{
+	width:362px;
+	height:40px;
+	border:1px solid rgba(232,223,223,1);
+	border-radius:6px;
+	padding: 0 10px;
+}
+.add_win .agree{
+	text-align: center;
+	margin: 30px 0;
+}
+.add_win .agree a{
+	display: inline-block;
+	height: auto;
+	width: auto;
+	line-height: normal;
+	background: #fff;
+	color: #F04E58;
+	font-size: 14px;
+}

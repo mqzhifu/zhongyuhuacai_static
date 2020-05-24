@@ -1,0 +1,260 @@
+/*全局通用样式*/
+html, body, div, dl, dt, dd, p, ul, li, h1, h2, h3, h4, h5, h6, th, td, input, textarea {padding: 0; margin: 0; 
+font-family: "微软雅黑","黑体", Microsoft YaHei, Arial, Verdana, Segoe UI, Tahoma,sans-serif, serif, monospace, fantasy;}
+li {list-style: none;}
+
+
+/*表格默认垂直居中*/
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{ vertical-align: middle;}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+    color:#ccc !important;
+	background-color:rgba(0,0,0,0.0)!important;
+}
+.navbar-inverse .navbar-brand:hover{
+        color:#ccc !important;
+} .navbar-inverse .navbar-nav>li>a:hover{
+    color:#ccc !important;
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+	background-color: rgba(0,0,0,0) !important;
+}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {color: #fff;}
+body{ overflow: auto !important; padding-right: 0 !important;}
+
+/*重设字体图标大小*/
+[class^="ls-icon-"]:before, [class*=" ls-icon-"]:before{ font-size: inherit;}
+
+/*清除浮动*/
+.f-cb{display:block;clear:both;visibility:hidden;height:0;overflow:hidden;}
+/*向左浮动*/
+.f-fl{ float: left;}
+/*向右浮动*/
+.f-fr{ float: right;}
+/*内联块级*/
+.f-ib{ display: inline-block;}
+/*文本居中*/
+.f-tac{ text-align: center;}
+/*文本居右*/
+.f-tar{ text-align: right;}
+/*文本居左*/
+.f-tal{ text-align: left;}
+/*垂直居中*/
+.f-vam{ vertical-align: middle;}
+/*内容居底*/
+.f-vab{ vertical-align: bottom;}
+/*溢出隐藏*/
+.f-oh{ overflow: hidden;}
+/*完全消失*/
+.f-dn{ display: none;}
+/*字体大小*/
+.f-fs{ font-size: 0;}
+/*字体加粗*/
+.f-fw{ font-weight: bold;}
+/*相对定位*/
+.f-pr{ position: relative;}
+/*绝对定位*/
+.f-pa{ position: absolute;}
+/*窗口定位*/
+.f-pf{ position: fixed;}
+/*仿pre标签样式*/
+.f-pre{overflow:hidden;text-align:left;white-space:pre-wrap;word-wrap:break-word;word-break:break-all;}
+/*内容自动换行*/
+.f-wwb{white-space:normal;word-wrap:break-word;word-break:break-all;}
+/*内容不换行*/
+.f-wsn{word-wrap:normal;white-space:nowrap;}
+/*超出文字隐藏...*/
+.f-toe{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+/*隐藏文字*/
+.f-ti{overflow:hidden;text-indent:-30000px;}
+/*鼠标显示为手型*/
+.f-csp{cursor:pointer;}
+
+.f-ih-16{ line-height: 16px;}
+.f-fs-20{ font-size: 20px;}
+.f-fs-12{ font-size: 12px;}
+/*遮罩*/
+.m-mask{
+    width:100%;height: 100%;background-color: rgba(0,0,0,0.8);position: fixed;top:0;left:0;z-index: 999;display: none;cursor: pointer;
+}
+/*动画*/
+.f-transition-t-o{
+    transition:top 0.2s ease-in-out,opacity 0.2s;
+    -webkit-transition:top 0.2s ease-in-out,opacity 0.2s;
+    -moz-transition:top 0.2s ease-in-out,opacity 0.2s;
+    -o-transition:top 0.2s ease-in-out,opacity 0.2s;
+}
+.f-transition-bg{
+    transition:background-color 0.3s ease-in-out;
+    -webkit-transition:background-color 0.3s ease-in-out;
+    -moz-transition:background-color 0.3s ease-in-out;
+    -o-transition:background-color 0.3s ease-in-out;
+}
+.f-transition-o{
+    transition:opacity 0.3s ease-in-out;
+    -webkit-transition:opacity 0.3s ease-in-out;
+    -moz-transition:opacity 0.3s ease-in-out;
+    -o-transition:opacity 0.3s ease-in-out;
+}
+/*翻转效果*/
+.flip {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateX(0); /* Needed to work around an iOS 3.1 bug that causes listview thumbs to disappear when -webkit-visibility:hidden is used. */
+    backface-visibility: hidden;
+    transform: translateX(0);
+}
+.flip.out {
+    -webkit-transform: rotateY(-90deg) scale(.9);
+    -webkit-animation-name: flipouttoleft;
+    -webkit-animation-duration: 175ms;
+    transform: rotateY(-90deg) scale(.9);
+    animation-name: flipouttoleft;
+    animation-duration: 175ms;
+}
+.flip.in {
+    -webkit-animation-name: flipintoright;
+    -webkit-animation-duration: 225ms;
+    animation-name: flipintoright;
+    animation-duration: 225ms;
+}
+.flip.out.reverse {
+    -webkit-transform: rotateY(90deg) scale(.9);
+    -webkit-animation-name: flipouttoright;
+    transform: rotateY(90deg) scale(.9);
+    animation-name: flipouttoright;
+}
+.flip.in.reverse {
+    -webkit-animation-name: flipintoleft;
+    animation-name: flipintoleft;
+}
+@-webkit-keyframes flipouttoleft {
+    from { -webkit-transform: rotateY(0); }
+    to { -webkit-transform: rotateY(-90deg) scale(.9); }
+}
+@keyframes flipouttoleft {
+    from { transform: rotateY(0); }
+    to { transform: rotateY(-90deg) scale(.9); }
+}
+@-webkit-keyframes flipouttoright {
+    from { -webkit-transform: rotateY(0) ; }
+    to { -webkit-transform: rotateY(90deg) scale(.9); }
+}
+@keyframes flipouttoright {
+    from { transform: rotateY(0); }
+    to { transform: rotateY(90deg) scale(.9); }
+}
+@-webkit-keyframes flipintoleft {
+    from { -webkit-transform: rotateY(-90deg) scale(.9); }
+    to { -webkit-transform: rotateY(0); }
+}
+@keyframes flipintoleft {
+    from { transform: rotateY(-90deg) scale(.9); }
+    to { transform: rotateY(0); }
+}
+@-webkit-keyframes flipintoright {
+    from { -webkit-transform: rotateY(90deg) scale(.9); }
+    to { -webkit-transform: rotateY(0); }
+}
+@keyframes flipintoright {
+    from { transform: rotateY(90deg) scale(.9); }
+    to { transform: rotateY(0); }
+}
+
+
+/*合作伙伴*/
+.m-partners{ padding-bottom: 100px; text-align: center;background: #fff;}
+.m-partners h3{ margin-top: 50px; font-size: 30px; font-weight: bold; color: #000;opacity: 0.8}
+.m-partners p{ margin-top: 20px; font-size: 14px; line-height: 26px;}
+.m-partners ul{ margin-top: 50px;}
+.m-partners li{ margin-bottom: 30px; float: left;}
+.m-partners li .flip{ width: 100%; position: absolute; left: 0;}
+.m-partners li div{ margin: 0 5px; height: 70px; line-height: 70px; position: relative; background-color: #fff; border: solid 1px #d8d8d8; border-radius: 5px;}
+.m-partners li div a{ padding: 0 10px;}
+.m-partners .img-responsive{ display: inline-block;}
+
+/*版权*/
+.m-foot{ text-align: center; padding: 0 0 20px;}
+.m-foot .links a {color: black;}
+.m-foot .links a:hover {text-decoration: none;}
+.m-foot p{ font-size: 12px;line-height: 25px; }
+.m-foot .btn{ float: none;}
+
+
+/*大屏幕（大桌面显示器，大于等于 1200px）*/
+@media screen and (min-width: 1200px)
+{
+    .container {
+        width: 1200px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/*超小屏幕（手机，小于 768px）*/
+@media screen and (max-width: 768px)
+{
+    .suspend{ display: none;}
+    .tw_suspend{ display: none;}
+}
+
+/*boot幻灯片淡入淡出*/
+.carousel-fade .carousel-inner .item{
+    opacity:0;
+    -webkit-transition-property:opacity ;
+    -moz-transition-property:opacity ;
+    -ms-transition-property:opacity ;
+    -o-transition-property:opacity ;
+    transition-property:opacity ;
+}
+
+.carousel-fade .carousel-inner .active{
+    opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right{
+    left: 0;
+    opacity: 0;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+
+/* suspend */
+.suspend {width:40px;height:198px;position:fixed;top:200px;right:0;overflow:hidden;z-index:9999;}
+.suspend dl {width:120px;height:198px;border-radius:25px 0 0 25px;padding-left:40px;box-shadow:0 0 5px #e4e8ec;}
+.suspend dl dt {width:40px;height:198px;background:url(../../images/contact.png);position:absolute;top:0;left:0;cursor:pointer;}
+.suspend dl dd {}
+.suspend dl dd.suspendQQ {width:120px;height:85px;background:#ffffff;}
+.suspend dl dd.suspendQQ a {width:120px;height:85px;display:block;background:url(../../images/contact.png) -40px 0;overflow:hidden;}
+.suspend dl dd.suspendTel {width:120px;height:112px;background:#ffffff;border-top:1px solid #e4e8ec;}
+.suspend dl dd.suspendTel a {width:120px;height:112px;display:block;background:url(../../images/contact.png) -40px -86px;overflow:hidden;}
+* html .suspend {position:absolute;left:expression(eval(document.documentElement.scrollRight));top:expression(eval(document.documentElement.scrollTop+200))}
+
+.tw_suspend {width:40px;height:198px;position:fixed;top:200px;right:0;overflow:hidden;z-index:9999;}
+.tw_suspend dl {width:120px;height:198px;border-radius:25px 0 0 25px;padding-left:40px;box-shadow:0 0 5px #e4e8ec;}
+.tw_suspend dl dt {width:40px;height:198px;background:url(../../images/tw_contact.png);position:absolute;top:0;left:0;cursor:pointer;}
+.tw_suspend dl dd {}
+.tw_suspend dl dd.suspendQQ {width:120px;height:85px;background:#ffffff;}
+.tw_suspend dl dd.suspendQQ a {width:120px;height:85px;display:block;background:url(../../images/tw_contact.png) -40px 0;overflow:hidden;}
+.tw_suspend dl dd.suspendTel {width:120px;height:112px;background:#ffffff;border-top:1px solid #e4e8ec;}
+.tw_suspend dl dd.suspendTel a {width:120px;height:112px;display:block;background:url(../../images/tw_contact.png) -40px -86px;overflow:hidden;}
+* html .tw_suspend {position:absolute;left:expression(eval(document.documentElement.scrollRight));top:expression(eval(document.documentElement.scrollTop+200))}
+
+/* totalAssets */
+.totalAssetsPiece {width:100%;height:60px;}
+.totalAssets {width:100%;height:30px;padding:15px 0;background:#333333;position:fixed;bottom:0;left:0;z-index:9998;}
+*html .totalAssets{position:absolute;left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0));top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)))}
+.totalAssetsBox {width:1200px;margin:auto;}
+.totalAssetsWallet {font-size:14px;float:left;}
+.totalAssetsWallet li {height:30px;line-height:30px;float:left;color:#ffffff;margin-right:20px;}
+.totalAssetsWallet li span {height:30px;display:inline-block;margin-right:10px;}
+.totalAssetsWallet li span.totalAssetsNumber {background:#222222;border-radius:3px;padding:0 20px;}
+.totalAssetsWallet li span.totalAssetsNumber span {margin-right:0;}
+.totalAssetsSerive {width:148px;height:28px;background:url(../images/service.png) 0 -70px;float:right;margin-top:1px;display:none;}
+.totalAssetsSeriveQQ {width:103px;height:28px;float:right;margin:1px 20px 0 0;display:none;}
+.totalAssetsSeriveQQ a {width:103px;height:28px;display:inline-block;background:url(../images/service.png) 0 -108px;}
+.totalAssetsSeriveQQ a:hover {background:url(../images/service.png) 0 -146px;}

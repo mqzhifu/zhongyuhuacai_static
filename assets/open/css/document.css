@@ -1,0 +1,145 @@
+body,html{
+	background-color: #f8f8f8;
+}
+.gameManage{
+	display: block;
+	width: 1208px;
+	height: auto;
+	margin: 23px auto 0;
+    min-height: calc(100vh - 250px);
+}
+.nav-list{
+	float: left;
+	width:203px;
+	height:auto;
+	
+}
+.nav-list .levelLi{
+	display: block;
+	width: 100%;
+	height: auto;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 0px 4px 0px rgba(207,206,206,0.2);
+	border-radius:4px;
+	margin-bottom: 16px;
+	padding: 7px 0;
+}
+.nav-list .levelLi .first-level{
+	display: block;
+	width: 100%;
+	height: 52px;
+	line-height: 52px;
+	font-size: 18px;
+	cursor: pointer;
+	padding-left: 20px;
+	position: relative;
+}
+.nav-list .levelLi .first-level .level-icon{
+	position: absolute;
+	left: 24px;
+	top: 50%;
+	transform:translateY(-50%);
+	-ms-transform:translateY(-50%); 	/* IE 9 */
+	-moz-transform:translateY(-50%); 	/* Firefox */
+	-webkit-transform:translateY(-50%); /* Safari 和 Chrome */
+	-o-transform:translateY(-50%); 	/* Opera */
+	display: inline-block;
+	width: 28px;
+}
+.nav-list .levelLi .first-level .level-click{
+	display: inline-block;
+	width: 14px;
+    right: 24px;
+    top: 23px;
+    position: absolute;
+	transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;	/* Firefox 4 */
+	-webkit-transition: all 0.5s ease-in-out;	/* Safari 和 Chrome */
+	-o-transition: all 0.5s ease-in-out;	/* Opera */
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); 	/* IE 9 */
+	-moz-transform:rotate(180deg); 	/* Firefox */
+	-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+	-o-transform:rotate(180deg); 	/* Opera */
+}
+.nav-list .levelLi .first-level .up{
+	transform:rotate(0deg);
+	-ms-transform:rotate(0deg); 	/* IE 9 */
+	-moz-transform:rotate(0deg); 	/* Firefox */
+	-webkit-transform:rotate(0deg); /* Safari 和 Chrome */
+	-o-transform:rotate(0deg); 	/* Opera */
+}
+.nav-list .levelLi .first-level .down{
+	
+}
+.nav-list .levelLi .second-level{
+	display: block;
+	width: 100%;
+	height: auto;
+	padding: 0;
+}
+.nav-list .levelLi .second-level li{
+	display: block;
+	width: 100%;
+	line-height: 20px;
+	font-size: 16px;
+	cursor: pointer;
+	padding: 15px 0;
+}
+.nav-list .levelLi .second-level li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding:0 10px 0 20px;
+	color: #000;
+}
+.nav-list .levelLi .second-level li.active,.nav-list .levelLi .second-level li.active a{
+	color: #ff4a55;
+}
+.iframeBox{
+    display: block;
+    width: 986px;
+    float: left;
+    margin-left: 9px;
+    border-radius: 4px;
+    background-color: #fff;
+    min-height: 70vh;
+}
+.iframeBox .card-sub-title{
+	width:926px;
+	height:54px;
+	line-height: 54px;
+	border-bottom: 1px solid #F2F2F2;
+	margin: 10px auto 0;
+	padding: 0 28px;
+	overflow: hidden;
+}
+.iframeBox .card-sub-title .card-sub-title-left{
+	float: left;
+	font-size: 16px;
+	color: #31373F;
+}
+.iframeBox .card-sub-title .card-sub-title-right{
+	float: right;
+	font-size: 14px;
+	color: #C1C1C1;
+}
+.iframeBox .reg_ul{
+	width:926px;
+	margin: 10px auto 0;
+	padding: 0 28px;
+	overflow: hidden;
+}
+ol,ul{
+	padding-left: 2.5rem;
+}
+.bannerAD li {
+    color: #fff;
+    list-style: circle;
+}
+.bannerAD>li {
+    color: #fff;
+    list-style: disc;
+}
+.bannerAD ol,.bannerAD ul,.bannerAD {padding-left:2.5rem}
+.bannerAD ol>li {list-style: inherit;}

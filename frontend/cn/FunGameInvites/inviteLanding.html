@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+		<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+		<meta http-equiv="expires" content="0">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no,minimal-ui">
+		<title></title>
+		<link rel="stylesheet" href="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/css/landing.css" />
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/js/http.js"></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/js/common.js"></script>
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/js/jquery.min.js" ></script>
+		<script> 
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?5cdb21c3076903f417805017878c128d";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		</script>
+		<script>
+			var protocolStr = document.location.protocol;
+			if(protocolStr == "http:")
+			{
+				console.log(1);
+				var script=document.createElement("script");
+				script.type="text/javascript";
+				script.src="http://sdk.talkingdata.com/app/h5/v1?appid=63F604A1C3484DC58597C2981946BB87&vn=pro&vc=1.0.1";
+				document.getElementsByTagName('head')[0].appendChild(script); 
+			}
+			else if(protocolStr == "https:")
+			{
+				console.log(2);
+				var script=document.createElement("script");
+				script.type="text/javascript";
+				script.src="https://jic.talkingdata.com/app/h5/v1?appid=63F604A1C3484DC58597C2981946BB87&vn=pro&vc=1.0.1";
+				document.getElementsByTagName('head')[0].appendChild(script); 
+			}
+			else
+			{
+			   console.log("other protocol");
+			}
+		</script>
+		<script>
+			C.setInitFontSize();
+			var timeStamp = Math.floor(Math.random() * (3 * 60 * 60)) + (16 * 60 * 60);
+		</script>
+	</head>
+
+	<body>
+		<div class="scroll" id="scroll">
+			<img class="circle1" src="img/circle1.png">
+			<img class="circle2" src="img/circle2.png">
+			<img class="circle3" src="img/circle3.png">
+			<img class="circle4" src="img/circle4.png">
+			<img class="logoImg" src="img/logo2.png">
+			<div class="award">
+				<img id="userAvatar" src="" onerror="this.src='img/touxiang.jpg'"></img>
+				<div class="awardP">
+					<p>注册<span>开心小游戏</span>并填写邀请码 </p>
+					<p>畅玩更多小游戏，还有惊喜福利等着你！</p>
+				</div>
+				
+				<div class="iniviteId">
+					<font id="copyId"></font>
+					<button id="copyBtn" data-clipboard-target="#copyId" data-clipboard-action="copy">复制</button>
+				</div>
+				<div id="copyInfo">复制成功</div>
+				
+				<!--<div class="time">
+					<font>奖励过期:</font>
+					<div id="hours">00</div>
+					<font>:</font>
+					<div id="minutes">00</div>
+					<font>:</font>
+					<div id="seconds">00</div>
+				</div>-->
+			</div>
+			<button id="downBtn" onclick="down();">立即下载</button>
+			<div id="toOther">
+				<img src="img/downTip.png"/>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="#HTTP_PROTOCOL#://#STATIC_URL#/frontend/FunGameInvites/js/clipboard.min.js"></script>
+		<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js" ></script>
+		<script type="text/javascript" src="https://res2.wx.qq.com/open/js/jweixin-1.4.0.js" ></script>
+		<script>
+			//C.setTime(timeStamp);
+			C.copyCode();
+			G.token();
+			//记录是否阻止滚动
+        	var disableScroll = false;
+ 
+       		//如果弹出对话框时，底层的视图就不让滚动了
+        	document.addEventListener('touchmove', function(e) {
+          		if(disableScroll){
+            		e.preventDefault();
+          		}
+        	}, {passive:false});
+
+//			var info = document.getElementById("toOther");
+//			var scroll = document.getElementById("scroll"); 
+			function down() {
+//				var ua = navigator.userAgent.toLocaleLowerCase();
+//				if(ua.match(/MicroMessenger/i) == "micromessenger"){
+//					disableScroll = true;
+//					info.style.display = "block"; //显
+//				}else{
+//					disableScroll = false;
+					window.location = "https://a.app.qq.com/o/simple.jsp?pkgname=com.kaixin.instantgame";
+//				}
+				G.landDown();
+			}
+			
+			C.setCodeAndName();
+			function GetQueryString(name)
+			{
+			     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+			     var r = window.location.search.substr(1).match(reg);
+			     if(r!=null)return  unescape(r[2]); return null;
+			}
+			var userAvatar = document.getElementById("userAvatar");
+			userAvatar.setAttribute('src',GetQueryString('avatar'));
+			var memo = "{'name':"+ C.name + "'code':"+ C.inviteCode+ "}";
+			//G.getInviteLog(C.token,1,memo);
+			$(function(){
+				$(".downBtn").on("click",function(){
+					TDAPP.onEvent ('落地页游戏下载');
+				});
+			})
+			if (/from=[^&$?]{1,}(&|$)/.test(location.search) || /isappinstalled=[^&$?]{1,}(&|$)/.test(location.search)) {
+			  var newSearch = location.search.replace(/from=[^&$?]{1,}(&|$)/, '').replace(/isappinstalled=[^&$?]{1,}(&|$)/, '').replace(/&$|\?$/, '');
+			  var newUrl = location.origin + location.pathname + newSearch + location.hash;
+			  location.replace(newUrl);
+			}
+			var Surl=encodeURIComponent(location.href.split('#')[0]);
+			G.wxShare(Surl);
+		</script>
+	</body>
+
+</html>
