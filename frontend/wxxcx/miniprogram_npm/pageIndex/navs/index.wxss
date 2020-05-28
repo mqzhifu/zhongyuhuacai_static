@@ -1,0 +1,23 @@
+.navs {
+  display: flex;
+  padding: 20rpx 0;
+  background: #fff;
+}
+.navs .item {
+  flex: 1;
+  text-align: center;
+}
+.navs .item .img {
+  text-align: center;
+}
+.navs .item .img image {
+  width: 84rpx;
+  height: 84rpx;  
+  display: inline-block;
+  border-radius: 50%; 
+}
+.navs .item .name {
+  font-size: 24rpx;
+  color: #515151;
+  text-align: center;
+}

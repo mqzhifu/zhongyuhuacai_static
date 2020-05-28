@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <v-header/> -->
+  <!-- //End h5导航 -->
+  <v-search />
+  <!-- //End 搜索部分 -->
+
+  <v-swiper listData="{{swiperList}}"/>
+  <!-- //End 轮播图 -->
+
+  <view class="bd">
+    <v-navs :list="navsList" />
+  </view>
+  <!-- //End 导航 -->
+
+  <view class="bd list-hot">
+    <view class="title">
+      <image class="img" src="images/home-icon-hot@2x.png" />
+      <text class="name">人气推荐</text>
+    </view>
+    <view class="items">
+      <view class="item" wx:for="{{hotList}}" wx:key="{{index}}">
+        <image class="img" src="{{item.imgUrl}}" alt="" />
+        <view class="name">{{item.title}}</view>
+        <view class="bottom">
+          <view class="price">
+            <text>￥</text>
+            <text>{{item.price}}</text>
+          </view>
+          <view class="priced">{{item.payment}}人付款</view>
+        </view>
+      </view>
+    </view>
+    <view class="more">点击继续加载</view>
+  </view>
+  <!-- //End 人气推荐 -->
+
+  <!-- <v-footer /> -->
+  <!-- footer -->
+
+</view>

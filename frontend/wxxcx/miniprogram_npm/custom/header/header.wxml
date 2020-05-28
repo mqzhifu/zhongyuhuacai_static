@@ -1,0 +1,15 @@
+<!--components/header.wxml-->
+<view class="header">
+  <view class="headerL" onclick="javascript:history.back(-1)">
+    <view class="goback">
+      <image class="img" src="./images/header-goback.png"></image>
+      <!-- <img src="assets/images/header-goback.png" /><view>返回</view> -->
+      </view>
+     </view>
+  <view class="headerC">
+    <text>新零售 云分享</text>
+  </view>
+  <view class="headerR">
+    <view class="dots"><i></i><i></i><i></i></view>
+  </view>
+</view>

@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/goods/index",
+    "pages/cart/index",
+    "pages/my/index",
+    "pages/agent/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "新零售 云分享",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#ff302a",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "./images/footer-icon1-active.png",
+        "iconPath": "./images/footer-icon1-default.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "./images/footer-icon2-active.png",
+        "iconPath": "./images/footer-icon2-default.png",
+        "pagePath": "pages/goods/index",
+        "text": "全部商品"
+      },
+      {
+        "selectedIconPath": "./images/footer-icon3-active.png",
+        "iconPath": "./images/footer-icon3-default.png",
+        "pagePath": "pages/cart/index",
+        "text": "购物车"
+      },
+      {
+        "selectedIconPath": "./images/footer-icon4-active.png",
+        "iconPath": "./images/footer-icon4-default.png",
+        "pagePath": "pages/my/index",
+        "text": "个人中心"
+      },
+      {
+        "selectedIconPath": "./images/footer-icon5-active.png",
+        "iconPath": "./images/footer-icon5-default.png",
+        "pagePath": "pages/agent/index",
+        "text": "成为代理"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "vant-weapp/button",
+    "van-row": "vant-weapp/row/index",
+    "van-col": "vant-weapp/col/index",
+    "van-cell": "vant-weapp/cell/index",
+    "van-cell-group": "vant-weapp/cell-group/index",
+    "van-tabbar": "vant-weapp/tabbar/index",
+    "van-tabbar-item": "vant-weapp/tabbar-item/index"
+  }
+}

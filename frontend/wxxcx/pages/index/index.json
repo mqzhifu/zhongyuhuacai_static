@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "v-header": "custom/header/header",
+    "v-search": "custom/citySearch/index",
+    "v-swiper": "custom/swiper/index",
+    "v-navs": "pageIndex/navs/index"
+  }
+}

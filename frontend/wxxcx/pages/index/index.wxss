@@ -1,0 +1,78 @@
+.list-hot {
+  padding: 20rpx;
+}
+.list-hot .title {
+  width: 100%;
+  height: 40rpx;
+  color: #d79756;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+}
+.list-hot .title .img {
+  width: 40rpx;
+  height: 41rpx;
+  float:left;
+}
+.list-hot .title .name {
+  float: left;
+  margin-left: 10rpx;
+}
+
+.list-hot .items {
+  width: 100%;
+  float: left;
+}
+.list-hot .items .item {
+  float: left;
+  width: 32%;
+  padding: 10rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 2%;
+  box-sizing: border-box;
+}
+.list-hot .items .item .img {
+  width: 100%;
+  height: 220rpx;
+  border-radius: 10rpx;
+}
+.list-hot .items .item .name {
+  color: #202020;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  height: 72rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  margin-top: 8rpx;
+  margin-bottom: 12.5rpx;
+}
+.list-hot .items .item .bottom .price {
+  font-size: 36rpx;
+  color: #ed4739;
+  float: left;
+}
+.list-hot .items .item .bottom .price em {
+  font-size: 32rpx;
+}
+.list-hot .items .item .bottom .priced {
+  font-size: 20rpx;
+  float: right;
+  line-height: 48rpx;
+  color: #909090;
+}
+.list-hot .items .item:nth-child(3n-1) {
+  margin: 0 2%;
+}
+.list-hot .more {
+  width: 100%;
+  line-height: 56rpx;
+  font-size: 28rpx;
+  text-align: center;
+}
+.list-hot .more a {
+  color: #666;
+  text-decoration: none;
+}
