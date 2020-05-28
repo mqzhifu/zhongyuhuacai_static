@@ -1,23 +1,2 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      <text>{{goodsList}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-
-<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
-  <!-- <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
-    <block wx:for="{{bnrUrl}}" wx:for-index="index">
-      <swiper-item>
-        <image src='{{item.url}}' class='u-img-slide' mode='aspectFill'></image>
-      </swiper-item>
-    </block>
-  </swiper> -->
-</view>
+<!--pages/agent/index.wxml-->
+<text>pages/agent/index.wxml</text>

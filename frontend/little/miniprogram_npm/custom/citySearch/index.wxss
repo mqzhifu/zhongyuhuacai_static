@@ -1,0 +1,72 @@
+.hSearch {
+  width: 750rpx;
+  height: 47rpx;
+  padding: 20rpx 0;
+  background: #fff;
+  position: relative;
+}
+.hSearch .city {
+  width: 150rpx;
+  padding: 5rpx 0;
+  padding-right: 12rpx;
+  padding-left: 35rpx;
+  padding-right: 30rpx;
+  position: absolute;
+  left: 20rpx;
+}
+.hSearch .city .img {
+  width: 26rpx;
+  height: 31rpx;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -11rpx;
+}
+
+.hSearch .city .name {
+  width: 100%;
+  float: left;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.hSearch .city .arrowDown .img2{
+  width: 19rpx;
+  height: 12rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -2rpx;
+  right: 0;
+}
+
+.hSearch .search {
+  width: 420rpx;
+  padding: 3px 15px;
+  height: 42rpx;
+  line-height: 42rpx;
+  background: #f2f2f2;
+  border-radius: 40rpx;
+  position: absolute;
+  top:50%;
+  left: 250rpx;
+  margin-top: -26rpx;
+}
+.hSearch .search .img {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top:7px;
+  left: 12px;
+}
+.hSearch .search .ipt {
+  width: 100%;
+  line-height: 21px;
+  font-size: 12px;
+  float: left;
+  margin-left: 30rpx;
+  background: transparent;
+  border: none;
+}
