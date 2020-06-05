@@ -1,7 +1,7 @@
 <view class="navs">
-  <view wx:for="{{list}}" wx:key="{{index}}" class="item">
-    <view class="bd img"><image src="{{item.imgUrl}}" /></view>
-    <view class="name">{{item.label}}</view>
+  <view wx:for="{{list}}" wx:key="index" class="item">
+    <view class="bd img"><image src="{{item.pic}}" /></view>
+    <view class="name">{{item.name}}</view>
   </view>
   <!-- <view class="item" href="">
     <view class="bd img"><image src="images/home-nav-1.png" /></view>

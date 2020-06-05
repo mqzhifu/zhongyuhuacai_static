@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+    <!--<button open-type='getUserInfo' >获取授权</button>-->
   <!-- <v-header/> -->
   <!-- //End h5导航 -->
   <v-search />
@@ -9,7 +10,7 @@
   <!-- //End 轮播图 -->
 
   <view class="bd">
-    <v-navs :list="navsList" />
+      <v-navs list="{{categoryList}}" />
   </view>
   <!-- //End 导航 -->
 
@@ -19,15 +20,15 @@
       <text class="name">人气推荐</text>
     </view>
     <view class="items">
-      <view class="item" wx:for="{{hotList}}" wx:key="{{index}}">
-        <image class="img" src="{{item.imgUrl}}" alt="" />
-        <view class="name">{{item.title}}</view>
+      <view class="item"  wx:for="{{hotList}}" wx:key="index">
+        <image class="img" src="{{item.pic}}" alt="" />
+        <view class="name" bindtap="click" data-pid="{{item.id}}">{{item.title}}</view>
         <view class="bottom">
           <view class="price">
             <text>￥</text>
-            <text>{{item.price}}</text>
+            <text>{{item.lowest_price}}</text>
           </view>
-          <view class="priced">{{item.payment}}人付款</view>
+          <view class="priced">{{item.goods_total}}人付款</view>
         </view>
       </view>
     </view>

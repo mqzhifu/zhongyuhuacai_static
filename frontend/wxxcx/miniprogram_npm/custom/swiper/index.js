@@ -15,11 +15,11 @@ Component({
   },
   observers:{
     listData:function(res){
-      console.log('res', res)
+      console.log('swiper observers res', res)
     }
   },
   onShow:function (){
-    console.log(this.listData);
+    // console.log(this.listData);
     
   }
 })
