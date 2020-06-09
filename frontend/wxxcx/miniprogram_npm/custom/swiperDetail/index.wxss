@@ -1,18 +1,23 @@
 .swiper {
+  position: relative;
+}
+.swiper,
+.swiper swiper {
   width: 750rpx;
-  height: 300rpx;
+  height: 760rpx;
 }
 .swiper .swiper-item {
   height: 100%;
 }
 .swiper .swiper-item .img {
   width: 100%;
-  height: 100%;
+  height: 760rpx;
 }
 
 .swiper .dots {
+  font-size: 20rpx;
+  color: #fff;
   position: absolute;
-  left: 0;
-  right: 0;
+  right: 20rpx;
   bottom: 20rpx;
 }

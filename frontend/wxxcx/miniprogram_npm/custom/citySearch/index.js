@@ -18,6 +18,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+      search_blur:function(e){
+        var v = e.detail.value
+          console.log(v.length)
+          this.triggerEvent("searchProduct",v)
+      },
   }
 })

@@ -1,0 +1,158 @@
+<view class="pageGoodsDetail pageBg">
+    <van-nav-bar custom-class="navBar" left-text="返回" left-arrow bind:click-left="onClickLeft">
+        <view slot="right">
+            <image bindtap="onTabCollection" class="collection" src="./images/icon-collection@2x.png" mode="scaleToFill" />
+            <image bindtap="onTabShare" class="share" src="./images/icon-share@2x.png" mode="scaleToFill" />
+        </view>
+    </van-nav-bar>
+    <!-- //End 顶部导航 -->
+    <view class="navBar">
+        <v-swiper listData="{{swiperList}}" dots="true" />
+    </view>
+    <!-- //End 产品轮播图 -->
+    <view class="sBtm">
+        <view class="title">{{product.title}}</view>
+        <view class="price">
+            <text class="new">￥{{product.lowest_price}}</text>
+            <text class="old">￥{{product.lowest_price}}</text>
+        </view>
+        <view class="stock">
+            <text class="s1">库存：{{product.stock}}件</text>
+            <text class="s2">销量：{{product.user_buy_total}}件</text>
+        </view>
+    </view>
+    <!-- //End 产品轮播图 下面的说明信息 -->
+    <view class="panel praise h_line">
+        <text class="text label">点赞</text>
+        <text class="text ">喜欢就点赞</text>
+        <image class="img" src="./images/icon-praise@2x.png" bindtap="setUpClick" mode="scaleToFill"></image>
+    </view>
+    <!-- //End 点赞 -->
+    <view class="panel specs">
+        <text class="text label">选择</text>
+        <text class="text ">规格名称</text>
+        <image class="img" src="./images/arrow-right@2x.png" mode="scaleToFill"></image>
+    </view>
+    <!--<view  wx:for-items="{{product.desc_attr_format}}" wx:for-item="item" wx:key="attr_key" >-->
+        <!--<text>{{item.key}}:{{item.value}}</text>-->
+    <!--</view>-->
+    <!-- //End 规格 -->
+    <!-- <view class="panel coupon">
+        <text class="text label">领券</text>
+        <view class="text">
+            <view class="item">
+                <text class="t1">10元</text>
+                <text class="line"></text>
+                <text class="t2">满299元使用</text>
+            </view>
+
+
+            <view class="item">
+                <text class="t1">10元</text>
+                <text class="line"></text>
+                <text class="t2">满299元使用</text>
+            </view>
+        </view>
+        <image class="img" src="./images/arrow-right@2x.png" mode="scaleToFill" />
+    </view> -->
+    <!-- //End 领券 -->
+    <view class="panel2 visitor">
+        <view class="title">最近访客</view>
+        <view class="peps">
+            <view class="items">
+                <view class="item" wx:for="{{visitorList}}" wx:key="unique">
+                    <van-image width="40" height="40" lazy-load round src="{{item.imgUrl}}" />
+                    <view class="name">{{item.name}}</view>
+                </view>
+            </view>
+            <view class="moreRound">
+                <image class="img" src="./images/arrow-right@2x.png" mode="scaleToFill" />
+            </view>
+        </view>
+    </view>
+    <!-- //End 最近访客 -->
+    <view class="panel2 buy">
+        <view class="title">最近购买记录</view>
+        <view class="items">
+            <view class="item" wx:for="{{buyList}}" wx:key="unique">
+                <image class="img" src="{{item.imgUrl}}" />
+                <view class="main">
+                    <view class="t1">{{item.name}}</view>
+                    <view class="t2">{{item.size}}</view>
+                </view>
+                <view class="time">{{item.time}}</view>
+            </view>
+            <view class="moreBuy">
+                <view class="txt">点击查看更多</view>
+            </view>
+        </view>
+    </view>
+    <!-- //End 最近购买记录 -->
+    <view class="bd">
+        <view class="titleDivider">评论</view>
+        <view class="comment">
+            <view class="title">
+                <text class="t1">商品评价（10）</text>
+                <view class="moreAll">
+                    查看全部
+                    <image class="img" src="./images/arrow-right-color@2x.png" />
+                </view>
+            </view>
+            <view class="items">
+                <view class="item" wx:for="{{commentList}}" wx:key="index">
+                    <view class="avatar">
+                        <image src="{{item.imgUrl}}" />
+                        <text class="name">{{item.name}}</text>
+                    </view>
+                    <view class="info">{{item.desc}}</view>
+                    <view class='imgs'>
+                        <view class='vImg' wx:for="{{item.thumbs}}" wx:for-item="image" wx:for-index="index2" wx:key="unique">
+                            <image wx:if="{{index2 < 3}}" src='{{image}}' data-index="{{index}}" data-src="{{image}}" bindtap="previewImage" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- //End 评论 -->
+    <view class="bd">
+        <view class="titleDivider">详情</view>
+        <view class="deDesc">
+            <view class="txt">{{product.desc}}</view>
+
+            <view class='' wx:for="{{detailPicsList}}" wx:key="title">
+                <image class="img" mode="widthFix" src="{{item}}" />
+            </view>
+
+            <!-- <image class="img" mode="widthFix" src="https://img30.360buyimg.com/sku/jfs/t1/123439/25/157/444655/5eb3ab36E5d9a7cc1/671063057105198d.jpg" />
+            <image class="img" mode="widthFix" src="https://img30.360buyimg.com/sku/jfs/t1/123439/25/157/444655/5eb3ab36E5d9a7cc1/671063057105198d.jpg" />
+            <image class="img" mode="widthFix" src="https://img30.360buyimg.com/sku/jfs/t1/123439/25/157/444655/5eb3ab36E5d9a7cc1/671063057105198d.jpg" /> -->
+        </view>
+    </view>
+    <!-- //End 详情 -->
+    <view class="bd">
+        <view class="titleDivider">更多推荐</view>
+        <card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
+        <view class="more">点击继续加载</view>
+    </view>
+    <!-- //End 更多推荐 -->
+    <view class="tools">
+        <!--<view class="icon active">-->
+            <!--<image src="./images/tools_shop@2x.png" mode="scaleToFill" />-->
+            <!--<view class="name">店铺</view>-->
+        <!--</view>-->
+        <view class="icon">
+
+            <image src="./images/tools_like@2x.png" mode="scaleToFill" />
+            <view class="name">收藏</view>
+        </view>
+        <view class="icon">
+            <image src="./images/tools_cart@2x.png" mode="scaleToFill" />
+            <view class="name">购物车</view>
+        </view>
+        <view class="btns">
+            <view class="btn btnCart">加入购物车</view>
+            <view class="btn btnBuy">立即购买</view>
+        </view>
+    </view>
+</view>

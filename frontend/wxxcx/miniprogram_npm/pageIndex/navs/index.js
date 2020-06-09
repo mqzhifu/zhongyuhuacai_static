@@ -25,14 +25,19 @@ Component({
 
   observers:{
       list:function(res){
-          console.log('navs observers res', res)
+          // console.log('navs observers res', res)
       }
   },
 
   /**
    * 组件的方法列表
    */
-  methods: {
-
+  methods:{
+      categoryGoto:function(e){
+          var categoryIndexKey = e.currentTarget.dataset.id;
+          console.log("component method : categoryGoto goto:",categoryIndexKey)
+          this.triggerEvent("categoryGoto",categoryIndexKey)
+      },
   }
+
 })

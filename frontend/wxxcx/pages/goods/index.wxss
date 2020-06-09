@@ -1,1 +1,72 @@
-/* pages/goods/index.wxss */
+.pageGoods {
+  width: 100%;
+  float: left;
+}
+.navClass {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.navClass .van-tab {
+  flex: 0 0 20% !important;
+  flex-basis: 20% !important;
+  padding: 0;
+}
+.navClass .van-ellipsis {
+  font-size: 28rpx;
+  color: #515151;
+}
+.navClass .van-tab--active .van-ellipsis {
+  color: #ff831b;
+}
+.van-tab__pane {
+  margin-top: 80rpx;
+  float: left;
+}
+.navClass .van-tabs__line {
+  background-color: #ff831b;
+}
+.navClass .van-hairline--bottom:after,
+.navClass .van-hairline--left:after,
+.navClass .van-hairline--right:after,
+.navClass .van-hairline--surround:after,
+.navClass .van-hairline--top-bottom:after,
+.navClass .van-hairline--top:after,
+.navClass .van-hairline:after {
+  border-color: #f00;
+}
+.tabChild {
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  border-top: 1px solid #eee;
+  /* border-bottom: 1px solid #eee; */
+  background-color: #fff;
+  position: absolute;
+  top: -1rpx;
+  left: 0;
+  z-index: 2;
+}
+.tabChild .item {
+  padding: 0 30rpx;
+  line-height: 78rpx;
+  text-align: center;
+  font-size: 24rpx;
+  float: left;
+}
+.tabChild .item.active {
+  color: #ff831b;
+}
+.tabChild .arrow {
+  width: 13rpx;
+  height: 7rpx;
+}
+.tabChild .arrowUpDefault {
+  position: relative;
+  top: -8rpx;
+}
+.tabChild .arrowDownDefault {
+  position: relative;
+  top: 3rpx;
+  left: -12rpx;
+}

@@ -1,25 +1,37 @@
 Component({
   // 接收父组件传递过来的数据
-  properties:{
+  properties: {
     listData: {
       type: Array,
-      value:[]
-    }
+      value: [],
+    },
+    dots: {
+      type: Boolean,
+    },
   },
   data: {
     indicatorDots: true,
     vertical: false,
     autoplay: false,
     interval: 2000,
-    duration: 500
+    duration: 500,
   },
-  observers:{
-    listData:function(res){
-      console.log('swiper observers res', res)
-    }
+
+
+  methods:{
+      bannerGoto:function(e){
+          var bannerIndexKey = e.currentTarget.dataset.id;
+          console.log("component method : banner goto:",bannerIndexKey)
+          this.triggerEvent("bannerGoto",bannerIndexKey)
+      },
   },
-  onShow:function (){
-    // console.log(this.listData);
-    
-  }
+
+  observers: {
+    listData: function (res) {
+      // console.log('res', res)
+    },
+  },
+  onShow: function () {
+    // console.log(this.listData)
+  },
 })

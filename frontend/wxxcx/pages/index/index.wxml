@@ -3,26 +3,28 @@
     <!--<button open-type='getUserInfo' >获取授权</button>-->
   <!-- <v-header/> -->
   <!-- //End h5导航 -->
-  <v-search />
+  <v-search bind:searchProduct="searchProduct" />
   <!-- //End 搜索部分 -->
 
-  <v-swiper listData="{{swiperList}}"/>
+  <v-swiper listData="{{swiperList}}" bind:bannerGoto="bannerGoto" />
   <!-- //End 轮播图 -->
 
   <view class="bd">
-      <v-navs list="{{categoryList}}" />
+      <v-navs list="{{categoryList}}" bind:categoryGoto="categoryGoto" />
   </view>
   <!-- //End 导航 -->
 
   <view class="bd list-hot">
+
     <view class="title">
       <image class="img" src="images/home-icon-hot@2x.png" />
       <text class="name">人气推荐</text>
     </view>
-    <view class="items">
-      <view class="item"  wx:for="{{hotList}}" wx:key="index">
-        <image class="img" src="{{item.pic}}" alt="" />
-        <view class="name" bindtap="click" data-pid="{{item.id}}">{{item.title}}</view>
+
+    <view class="items" >
+      <view class="item"  wx:for="{{hotList}}" wx:key="index" wx:if="{{hotList}}">
+        <image  data-pid="{{item.id}}" class="img" src="{{item.pic}}" alt="" />
+        <view class="name" bindtap="productGoto" data-pid="{{item.id}}">{{item.title}}</view>
         <view class="bottom">
           <view class="price">
             <text>￥</text>
@@ -31,8 +33,21 @@
           <view class="priced">{{item.goods_total}}人付款</view>
         </view>
       </view>
+
     </view>
-    <view class="more">点击继续加载</view>
+
+    <view  wx:if="{{hotListHasBottom}}">
+      <view>我也是有底线的，好不啦!!!</view>
+    </view>
+
+
+    <view  wx:if="{{hotListPage == -1}}">
+      <view>暂无数据</view>
+    </view>
+
+
+    <!--<view class="more">点击继续加载</view>-->
+
   </view>
   <!-- //End 人气推荐 -->
 

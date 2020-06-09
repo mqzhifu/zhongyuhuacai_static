@@ -1,0 +1,67 @@
+.listItem {
+  width: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  float: left;
+}
+.listItem .items {
+  width: 100%;
+  float: left;
+}
+.listItem .items .item {
+  float: left;
+  width: 49%;
+  padding: 10rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 2%;
+  box-sizing: border-box;
+}
+.listItem .items .item .img {
+  width: 100%;
+  height: 220rpx;
+  border-radius: 10rpx;
+}
+.listItem .items .item .name {
+  color: #202020;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  height: 72rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  margin-top: 8rpx;
+  margin-bottom: 12.5rpx;
+}
+.listItem .items .item .bottom {
+}
+.listItem .items .item .bottom .price {
+  width: 100%;
+  font-size: 36rpx;
+  color: #ff831b;
+  float: left;
+}
+.listItem .items .item .bottom .price em {
+  font-size: 32rpx;
+}
+.listItem .items .item .bottom .priced {
+  width: 100%;
+  font-size: 24rpx;
+  float: left;
+  line-height: 48rpx;
+  color: #909090;
+}
+.listItem .items .item .bottom .priced .num {
+  float: left;
+}
+.listItem .items .item .cart {
+  float: right;
+}
+.listItem .items .item .cart .img {
+  width: 34rpx;
+  height: 34rpx;
+}
+.listItem .items .item:nth-child(2n) {
+  float: right;
+}

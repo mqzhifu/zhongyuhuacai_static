@@ -44,8 +44,9 @@ App({
 
         var storageServerToken = wx.getStorageSync('serverToken')
         if(storageServerToken && !this.isUndefined(storageServerToken)){
-            this.globalData.serverToken = storageServerToken;
+            this.globalData.serverToken = storageServerToken
             console.log("serverToken has,no need request "+storageServerToken)
+            this.initLocation()
             this.globalData.promiseResolve()
         }else{
             console.log("serverToken is is null");
@@ -86,6 +87,7 @@ App({
                     // console.log("tttt token"+parentObj.globalData.serverToken)
                     parentObj.globalData.serverToken = token
                  
+                    
                     wx.setStorageSync('serverToken',token)
                     resolve()
                     parentObj.initLocation()
@@ -116,7 +118,7 @@ App({
             url += "?token="+ this.globalData.serverToken
         }
         + "?token" + this.globalData.serverToken
-        console.log("httpRequest:",url,data)
+        console.log("httpRequest:",url,data,urlKey)
         var parent = this
         var promiseResolve = this.globalData.promiseResolve
         wx.request({
@@ -147,6 +149,7 @@ App({
     },
 
     initLocation :function(){
+        // console.log("initLocation")
         var parentObj = this
         wx.getLocation({
             type: 'wgs84',
@@ -176,19 +179,52 @@ App({
         })
     },
 
+    navigateGoto:function(url){
+        console.log("navigateGoto：",url)
+        wx.navigateTo({
+            url: url
+        })
+    },
+
+    switchGoto:function(url){
+        console.log("switchGoto：",url)
+        wx.switchTab({
+            url: url
+        })
+    },
+
+    // setSelfGlobal:function(key,value){
+    //     // this.globalData.serverToken = storageServerToken;
+    //     this.globalData.key = value
+    //     console.log("setSelfGlobal",key,this.globalData.key)
+    // },
+
     globalData: {
+        noImgUrl : "https://api.day900.com/noimg.png",
         userInfo: null,
         serverToken:"",
         serverHost :"https://api.day900.com/",
         promiseResolve : null,
+
+        //操蛋的微信，不让跑tab传参数
+        searchKeyword:"",
+        searchCategory:0,
+        // searchOrderType :0,
+
         serverUrl : {
             "login":"login/wxLittleLoginByCode/",
             "getBannerList":"index/getBannerList/",
             "getRecommendProductList":"product/getRecommendList/",
-            "search":"index/search/",
+            "search":"product/search/",
             'getAllCategory':"product/getAllCategory/",
             'location':"index/wxPushLocation/",
-            'productDetail':"product/getOneDetail/"
+            'productDetail':"product/getOneDetail/",
+            'getUserHistoryPVList':"product/getUserHistoryPVList/",
+            'getNearUserBuyHistory':"order/getNearUserBuyHistory/",
+            'getCommentList':'product/getCommentList/',
+            'collect':'product/collect/',
+            'up':'product/up/',
+            'getSearchAttr':'product/getSearchAttr/',
         },
         pageData :{
             'index':{

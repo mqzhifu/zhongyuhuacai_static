@@ -1,0 +1,14 @@
+<view class="swiper">
+  <swiper autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" current='{{currentSwiper}}' bindchange='swiperChange'>
+    <block wx:for="{{listData}}" wx:key="uni">
+      <swiper-item>
+        <view class="swiper-item">
+          <image bindchange='swiperChange' id='{{index}}' class="img" src="{{item}}"></image>
+        </view>
+      </swiper-item>
+    </block>
+    <!-- //End 图片 -->
+  </swiper>
+  <view class="dots">{{currentSwiper+1}}/{{listData.length}}</view>
+  <!-- //End dots -->
+</view>

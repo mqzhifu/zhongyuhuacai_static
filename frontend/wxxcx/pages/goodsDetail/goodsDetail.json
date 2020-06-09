@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "v-swiper": "custom/swiperDetail/index",
     "card-item": "custom/cardItem/index"
   }
 }

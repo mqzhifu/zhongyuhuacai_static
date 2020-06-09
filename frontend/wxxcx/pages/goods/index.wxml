@@ -1,2 +1,33 @@
-<!--pages/goods/index.wxml-->
-<text>pages/goods/index.wxml</text>
+<view class="pageGoods pageBg">
+<!-- bind:change="onChange" -->
+  <van-search value="{{searchKeyword}}" placeholder="请输入商品名称..." use-action-slot shape="round" bindblur="blurSearch"  bindtap="clickSearch"></van-search>
+  <!-- //End 搜索框 -->
+  <van-tabs swipeable sticky nav-class="navClass" bind:click="onTabsClick"  active="{{searchCategory}}"  >
+
+    <van-sticky offset-top="{{ 44 }}">
+      <view class="tabChild">
+       
+        <view  wx:for="{{orderType}}" class="item {{item.id==orderType ? 'active' : ''}}" data-id="{{index}}" bindtap="orderClieck" wx:key="goods_list">
+          {{item.name}}
+        </view>
+      </view>
+    </van-sticky>
+
+    <van-tab title="全部商品">
+      <card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
+      <view class="more" wx:if="{{!listData}}">未搜索到相关商品</view>
+    </van-tab>
+
+
+      <van-tab title="{{item.name}}" wx:for="{{category}}"  name="{{item.id}}" data-id="{{item.id}}">
+
+      </van-tab>
+
+
+
+
+  </van-tabs>
+
+
+  <!-- //End nav标签 -->
+</view>

@@ -1,0 +1,22 @@
+.initLoading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -9999;
+  overflow: hidden;
+}
+.initLoading .icon {
+  width: 75rpx;
+  height: 49rpx;
+  position: absolute;
+  top: 577rpx;
+  left: 143rpx;
+}
+.initLoading .full {
+  width: 100%;
+  height: 100%;
+}

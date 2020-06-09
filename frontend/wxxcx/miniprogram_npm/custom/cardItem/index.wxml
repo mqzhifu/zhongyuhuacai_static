@@ -1,0 +1,21 @@
+<view class="bd listItem pageBg">
+  <view class="items">
+    <view class="item" wx:for="{{list}}" wx:key="{{cardItem}}">
+      <image class="img" src="{{item.imgUrl}}" alt="" data-index="{{index}}" bindtap="onTapItemImg" />
+      <view class="name">{{item.title}}</view>
+      <view class="bottom">
+        <view class="price">
+          <text>￥</text>
+          <text>{{item.price}}</text>
+        </view>
+        <view class="priced">
+          <view class="num">{{item.payment}}件已售</view>
+          <view class="cart" data-index="{{index}}" bindtap="onTapItemCart">
+            <image class="img" src="./images/cart@2x.png" mode="scaleToFill"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- //End 人气推荐 -->

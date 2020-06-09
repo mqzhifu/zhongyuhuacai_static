@@ -1,13 +1,13 @@
 <view class="hSearch">
-   <view class="city">
-        <image width="13" class="img" src="images/search-icon1@2x.png" />
-        <view class="name">北京市北京市北京市</view>
-        <view class="arrow arrowDown">
-            <image class="img2" src="images/search-icon-arrowDown@2x.png"></image>
-        </view>
-    </view>
+   <!--<view class="city">-->
+        <!--<image width="13" class="img" src="images/search-icon1@2x.png" />-->
+        <!--<view class="name">北京市北京市北京市</view>-->
+        <!--<view class="arrow arrowDown">-->
+            <!--<image class="img2" src="images/search-icon-arrowDown@2x.png"></image>-->
+        <!--</view>-->
+    <!--</view>-->
     <view class="search">
-        <image class="img" src="images/search-icon.png" alt="" />
-        <input class="ipt" name="keyword" type="text" placeholder="请输入商品名称" />
+        <image class="img" src="images/search-icon.png" alt="" bindtap="search_blur" />
+        <input bindblur="search_blur" class="ipt" name="keyword" type="text" placeholder="请输入商品名称" />
     </view>
 </view>

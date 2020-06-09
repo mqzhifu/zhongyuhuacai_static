@@ -1,6 +1,6 @@
 <view class="navs">
   <view wx:for="{{list}}" wx:key="index" class="item">
-    <view class="bd img"><image src="{{item.pic}}" /></view>
+    <view class="bd img"><image src="{{item.pic}}" data-id="{{item.id}}" bindtap="categoryGoto" /></view>
     <view class="name">{{item.name}}</view>
   </view>
   <!-- <view class="item" href="">
