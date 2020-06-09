@@ -11,6 +11,7 @@ Page({
     searchOrderType:0,
     searchKeyword:"",
     searchCategory:0,
+    searchOrderUpDown: 0,
 
     value: '',
     active: 0,
@@ -34,17 +35,18 @@ Page({
 
 
   // 点击筛选
-  onTabChild(event) {
-    const id = event.target.dataset.id
-    if (id == 3) {
-      this.data.priceSort++
-      if (this.data.priceSort == 2) {
-        this.setData({ priceSort: 0 })
-      }
-      this.setData({ priceSort: this.data.priceSort++ })
-    }
-    this.setData({ tabChildIndex: id })
-  },
+  // onTabChild(event) {
+  //   const id = event.target.dataset.id
+  //   if (id == 3) {
+  //     this.data.priceSort++
+  //     if (this.data.priceSort == 2) {
+  //       this.setData({ priceSort: 0 })
+  //     }
+  //     this.setData({ priceSort: this.data.priceSort++ })
+  //   }
+  //   this.setData({ tabChildIndex: id })
+  // },
+
   // 点击产品图片
   onItemImgClick(e) {
     wx.navigateTo({
@@ -63,21 +65,6 @@ Page({
    */
   onLoad: function () {
     console.log("im <goods> page ,start:")
-    // console.log(data)data
-    // if(data && !app.isUndefined(data)){
-    //     if(data.searchCategory  && !app.isUndefined(data.searchCategory)){
-    //       this.searchCategory = data.searchCategory
-    //     }
-    //
-    //     if(app.globalapp.globalData.searchKeyword  && !app.isUndefined(app.globalData.searchKeyword)){
-    //       app.setData("searchKeyword")
-    //       this. = app.globalData.searchKeyword
-    //     }
-    //
-    //     if(data.searchOrderType  && !app.isUndefined(data.searchOrderType)){
-    //       this.searchOrderType = data.searchOrderType
-    //     }
-    // }
 
     var PromiseObj =  new Promise(function(resolve, reject) {
       app.globalData.promiseResolve = resolve
@@ -92,7 +79,7 @@ Page({
     )  
   },
 
-  // 点击tab标签
+  // 点击 分类
   onTabsClick(event) {
     var id = event.detail.index
       this.data.searchCategory = id
@@ -100,19 +87,19 @@ Page({
     console.log("set searchCategory",id)
     this.searchProduct()
   },
-
+  //排序
   orderClieck:function(e){
-    // var id = e.target.dataset.id
-    // this.setData({searchOrderType:id})
-    // console.log("set searchCategory",id)
-    // this.searchProduct()
+    var id = e.target.dataset.id
+    this.setData({searchOrderType:id})
+    console.log("set searchOrderType",id)
+    this.searchProduct()
   },
-
+  //点击搜索框，目前没用到
   clickSearch:function(e) {
     console.log("in on search clicks",e)
     // Toast('搜索' + this.data.value)
   },
-
+  //搜索框失败焦点，进入搜索模式
   blurSearch:function(e){
     var keyword = e.detail.value
     console.log("in on search blur",keyword)
@@ -138,18 +125,21 @@ Page({
     console.log("start init  <goods> page data.")
     var parentObj = this
     console.log("im in initData ,global:","searchKeyword", app.globalData.searchKeyword,"searchCategory",app.globalData.searchCategory )
+    //如果是从首页过来，因为switchTabs 不支付传参数
+    //所以，只能用全局变量，获取上一个页面过来的参数
 
+      //搜索关键字
     this.setData({"searchKeyword" :  app.globalData.searchKeyword})
+      //产品类型
     this.setData({"searchCategory" :  app.globalData.searchCategory})
 
     //获取分类信息 和 排序信息
     var AllCategoryListCallback = function(resolve,res){
-          console.log("AllCategoryListCallback")
-
-          console.log( res)
+          console.log("AllCategoryListCallback",res)
+        //set 所有产品分类
           parentObj.setData({"category":res.category})
+        //所有产品分类的排序项
           parentObj.setData({"orderType":res.order_type})
-          console.log("orderType",parentObj.data.orderType)
     }
 
     var data = {}

@@ -7,20 +7,33 @@
     <van-sticky offset-top="{{ 44 }}">
       <view class="tabChild">
        
-        <view  wx:for="{{orderType}}" class="item {{item.id==orderType ? 'active' : ''}}" data-id="{{index}}" bindtap="orderClieck" wx:key="goods_list">
+        <view  wx:for="{{orderType}}" class="item {{item.id==searchOrderType ? 'active' : ''}}" data-id="{{index}}" bindtap="orderClieck" wx:key="goods_list">
           {{item.name}}
+
+
+          <view wx:if="{{index == 3}}">
+            <block wx:if="{{searchOrderUpDown == 0}}">
+              <image class="arrow arrowUpDefault" src="images/arrow-up-active.png" mode="scaleToFill"></image>
+              <image class="arrow arrowDownDefault" src="images/arrow-down-default.png" mode="scaleToFill"></image>
+            </block>
+            <!-- 价格从低到高 -->
+            <block wx:if="{{searchOrderUpDown == 1}}">
+              <image class="arrow arrowUpDefault" src="images/arrow-up-default.png" mode="scaleToFill"></image>
+              <image class="arrow arrowDownDefault" src="images/arrow-down-active.png" mode="scaleToFill"></image>
+            </block>
+          </view>
+
         </view>
       </view>
     </van-sticky>
 
     <van-tab title="全部商品">
       <card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
-        <view class="more" wx:if="{{!listData}}"></view>
     </van-tab>
 
 
-      <van-tab title="{{item.name}}" wx:for="{{category}}"  name="{{item.id}}" data-id="{{item.id}}">
-        <view class="more" wx:if="{{listData}}"></view>
+      <van-tab title="{{item.name}}" wx:for="{{category}}"  name="{{item.id}}" data-id="{{item.id}}" wx:key="goods_category_list">
+        <card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
       </van-tab>
 
 
@@ -29,5 +42,4 @@
   </van-tabs>
 
 
-  <!-- //End nav标签 -->
 </view>
