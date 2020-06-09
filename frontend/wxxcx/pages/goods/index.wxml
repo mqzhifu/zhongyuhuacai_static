@@ -15,12 +15,12 @@
 
     <van-tab title="全部商品">
       <card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
-      <view class="more" wx:if="{{!listData}}">未搜索到相关商品</view>
+        <view class="more" wx:if="{{!listData}}"></view>
     </van-tab>
 
 
       <van-tab title="{{item.name}}" wx:for="{{category}}"  name="{{item.id}}" data-id="{{item.id}}">
-
+        <view class="more" wx:if="{{listData}}"></view>
       </van-tab>
 
 

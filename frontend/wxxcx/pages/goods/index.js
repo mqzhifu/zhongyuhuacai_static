@@ -159,11 +159,9 @@ Page({
 
 
   searchProduct:function(){
-    console.log("ready searchProduct")
     var parentObj = this
     var SearchListCallback = function(resolve,res){
-      console.log("SearchListCallback")
-      console.log( res)
+      console.log("SearchListCallback",res)
 
       if(!res){
         parentObj.setData({"listData":null})
