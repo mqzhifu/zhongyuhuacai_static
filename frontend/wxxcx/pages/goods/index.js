@@ -70,6 +70,36 @@ Page({
                 title: "添加购物车返回"+res,
                 icon: 'success', //图标,
             })
+
+            var getUserCartCntCallback = function(r,res){
+                console.log("getUserCartCntCallback",res)
+                if(res && res > 0){
+                    wx.showTabBarRedDot({
+                        index:2,
+                        success:function(res){
+                            console.log("showTabBarRedDot ok",res)
+                        },
+                        fail:function(res){
+                            console.log("showTabBarRedDot err",res)
+                        },
+                    })
+                }else{
+                    wx.hideTabBarRedDot({
+                        index:2,
+                        success:function(res){
+                            console.log("hideTabBarRedDot ok",res)
+                        },
+                        fail:function(res){
+                            console.log("hideTabBarRedDot err",res)
+                        },
+                    })
+                }
+            }
+
+
+            httpRequest("getUserCartCnt",{},getUserCartCntCallback)
+
+
         }
 
         var data = {

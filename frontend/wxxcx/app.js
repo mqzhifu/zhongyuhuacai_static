@@ -361,6 +361,7 @@ App({
             'getUserOrderList':"order/getUserList/",
             "delUserCart":"order/delUserCart/",
             'upAvatar':"user/upAvatar/",
+            "getUserCartCnt":"order/getUserCartCnt/",
         },
 
         map :{
