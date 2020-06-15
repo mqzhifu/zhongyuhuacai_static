@@ -7,7 +7,7 @@
         <!--</view>-->
     <!--</view>-->
     <view class="search">
-        <image class="img" src="images/search-icon.png" alt="" bindtap="search_blur" />
-        <input bindblur="search_blur" class="ipt" name="keyword" type="text" placeholder="请输入商品名称" />
+        <image class="img" src="images/search-icon.png" alt="" bindtap="search_blur"  />
+        <input  bindblur="search_blur" class="ipt" name="keyword" type="text" placeholder="请输入商品名称" />
     </view>
 </view>

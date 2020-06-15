@@ -1,72 +1,39 @@
 .hSearch {
   width: 750rpx;
-  height: 47rpx;
-  padding: 20rpx 0;
+  height: 112rpx;
+  padding: 20rpx;
   background: #fff;
   position: relative;
-}
-.hSearch .city {
-  width: 150rpx;
-  padding: 5rpx 0;
-  padding-right: 12rpx;
-  padding-left: 35rpx;
-  padding-right: 30rpx;
-  position: absolute;
-  left: 20rpx;
-}
-.hSearch .city .img {
-  width: 26rpx;
-  height: 31rpx;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  margin-top: -11rpx;
-}
-
-.hSearch .city .name {
-  width: 100%;
-  float: left;
-  font-size: 24rpx;
-  line-height: 32rpx;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.hSearch .city .arrowDown .img2{
-  width: 19rpx;
-  height: 12rpx;
-  position: absolute;
-  top: 50%;
-  margin-top: -2rpx;
-  right: 0;
+  box-sizing: border-box;
 }
 
 .hSearch .search {
-  width: 420rpx;
+  width: 100%;
   padding: 3px 15px;
-  height: 42rpx;
-  line-height: 42rpx;
+  height: 72rpx;
+  line-height: 72rpx;
   background: #f2f2f2;
   border-radius: 40rpx;
-  position: absolute;
-  top:50%;
-  left: 250rpx;
-  margin-top: -26rpx;
+  float: left;
+  box-sizing: border-box;
+  position: relative;
 }
 .hSearch .search .img {
-  width: 15px;
-  height: 15px;
+  width: 30rpx;
+  height: 30rpx;
   position: absolute;
-  top:7px;
-  left: 12px;
+  top: 50%;
+  left: 25rpx;
+  margin-top: -15rpx;
 }
 .hSearch .search .ipt {
   width: 100%;
-  line-height: 21px;
-  font-size: 12px;
-  float: left;
-  margin-left: 30rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 24rpx;
+  position: absolute;
+  top: 0;
+  left: 70rpx;
   background: transparent;
   border: none;
 }

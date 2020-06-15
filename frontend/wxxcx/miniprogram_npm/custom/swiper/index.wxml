@@ -1,8 +1,7 @@
 <view class="swiper">
   <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-color="rgba(0,0,0,.2)" indicator-active-color="rgba(255,255,255,1)">
-    <swiper-item wx:for="{{listData}}" wx:key="bannerSwiper" >
+    <swiper-item wx:for="{{listData}}" wx:key="index_swiper">
       <view class="swiper-item">
-
         <image class="img" src="{{item}}"  data-id="{{index}}" bindtap="bannerGoto"></image>
       </view>
     </swiper-item>

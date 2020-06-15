@@ -1,0 +1,29 @@
+<view class="pageAddress pageBg">
+    <view class="items">
+        <view class="item">
+            <view class="title">
+                <text class="name">唐某某</text>
+                <text class="tel">17710329568</text>
+                <view class="default">默认</view>
+            </view>
+            <view class="desc">北京市北京市北京市北京市北京市</view>
+            <view class="btn"><view class="line_left"></view>编辑</view>
+            <view class="h_line"></view>
+        </view>
+        <view class="item">
+            <view class="title">
+                <text class="name">唐某某</text>
+                <text class="tel">17710329568</text>
+                <view class="default">默认</view>
+            </view>
+            <view class="desc">北京市北京市北京市北京市北京市</view>
+            <view class="btn"><view class="line_left"></view>编辑</view>
+            <view class="h_line"></view>
+        </view>
+    </view>
+    <!--//End -->
+
+    <view class="create">
+        <view class="text">+新增收货地址</view>
+    </view>
+</view>

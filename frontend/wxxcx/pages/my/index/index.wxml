@@ -1,0 +1,114 @@
+<view class="pageBg pageMy">
+    <view class="baseInfo">
+        <image class="avatar" src="{{uinfo.avatar}}" />
+        <view class="info">
+            <view class="name">
+                <text class="t1">昵称</text>
+                <text class="t2">{{uinfo.nickname}}</text>
+                <view class="iconEdit" bindtap="onRouteEdit"><image src="./images/icon-edit@2x.png" alt=""/></view>
+            </view>
+            <view class="name">
+                <text class="t1">注册时间：</text>
+                <text class="t2">{{uinfo.reg_dt}}</text>
+            </view>
+            <view class="name level">
+                <view class="ver">V1</view>
+                <view class="txt">一级代理</view>
+            </view>
+        </view>
+        <image class="setting" src="./images/icon-setting.png" />
+    </view>
+    <!-- //End -->
+    <view class="baseInfoTab">
+        <view class="item"><view class="num">{{uinfo.collect_cnt}}</view><view>商品收藏</view></view>
+        <view class="item"><view class="num">{{uinfo.view_product_history_cnt}}</view><view>历史浏览</view></view>
+        <view class="item"><view class="num">{{uinfo.coupon_cnt}}</view><view>优惠券</view></view>
+        <view class="item"><view class="num">{{uinfo.balance}}</view><view>账户余额</view></view>
+    </view>
+    <!-- //End -->
+    <view class="orders">
+        <view class="title" bindtap="gotoOrderList">
+            <view class="name" >全部订单</view>
+            <view class="right">查看全部订单<image src="../../../images/arrow-right@2x.png"/></view>
+            <view class="h_line"></view>
+        </view>
+        <!-- //End -->
+        <view class="tabs">
+            <view class="item">
+                <image src="./images/orders-icon1@2x.png" />
+                <view class="txt">待付款</view>
+            </view>
+            <view class="item">
+                <image src="./images/orders-icon2@2x.png" />
+                <view class="txt">待发货</view>
+            </view>
+            <view class="item">
+                <image src="./images/orders-icon3@2x.png" />
+                <view class="txt">待收货</view>
+            </view>
+            <view class="item">
+                <image src="./images/orders-icon4@2x.png" />
+                <view class="txt">待评价</view>
+            </view>
+            <view class="item">
+                <image src="./images/orders-icon5@2x.png" />
+                <view class="txt">退货/退款</view>
+            </view>
+        </view>
+    </view>
+    <!-- //End -->
+    <view class="others">
+        <!--<view class="item">-->
+            <!--<view class="img"><image src="./images/others-icon1.png" /></view>-->
+            <!--<view class="txt">优惠券</view>-->
+        <!--</view>-->
+         <!--<view class="item">-->
+            <!--<view class="img"><image src="./images/others-icon2.png" /></view>-->
+            <!--<view class="txt">账户余额</view>-->
+        <!--</view>-->
+         <!--<view class="item">-->
+            <!--<view class="img"><image src="./images/others-icon3.png" /></view>-->
+            <!--<view class="txt">红包</view>-->
+        <!--</view>-->
+        <view class="item">
+            <view class="img"><image src="./images/others-icon4.png" /></view>
+            <view class="txt">我的公告</view>
+        </view>
+        <!--<view class="item">-->
+            <!--<view class="img"><image src="./images/others-icon5.png" /></view>-->
+            <!--<view class="txt">素材库</view>-->
+        <!--</view>-->
+        <!--<view class="item">-->
+            <!--<view class="img"><image src="./images/others-icon6.png" /></view>-->
+            <!--<view class="txt">我的团队</view>-->
+        <!--</view>-->
+        <view class="item">
+            <view class="img"><image src="./images/others-icon7.png" /></view>
+            <view class="txt">地址管理</view>
+        </view>
+        <view class="item">
+            <view class="img"><image src="./images/others-icon8.png" /></view>
+            <view class="txt">我的评价</view>
+        </view>
+    </view>
+    <!-- //End -->
+
+    <view class="links">
+        <view class="link">
+            <view class="label">在线咨询</view>
+            <view class="right"><image src="../../../images/arrow-right@2x.png"/></view>
+            <view class="h_line"></view>
+        </view>
+        <view class="link">
+            <view class="label">客服电话</view>
+            <view class="right">
+            <text>00000000000</text><image src="../../../images/arrow-right@2x.png"/></view>
+            <view class="h_line"></view>
+        </view>
+        <view class="link">
+            <view class="label">意见与反馈</view>
+            <view class="right"><image src="../../../images/arrow-right@2x.png"/></view>
+            <view class="h_line"></view>
+        </view>
+    </view>
+</view>

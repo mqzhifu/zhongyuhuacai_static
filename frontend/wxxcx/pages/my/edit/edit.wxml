@@ -1,0 +1,38 @@
+<view class="pageMyEdit pageBg">
+    <view class="avatar" bindtap="changeAvatar">
+        <image class="img" src="{{uinfo.avatar}}" />
+        <image class="photo" src="./images/icon-photo.png" />
+    </view>
+    <!-- //End -->
+    <view class="links">
+        <view class="link">
+            <view class="label">昵称</view>
+            <view class="ipt">
+                <input wx:if="{{showNickNameInput}}" name="name" value="{{uinfo.nickname}}" />
+                <view wx:else class="name">{{uinfo.nickname}}</view>
+            </view>
+            <image wx:if="{{!showNickNameInput}}" bindtap="onEditName" class="icon-edit" src="./images/icon-edit.png" />
+            <view class="h_line"></view>
+        </view>
+        <!--<view class="link">-->
+            <!--<view class="label">会员名</view>-->
+            <!--<view class="ipt">sad大所多</view>-->
+            <!--<view class="h_line"></view>-->
+        <!--</view>-->
+        <!--<view class="link">-->
+            <!--<view class="label">注册日期</view>-->
+            <!--<view class="ipt">{{uinfo.reg_dt}}</view>-->
+            <!--<view class="h_line"></view>-->
+        <!--</view>-->
+        <!--<view class="link">-->
+            <!--<view class="label">性别</view>-->
+            <!--<view class="ipt">{{sex[uinfo.sex]}}</view>-->
+            <!--<image class="icon-edit" src="./images/icon-edit.png" />-->
+            <!--<view class="h_line"></view>-->
+        <!--</view>-->
+    </view>
+    <!-- //End -->
+    <view class="btnSave">
+        <view class="txt">保存</view>
+    </view>
+</view>

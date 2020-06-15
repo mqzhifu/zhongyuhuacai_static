@@ -230,35 +230,6 @@
 }
 
 /* --------- */
-.titleDivider {
-  width: 100%;
-  font-size: 20rpx;
-  color: #ccc;
-  text-align: center;
-  position: relative;
-  float: left;
-  margin: 20rpx 0;
-}
-.titleDivider::before {
-  content: '';
-  width: 56rpx;
-  height: 1rpx;
-  background: #e5e5e5;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -100rpx;
-}
-.titleDivider::after {
-  content: '';
-  width: 56rpx;
-  height: 1rpx;
-  background: #e5e5e5;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: 50rpx;
-}
 
 /* ----评论------ */
 .comment {
@@ -358,6 +329,7 @@
   left: 0;
   right: 0;
   background: #fff;
+  z-index: 99999;
 }
 .pageGoodsDetail .tools .icon {
   width: 98rpx;
@@ -365,11 +337,17 @@
   margin-right: 7rpx;
   text-align: center;
   float: left;
+  position: relative;
 }
 .pageGoodsDetail .tools .icon image {
   width: 43rpx;
   height: 43rpx;
   margin-top: 15rpx;
+}
+.pageGoodsDetail .tools .icon .tag {
+  position: absolute;
+  top: -10rpx;
+  right: 0;
 }
 .pageGoodsDetail .tools .icon .name {
   font-size: 20rpx;
@@ -396,6 +374,179 @@
   background: #ff831b;
 }
 /* --------开发方便先隐藏掉上面的布局-------------- */
+.specsAction {
+}
+.specsAction .van-popup--bottom {
+  background: transparent;
+  height: auto !important;
+  overflow: hidden;
+}
+.specsAction .content {
+  padding-top: 40rpx;
+}
+.specsAction .base {
+  width: 100%;
+  background: #fff;
+  padding: 0 23rpx 24rpx 23rpx;
+  float: left;
+}
+.specsAction .base .img {
+  width: 238rpx;
+  height: 238rpx;
+  padding: 1rpx;
+  border-radius: 8rpx;
+  margin-right: 37rpx;
+  overflow: hidden;
+  float: left;
+  flex: 0 0 238rpx;
+  background: #fff;
+  position: relative;
+  top: -40rpx;
+}
+.specsAction .base .img image {
+  width: 236rpx;
+  height: 236rpx;
+}
+.specsAction .base .info .txt {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 42rpx;
+  padding-top: 37rpx;
+  margin-bottom: 33rpx;
+}
+.specsAction .base .info .price .p1 {
+  font-size: 36rpx;
+  color: #ff831b;
+}
+.specsAction .base .info .price .p2 {
+  font-size: 26rpx;
+  color: #878787;
+  margin-left: 10rpx;
+}
+.specsAction .base .info .price .p3 {
+  font-size: 26rpx;
+  color: #7b7b7b;
+  margin-left: 37rpx;
+}
+.specsAction .colors {
+  width: 100%;
+  padding: 0 23rpx;
+  float: left;
+  background: #fff;
+  box-sizing: border-box;
+}
+.specsAction .colors .title {
+  font-size: 30rpx;
+  color: #464646;
+  margin-bottom: 20rpx;
+}
+.specsAction .colors .item {
+  font-size: 28rpx;
+  color: #727272;
+  line-height: 56rpx;
+  padding: 0 20rpx;
+  border: 1px solid #313131;
+  float: left;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+  border-radius: 5rpx;
+}
+.specsAction .colors .item.active {
+  background: #ff831b;
+  border: 1px solid #ff831b;
+  color: #fff;
+}
+.specsAction .tables {
+  padding-left: 20rpx;
+  background: #fff;
+  padding-top: 20rpx;
+}
+.specsAction .tables view {
+  font-size: 28rpx;
+  color: #323232;
+}
+.specsAction .tables,
+.specsAction .tables .dt,
+.specsAction .tables .dd {
+  width: 100%;
+  float: left;
+  background: #fff;
+  position: relative;
+}
+.specsAction .tables {
+  padding-bottom: 100rpx;
+}
+.specsAction .tables .dt {
+  margin-bottom: 20rpx;
+}
+.specsAction .tables .dd {
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+}
+.specsAction .tables .t1 {
+  width: 240rpx;
+  font-size: 28rpx;
+  color: #323232;
+  line-height: 50rpx;
+  float: left;
+}
+.specsAction .tables .t2 {
+  width: 270rpx;
+  font-size: 28rpx;
+  color: #323232;
+  line-height: 50rpx;
+  float: left;
+}
+.specsAction .tables .stepper {
+  width: 190rpx;
+  height: 48rpx;
+  border: 1px solid #f4f4f4;
+  float: left;
+}
+.specsAction .tables .stepper .sub,
+.specsAction .tables .stepper .add {
+  float: left;
+  width: 48rpx;
+  height: 48rpx;
+  position: relative;
+}
+.specsAction .tables .stepper .sub {
+  border-right: 1px solid #f4f4f4;
+}
+.specsAction .tables .stepper .sub image {
+  width: 28rpx;
+  height: 3rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1.5rpx;
+  margin-left: -14rpx;
+}
+.specsAction .tables .stepper .num {
+  width: 90rpx;
+  line-height: 48rpx;
+  float: left;
+  text-align: center;
+}
+.specsAction .tables .stepper .num input {
+  padding: 0 20rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+}
+.specsAction .tables .stepper .add {
+  border-left: 1px solid #f4f4f4;
+}
+.specsAction .tables .stepper .add image {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -14rpx;
+  margin-left: -14rpx;
+}
+/* --------规格弹出层-------------- */
+
 /* .navBar,
 .swiper,
 .sBtm,

@@ -1,6 +1,6 @@
 <view class="bd listItem pageBg">
   <view class="items">
-    <view class="item" wx:for="{{list}}" wx:key="{{cardItem}}">
+    <view class="item" wx:for="{{list}}" wx:key="goods_list_product">
       <image class="img" src="{{item.imgUrl}}" alt="" data-index="{{index}}" bindtap="onTapItemImg" />
       <view class="name">{{item.title}}</view>
       <view class="bottom">

@@ -1,4 +1,14 @@
 /**app.wxss**/
+.pageBg::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #f2f2f2;
+  z-index: -1;
+}
 .container {
   height: 100%;
   display: flex;
@@ -6,9 +16,70 @@
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  background-color: #eee;
-} 
+  background-color: #f2f2f2;
+}
 .bd {
   width: 100%;
-  box-sizing:border-box;
+  box-sizing: border-box;
+}
+.more {
+  width: 100%;
+  line-height: 56rpx;
+  font-size: 28rpx;
+  text-align: center;
+  color: #666;
+}
+.h_line::after,
+.line_left::after,
+.line_top::after {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+.h_line::after {
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.line_left::after {
+  border-left: 1rpx solid #e5e5e5;
+}
+.line_top::after {
+  border-top: 1rpx solid #e5e5e5;
+}
+.titleDivider {
+  width: 100%;
+  font-size: 20rpx;
+  color: #ccc;
+  text-align: center;
+  position: relative;
+  float: left;
+  margin: 20rpx 0;
+}
+.titleDivider::before {
+  content: '';
+  width: 56rpx;
+  height: 1rpx;
+  background: #e5e5e5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -100rpx;
+}
+.titleDivider::after {
+  content: '';
+  width: 56rpx;
+  height: 1rpx;
+  background: #e5e5e5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: 50rpx;
 }

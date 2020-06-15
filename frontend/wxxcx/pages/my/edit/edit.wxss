@@ -1,0 +1,77 @@
+.pageMyEdit .avatar {
+  height: 200rpx;
+  background: #f2f2f2;
+  position: relative;
+}
+.pageMyEdit .avatar .img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -60rpx;
+  margin-left: -60rpx;
+  border: 1px solid #ccc;
+}
+.pageMyEdit .avatar .photo {
+  width: 52rpx;
+  height: 52rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 14rpx;
+  margin-left: 14rpx;
+}
+/* ---------------- */
+.pageMyEdit .links .link {
+  width: 100%;
+  line-height: 29rpx;
+  padding: 42rpx 28rpx 36rpx 28rpx;
+  background: #fff;
+  float: left;
+  box-sizing: border-box;
+  position: relative;
+}
+.pageMyEdit .links .link .label {
+  width: 140rpx;
+  font-size: 30rpx;
+  line-height: 29rpx;
+  color: #999;
+  float: left;
+}
+.pageMyEdit .links .link .ipt {
+  width: 350rpx;
+  font-size: 30rpx;
+  height: 29rpx;
+  min-height: 29rpx;
+  line-height: 29rpx;
+  float: left;
+  margin-left: 150rpx;
+  position: relative;
+}
+.pageMyEdit .links .link .ipt input {
+  position: absolute;
+  top: -1rpx;
+  left: 0;
+}
+.pageMyEdit .links .link .icon-edit {
+  width: 33rpx;
+  height: 32rpx;
+  float: right;
+}
+
+.pageMyEdit .btnSave {
+  width: 100%;
+  padding: 36rpx 28rpx;
+  margin: 36rpx 0;
+  float: left;
+  box-sizing: border-box;
+}
+.pageMyEdit .btnSave .txt {
+  background: #ff831b;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+}

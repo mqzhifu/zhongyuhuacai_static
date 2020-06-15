@@ -1,10 +1,10 @@
 <view class="pageGoodsDetail pageBg">
-    <van-nav-bar custom-class="navBar" left-text="返回" left-arrow bind:click-left="onClickLeft">
-        <view slot="right">
-            <image bindtap="onTabCollection" class="collection" src="./images/icon-collection@2x.png" mode="scaleToFill" />
-            <image bindtap="onTabShare" class="share" src="./images/icon-share@2x.png" mode="scaleToFill" />
-        </view>
-    </van-nav-bar>
+    <!--<van-nav-bar custom-class="navBar" left-text="返回" left-arrow bind:click-left="onClickLeft">-->
+        <!--<view slot="right">-->
+            <!--<image bindtap="onTabCollection" class="collection" src="./images/icon-collection@2x.png" mode="scaleToFill" />-->
+            <!--<image bindtap="onTabShare" class="share" src="./images/icon-share@2x.png" mode="scaleToFill" />-->
+        <!--</view>-->
+    <!--</van-nav-bar>-->
     <!-- //End 顶部导航 -->
     <view class="navBar">
         <v-swiper listData="{{swiperList}}" dots="true" />
@@ -25,36 +25,32 @@
     <view class="panel praise h_line">
         <text class="text label">点赞</text>
         <text class="text ">喜欢就点赞</text>
-        <image class="img" src="./images/icon-praise@2x.png" bindtap="setUpClick" mode="scaleToFill"></image>
+        <image bindtap="tapPraise" data-type="0" wx:if="{{praiseFlag}}" class="img" src="./images/icon-praise-active@2x.png" mode="scaleToFill"></image>
+        <image bindtap="tapPraise" data-type="1" wx:else class="img" src="./images/icon-praise@2x.png" mode="scaleToFill"></image>
     </view>
     <!-- //End 点赞 -->
-    <view class="panel specs">
+    <view class="panel specs" bindtap="tapSpecs">
         <text class="text label">选择</text>
         <text class="text ">规格名称</text>
         <image class="img" src="./images/arrow-right@2x.png" mode="scaleToFill"></image>
     </view>
-    <!--<view  wx:for-items="{{product.desc_attr_format}}" wx:for-item="item" wx:key="attr_key" >-->
-        <!--<text>{{item.key}}:{{item.value}}</text>-->
-    <!--</view>-->
     <!-- //End 规格 -->
-    <!-- <view class="panel coupon">
-        <text class="text label">领券</text>
-        <view class="text">
-            <view class="item">
-                <text class="t1">10元</text>
-                <text class="line"></text>
-                <text class="t2">满299元使用</text>
-            </view>
-
-
-            <view class="item">
-                <text class="t1">10元</text>
-                <text class="line"></text>
-                <text class="t2">满299元使用</text>
-            </view>
-        </view>
-        <image class="img" src="./images/arrow-right@2x.png" mode="scaleToFill" />
-    </view> -->
+    <!--<view class="panel coupon">-->
+        <!--<text class="text label">领券</text>-->
+        <!--<view class="text">-->
+            <!--<view class="item">-->
+                <!--<text class="t1">10元</text>-->
+                <!--<text class="line"></text>-->
+                <!--<text class="t2">满299元使用</text>-->
+            <!--</view>-->
+            <!--<view class="item">-->
+                <!--<text class="t1">10元</text>-->
+                <!--<text class="line"></text>-->
+                <!--<text class="t2">满299元使用</text>-->
+            <!--</view>-->
+        <!--</view>-->
+        <!--<image class="img" src="./images/arrow-right@2x.png" mode="scaleToFill" />-->
+    <!--</view>-->
     <!-- //End 领券 -->
     <view class="panel2 visitor">
         <view class="title">最近访客</view>
@@ -117,42 +113,121 @@
     <!-- //End 评论 -->
     <view class="bd">
         <view class="titleDivider">详情</view>
-        <view class="deDesc">
-            <view class="txt">{{product.desc}}</view>
-
-            <view class='' wx:for="{{detailPicsList}}" wx:key="title">
-                <image class="img" mode="widthFix" src="{{item}}" />
-            </view>
-
-            <!-- <image class="img" mode="widthFix" src="https://img30.360buyimg.com/sku/jfs/t1/123439/25/157/444655/5eb3ab36E5d9a7cc1/671063057105198d.jpg" />
-            <image class="img" mode="widthFix" src="https://img30.360buyimg.com/sku/jfs/t1/123439/25/157/444655/5eb3ab36E5d9a7cc1/671063057105198d.jpg" />
-            <image class="img" mode="widthFix" src="https://img30.360buyimg.com/sku/jfs/t1/123439/25/157/444655/5eb3ab36E5d9a7cc1/671063057105198d.jpg" /> -->
+        <view class="txt">{{product.desc}}</view>
+        <view class='deDesc' wx:for="{{detailPicsList}}" wx:key="title">
+            <image class="img" mode="widthFix" src="{{item}}" data-src="{{item}}" bindtap="previewImageDetail" />
         </view>
+
+
     </view>
     <!-- //End 详情 -->
-    <view class="bd">
-        <view class="titleDivider">更多推荐</view>
-        <card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
-        <view class="more">点击继续加载</view>
-    </view>
+    <!--<view class="bd">-->
+        <!--<view class="titleDivider">更多推荐</view>-->
+        <!--<card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />-->
+        <!--<view class="more">点击继续加载</view>-->
+    <!--</view>-->
     <!-- //End 更多推荐 -->
     <view class="tools">
-        <!--<view class="icon active">-->
-            <!--<image src="./images/tools_shop@2x.png" mode="scaleToFill" />-->
-            <!--<view class="name">店铺</view>-->
-        <!--</view>-->
+        <view class="icon active">
+            <image src="./images/tools_shop@2x.png" mode="scaleToFill" />
+            <view class="name">店铺</view>
+        </view>
         <view class="icon">
-
-            <image src="./images/tools_like@2x.png" mode="scaleToFill" />
+            <image wx:if="{{likeFlag}}" bindtap="tapLike" data-type="0" src="./images/tools_like@2x.png"        mode="scaleToFill" />
+            <image wx:else              bindtap="tapLike" data-type="1" src="./images/tools_like_active@2x.png" mode="scaleToFill" />
             <view class="name">收藏</view>
         </view>
-        <view class="icon">
+        <view class="icon" bindtap="gotoCart">
+            <van-tag class="tag" color="#FF831B" round type="success">{{product.cart_num}}</van-tag>
             <image src="./images/tools_cart@2x.png" mode="scaleToFill" />
-            <view class="name">购物车</view>
+            <view class="name" >购物车</view>
         </view>
         <view class="btns">
-            <view class="btn btnCart">加入购物车</view>
-            <view class="btn btnBuy">立即购买</view>
+            <view class="btn btnCart" bindtap="onItemCartClick">加入购物车</view>
+            <view class="btn btnBuy"  bindtap="buyGotoOrder">立即购买</view>
         </view>
     </view>
+
+    <!-- -->
+    <van-popup
+        class="specsAction"
+        show="{{ specsShow }}"
+        position="bottom"
+        custom-style="height: 20%;"
+        bind:close="tapSpecsClose"
+         catchtouchmove="return"
+        >
+        <view class="content" wx:if="{{product.category_attr_null == 2}}">
+            <view class="base">
+                <view class="img"><image src="{{detailPicsList[0]}}" /></view>
+                <view class="info">
+                    <view class="txt">{{product.title}}</view>
+                    <view class="price">
+                        <text class="p1">￥{{product.lowest_price}}</text>
+                        <text class="p2">￥{{product.lowest_price}}</text>
+                        <text class="p3">库存：{{product.stock}}件</text>
+                    </view>
+                </view>
+            </view>
+
+            <!--<view>-->
+
+                <!--aaaaaa-{{userSelGoods[38]}}-->
+
+            <!--</view>-->
+
+
+
+
+
+
+            <!-- //End -->
+            <view class="colors" wx:for="{{product.pcap}}" wx:key="pcap_wx_key"  >
+                <view class="title">{{item.name}}</view>
+                <view class="items">
+                    <view class="item {{userSelGoods[item.id] == row.id  ? 'active' : ''}}" wx:for="{{item.category_attr_para}}" wx:key="pcap_wx_key_sub" data-pcaid="{{item.id}}"  data-pcapid="{{row.id}}" wx:for-item="row" bindtap="selGoods">{{row.name}}</view>
+                </view>
+            </view>
+
+
+            <!-- //End -->
+            <view class="tables">
+                <!--<view class="dt">-->
+                    <!--<view class="t1">规格</view>-->
+                    <!--<view class="t2">库存</view>-->
+                    <!--<view class="t3"></view>-->
+                <!--</view>-->
+                <!--<view class="dd">-->
+                    <!--<view class="t1">S</view>-->
+                    <!--<view class="t2">1000</view>-->
+                    <!--<view class="t3">-->
+                        <!--<view class="stepper">-->
+                            <!--<view class="sub"><image src="./images/icon-sub.png" /></view>-->
+                            <!--<view class="num">-->
+                            <!--<input name="name" value="1" />-->
+                            <!--</view>-->
+                            <!--<view class="add"><image src="./images/icon-add.png" /></view>-->
+                        <!--</view>-->
+                    <!--</view>-->
+                    <!--<view class="h_line"></view>-->
+                <!--</view>-->
+                <view class="dd">
+                    <!--<view class="t1">S</view>-->
+                    <!--<view class="t2">1000</view>-->
+                    <view class="t3">
+                        <view class="stepper">
+                            <view class="sub"><image src="./images/icon-sub.png" /></view>
+                            <view class="num">
+                            <input name="num" value="1"  bindinput='setNumInputValue' />
+                            </view>
+                            <view class="add"><image src="./images/icon-add.png" /></view>
+                        </view>
+                    </view>
+                    <view class="h_line"></view>
+                </view>
+            </view>
+            <!-- //End -->
+        </view>
+    </van-popup>
+    <!-- -->
 </view>

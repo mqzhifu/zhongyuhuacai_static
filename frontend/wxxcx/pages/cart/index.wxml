@@ -1,2 +1,57 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="pageCart pageBg">
+    <view class="title">
+        <view class="num">购物车({{cartListCnt}})</view>
+        <!--<view class="edit">编辑</view>-->
+    </view>
+    <!-- //End -->
+
+    <view class="goods">
+        <view class="item" wx:for="{{cartList}}" wx:key="cart_list_index">
+            <view class="radio" bindtap="clickCheckBox" data-id="{{index}}">
+                <image wx:if="{{checkBoxList[index].check == false}}" src="./images/icon-radio.png" />
+                <image wx:else src="./images/icon-radio-active.png" />
+            </view>
+
+
+
+            <view class="thumb">
+                <image mode="aspectFit" src="{{item.pic}}" />
+            </view>
+            <view class="info">
+                <view class="txt">{{item.title}}</view>
+                <view class="price">￥{{item.lowest_price}}</view>
+            </view>
+            <view bindtap="cartDelOne" data-id="{{index}}">删除</view>
+            <view class="stepper">
+                <view class="sub" bindtap="num_less" data-id="{{index}}" ><image src="./images/icon-sub.png" /></view>
+                <view class="num">
+                  <input name="name" value="{{checkBoxList[index].num}}" />
+                </view>
+                <view class="add"  bindtap="num_add" data-id="{{index}}" ><image src="./images/icon-add.png"  /></view>
+            </view>
+            <view class="h_line"></view>
+        </view>
+    </view>
+    <!-- //End -->
+
+    <view class="list">
+        <view class="titleDivider">你可能还想买</view>
+         <card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
+        <view class="more">点击继续加载</view>
+    </view>
+    <!-- //End -->
+
+    <view class="total">
+        <view class="radio" bindtap="selAll">
+            <image wx:if="{{selAll == 0}}" src="./images/icon-radio.png" />
+            <image wx:else  src="./images/icon-radio-active.png" />
+            <text>全选</text>
+        </view>
+        <view class="info">
+            <text class="txt">合计</text>
+            <text class="price">￥{{total}}</text>
+            <view class="btn" bindtap="orderConfirm">结算({{checkBoxListSelCnt}})</view>
+        </view>
+        <view class="h_line"></view>
+    </view>
+</view>

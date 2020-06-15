@@ -1,0 +1,257 @@
+.pageConfirm {
+  width: 100%;
+  float: left;
+  padding-bottom: 96rpx;
+}
+.pageConfirm .address {
+  margin-bottom: 20rpx;
+}
+.pageConfirm .address .item {
+  padding: 30rpx;
+  background: #fff;
+  position: relative;
+}
+.pageConfirm .address .item .title {
+  width: 100%;
+  float: left;
+  margin-bottom: 16rpx;
+  position: relative;
+}
+.pageConfirm .address .item .title text {
+  color: #333;
+  height: 30rpx;
+  line-height: 30rpx;
+}
+.pageConfirm .address .item .title .name {
+  font-size: 32rpx;
+  margin-right: 17rpx;
+}
+.pageConfirm .address .item .title .tel {
+  font-size: 24rpx;
+}
+
+.pageConfirm .address .item .desc {
+  font-size: 28rpx;
+  color: #909090;
+}
+.pageConfirm .address .item .img {
+  width: 15rpx;
+  height: 25rpx;
+  position: absolute;
+  top: 50%;
+  right: 20rpx;
+  margin-top: -12.5rpx;
+}
+/* --------- */
+.pageConfirm .goods {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+}
+.pageConfirm .goods .title {
+  font-size: 30rpx;
+  color: #333;
+  padding: 27rpx 0;
+}
+.pageConfirm .goods .main {
+  display: flex;
+  padding-bottom: 76rpx;
+}
+.pageConfirm .goods .main .thumb {
+  width: 159rpx;
+  height: 159rpx;
+  border: 1px solid #eee;
+  float: left;
+  margin-right: 28rpx;
+  flex: 0 0 159rpx;
+}
+.pageConfirm .goods .main .thumb image {
+  width: 100%;
+  height: 100%;
+}
+.pageConfirm .goods .main .info {
+  flex: 0 0 360rpx;
+  padding-right: 30rpx;
+}
+.pageConfirm .goods .main .info .desc {
+  font-size: 24rpx;
+  color: #333;
+  line-height: 30rpx;
+  margin-bottom: 16rpx;
+}
+.pageConfirm .goods .main .info .cate {
+  font-size: 20rpx;
+  color: #999;
+}
+.pageConfirm .goods .price {
+  flex: 0 0 130rpx;
+  text-align: right;
+}
+.pageConfirm .goods .price .txt {
+  font-size: 20rpx;
+  color: #333;
+}
+.pageConfirm .goods .price .num {
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 14rpx;
+}
+
+.pageConfirm .goods .stepper {
+  width: 210rpx;
+  height: 60rpx;
+  border: 1px solid #f4f4f4;
+  position: absolute;
+  bottom: 30rpx;
+  right: 25rpx;
+}
+.pageConfirm .goods .stepper .sub,
+.pageConfirm .goods .stepper .add {
+  float: left;
+  width: 58rpx;
+  height: 58rpx;
+  position: relative;
+}
+.pageConfirm .goods .stepper .sub {
+  border-right: 1px solid #f4f4f4;
+}
+.pageConfirm .goods .stepper .sub image {
+  width: 28rpx;
+  height: 3rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1.5rpx;
+  margin-left: -14rpx;
+}
+.pageConfirm .goods .stepper .num {
+  width: 90rpx;
+  line-height: 58rpx;
+  float: left;
+  text-align: center;
+}
+.pageConfirm .goods .stepper .num input {
+  padding: 0 20rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+}
+.pageConfirm .goods .stepper .add {
+  border-left: 1px solid #f4f4f4;
+}
+.pageConfirm .goods .stepper .add image {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -14rpx;
+  margin-left: -14rpx;
+}
+/* ----------- */
+.pageConfirm .infos {
+  width: 100%;
+  margin-top: 20rpx;
+  padding-top: 40rpx;
+  background: #fff;
+  float: left;
+}
+.pageConfirm .infos .item {
+  width: 100%;
+  float: left;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 29rpx;
+}
+.pageConfirm .infos .item .t1 {
+  float: left;
+  font-size: 27rpx;
+  color: #676767;
+  line-height: 25rpx;
+}
+.pageConfirm .infos .item .t2 {
+  float: right;
+  font-size: 27rpx;
+  color: #333;
+  line-height: 25rpx;
+}
+.pageConfirm .infos .item .ipt {
+  width: 560rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  font-size: 27rpx;
+  background: #fff;
+  float: left;
+  margin-left: 32rpx;
+  position: relative;
+  top: -7rpx;
+}
+/* ----------- */
+.pageConfirm .pays {
+  width: 100%;
+  float: left;
+  padding: 0 20rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  box-sizing: border-box;
+}
+.pageConfirm .pays .title {
+  font-size: 30rpx;
+  color: #333;
+  padding: 56rpx 0;
+}
+.pageConfirm .pays .item {
+  width: 100%;
+  float: left;
+  padding-bottom: 40rpx;
+}
+.pageConfirm .pays text {
+  float: left;
+  line-height: 49rpx;
+}
+.pageConfirm .pays .icon {
+  width: 49rpx;
+  height: 49rpx;
+  float: left;
+  margin-right: 22rpx;
+}
+.pageConfirm .pays .radio {
+  width: 43rpx;
+  height: 43rpx;
+  float: right;
+}
+/* ----------- */
+.pageConfirm .total {
+  background: #fff;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+  right: 0;
+}
+.pageConfirm .info {
+  float: right;
+}
+.pageConfirm .info text,
+.pageConfirm .info view {
+  float: left;
+  line-height: 100rpx;
+}
+.pageConfirm .info .txt {
+  font-size: 24rpx;
+  color: #999;
+  margin-right: 22rpx;
+}
+.pageConfirm .info .price {
+  padding-right: 20rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ff831b;
+}
+.pageConfirm .info .btn {
+  width: 241rpx;
+  text-align: center;
+  background: #ff831b;
+  color: #fff;
+  font-size: 36rpx;
+}

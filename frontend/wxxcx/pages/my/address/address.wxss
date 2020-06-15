@@ -1,0 +1,67 @@
+.pageAddress .items {
+  margin-top: 15rpx;
+}
+.pageAddress .items .item {
+  padding: 30rpx;
+  background: #fff;
+  position: relative;
+}
+.pageAddress .items .item .title {
+  width: 100%;
+  float: left;
+  margin-bottom: 16rpx;
+  position: relative;
+}
+.pageAddress .items .item .title text {
+  color: #333;
+  height: 30rpx;
+  line-height: 30rpx;
+}
+.pageAddress .items .item .title .name {
+  font-size: 32rpx;
+  margin-right: 17rpx;
+}
+.pageAddress .items .item .title .tel {
+  font-size: 24rpx;
+}
+.pageAddress .items .item .title .default {
+  display: inline-block;
+  margin-left: 80rpx;
+  width: 60rpx;
+  line-height: 31rpx;
+  text-align: center;
+  background: #ff831b;
+  font-size: 24rpx;
+  color: #fff;
+}
+.pageAddress .items .item .desc {
+  font-size: 28rpx;
+  color: #909090;
+}
+.pageAddress .items .item .btn {
+  color: #909090;
+  font-size: 24rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  position: absolute;
+  top: 50%;
+  right: 35rpx;
+  margin-top: -25rpx;
+  padding-left: 15rpx;
+}
+
+.pageAddress .create {
+  padding: 0 28rpx;
+  position: fixed;
+  bottom: 56rpx;
+  left: 0;
+  right: 0;
+}
+.pageAddress .create .text {
+  background: #ff831b;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 88rpx;
+  border-radius: 3px;
+}

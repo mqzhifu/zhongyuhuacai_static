@@ -17,14 +17,13 @@ Component({
     duration: 500,
   },
 
-
-  methods:{
-      bannerGoto:function(e){
-          var bannerIndexKey = e.currentTarget.dataset.id;
-          console.log("component method : banner goto:",bannerIndexKey)
-          this.triggerEvent("bannerGoto",bannerIndexKey)
-      },
-  },
+    methods:{
+        bannerGoto:function(e){
+            var bannerIndexKey = e.currentTarget.dataset.id;
+            console.log("component method : banner goto:",bannerIndexKey)
+            this.triggerEvent("bannerGoto",bannerIndexKey)
+        },
+    },
 
   observers: {
     listData: function (res) {
@@ -32,6 +31,6 @@ Component({
     },
   },
   onShow: function () {
-    // console.log(this.listData)
+    console.log(this.listData)
   },
 })

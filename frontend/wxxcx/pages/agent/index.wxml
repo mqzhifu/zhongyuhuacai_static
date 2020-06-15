@@ -1,2 +1,2 @@
 <!--pages/agent/index.wxml-->
-<text>pages/agent/index.wxml</text>
+<button bindtap="clearUserLocalStorage">清理本地数据库缓存</button>

@@ -1,0 +1,225 @@
+.pageMy {
+  height: 100%;
+  padding-bottom: 30rpx;
+  float: left;
+}
+.pageMy .baseInfo {
+  height: 180rpx;
+  background: #ff831b;
+  padding: 62rpx 50rpx 0 50rpx;
+  display: flex;
+  box-sizing: border-box;
+}
+.pageMy .baseInfo .avatar {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  flex: 0 0 88rpx;
+}
+.pageMy .baseInfo .info {
+  color: #fff;
+  position: relative;
+  top: -5rpx;
+}
+.pageMy .baseInfo .info .name {
+  width: 100%;
+  line-height: 20rpx;
+  margin-left: 23rpx;
+  margin-bottom: 7rpx;
+  position: relative;
+  float: left;
+}
+.pageMy .baseInfo .info .name text,
+.pageMy .baseInfo .info .name view {
+  font-size: 20rpx;
+}
+.pageMy .baseInfo .info .name .t1 {
+  width: 120rpx;
+  display: inline-block;
+}
+.pageMy .baseInfo .name .iconEdit {
+  display: inline-block;
+  margin-left: 80rpx;
+  position: relative;
+  top: 7rpx;
+}
+.pageMy .baseInfo .name .iconEdit image {
+  width: 27rpx;
+  height: 25rpx;
+}
+.pageMy .baseInfo .level {
+  margin-top: 5rpx;
+  margin-bottom: 0;
+}
+.pageMy .baseInfo .level .ver {
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 20rpx;
+  border-radius: 50%;
+  background: #de0000;
+  color: #fff;
+  text-align: center;
+  float: left;
+}
+.pageMy .baseInfo .level .txt {
+  color: #de0000;
+  font-size: 24rpx;
+  line-height: 32rpx;
+  float: left;
+  margin-left: 10rpx;
+}
+.baseInfo .setting {
+  width: 40rpx;
+  height: 38rpx;
+  position: absolute;
+  top: 60rpx;
+  right: 30rpx;
+}
+
+.pageMy .baseInfo .tabs {
+  width: 100%;
+  float: left;
+}
+.pageMy .baseInfoTab {
+  display: flex;
+}
+.pageMy .baseInfoTab .item {
+  flex: 1;
+  text-align: center;
+  background: #ff831b;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 27rpx 0;
+}
+.pageMy .baseInfoTab .item .num {
+  margin-bottom: 10rpx;
+}
+.pageMy .orders {
+  background: #fff;
+  width: 100%;
+  float: left;
+  margin-bottom: 10rpx;
+}
+.pageMy .orders .title {
+  height: 31rpx;
+  line-height: 31rpx;
+  padding: 36rpx 20rpx 30rpx 22rpx;
+  position: relative;
+}
+.pageMy .orders .title .name {
+  font-size: 32rpx;
+  float: left;
+}
+.pageMy .orders .title .right {
+  font-size: 24rpx;
+  color: #999;
+  float: right;
+}
+.pageMy .orders .title .right image {
+  width: 10rpx;
+  height: 18rpx;
+  margin-left: 10rpx;
+}
+.pageMy .orders .tabs {
+  display: flex;
+}
+.pageMy .orders .tabs .item {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0 19rpx 0;
+}
+.pageMy .orders .tabs .item image {
+  width: 50rpx;
+  height: 44rpx;
+}
+.pageMy .orders .tabs .item .txt {
+  font-size: 24rpx;
+  color: #333;
+}
+.pageMy .others {
+  background: #fff;
+  width: 100%;
+  padding-top: 39rpx;
+  float: left;
+  margin-bottom: 10rpx;
+}
+.pageMy .others .item {
+  width: 25%;
+  text-align: center;
+  float: left;
+  margin-bottom: 31rpx;
+}
+.pageMy .others .item .img {
+  width: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+.pageMy .others .item .img image {
+  width: 50rpx;
+  height: 44rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -22rpx;
+  margin-left: -25rpx;
+  border-radius: 3px;
+}
+.pageMy .others .item .txt {
+  font-size: 24rpx;
+  color: #333;
+  margin-top: 16rpx;
+}
+.pageMy .others .item:nth-child(1) .img {
+  background: #fabf00;
+}
+.pageMy .others .item:nth-child(2) .img {
+  background: #67ddab;
+}
+.pageMy .others .item:nth-child(3) .img {
+  background: #ffa391;
+}
+.pageMy .others .item:nth-child(4) .img {
+  background: #ffa2ca;
+}
+.pageMy .others .item:nth-child(5) .img {
+  background: #ffa391;
+}
+.pageMy .others .item:nth-child(6) .img {
+  background: #ffa2ca;
+}
+.pageMy .others .item:nth-child(7) .img {
+  background: #7ecef4;
+}
+.pageMy .others .item:nth-child(8) .img {
+  background: #67ddab;
+}
+/* ------ */
+.pageMy .links .link {
+  width: 100%;
+  padding-left: 21rpx;
+  padding-right: 22rpx;
+  line-height: 88rpx;
+  float: left;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+}
+.pageMy .links .link .label {
+  font-size: 28rpx;
+  color: #333;
+  float: left;
+}
+.pageMy .links .link .right {
+  float: right;
+}
+.pageMy .links .link .right image {
+  width: 10rpx;
+  height: 18rpx;
+}
+.pageMy .links .link .right text {
+  color: #ff831b;
+  margin-right: 23rpx;
+}

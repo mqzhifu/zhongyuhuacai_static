@@ -19,7 +19,7 @@ Component({
    */
   methods: {
       search_blur:function(e){
-        var v = e.detail.value
+          var v = e.detail.value
           console.log(v.length)
           this.triggerEvent("searchProduct",v)
       },

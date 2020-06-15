@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+      headerTitle:{
+          type:String,
+          value:"",
+      }
   },
 
   /**
@@ -14,6 +17,11 @@ Component({
 
   },
 
+    observers: {
+        headerTitle: function (res) {
+            console.log('from index header', res)
+        },
+    },
   /**
    * 组件的方法列表
    */

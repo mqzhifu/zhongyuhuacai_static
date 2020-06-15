@@ -1,30 +1,33 @@
 <!--index.wxml-->
 <view class="container">
-    <!--<button open-type='getUserInfo' >获取授权</button>-->
   <!-- <v-header/> -->
+
+
   <!-- //End h5导航 -->
-  <v-search bind:searchProduct="searchProduct" />
+  <v-search bind:searchProduct="searchProduct"  />
   <!-- //End 搜索部分 -->
 
-  <v-swiper listData="{{swiperList}}" bind:bannerGoto="bannerGoto" />
+  <v-swiper listData="{{swiperList}}" bind:bannerGoto="bannerGoto"/>
   <!-- //End 轮播图 -->
 
   <view class="bd">
-      <v-navs list="{{categoryList}}" bind:categoryGoto="categoryGoto" />
+    <v-navs list="{{categoryList}}" bind:categoryGoto="categoryGoto" />
   </view>
   <!-- //End 导航 -->
 
   <view class="bd list-hot">
-
     <view class="title">
       <image class="img" src="images/home-icon-hot@2x.png" />
       <text class="name">人气推荐</text>
     </view>
+    <view class="items"  >
 
-    <view class="items" >
-      <view class="item"  wx:for="{{hotList}}" wx:key="index" wx:if="{{hotList}}">
-        <image  data-pid="{{item.id}}" class="img" src="{{item.pic}}" alt="" />
-        <view class="name" bindtap="productGoto" data-pid="{{item.id}}">{{item.title}}</view>
+
+
+      <!-- <view class="item"  wx:if="{{!hostList}}">管理员开了小差，没设置推荐数据...</view> -->
+      <view  class="item"  wx:for="{{hotList}}" bindtap="productGoto" data-pid="{{item.id}}"  wx:key="index_product_list" wx:key="index_recommend">
+        <image class="img" src="{{item.pic}}" alt="" />
+        <view class="name">{{item.title}}</view>
         <view class="bottom">
           <view class="price">
             <text>￥</text>
@@ -34,10 +37,17 @@
         </view>
       </view>
 
+
+
+  
+    
+
+
     </view>
+    <!--<view class="more">点击继续加载</view>-->
 
     <view  wx:if="{{hotListHasBottom}}">
-      <view>我也是有底线的，好不啦!!!</view>
+      <view>不能再拖动了~我也是有底线的，好不啦!!!</view>
     </view>
 
 
@@ -45,8 +55,6 @@
       <view>暂无数据</view>
     </view>
 
-
-    <!--<view class="more">点击继续加载</view>-->
 
   </view>
   <!-- //End 人气推荐 -->

@@ -1,1 +1,184 @@
-/* pages/cart/index.wxss */
+.pageCart {
+  width: 100%;
+  padding-bottom: 130rpx;
+  float: left;
+}
+.pageCart .title {
+  width: 100%;
+  font-size: 32rpx;
+  padding: 39rpx 20rpx 39rpx 20rpx;
+  float: left;
+  box-sizing: border-box;
+}
+.pageCart .title .num {
+  float: left;
+}
+.pageCart .title .edit {
+  float: right;
+}
+.pageCart .goods .item {
+  width: 100%;
+  float: left;
+  display: flex;
+  background: #fff;
+  padding: 28rpx 20rpx 24rpx 60rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.pageCart .goods .item .radio {
+  width: 43rpx;
+  height: 43rpx;
+  position: absolute;
+  top: 50%;
+  left: 20rpx;
+  margin-top: -21.5rpx;
+}
+.pageCart .goods .item .radio image {
+  width: 43rpx;
+  height: 43rpx;
+}
+.pageCart .goods .item .thumb {
+  width: 149rpx;
+  height: 149rpx;
+  text-align: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-left: 27rpx;
+  margin-right: 30rpx;
+}
+.pageCart .goods .item .thumb image {
+  height: 100%;
+  width: 100%;
+}
+.item .info .txt {
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #4c4c4c;
+}
+.item .info .price {
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #ff831b;
+  margin-top: 27rpx;
+}
+.pageCart .goods .stepper {
+  width: 210rpx;
+  height: 60rpx;
+  border: 1px solid #f4f4f4;
+  position: absolute;
+  bottom: 22rpx;
+  right: 24rpx;
+}
+.pageCart .goods .stepper .sub,
+.pageCart .goods .stepper .add {
+  float: left;
+  width: 58rpx;
+  height: 58rpx;
+  position: relative;
+}
+.pageCart .goods .stepper .sub {
+  border-right: 1px solid #f4f4f4;
+}
+.pageCart .goods .stepper .sub image {
+  width: 28rpx;
+  height: 3rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1.5rpx;
+  margin-left: -14rpx;
+}
+.pageCart .goods .stepper .num {
+  width: 90rpx;
+  line-height: 58rpx;
+  float: left;
+  text-align: center;
+}
+.pageCart .goods .stepper .num input {
+  padding: 0 20rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+}
+.pageCart .goods .stepper .add {
+  border-left: 1px solid #f4f4f4;
+}
+.pageCart .goods .stepper .add image {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -14rpx;
+  margin-left: -14rpx;
+}
+
+.pageCart .titleDivider {
+  color: #ff831b;
+  margin-bottom: 0;
+}
+.pageCart .titleDivider::before {
+  margin-left: -130rpx;
+}
+.pageCart .titleDivider::after {
+  margin-left: 70rpx;
+}
+
+.pageCart .total {
+  background: #fff;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+  right: 0;
+}
+.pageCart .total .radio {
+  height: 26rpx;
+  line-height: 26rpx;
+  position: absolute;
+  top: 50%;
+  left: 22rpx;
+  margin-top: -13rpx;
+}
+.pageCart .total .radio image {
+  width: 32rpx;
+  height: 32rpx;
+  float: left;
+  margin-right: 13rpx;
+}
+.pageCart .total .radio text {
+  font-size: 28rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  color: #333;
+  float: left;
+}
+/* ------------ */
+.pageCart .info {
+  float: right;
+}
+.pageCart .info text,
+.pageCart .info view {
+  float: left;
+  line-height: 100rpx;
+}
+.pageCart .info .txt {
+  font-size: 24rpx;
+  color: #999;
+}
+.pageCart .info .price {
+  padding: 0 20rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ff831b;
+}
+.pageCart .info .btn {
+  width: 200rpx;
+  text-align: center;
+  background: #ff831b;
+  color: #fff;
+  font-size: 36rpx;
+}
+.pageCart .list {
+  width: 100%;
+  float: left;
+}
