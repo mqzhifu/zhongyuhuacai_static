@@ -128,6 +128,7 @@
   flex: 1;
   text-align: center;
   padding: 24rpx 0 19rpx 0;
+  position: relative;
 }
 .pageMy .orders .tabs .item image {
   width: 50rpx;
@@ -136,6 +137,22 @@
 .pageMy .orders .tabs .item .txt {
   font-size: 24rpx;
   color: #333;
+}
+.pageMy .orders .tabs .item .cusTag {
+  /* padding: 0 8rpx; */
+  width: 25rpx;
+  height: 25rpx;
+  line-height: 25rpx;
+  font-size: 24rpx;
+  color: #fff;
+  border-radius: 999px;
+  position: absolute;
+  top:15rpx;
+  left:85rpx;
+  background-color: #FF831B;
+}
+.pageMy .orders .tabs .item .cusTags {
+  width:43rpx;
 }
 .pageMy .others {
   background: #fff;
@@ -212,6 +229,19 @@
   color: #333;
   float: left;
 }
+.pageMy .links .link .btn {
+  width: 100%;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  background-color: transparent;
+  padding-left: 21rpx;
+  padding-right: 0;
+  text-align: left;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.pageMy .links .link .btn::after{ border: none; }
 .pageMy .links .link .right {
   float: right;
 }

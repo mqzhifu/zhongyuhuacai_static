@@ -1,66 +1,57 @@
-// pages/other/loading/loading.js
+const app = getApp()
+const Logs = require("../../../utils/log.js")
 Page({
+    data: {
+        process: 140,
+        processFull: 570
+    },
+    //左侧向右侧 ，滑动 进度条
+    setLeftProcess: function (num) {
+        var difference = this.data.processFull - this.data.process;
+        var persent = difference / 100
+        persent = parseInt(persent)
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+        var vv = this.data.process + num * persent
+        this.setData({process: vv})
+    },
 
-  },
+    onLoad: function (options) {
+        Logs.onload("loading",options)
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+        var PromiseObj = new Promise(function (resolve, reject) {
+            app.globalData.promiseResolve = resolve
+            app.loginInit()
+        })
+        var parent = this
+        PromiseObj.then(
+            this.startPage
 
-  },
+        )
+    },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
-  },
+    startPage: function () {
+        // this.setLeftProcess(100)
+        app.goto(2, 1, null)
+        // var parentObj = this
+        // setTimeout(function() {
+        //
+        //     console.log("im settimeout")
+        //     parentObj.setLeftProcess(100)
+        // }, 2000);
+    },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
 
-  },
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+    },
 
-  },
+    onShareAppMessage: function () {
+        return app.shareMyApp(1, 14, '首页~','首页的内容',null)
+    },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
 
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

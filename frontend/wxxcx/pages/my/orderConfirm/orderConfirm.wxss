@@ -161,13 +161,14 @@
   float: left;
   padding: 0 20rpx;
   box-sizing: border-box;
-  margin-bottom: 29rpx;
+  margin-bottom: 20rpx;
 }
 .pageConfirm .infos .item .t1 {
   float: left;
   font-size: 27rpx;
   color: #676767;
-  line-height: 25rpx;
+  height: 50rpx;
+  line-height: 50rpx;
 }
 .pageConfirm .infos .item .t2 {
   float: right;
@@ -177,14 +178,14 @@
 }
 .pageConfirm .infos .item .ipt {
   width: 560rpx;
-  height: 25rpx;
-  line-height: 25rpx;
+  height: 50rpx;
+  line-height: 50rpx;
   font-size: 27rpx;
   background: #fff;
   float: left;
   margin-left: 32rpx;
   position: relative;
-  top: -7rpx;
+  top: 0;
 }
 /* ----------- */
 .pageConfirm .pays {

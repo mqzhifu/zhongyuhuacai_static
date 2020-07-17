@@ -11,7 +11,7 @@
         <view class="priced">
           <view class="num">{{item.payment}}件已售</view>
           <view class="cart" data-index="{{index}}" bindtap="onTapItemCart">
-            <image class="img" src="./images/cart@2x.png" mode="scaleToFill"></image>
+            <image wx:if="{{!item.has_cart}}" class="img" src="./images/cart@2x.png" mode="scaleToFill"></image>
           </view>
         </view>
       </view>

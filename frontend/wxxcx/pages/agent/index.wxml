@@ -1,2 +1,3 @@
 <!--pages/agent/index.wxml-->
 <button bindtap="clearUserLocalStorage">清理本地数据库缓存</button>
+<view bindtap="gotoLoading">跳转loading</view>

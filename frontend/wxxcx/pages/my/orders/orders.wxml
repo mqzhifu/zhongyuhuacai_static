@@ -6,269 +6,107 @@
         <view class="item {{selectedTab==4 && 'active'}}" data-index="4" bindtap="onChangeTabs">待收货<view class="line"></view></view>
         <view class="item {{selectedTab==5 && 'active'}}" data-index="5" bindtap="onChangeTabs">待评价<view class="line"></view></view>
     </view>
-    <view class="tabPanel" wx:if="{{selectedTab==1}}">
-        <view class="item">
-            <view class="status">交易成功</view>
-            <view class="main">
-                <view class="thumb">
-                    <image mode="aspectFit" src="https://img14.360buyimg.com/n1/jfs/t3682/362/1363475238/559844/ab37eb62/58229915N5796455e.jpg" />
+
+    <view wx:for="{{tabPanel}}" wx:for-item="o_list" wx:key="orders_parent">
+
+        <view class="tabPanel" wx:if="{{selectedTab==index}}" >
+            <view class="item" wx:for="{{o_list}}" wx:key="orders_list"  >
+                <view class="status">{{item.status_desc}}</view>
+                <view class="main" wx:for="{{item.goods_list}}" wx:for-item="goods" wx:key="orders_list_item">
+                    <view class="thumb">
+                        <image mode="aspectFit" src="{{goods.pic}}" />
+                    </view>
+                    <view class="info">
+                        <view class="desc">{{goods.title}}</view>
+                        <view class="cate">{{goods.pcap_desc_str}}</view>
+                    </view>
+                    <view class="price">
+                        <view class="txt">￥{{goods.price}}</view>
+                        <view class="num">x{{goods.num}}</view>
+                    </view>
                 </view>
-                <view class="info">
-                    <view class="desc">介绍介绍介绍介绍介绍介绍介绍 介绍介绍介绍</view>
-                    <view class="cate">颜色：180x200cm绿色格子</view>
+                <!-- //End -->
+                <view class="total">
+                    <text>共{{item.goods_total_num}}件商品 总计：</text>
+                    <text class="price">￥{{item.total_price}}</text>
+
+                    <text>（含运费：￥{{item.haulage}}）</text>
+                    <view class="h_line"></view>
                 </view>
-                <view class="price">
-                    <view class="txt">￥89.00</view>
-                    <view class="num">x1</view>
+                <!-- //End -->
+
+
+                <view class="tools">
+                    <!--<view class="btn">延长收货</view>-->
+                    <view class="btn" bindtap="gotoPay" wx:if  ="{{item.status == 1}}" data-oid="{{item.id}}">支付</view>
+                    <view class="btn" bindtap="cancel" wx:if  ="{{item.status == 1}}" data-oid="{{item.id}}">取消</view>
+                    <view class="btn"  wx:if  ="{{item.status == 5}}">查看物流</view>
+                    <view class="btn" bindtap="confirmReceive" wx:if  ="{{item.status == 2}}"  data-oid="{{item.id}}">确认收货</view>
+                    <view class="btn" bindtap="refund" wx:if  ="{{item.status == 2 ||  item.status == 5 || item.status == 6}}"  data-oid="{{item.id}}">申请退款</view>
+                    <view class="btn" wx:if  ="{{ item.status == 6 || item.status == 8}}" bindtap="goto_common" data-id="{{item.id}}">评论</view>
                 </view>
+                <!-- //End -->
+                <view class="btmDesc">
+                    <image src="./images/icon-car.png" />
+                    <text>收货地址为：XXX-XXX-XXX</text>
+                </view>
+                <view class="btmDesc" wx:if  ="{{item.status >= 2}}">
+                    <text>XX快递 ,单号： {{item.express_no}}</text>
+                </view>
+                <view class="btmDesc"  wx:if  ="{{item.status >= 6}}">
+                    <text >签收时间 :{{item.sigin_time_dt}}</text>
+                </view>
+
+
+
+
+                <!-- //End -->
             </view>
-            <!-- //End -->
-            <view class="total">
-                <text>共1件商品 总计：</text>
-                <text class="price">￥199.99</text>
-                <text>（含运费：￥5.00）</text>
-                <view class="h_line"></view>
-            </view>
-            <!-- //End -->
-            <view class="tools">
-                <!--<view class="btn">延长收货</view>-->
-                <view class="btn">申请退款</view>
-                <view class="btn">查看物流</view>
-                <view class="btn confirm">确认收货</view>
-            </view>
-            <!-- //End -->
-            <view class="btmDesc">
-                <image src="./images/icon-car.png" />
-                <text>韵达快递: 【代收点】 您的快件已签收 ,签收人在 【北京市【北京市【北京市【北京市</text>
-            </view>
-            <!-- //End -->
+            <!-- //End 交易成功 -->
+            <!--<view class="item">-->
+                <!--<view class="status">已评价</view>-->
+                <!--<view class="main">-->
+                    <!--<view class="thumb">-->
+                        <!--<image mode="aspectFit" src="https://img14.360buyimg.com/n1/jfs/t3682/362/1363475238/559844/ab37eb62/58229915N5796455e.jpg" />-->
+                    <!--</view>-->
+                    <!--<view class="info">-->
+                        <!--<view class="desc">介绍介绍介绍介绍介绍介绍介绍 介绍介绍介绍</view>-->
+                        <!--<view class="cate">颜色：180x200cm绿色格子</view>-->
+                    <!--</view>-->
+                    <!--<view class="price">-->
+                        <!--<view class="txt">￥89.00</view>-->
+                        <!--<view class="num">x1</view>-->
+                    <!--</view>-->
+                <!--</view>-->
+
+                <!--&lt;!&ndash; //End &ndash;&gt;-->
+                <!--<view class="total">-->
+                    <!--<text>共1件商品 总计：</text>-->
+                    <!--<text class="price">￥199.99</text>-->
+                    <!--<text>（含运费：￥5.00）</text>-->
+                    <!--<view class="h_line"></view>-->
+                <!--</view>-->
+                <!--&lt;!&ndash; //End &ndash;&gt;-->
+                <!--<view class="tools">-->
+                    <!--<view class="more">更多</view>-->
+                    <!--<view class="btn">申请退款</view>-->
+                    <!--<view class="btn">追加评论</view>-->
+                    <!--<view class="btn">再次购买</view>-->
+                <!--</view>-->
+                <!--&lt;!&ndash; //End &ndash;&gt;-->
+            <!--</view>-->
+            <!-- //End 已评价 -->
+
+
+
+
+
+
+
         </view>
-        <!-- //End 交易成功 -->
-        <view class="item">
-            <view class="status">已评价</view>
-            <view class="main">
-                <view class="thumb">
-                    <image mode="aspectFit" src="https://img14.360buyimg.com/n1/jfs/t3682/362/1363475238/559844/ab37eb62/58229915N5796455e.jpg" />
-                </view>
-                <view class="info">
-                    <view class="desc">介绍介绍介绍介绍介绍介绍介绍 介绍介绍介绍</view>
-                    <view class="cate">颜色：180x200cm绿色格子</view>
-                </view>
-                <view class="price">
-                    <view class="txt">￥89.00</view>
-                    <view class="num">x1</view>
-                </view>
-            </view>
-            <!-- //End -->
-            <view class="total">
-                <text>共1件商品 总计：</text>
-                <text class="price">￥199.99</text>
-                <text>（含运费：￥5.00）</text>
-                <view class="h_line"></view>
-            </view>
-            <!-- //End -->
-            <view class="tools">
-                <view class="more">更多</view>
-                <view class="btn">申请退款</view>
-                <view class="btn">追加评论</view>
-                <view class="btn">再次购买</view>
-            </view>
-            <!-- //End -->
-        </view>
-        <!-- //End 已评价 -->
-        <view class="item">
-            <view class="status">待收货</view>
-            <view class="main">
-                <view class="thumb">
-                    <image mode="aspectFit" src="https://img14.360buyimg.com/n1/jfs/t3682/362/1363475238/559844/ab37eb62/58229915N5796455e.jpg" />
-                </view>
-                <view class="info">
-                    <view class="desc">介绍介绍介绍介绍介绍介绍介绍 介绍介绍介绍</view>
-                    <view class="cate">颜色：180x200cm绿色格子</view>
-                </view>
-                <view class="price">
-                    <view class="txt">￥89.00</view>
-                    <view class="num">x1</view>
-                </view>
-            </view>
-            <!-- //End -->
-            <view class="total">
-                <text>共1件商品 总计：</text>
-                <text class="price">￥199.99</text>
-                <text>（含运费：￥5.00）</text>
-                <view class="h_line"></view>
-            </view>
-            <!-- //End -->
-            <view class="tools">
-                <view class="btn">延长收货</view>
-                <view class="btn">申请退款</view>
-                <view class="btn">查看物流</view>
-                <view class="btn confirm">确认收货</view>
-            </view>
-            <!-- //End -->
-            <view class="btmDesc">
-                <image src="./images/icon-car.png" />
-                <text>韵达快递: 【代收点】 您的快件已签收 ,签收人在 【北京市【北京市【北京市【北京市</text>
-            </view>
-            <!-- //End -->
-        </view>
-        <!-- //End 待收货 -->
+
+
+
     </view>
     <!-- //End  -->
-    <view class="tabPanel" wx:if="{{selectedTab==2}}">
-        <view class="item">
-            <view class="status">待付款</view>
-            <view class="main">
-                <view class="thumb">
-                    <image mode="aspectFit" src="https://img14.360buyimg.com/n1/jfs/t3682/362/1363475238/559844/ab37eb62/58229915N5796455e.jpg" />
-                </view>
-                <view class="info">
-                    <view class="desc">介绍介绍介绍介绍介绍介绍介绍 介绍介绍介绍</view>
-                    <view class="cate">颜色：180x200cm绿色格子</view>
-                </view>
-                <view class="price">
-                    <view class="txt">￥89.00</view>
-                    <view class="num">x1</view>
-                </view>
-            </view>
-            <!-- //End -->
-            <view class="total">
-                <text>共1件商品 总计：</text>
-                <text class="price">￥199.99</text>
-                <text>（含运费：￥5.00）</text>
-                <view class="h_line"></view>
-            </view>
-            <!-- //End -->
-            <view class="tools">
-                <view class="btn">延长收货</view>
-                <view class="btn">申请退款</view>
-                <view class="btn">查看物流</view>
-                <view class="btn confirm">确认收货</view>
-            </view>
-            <!-- //End -->
-            <view class="btmDesc">
-                <image src="./images/icon-car.png" />
-                <text>韵达快递: 【代收点】 您的快件已签收 ,签收人在 【北京市【北京市【北京市【北京市</text>
-            </view>
-            <!-- //End -->
-        </view>
-    </view>
-    <!-- //End 待付款 -->
-    <view class="tabPanel" wx:if="{{selectedTab==3}}">
-        <view class="item">
-            <view class="status">待发货</view>
-            <view class="main">
-                <view class="thumb">
-                    <image mode="aspectFit" src="https://img14.360buyimg.com/n1/jfs/t3682/362/1363475238/559844/ab37eb62/58229915N5796455e.jpg" />
-                </view>
-                <view class="info">
-                    <view class="desc">介绍介绍介绍介绍介绍介绍介绍 介绍介绍介绍</view>
-                    <view class="cate">颜色：180x200cm绿色格子</view>
-                </view>
-                <view class="price">
-                    <view class="txt">￥89.00</view>
-                    <view class="num">x1</view>
-                </view>
-            </view>
-            <!-- //End -->
-            <view class="total">
-                <text>共1件商品 总计：</text>
-                <text class="price">￥199.99</text>
-                <text>（含运费：￥5.00）</text>
-                <view class="h_line"></view>
-            </view>
-            <!-- //End -->
-            <view class="tools">
-                <view class="btn">延长收货</view>
-                <view class="btn">申请退款</view>
-                <view class="btn">查看物流</view>
-                <view class="btn confirm">确认收货</view>
-            </view>
-            <!-- //End -->
-            <view class="btmDesc">
-                <image src="./images/icon-car.png" />
-                <text>韵达快递: 【代收点】 您的快件已签收 ,签收人在 【北京市【北京市【北京市【北京市</text>
-            </view>
-            <!-- //End -->
-        </view>
-    </view>
-    <!-- //End 待发货 -->
-    <view class="tabPanel" wx:if="{{selectedTab==4}}">
-        <view class="item">
-            <view class="status">待收货</view>
-            <view class="main">
-                <view class="thumb">
-                    <image mode="aspectFit" src="https://img14.360buyimg.com/n1/jfs/t3682/362/1363475238/559844/ab37eb62/58229915N5796455e.jpg" />
-                </view>
-                <view class="info">
-                    <view class="desc">介绍介绍介绍介绍介绍介绍介绍 介绍介绍介绍</view>
-                    <view class="cate">颜色：180x200cm绿色格子</view>
-                </view>
-                <view class="price">
-                    <view class="txt">￥89.00</view>
-                    <view class="num">x1</view>
-                </view>
-            </view>
-            <!-- //End -->
-            <view class="total">
-                <text>共1件商品 总计：</text>
-                <text class="price">￥199.99</text>
-                <text>（含运费：￥5.00）</text>
-                <view class="h_line"></view>
-            </view>
-            <!-- //End -->
-            <view class="tools">
-                <view class="btn">延长收货</view>
-                <view class="btn">申请退款</view>
-                <view class="btn">查看物流</view>
-                <view class="btn confirm">确认收货</view>
-            </view>
-            <!-- //End -->
-            <view class="btmDesc">
-                <image src="./images/icon-car.png" />
-                <text>韵达快递: 【代收点】 您的快件已签收 ,签收人在 【北京市【北京市【北京市【北京市</text>
-            </view>
-            <!-- //End -->
-        </view>
-    </view>
-    <!-- //End 待收货 -->
-    <view class="tabPanel" wx:if="{{selectedTab==5}}">
-        <view class="item">
-            <view class="status">待评价</view>
-            <view class="main">
-                <view class="thumb">
-                    <image mode="aspectFit" src="https://img14.360buyimg.com/n1/jfs/t3682/362/1363475238/559844/ab37eb62/58229915N5796455e.jpg" />
-                </view>
-                <view class="info">
-                    <view class="desc">介绍介绍介绍介绍介绍介绍介绍 介绍介绍介绍</view>
-                    <view class="cate">颜色：180x200cm绿色格子</view>
-                </view>
-                <view class="price">
-                    <view class="txt">￥89.00</view>
-                    <view class="num">x1</view>
-                </view>
-            </view>
-            <!-- //End -->
-            <view class="total">
-                <text>共1件商品 总计：</text>
-                <text class="price">￥199.99</text>
-                <text>（含运费：￥5.00）</text>
-                <view class="h_line"></view>
-            </view>
-            <!-- //End -->
-            <view class="tools">
-                <view class="btn">延长收货</view>
-                <view class="btn">申请退款</view>
-                <view class="btn">查看物流</view>
-                <view class="btn confirm">确认收货</view>
-            </view>
-            <!-- //End -->
-            <view class="btmDesc">
-                <image src="./images/icon-car.png" />
-                <text>韵达快递: 【代收点】 您的快件已签收 ,签收人在 【北京市【北京市【北京市【北京市</text>
-            </view>
-            <!-- //End -->
-        </view>
-    </view>
-    <!-- //End 待评价 -->
 </view>

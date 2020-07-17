@@ -1,24 +1,31 @@
 
 const app = getApp()
-
+const Logs = require("../../utils/log.js")
 
 Page({
     data: {
-        swiperList:[],//轮播图
-        swiperDataList :[],//server 轮播图的数据，暂存，因为上面的数据只是有k:v
+        swiperList:[],//轮播图，给控件用 k:v 形式，只能用于控件
+        swiperDataList :[],//server 轮播图的数据，暂存，用于轮播图点击事件
 
-        //人气推荐- 产品列表
-        hotList:null,//列表数据
-        hotListPage :0,//当前页
-        hotListMaxPage:0,//当前数据总页数
-        hotListHasBottom:0,//是否已经到底了
+        //推荐-产品列表
+        showLoading:0,//获取数据时显示loading....icon
+
+        recommendProductType : 1,//分类
+        recommendProductLimit : 3,//每页多少条记录
+        recommendProductList:[],//列表数据
+        recommendProductCurrentPage :0,//当前页
+        recommendProductMaxPage:0,//当前数据总页数
+        //推荐-产品列表-end
+
         //产品分类 列表
         categoryList:[]//分类列表数据
+
+        // hotListHasBottom:0,//是否已经到底了
     },
 
-    onLoad: function () {
-        console.log("im in <index> page Onload...");
 
+    onLoad: function (para) {
+        Logs.onload("index",para)
         //初始化 登陆信息
         var PromiseObj =  new Promise(function(resolve, reject) {
             app.globalData.promiseResolve = resolve
@@ -36,26 +43,20 @@ Page({
     productGoto:function(e){
         var pid = e.currentTarget.dataset.pid
         app.goto(1,2,{pid:pid})
-        // console.log("navigateTo:goodsDetail","pid:",pid)
-        // app.navigateGoto('/pages/goodsDetail/goodsDetail?pid='+pid)
     },
-
+    //轮播图 点击跳转
     bannerGoto:function(e){
         console.log("from component bannerGoto:",e.detail)
         var banner = this.data.swiperDataList[e.detail]
         console.log("banner row:",banner)
         if(banner.type == 1){//直接跳转产品详情页
             app.goto(1,2,{pid:banner.pid})
-            // app.navigateGoto('/pages/goodsDetail/goodsDetail?pid='+banner.pid)
         }else if(banner.type == 2){//跳转到产品分类页
-            // app.globalData.searchCategory = e.detail
-            // app.switchGoto(  '/pages/goods/index')
-            // app.switchGoto( '/pages/goods/index?category='+banner.category)
         }else{
-            console.log("error:banner click goto ")
+            console.log("error:banner click goto type err ")
         }
     },
-
+    //分类ICON跳转
     categoryGoto:function(e){
         console.log("from component categoryGoto:",e.detail)
         app.globalData.searchCategory = e.detail
@@ -63,104 +64,87 @@ Page({
         // app.switchGoto(  '/pages/goods/index')
 
     },
-
-
+    //搜索跳转
     searchProduct:function(e){
         var value = e.detail
         console.log("searchProduct:",value)
         app.globalData.searchKeyword = value
+        //这是switch 跳转，不能直接传参数 .得用全局变量
         app.goto(2,3,null)
-        // app.switchGoto(  '/pages/goods/index')
     },
-
-
+    //触碰到底部，推荐产品要做分页处理
     onReachBottom: function () {
-        console.log("oh no ~ bottom","max page",this.data.hotListMaxPage)
-
-        if(this.data.hotListPage  >= this.data.hotListMaxPage ){
-
-            this.setData({"hotListHasBottom":1})
-
-            console.log("hotListMaxPage >= hotListPage")
+        console.log("oh no ~ bottom","max page",this.data.recommendProductMaxPage)
+        if(this.data.recommendProductCurrentPage  >= this.data.recommendProductMaxPage ){
+            console.log("recommendProductMaxPage >= recommendProductCurrentPage")
             return -3
         }
 
         this.getRecommendProductListPage()
     },
-
-
+    //获取推荐产品数据
     getRecommendProductListPage:function(){
-        if(this.hotListPage == -1){
-            console.log(" RecommendProductList is null don't request server. ")
-            return -2
-        }
-
+        // if(this.data.recommendProductCurrentPage >= this.data.recommendProductMaxPage){
+        //     console.log(" RecommendProductList is null don't request server. ")
+        //     return -2
+        // }
         //获取 推荐产品 列表
         var parentObj = this
         var RecommendProductListCallback = function(resolve,res){
-            console.log("getRecommendProductList callback", res)
-            if(!res){
+            console.log("RecommendProductListCallback callback", res)
+            if(app.weakCheckscalarEmpty(res.list) || app.isEmptyArray(res.list)){
                 console.log("notice:getRecommendProductList is null")
-                parentObj.setData({"hotList":[],"hotListPage":-1})
+                // parentObj.setData({"recommendProductList":[],"recommendProductCurrentPage":-1})
                 return -1
             }
 
-            
-            var data = []
-            for(var i=0;i<res.list.length ;i++){
-                data[i] = res.list[i]
-                // parentObj.data.swiperList[i] =res[i]['pic']
-            }
-
-            // console.log("hotList：",parentObj.data.hotList,parentObj.data.hotList.keys())
-            if( ! parentObj.data.hotList ){
-                console.log("hotList is null ,first set data")
-                parentObj.setData({"hotList":data})
+            if( app.isEmptyArray(parentObj.data.recommendProductList ) ){
+                console.log("recommendProductList is null ,first set data")
+                parentObj.setData({"recommendProductList":res.list})
             }else{
-                console.log("hotList is exist ,append data")
-                var tmp = parentObj.data.hotList.concat(data);
-                parentObj.setData({"hotList":tmp})
+                console.log("recommendProductList is exist ,append data",res.list)
+                var tmp = parentObj.data.recommendProductList.concat(res.list);
+                parentObj.setData({"recommendProductList":tmp})
             }
 
-            parentObj.setData({"hotListMaxPage":res.page_cnt})
-
-            if(parentObj.data.hotListPage  >= parentObj.data.hotListMaxPage ){
-                parentObj.setData({"hotListHasBottom":1})
-            }
-
+            parentObj.setData({"recommendProductMaxPage":res.page_cnt})//最大页数
+            parentObj.setData({"showLoading":0})//关闭loading...icon
         }
 
-        parentObj.setData({"hotListPage":parentObj.data.hotListPage + 1})
+        parentObj.setData({"recommendProductCurrentPage":parentObj.data.recommendProductCurrentPage + 1})
         var data = {
-            'page':parentObj.data.hotListPage,
-            'limit':4
+            'page':parentObj.data.recommendProductCurrentPage,
+            'limit':this.data.recommendProductLimit,
+            'type':this.data.recommendProductType,
         }
+
+        parentObj.setData({"showLoading":1})//显示 loading....icon
         app.httpRequest('getRecommendProductList',data,RecommendProductListCallback);
     },
-
+    //初始化页面数据
     initIndexData: function(){
         console.log("start init <index> page Data:")
 
-        //获取首页轮播图
-        var data = {}
         var parentObj = this;
+        //获取首页轮播图
         var BannerListCallback = function(resolve,res){
             console.log("getBannerList callback", res)
-            if(!res){
+            if(app.weakCheckscalarEmpty(res) || app.isEmptyArray(res)){
                 console.log("notice:getBannerList is null")
                 parentObj.setData({"swiperList":data})
                 return -1
             }
-            var data = []
+            //临时变量
+            var tmpArr = []
             for(var i=0;i<res.length ;i++){
-                data[i] = res[i]['pic']
+                tmpArr[i] = res[i]['pic']
                 // parentObj.data.swiperList[i] =res[i]['pic']
             }
-
-            parentObj.setData({"swiperList":data})
-            parentObj.setData({"swiperDataList":res})
-
-
+            //设置-轮播图变量
+            parentObj.setData({
+                "swiperList":tmpArr,//轮播图控件
+                "swiperDataList":res//用于计算的数据
+            })
         }
         //获取 - 分类列表
         var AllCategoryListCallback = function(resolve,res){
@@ -171,20 +155,18 @@ Page({
             for(var i=0;i<res.length ;i++){
                 data[i] = res[i]
             }
-
             parentObj.setData({"categoryList":data})
-
         }
+
+        var data = {}
 
         parentObj.getRecommendProductListPage()
         app.httpRequest('getBannerList',data,BannerListCallback);
         app.httpRequest('getAllCategory',data,AllCategoryListCallback);
-
     },
-
-
+    //分享
     onShareAppMessage: function () {
-        return app.shareMyApp(1, '首页~','首页的内容',null)
+        return app.shareMyApp(1, 1, '首页~','首页的内容',null)
     }
 
 })

@@ -1,10 +1,10 @@
 <view class="pageGoodsDetail pageBg">
-    <!--<van-nav-bar custom-class="navBar" left-text="返回" left-arrow bind:click-left="onClickLeft">-->
-        <!--<view slot="right">-->
+    <van-nav-bar custom-class="navBar" left-text="返回" left-arrow bind:click-left="onClickLeft">
+        <view slot="right">
             <!--<image bindtap="onTabCollection" class="collection" src="./images/icon-collection@2x.png" mode="scaleToFill" />-->
-            <!--<image bindtap="onTabShare" class="share" src="./images/icon-share@2x.png" mode="scaleToFill" />-->
-        <!--</view>-->
-    <!--</van-nav-bar>-->
+            <image bindtap="onTabShare" class="share" src="./images/icon-share@2x.png" mode="scaleToFill" />
+        </view>
+    </van-nav-bar>
     <!-- //End 顶部导航 -->
     <view class="navBar">
         <v-swiper listData="{{swiperList}}" dots="true" />
@@ -14,11 +14,11 @@
         <view class="title">{{product.title}}</view>
         <view class="price">
             <text class="new">￥{{product.lowest_price}}</text>
-            <text class="old">￥{{product.lowest_price}}</text>
+            <text class="old">原价 ￥{{product.original_price}}</text>
         </view>
         <view class="stock">
-            <text class="s1">库存：{{product.stock}}件</text>
-            <text class="s2">销量：{{product.user_buy_total}}件</text>
+            <text class="s1">总库存：{{product.stock}}件</text>
+            <text class="s2">总销量：{{product.user_buy_total}}件</text>
         </view>
     </view>
     <!-- //End 产品轮播图 下面的说明信息 -->
@@ -52,6 +52,12 @@
         <!--<image class="img" src="./images/arrow-right@2x.png" mode="scaleToFill" />-->
     <!--</view>-->
     <!-- //End 领券 -->
+
+
+
+
+
+
     <view class="panel2 visitor">
         <view class="title">最近访客</view>
         <view class="peps">
@@ -59,6 +65,7 @@
                 <view class="item" wx:for="{{visitorList}}" wx:key="unique">
                     <van-image width="40" height="40" lazy-load round src="{{item.imgUrl}}" />
                     <view class="name">{{item.name}}</view>
+
                 </view>
             </view>
             <view class="moreRound">
@@ -77,6 +84,7 @@
                     <view class="t2">{{item.size}}</view>
                 </view>
                 <view class="time">{{item.time}}</view>
+
             </view>
             <view class="moreBuy">
                 <view class="txt">点击查看更多</view>
@@ -113,19 +121,19 @@
     <!-- //End 评论 -->
     <view class="bd">
         <view class="titleDivider">详情</view>
-        <view class="txt">{{product.desc}}</view>
+        <!--<view class="txt">{{product.desc}}</view>-->
         <view class='deDesc' wx:for="{{detailPicsList}}" wx:key="title">
             <image class="img" mode="widthFix" src="{{item}}" data-src="{{item}}" bindtap="previewImageDetail" />
         </view>
 
 
     </view>
-    <!-- //End 详情 -->
-    <!--<view class="bd">-->
-        <!--<view class="titleDivider">更多推荐</view>-->
-        <!--<card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />-->
-        <!--<view class="more">点击继续加载</view>-->
-    <!--</view>-->
+     <!--//End 详情-->
+    <view class="bd">
+        <view class="titleDivider">更多推荐</view>
+        <card-item list="{{recommendProductList}}" bind:imgClick="onTapItemImg" bind:cartClick="onTapItemImg" />
+        <view class="more">点击继续加载</view>
+    </view>
     <!-- //End 更多推荐 -->
     <view class="tools">
         <view class="icon active">
@@ -133,12 +141,14 @@
             <view class="name">店铺</view>
         </view>
         <view class="icon">
+
             <image wx:if="{{likeFlag}}" bindtap="tapLike" data-type="0" src="./images/tools_like@2x.png"        mode="scaleToFill" />
             <image wx:else              bindtap="tapLike" data-type="1" src="./images/tools_like_active@2x.png" mode="scaleToFill" />
             <view class="name">收藏</view>
         </view>
         <view class="icon" bindtap="gotoCart">
-            <van-tag class="tag" color="#FF831B" round type="success">{{product.cart_num}}</van-tag>
+            <van-tag class="tag" wx:if="{{userCartCnt > 0}}" color="#FF831B" round type="success">{{product.cart_num}}</van-tag>
+
             <image src="./images/tools_cart@2x.png" mode="scaleToFill" />
             <view class="name" >购物车</view>
         </view>
@@ -147,6 +157,7 @@
             <view class="btn btnBuy"  bindtap="buyGotoOrder">立即购买</view>
         </view>
     </view>
+
 
     <!-- -->
     <van-popup
@@ -163,20 +174,12 @@
                 <view class="info">
                     <view class="txt">{{product.title}}</view>
                     <view class="price">
-                        <text class="p1">￥{{product.lowest_price}}</text>
-                        <text class="p2">￥{{product.lowest_price}}</text>
-                        <text class="p3">库存：{{product.stock}}件</text>
+                        <text class="p1">￥{{userSelGoodsRow.sale_price}}</text>
+                        <text class="p2">￥{{userSelGoodsRow.original_price}}</text>
+                        <text class="p3">库存：{{userSelGoodsRow.stock}}件</text>
                     </view>
                 </view>
             </view>
-
-            <!--<view>-->
-
-                <!--aaaaaa-{{userSelGoods[38]}}-->
-
-            <!--</view>-->
-
-
 
 
 
@@ -216,11 +219,11 @@
                     <!--<view class="t2">1000</view>-->
                     <view class="t3">
                         <view class="stepper">
-                            <view class="sub"><image src="./images/icon-sub.png" /></view>
+                            <view class="sub" bindtap="num_change" data-type="less"><image src="./images/icon-sub.png" /></view>
                             <view class="num">
-                            <input name="num" value="1"  bindinput='setNumInputValue' />
+                            <input name="num" value="{{num}}"  bindinput='setNumInputValue' />
                             </view>
-                            <view class="add"><image src="./images/icon-add.png" /></view>
+                            <view class="add"  bindtap="num_change" data-type="add"><image src="./images/icon-add.png" /></view>
                         </view>
                     </view>
                     <view class="h_line"></view>

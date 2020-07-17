@@ -1,0 +1,74 @@
+<view class="comment pageBg">
+    <view class="info">
+        <view class="line_top"></view>
+        <image class="pic" src="{{product.pic}}"></image>
+        <view class="txt">{{product.title}}</view>
+        <view class="h_line"></view>
+    </view>
+
+    <view class="rate">
+        <view class="label">综合评分</view>
+        <van-rate
+                custom-class="vanRate"
+                value="{{ value }}"
+                size="{{ 16 }}"
+                color="#FF831B"
+                void-color="#eee"
+                void-icon="star"
+                bind:change="onChange"
+        />
+        <view class="value">好</view>
+        <view class="h_line"></view>
+    </view>
+
+    <view class="panel">
+        <textarea class="textarea" placeholder-style="color:#ccc;" placeholder="宝贝满足你的期待吗？说说你的使用心得，分享给想买 的他们吧"
+                  bindblur="contentBlur"></textarea>
+    </view>
+
+    <view class="panel">
+        <!--<view class="upload" bindtap="uploadPic">-->
+            <!--<image class="pic" src="./images/photo.png"></image>-->
+            <!--<view class="txt">添加图片</view>-->
+        <!--</view>-->
+        <!--<view class="upload uploadImg">-->
+            <!--<image class="pic" src="https://img13.360buyimg.com/babel/s590x470_jfs/t1/129085/17/2638/58120/5ec76890E61a57640/3f73269e4905df0f.jpg"></image>-->
+        <!--</view>-->
+
+        <!--<view class="upload">-->
+            <!--<image class="pic" src="./images/photo.png"></image>-->
+            <!--<view class="txt">还可添加3张</view>-->
+        <!--</view>-->
+
+        <!--<view class="upload"></view>-->
+        <!--<view class="upload"></view>-->
+        <!--<view class="upload"></view>-->
+
+
+        <view class="upload" wx:for="{{picList}}" wx:key="pic_list_key" bindtap="uploadPic">
+            <image wx:if="{{!item}}" class="pic" src="./images/photo.png"></image>
+            <view  wx:if="{{!item}}"  class="txt">添加图片</view>
+            <image  wx:if="{{item}}" class="pic" src="{{item}}"></image>
+        </view>
+
+
+        <view class="upload" wx:if="{{!uploadVideo}}" bindtap="uploadVideo">
+            <image class="pic" src="./images/video.png"></image>
+            <view class="txt">添加短视频</view>
+        </view>
+
+        <view class="upload" wx:if="{{uploadVideo}}" bindtap="uploadVideo">
+            <image class="pic" src="{{thumbTempFilePath}}"></image>
+            <!--<view class="txt">添加短视频</view>-->
+        </view>
+
+
+
+
+
+    </view>
+
+    <view class="create">
+        <view class="text" bindtap="subCommon">添加评论</view>
+    </view>
+</view>

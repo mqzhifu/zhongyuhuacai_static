@@ -1,0 +1,63 @@
+page{
+
+  background: #eee;
+
+}
+
+.share{
+
+  width: 300px;
+
+  height: 380px;
+
+  position: fixed;
+
+  left: 0;
+
+  right: 0;
+
+  top: 0;
+
+  bottom: 100rpx;
+
+  margin: auto;
+
+}
+
+.btn-box{
+
+  padding: 1060rpx 60rpx 0 60rpx;
+
+}
+
+button{
+
+  background: darkturquoise;
+
+}
+
+ 
+
+.bottom{
+
+ width:300px;
+
+ height:40px;
+
+ background-color:white;
+
+}
+
+ 
+
+.bottom image{
+
+width:70rpx;
+
+height:70rpx;
+
+margin-left: 45%;
+
+margin-top: 2%;
+
+}

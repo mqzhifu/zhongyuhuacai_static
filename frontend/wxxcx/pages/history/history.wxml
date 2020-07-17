@@ -1,0 +1,44 @@
+<view class="history pageBg">
+
+  <view class="panel">
+    <view class="bar">
+      <!--<view class="del">删除</view>-->
+      <view class="txt">历史记录</view>
+    </view>
+     <view class="items">
+      <view class="item" wx:for="{{hotList}}" wx:key="{{index}}">
+        <image class="img" src="{{item.imgUrl}}" alt="" data-pid="{{item.id}}" bindtap="gotoDetail" />
+        <view class="name" data-pid="{{item.id}}" bindtap="gotoDetail" >{{item.title}}</view>
+        <view class="bottom">
+          <view class="price">
+            <text>￥</text>
+            <text>{{item.price}}</text>
+          </view>
+          <!--<view class="del">删除</view>-->
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--<view class="panel">-->
+    <!--<view class="bar">-->
+      <!--<view class="del">删除</view>-->
+      <!--<view class="txt">6月28日</view>-->
+    <!--</view>-->
+     <!--<view class="items">-->
+      <!--<view class="item" wx:for="{{hotList}}" wx:key="{{index}}">-->
+        <!--<image class="img" src="{{item.imgUrl}}" alt="" />-->
+        <!--<view class="name">{{item.title}}</view>-->
+        <!--<view class="bottom">-->
+          <!--<view class="price">-->
+            <!--<text>￥</text>-->
+            <!--<text>{{item.price}}</text>-->
+          <!--</view>-->
+          <!--<view class="del">删除</view>-->
+        <!--</view>-->
+      <!--</view>-->
+    <!--</view>-->
+  <!--</view>-->
+
+
+</view>

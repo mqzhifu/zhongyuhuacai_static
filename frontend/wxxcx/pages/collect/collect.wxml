@@ -1,0 +1,45 @@
+<view class="pageCart pageBg">
+    <view class="goods">
+        <view class="item" wx:for="{{productList}}">
+            <view class="thumb">
+                <image mode="aspectFit" src="{{item.pic}}" />
+            </view>
+            <view class="info">
+                <view class="txt">{{item.title}}</view>
+                <view class="price">￥{{item.lowest_price}}</view>
+            </view>
+            <view class="btns">
+               <view class="btn added"  wx:if="{{item.has_cart}}">已加入购物车</view>
+                <view class="btn"  wx:else bindtap="add_cart" data-id="{{item.id}}" data-index="{{index}}" data-pid="{{item.pid}}">加入购物车</view>
+               <view class="btn" bindtap="cancelCollect"  data-id="{{item.id}}" data-index="{{index}}" data-pid="{{item.pid}}">取消收藏</view>
+            </view>
+            <view class="h_line"></view>
+        </view>
+
+        <view wx:if="{{!productList}}">
+            <view>您还没有收藏任何商品哟~~~</view>
+        </view>
+        <!--<view class="item">-->
+            <!--<view class="thumb">-->
+                <!--<image mode="aspectFit" src="https://img14.360buyimg.com/n1/jfs/t3682/362/1363475238/559844/ab37eb62/58229915N5796455e.jpg" />-->
+            <!--</view>-->
+            <!--<view class="info">-->
+                <!--<view class="txt">新西兰皇家红苹果6个约135g/个 90元包邮送货上门</view>-->
+                <!--<view class="price">￥27.90</view>-->
+            <!--</view>-->
+            <!--<view class="btns">-->
+               <!--<view class="btn">加入购物车</view>-->
+               <!--<view class="btn">取消收藏</view>-->
+            <!--</view>-->
+            <!--<view class="h_line"></view>-->
+        <!--</view>-->
+    </view>
+    <!-- //End -->
+
+    <view class="list">
+        <view class="titleDivider">你可能还想买</view>
+         <card-item list="{{recommendProductList}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
+        <view class="more">点击继续加载</view>
+    </view>
+    <!-- //End -->
+</view>

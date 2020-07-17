@@ -1,0 +1,120 @@
+.comment .info {
+  height: 100rpx;
+  padding: 4rpx 32rpx;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.comment .info .pic {
+  width: 92rpx;
+  height: 92rpx;
+  flex-basis: 92rpx;
+  display: inline-block;
+  margin-top: 2rpx;
+}
+.comment .info .txt {
+  line-height: 92rpx;
+  font-size: 28rpx;
+  color: #333;
+  flex: 1;
+  padding-left: 20rpx;
+  padding-right: 115rpx;
+}
+.comment .rate {
+  height: 100rpx;
+  padding: 4rpx 32rpx;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.comment .rate .label {
+  font-size: 30rpx;
+  color:#333;
+  line-height: 100rpx;
+  float: left;
+}
+
+.comment .rate .vanRate {
+  float: left;
+  line-height: 100rpx;
+  margin-left: 34rpx;
+  position: relative;
+  top:3rpx
+}
+.comment .rate .value {
+  float: left;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #ccc;
+  margin-left: 24rpx;
+}
+
+.comment .panel {
+  width: 100%;
+  padding: 20rpx 28rpx;
+  background-color: #fff;
+  float: left;
+  box-sizing: border-box;
+}
+.comment .panel .textarea {
+  font-size: 28rpx;
+  color: #333;
+  height: 170rpx;
+}
+.comment .panel .upload {
+  width: 160rpx;
+  height: 160rpx;
+  border: 2rpx dashed #ccc;
+  text-align: center;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 21rpx;
+  margin-bottom: 24rpx;
+}
+.comment .panel .upload:first-child,
+.comment .panel .upload:nth-child(4n+1) {
+  margin-left: 0;
+}
+.comment .panel .upload:nth-child(4n) {
+  float: right;
+}
+
+.comment .panel .upload .pic {
+  width: 60rpx;
+  height: 48rpx;
+  margin-top: 36rpx;
+  margin-bottom: 10rpx;
+}
+.comment .panel .upload .txt {
+  font-size: 24rpx;
+  color: #ccc;
+}
+.comment .panel .uploadImg {
+  border: 0;
+}
+.comment .panel .uploadImg .pic {
+  width: 160rpx;
+  height: 160rpx;
+  margin-top: 0;
+}
+
+.comment .create {
+  width: 100%;
+  padding: 0 28rpx;
+  float: left;
+  box-sizing: border-box ;
+  margin-top: 24rpx;
+  /* position: fixed;
+  bottom: 56rpx;
+  left: 0;
+  right: 0; */
+}
+.comment .create .text {
+  background: #ff831b;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 88rpx;
+  border-radius: 50rpx;
+}

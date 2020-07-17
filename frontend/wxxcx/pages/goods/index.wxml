@@ -41,14 +41,21 @@
     </van-sticky>
 
     <van-tab title="全部商品">
-      <card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
-      <view class="more">点击继续加载</view>
+      <card-item wx:if="{{listData}}" list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
+      <view wx:if="{{!listData || listData.length <=0}}">抱歉，没有搜索到您要的宝贝~~~</view>
+      <!--<view class="more">点击继续加载</view>-->
     </van-tab>
 
-    <van-tab wx:for="{{category}}" title="{{item.name}}" name="{{item.id}}" data-id="{{item.id}}" wx:key="goods_list_category">
+    <van-tab  wx:for="{{category}}" title="{{item.name}}" name="{{item.id}}" data-id="{{item.id}}" wx:key="goods_list_category">
       <card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
-      <view class="more">点击继续加载</view>
+      <view wx:if="{{!listData ||  listData.length <=0}}">抱歉，没有搜索到您要的宝贝~~~</view>
+      <!--<view class="more">点击继续加载</view>-->
     </van-tab>
+
+
+    <view  wx:if="{{hasBottom}}">
+      <view class="more">不能再拖动了~我也是有底线的，好不啦!!!</view>
+    </view>
 
   </van-tabs>
   <!-- //End nav标签 -->

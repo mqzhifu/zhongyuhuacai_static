@@ -25,7 +25,7 @@
 
 
       <!-- <view class="item"  wx:if="{{!hostList}}">管理员开了小差，没设置推荐数据...</view> -->
-      <view  class="item"  wx:for="{{hotList}}" bindtap="productGoto" data-pid="{{item.id}}"  wx:key="index_product_list" wx:key="index_recommend">
+      <view  class="item"  wx:for="{{recommendProductList}}" bindtap="productGoto" data-pid="{{item.id}}"  wx:key="index_product_list" wx:key="index_recommend">
         <image class="img" src="{{item.pic}}" alt="" />
         <view class="name">{{item.title}}</view>
         <view class="bottom">
@@ -39,24 +39,27 @@
 
 
 
-  
-    
+
 
 
     </view>
     <!--<view class="more">点击继续加载</view>-->
 
-    <view  wx:if="{{hotListHasBottom}}">
-      <view>不能再拖动了~我也是有底线的，好不啦!!!</view>
+    <view  wx:if="{{recommendProductCurrentPage == recommendProductMaxPage}}">
+      <view class="more">不能再拖动了~我也是有底线的，好不啦!!!</view>
     </view>
 
 
-    <view  wx:if="{{hotListPage == -1}}">
+    <view  wx:if="{{recommendProductCurrentPage == 0}}">
       <view>暂无数据</view>
     </view>
 
 
   </view>
+
+
+  <van-loading wx:if="{{showLoading}}" />
+
   <!-- //End 人气推荐 -->
 
   <!-- <v-footer /> -->

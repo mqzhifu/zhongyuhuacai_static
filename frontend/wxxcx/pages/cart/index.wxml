@@ -1,11 +1,11 @@
 <view class="pageCart pageBg">
     <view class="title">
-        <view class="num">购物车({{cartListCnt}})</view>
+        <view class="num" wx:if="{{cartListCnt}}">购物车({{cartListCnt}})</view>
         <!--<view class="edit">编辑</view>-->
     </view>
     <!-- //End -->
 
-    <view class="goods">
+    <view class="goods" wx:if="{{cartListCnt}}">
         <view class="item" wx:for="{{cartList}}" wx:key="cart_list_index">
             <view class="radio" bindtap="clickCheckBox" data-id="{{index}}">
                 <image wx:if="{{checkBoxList[index].check == false}}" src="./images/icon-radio.png" />
@@ -15,13 +15,14 @@
 
 
             <view class="thumb">
-                <image mode="aspectFit" src="{{item.pic}}" />
+                <image mode="aspectFit" src="{{item.pic}}" data-pid="{{item.id}}" bindtap="gotoDetail" />
             </view>
             <view class="info">
+                <view class="del" bindtap="cartDelOne" data-id="{{index}}">删除</view>
                 <view class="txt">{{item.title}}</view>
                 <view class="price">￥{{item.lowest_price}}</view>
             </view>
-            <view bindtap="cartDelOne" data-id="{{index}}">删除</view>
+        
             <view class="stepper">
                 <view class="sub" bindtap="num_less" data-id="{{index}}" ><image src="./images/icon-sub.png" /></view>
                 <view class="num">
@@ -32,16 +33,22 @@
             <view class="h_line"></view>
         </view>
     </view>
+
+    <view class="goods" wx:else>
+        <view>
+            客官，赶紧去添加几个商品吧....
+        </view>
+    </view>
     <!-- //End -->
 
     <view class="list">
         <view class="titleDivider">你可能还想买</view>
-         <card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
+         <card-item list="{{recommendProductList}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
         <view class="more">点击继续加载</view>
     </view>
     <!-- //End -->
 
-    <view class="total">
+    <view class="total" wx:if="{{cartListCnt}}">
         <view class="radio" bindtap="selAll">
             <image wx:if="{{selAll == 0}}" src="./images/icon-radio.png" />
             <image wx:else  src="./images/icon-radio-active.png" />

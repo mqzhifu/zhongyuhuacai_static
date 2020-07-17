@@ -1,4 +1,5 @@
 <view class="initLoading">
-  <image class="icon" src="./images/loadingIcon.png" />
+
+  <image class="icon" src="./images/loadingIcon.png" style="left:{{process}}rpx" />
   <image class="full" src="./images/loading.png" mode="widthFix"></image>
 </view>

@@ -50,10 +50,26 @@
   height: 100%;
   width: 100%;
 }
+.item .info {
+  position: relative;
+}
 .item .info .txt {
   font-size: 24rpx;
   line-height: 40rpx;
   color: #4c4c4c;
+  padding-right: 80rpx;
+}
+.item .info .del {
+  width:72rpx;
+  height:41rpx;
+  line-height: 41rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #ccc;
+  border:2rpx solid #F4F4F4;
+  position: absolute;
+  top:0;
+  right:0;
 }
 .item .info .price {
   font-size: 30rpx;

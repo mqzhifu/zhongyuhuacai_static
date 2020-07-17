@@ -1,0 +1,107 @@
+.pageCart {
+  width: 100%;
+  padding-bottom: 130rpx;
+  float: left;
+}
+
+.pageCart .goods .item {
+  width: 100%;
+  float: left;
+  display: flex;
+  background: #fff;
+  padding: 28rpx 20rpx 60rpx 249rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.pageCart .goods .item .thumb {
+  width: 149rpx;
+  height: 149rpx;
+  position: absolute;
+  top:28rpx;
+  left: 20rpx;
+  overflow: hidden;
+  margin-right: 79rpx;
+  float: left;
+}
+.pageCart .goods .item .thumb image {
+  height: 100%;
+  width: 100%;
+}
+.item .info {
+  position: relative;
+}
+.item .info .txt {
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #4c4c4c;
+  padding-right: 150rpx;
+}
+.item .info .price {
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #ff831b;
+  margin-top: 10rpx;
+}
+.pageCart .goods .btns {
+  position: absolute;
+  bottom: 22rpx;
+  right: 24rpx;
+}
+.pageCart .goods .btns .btn {
+  padding:3rpx 2rpx;
+  border:1px solid #ccc;
+  border-radius:6rpx;
+  font-size: 24rpx;
+  color: #333;
+  float: left;
+} 
+.pageCart .goods .btns .btn.added {
+  background-color: #FF831B;
+  color: #fff;
+  border-color: #FF831B;
+}
+.pageCart .goods .btns .btn:nth-child(2) {
+  margin-left:23rpx
+}
+.pageCart .titleDivider {
+  color: #ff831b;
+  margin-bottom: 0;
+}
+.pageCart .titleDivider::before {
+  margin-left: -130rpx;
+}
+.pageCart .titleDivider::after {
+  margin-left: 70rpx;
+}
+
+
+/* ------------ */
+.pageCart .info {
+  float: right;
+}
+.pageCart .info text,
+.pageCart .info view {
+  float: left;
+  line-height: 100rpx;
+}
+.pageCart .info .txt {
+  font-size: 24rpx;
+  color: #4C4C4C;
+}
+.pageCart .info .price {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ff831b;
+}
+.pageCart .info .btn {
+  width: 200rpx;
+  text-align: center;
+  background: #ff831b;
+  color: #fff;
+  font-size: 36rpx;
+}
+.pageCart .list {
+  width: 100%;
+  float: left;
+}

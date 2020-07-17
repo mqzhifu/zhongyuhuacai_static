@@ -1,17 +1,22 @@
 {
   "pages": [
+    "pages/other/loading/loading",
     "pages/index/index",
     "pages/goods/index",
     "pages/cart/index",
     "pages/agent/index",
     "pages/goodsDetail/goodsDetail",
-    "pages/other/loading/loading",
+
+    "pages/my/comment/comment",
     "pages/other/authority/authority",
+    "pages/other/clear/cache",
     "pages/my/index/index",
     "pages/my/edit/edit",
     "pages/my/address/address",
+    "pages/createAddress/createAddress",
     "pages/my/orderConfirm/orderConfirm",
-    "pages/my/orders/orders"
+    "pages/my/orders/orders",
+    "pages/other/canvasShareImg/canvasShareImg"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -47,12 +52,6 @@
         "iconPath": "./images/footer-icon4-default.png",
         "pagePath": "pages/my/index/index",
         "text": "个人中心"
-      },
-      {
-        "selectedIconPath": "./images/footer-icon5-active.png",
-        "iconPath": "./images/footer-icon5-default.png",
-        "pagePath": "pages/agent/index",
-        "text": "成为代理"
       }
     ]
   },
@@ -78,7 +77,9 @@
     "van-radio-group": "vant-weapp/radio-group/index",
     "van-action-sheet": "vant-weapp/action-sheet/index",
     "van-popup": "vant-weapp/popup/index",
-    "van-tag": "vant-weapp/tag/index"
+    "van-tag": "vant-weapp/tag/index",
+    "van-area": "vant-weapp/area/index",
+    "van-loading": "vant-weapp/loading/index"
   },
 
 

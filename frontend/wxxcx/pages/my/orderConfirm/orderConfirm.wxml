@@ -1,21 +1,20 @@
 <view class="pageConfirm pageBg">
     <view class="address">
-        <!--<view class="item" bindtap="onRouteAddress">-->
         <view wx:if="{{userAddress.length != 0}}" class="item" bindtap="changeAddress">
             <view class="title">
-                <text class="name">{{uinfo.nickName}}</text>
-                <text class="tel">12345678910</text>
+                <text class="name">{{userAddress.name}}</text>
+                <text class="tel">{{userAddress.mobile}}</text>
             </view>
-            <view class="desc">{{uinfo.country}}-{{uinfo.city}}</view>
+            <view class="desc">{{userAddress.county_code}}-{{userAddress.town_code}}</view>
             <image class="img" src="../../../images/arrow-right@2x.png"></image>
         </view>
-        <view wx:else class="item">
+        <view wx:else class="item" bindtap="addAddress">
             添加新地址
         </view>
     </view>
 
     <!--//End--->
-    <view class="goods" wx:for="{{productList}}">
+    <view class="goods" wx:for="{{productList}}" wx:key="ttt">
         <!--<view class="title">订单商品</view>-->
         <view class="main">
             <view class="thumb">
@@ -38,13 +37,13 @@
             <text class="t1">商品金额</text>
             <text class="t2">￥{{goodsTotalPrice}}</text>
         </view>
-        <view class="item">
-            <text class="t1">折扣券</text>
-            <text class="t2">-￥0.00</text>
-        </view>
+        <!--<view class="item">-->
+            <!--<text class="t1">折扣券</text>-->
+            <!--<text class="t2">-￥0.00</text>-->
+        <!--</view>-->
         <view class="item">
             <text class="t1">总运费</text>
-            <text class="t2" wx:if="totalHaulage > 0 ">{{totalHaulage}}</text>
+            <text class="t2" wx:if="totalHaulage > 0 ">￥{{totalHaulage}}</text>
             <text class="t2" wx:else >包邮</text>
         </view>
         <view class="item">
