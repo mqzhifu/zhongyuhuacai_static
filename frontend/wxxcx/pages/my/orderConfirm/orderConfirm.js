@@ -95,7 +95,7 @@ Page({
         // return 1
 
         //agent_uid  coupon_id
-
+        console.log("this.data.userSelAddressId",this.data.userSelAddressId)
         if(!this.data.userSelAddressId || app.isUndefined(this.data.userSelAddressId) ){
             wx.showToast({
                 title: "请选择收货地址",
@@ -215,8 +215,6 @@ Page({
         app.httpRequest('confirmOrder', data, ProductGoodsCallback)
 
         if(this.data.userSelAddressId){
-
-
             var getAddressByIdCallback = function (r, res) {
                 console.log("getAddressByIdCallback", res)
                 if (!res) {
@@ -230,11 +228,12 @@ Page({
 
         }else{
             var UserAddressDefaultCallback = function (r, res) {
-                console.log("UserAddrListCallback", res)
+                console.log("UserAddrListCallback", res,res['id'])
                 if (!res) {
                     console.log("notice: user address is null")
                 }
                 parentObj.setData({"userAddress": res})
+                parentObj.setData({"userSelAddressId": res['id']})
             }
 
             app.httpRequest('getUserAddressDefault', [], UserAddressDefaultCallback)

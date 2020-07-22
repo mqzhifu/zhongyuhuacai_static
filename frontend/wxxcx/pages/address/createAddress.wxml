@@ -1,0 +1,54 @@
+<view class="createAddress ">
+  <view class="ruleForm">
+    <view class="item">
+      <view class="label">收货人</view>
+      <input class="ipt" name="name" placeholder="收货人的姓名" value="{{name}}" bindinput='inputName' />
+    </view>
+    <view class="item">
+      <view class="label">联系方式</view>
+      <input class="ipt" name="tel" placeholder="请输入收货人手机号码"  value="{{mobile}}" bindinput='inputMobile'  />
+    </view>
+    <view class="item" bindtap="onShowCity">
+      <view class="label" >所在区域</view>
+      <view>{{userSelArea}}</view>
+      <image class="pic" src="./images/arrow-right@2x.png"></image>
+    </view>
+    <view class="item">
+      <view class="label">详细地址</view>
+      <textarea class="textarea" placeholder="请输入详细地址" value="{{address}}" bindinput='inputAddress'></textarea>
+    </view>
+    <view class="item">
+      <view class="label3"  bindtap="clickIsDefault">
+        <checkbox/>
+        <view class="txt">设置为默认地址</view>
+      </view>
+    </view>
+  </view>
+  <!-- //End -->
+  <view class="panelBox">
+      <view class="title">智能识别地址</view>
+      <textarea class="textarea" bindblur="blurAiText" value="{{aiTextValue}}"></textarea>
+      <view class="tool">
+        <view class="btn btnDefault" bindtap="clearAIAddress">清空</view>
+        <view class="btn btnBg" bindtap="parserAddressByStr">识别</view>
+      </view>
+  </view>
+  <!-- //End -->
+
+  <view class="btm-btn">
+    <view class="txt" bindtap="submitData">保存</view>
+  </view>
+
+
+
+  <van-popup
+          show="{{ show }}"
+          position="bottom"
+          custom-style="height: 60%;"
+          bind:close="onCloseCity"
+  >
+    <van-area area-list="{{ areaList }}" title="请选择所在地区" bind:confirm="onSelectedCity" />
+  </van-popup>
+
+
+</view>

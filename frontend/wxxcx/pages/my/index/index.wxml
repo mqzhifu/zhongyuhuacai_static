@@ -81,7 +81,7 @@
                 <view class="txt">待评价</view>
                 <view class="cusTag" wx:if="{{orderTotalCnt.wait_comment}}">{{orderTotalCnt.wait_comment}}</view>
             </view>
-            <view class="item" data-tabid="6" bindtap="gotoOrderList">
+            <view class="item" data-tabid="6" bindtap="gotoOrderList" bindtap="goto_apply_refund">
                 <image src="./images/orders-icon5@2x.png" />
                 <view class="txt">退货/退款</view>
             </view>

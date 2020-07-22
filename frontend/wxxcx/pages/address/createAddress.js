@@ -8,17 +8,20 @@ Page({
      * 页面的初始数据
      */
     data: {
-        mobile:"",
-        name :"",
-        address  :"",
-        province_code  :"",
-        city_code :"",
-        county_code :"",
-        town_code:"",
-        aiTextValue: "",
-        isDefault:0,
+        mobile:"",//手机
+        name :"",//姓名
+        address  :"",//详细地址
+        province_code  :"",//省
+        city_code :"",//市
+        county_code :"",//县
+        town_code:"",//乡镇
+        aiTextValue: "",//AI智能识别地址
+        isDefault:0,//是否为设置成默认地址
 
-        show: false,
+        show: false,//选择 省市县  弹窗
+
+        userSelArea:"",//用户选择后的地址
+
         areaList: {
             province_list : areaData.province_list,
             city_list : areaData.city_list,
@@ -101,6 +104,10 @@ Page({
         //     city_code :"",
         //     county_code :"",
 
+
+        var userSelArea = e.detail.values[0].name + "-" + e.detail.values[1].name +"-" +e.detail.values[2].name
+        this.setData({"userSelArea":userSelArea})
+
         this.setData({
             "province_code":e.detail.values[0].code,
             "city_code":e.detail.values[1].code,
@@ -114,8 +121,12 @@ Page({
 
     submitData :function(){
 
-        var submitDataCallback = function(rs){
+        var submitDataCallback = function(r,rs){
             console.log("submitDataCallback",rs)
+
+            var data = app.globalData.orderConfirmGotoAddressSavePara
+            data.selAddress = rs
+            app.goto(1,5,data)
         }
 
         var data = {

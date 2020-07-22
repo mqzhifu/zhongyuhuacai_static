@@ -35,6 +35,7 @@ Component({
       // detail对象，提供给事件监听函数
       var myEventDetail = {
         id: this.properties.list[index].id,
+        index:index,
       }
       // 触发事件的选项
       var myEventOption = {}

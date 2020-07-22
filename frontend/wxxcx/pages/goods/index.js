@@ -74,16 +74,23 @@ Page({
     // 点击产品上的购物车,将产品加入购物车
     onItemCartClick(e) {
         var pid = e.detail.id;
-        console.log("cart click", pid)
+        var arrIndex = e.detail.index
+        var parentObj = this
+        console.log("cart click", pid , arrIndex)
 
         var AddCartCallback = function (resolve, res) {
             console.log("AddCartCallback", res)
-            wx.showToast({
-                title: "添加购物车返回" + res,
-                icon: 'success', //图标,
+            app.showToast("添加购物车返回" + res)
+
+            // this.data.listData[arrIndex].has_cart = 0
+            var datalist = parentObj.data.listData
+            datalist[arrIndex].has_cart = 1
+            parentObj.setData({
+                "listData":datalist
             })
 
             app.checkCartRedDot()
+
         }
 
         var data = {

@@ -39,7 +39,7 @@
     <view class="list">
         <view class="titleDivider">你可能还想买</view>
          <card-item list="{{recommendProductList}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
-        <view class="more">点击继续加载</view>
+        <view wx:if="{{recommendProductCurrentPage == recommendProductMaxPage}}" class="more">不能再拖动了~我也是有底线的，好不啦!!!</view>
     </view>
     <!-- //End -->
 </view>

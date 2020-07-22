@@ -1,0 +1,64 @@
+<view class="pageMoney pageBg">
+	<view class="panel">
+		<view class="base">
+			<view class="txt">退款金额</view>
+			<view class="num"><text>¥</text>100</view>
+			<view class="txt2">已退到：微信</view>
+		</view>
+		<!-- //End -->
+		<view class="info">
+			<view class="item">
+				<view class="fl">账户</view>
+				<view class="fr">
+					<image class="img" src="./images/avatar.png"></image>
+					<view>糖糖</view>
+				</view>
+			</view>
+			<!-- //End item -->
+			<view class="item">
+				<view class="fl">支付渠道</view>
+				<view class="fr">
+					<view>微信</view>
+				</view>
+			</view>
+			<!-- //End item -->
+		</view>
+		<!-- //End -->
+
+		<view class="step">
+			<view class="item">
+				<view class="num"><view class="line" style="top:27px;height:81rpx;"></view>1</view>
+				<view class="main h_line">
+					<view class="txt">
+						<text>商家同意退款</text>
+						<text>2020-07-19  20:20:20</text>
+					</view>
+					<view class="tip">系统会在1-2天内提交微信处理</view>
+				</view>
+			</view>
+      <!-- //End step1 -->
+      <view class="item">
+				<view class="num"><view class="line" style="top:46rpx;height: 124rpx;"></view>2</view>
+				<view class="main h_line">
+					<view class="txt">
+						<text>已退款，微信处理种</text>
+						<text>2020-07-19  20:20:20</text>
+					</view>
+					<view class="tip">商家已将退款资金提交微信处理，通常情况下，退款会 原路退回您的支付账户，余额会在20分钟内到账。</view>
+				</view>
+			</view>
+      <!-- //End step2 -->
+      <view class="item">
+				<view class="num">3</view>
+				<view class="main ">
+					<view class="txt">
+						<text>到账成功</text>
+						<text>2020-07-19  20:20:20</text>
+					</view>
+					<view class="tip">已退到：微信</view>
+				</view>
+			</view>
+      <!-- //End step3 -->
+		</view>
+	</view>
+</view>

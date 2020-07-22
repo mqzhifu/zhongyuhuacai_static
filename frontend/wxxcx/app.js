@@ -543,7 +543,8 @@ App({
                 'paySign':  res.paySign,
                 'success':function(res){
                     console.log("ok",res)
-                    parentObj.goto(1,7,null)
+                    var data = {"tabId":1}
+                    parentObj.goto(1,7,data)
                 },
                 'fail':function(res){
                     console.log("fail",res)
@@ -582,7 +583,7 @@ App({
         searchCategory:0,
         // searchOrderType :0,
 
-
+        //订单确认页，填写地址时，跳页面，得返回
         orderConfirmGotoAddressSavePara :null,
 
         //所有 server http 请求地址
@@ -614,10 +615,10 @@ App({
             'up':'product/up/',//点赞一个产品
             'cancelUp':'product/cancelUp/',//取消 点赞一个产品
             //购物车相关
-            'addUserCart':"order/addUserCart/",//添加一个产品到购物车
-            "getUserCart":"order/getUserCart/",//获取用户购买车里的产品
-            "getUserCartCnt":"order/getUserCartCnt/",//获取用户购物车里的产品数量
-            'delUserCart':"order/delUserCart/",//删除用户购物车里的一个记录
+            'addUserCart':"cart/addUserCart/",//添加一个产品到购物车
+            "getUserCart":"cart/getUserCart/",//获取用户购买车里的产品
+            "getUserCartCnt":"cart/getUserCartCnt/",//获取用户购物车里的产品数量
+            'delUserCart':"cart/delUserCart/",//删除用户购物车里的一个记录
             //订单相关
             'getUserOrderList':"order/getUserList/",//获取用户订单列表
             'confirmOrder':"order/confirmOrder/",//订单确定 页面
@@ -648,6 +649,9 @@ App({
             "addComment":"product/comment/",
             "uploadCommentPic":"product/uploadCommentPic/",
             "uploadCommentVideo":"product/uploadCommentVideo/",
+            "uploadCommentVideoTopPic":"product/uploadCommentVideoTopPic/",
+            "getRefundConst" :"order/getRefundConst/",
+
         },
 
         map :{
@@ -660,7 +664,7 @@ App({
             // 6:{title:"订单编辑",url:"/pages/index/index"},
             7:{title:"订单列表",url:"/pages/my/orders/orders?tabId=#tabId#"},
             8:{title:"个人中心",url:"/pages/my/index/index"},
-            9:{title:"挑选地址列表",url:"/pages/my/address/address?source=#source#"},
+            9:{title:"挑选地址列表",url:"/pages/address/address?source=#source#"},
             10:{title:"授权页面",url:"/pages/other/authority/authority"},
             11:{title:"个人中心编辑",url:"/pages/my/edit/edit"},
             12:{title:"授权页面",url:"/pages/other/authority/authority"},
@@ -669,9 +673,11 @@ App({
             15:{title:"渲染分享朋友圈图片",url:"/pages/other/canvasShareImg/canvasShareImg"},
             16:{title:"用户收藏列表",url:"/pages/collect/collect"},
             17:{title:"用户浏览记录",url:"/pages/history/history"},
-            18:{title:"添加新收货地址",url:"/pages/createAddress/createAddress"},
+            18:{title:"添加新收货地址",url:"/pages/address/createAddress?source=#source#"},
             19:{title:"添加评论",url:"/pages/my/comment/comment?oid=#oid#"},
-
+            20:{title:"个人中心-地址管理",      url:"/pages/my/address/address?source=#source#"},
+            21:{title:"个人中心-添加新收货地址",url:"/pages/my/address/createAddress?source=#source#&editId=#editId#"},
+            22:{title:"个人中心-申请退款",url:"/pages/my/refund/details/details?oid=#oid#"},
         },
     }
 })

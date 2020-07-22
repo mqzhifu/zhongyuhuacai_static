@@ -68,6 +68,11 @@ Page({
         app.goto(1,13,null)
     },
 
+    goto_apply_refund:function(){
+        var data = {oid:32}
+        app.goto(1,22,data)
+    },
+
     initUserData: function () {
         var parentObj = this
         var GetUserInfoCallback = function (resolve, res) {
@@ -93,8 +98,8 @@ Page({
     },
 
     gotoAddressList:function(){
-        var data = {source:"my_index"}
-        app.goto(1,9,data)
+        var data = {source:"my_index_2"}
+        app.goto(1,20,data)
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

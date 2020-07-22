@@ -136,7 +136,7 @@ Page({
         PromiseObj.then(
             function () {
                 console.log(" init login finish.")
-                parent.initCartData();
+                parent.initCartData(0);
             }
         )
     },
@@ -265,7 +265,7 @@ Page({
     },
 
 
-    initCartData: function () {
+    initCartData: function (isOnshow) {
         console.log("start init <initCartData> page Data:")
 
         var data = {}
@@ -300,7 +300,10 @@ Page({
 
         app.httpRequest('getUserCart', data, GetUserCartCallback);
 
-        this.getRecommendProductListPage();
+        if(!isOnshow){
+            this.getRecommendProductListPage();
+        }
+
     },
 
 
@@ -323,7 +326,7 @@ Page({
 
             var data = []
             for (var i = 0; i < res.list.length; i++) {
-                var tmp = {id: res.list[i].id, imgUrl: res.list[i].pic, title: res.list[i].title,price:res.list[i].lowest_price,'payment':res.list[i].user_buy_total}
+                var tmp = {id: res.list[i].id, imgUrl: res.list[i].pic, title: res.list[i].title,price:res.list[i].lowest_price,'payment':res.list[i].user_buy_total ,"has_cart":res.list[i].has_cart}
                 data[i] = tmp
             }
 
@@ -349,6 +352,45 @@ Page({
 
         parentObj.setData({"showLoading":1})//显示 loading....icon
         app.httpRequest('getRecommendProductList',data,RecommendProductListCallback);
+    },
+
+    // 点击产品图片，跳转到产品详情页
+    onItemImgClick(e) {
+        var pid = e.detail.id;
+        console.log("img click", pid)
+        app.goto(1, 2, {"pid": pid})
+    },
+
+
+
+
+
+    // 点击产品上的购物车,将产品加入购物车
+    onItemCartClick(e) {
+        var pid = e.detail.id;
+        var arrIndex = e.detail.index
+        var parentObj = this
+        console.log("cart click", pid , arrIndex)
+
+        var AddCartCallback = function (resolve, res) {
+            console.log("AddCartCallback", res)
+            app.showToast("添加购物车返回" + res)
+
+            // this.data.listData[arrIndex].has_cart = 0
+            var datalist = parentObj.data.recommendProductList
+            datalist[arrIndex].has_cart = 1
+            parentObj.setData({
+                "recommendProductList":datalist
+            })
+
+            app.checkCartRedDot()
+
+        }
+
+        var data = {
+            'pid': pid,
+        }
+        app.httpRequest('addUserCart', data, AddCartCallback)
     },
 
     /**

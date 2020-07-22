@@ -1,0 +1,122 @@
+.pageMoney {
+  width: 100%;
+  float: left;
+  padding: 13rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.pageMoney .panel {
+  width: 100%;
+  float: left;
+  background-color: #fff;
+  border-radius: 8rpx;
+  padding: 40rpx 20rpx 0 20rpx;
+  box-sizing: border-box;
+}
+
+.pageMoney .panel .base {
+  text-align: center;
+}
+
+.pageMoney .panel .base .txt {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.pageMoney .panel .base .num {
+  font-size: 72rpx;
+  color: #333;
+  font-weight: bolder;
+  margin: 20rpx 0;
+}
+
+.pageMoney .panel .base .num text {
+  font-size: 48rpx;
+  color: #333;
+}
+
+.pageMoney .panel .base .txt2 {
+  font-size: 24rpx;
+  color: #FF831B;
+}
+
+.panel .info .item {
+  width: 100%;
+  float: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel .info .item view {
+  font-size: 24rpx;
+  line-height: 57rpx;
+  float: left;
+}
+
+.panel .info .item .img {
+  width: 57rpx;
+  height: 57rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.step {
+  width: 100%;
+  float: left;
+}
+.step .item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.step .item .num {
+  /* flex-basis: 39rpx; */
+  width: 39rpx;
+  height: 39rpx;
+  line-height: 39rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #FF831B;
+  border-radius: 1000px;
+  border:3rpx solid #FF831B;
+  float: left;
+  margin-top:30rpx;
+  position: relative;
+}
+
+.step .num .line {
+  width: 1rpx;
+  background-color: #FF831B;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
+
+.step .item .main {
+  flex: 1;
+  padding-left: 31rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+}
+.step .item .main .txt {
+  display: flex;
+  line-height: 39rpx;
+  justify-content: space-between;
+}
+.step .item .main .txt text:first-child {
+  font-size: 28rpx;
+  color: #FF831B;
+ float: left;
+}
+.step .item .main .txt text:last-child {
+  font-size: 24rpx;
+  color: #999;
+  float: right;
+}
+.step .item .main .tip {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 23rpx;
+}
+

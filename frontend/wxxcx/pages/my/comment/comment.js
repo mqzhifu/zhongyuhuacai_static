@@ -168,7 +168,7 @@ Page({
         var parentObj = this
         if(!content){
             wx.showToast({
-                title: "客官，好歹还是写几个汉字吧。当练手了~" ,
+                title: "大人，好歹还是写几个汉字吧。都是中国人，当熟悉下汉字...." ,
                 icon: 'success', //图标,
             })
 
@@ -240,6 +240,24 @@ Page({
                     console.log('fail', res);
                 },
             })
+
+
+            var url = app.getServerUrlAction("uploadCommentVideoTopPic") + "&token=" + app.globalData.serverToken + "&oid="+this.data.oid +"&cid="+comment_id
+            console.log(" wx request ",url, this.data.thumbTempFilePath)
+            wx.uploadFile({
+                url: url,
+                filePath:this.data.thumbTempFilePath,
+                name: 'comment',
+                header: {"Content-Type": "multipart/form-data"},
+                formData: {"fromWX": "commentFile"},
+                success: function (res) {
+                    console.log("wx back ", res)
+                },
+                fail: function (res) {
+                    console.log('fail', res);
+                },
+            })
+
         }else{
             console.log(" no need upload video.")
         }

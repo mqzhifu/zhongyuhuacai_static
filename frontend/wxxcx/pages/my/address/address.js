@@ -11,6 +11,9 @@ Page({
         source : "",
     },
 
+
+
+
     /**
      * 生命周期函数--监听页面加载
      */
@@ -31,13 +34,20 @@ Page({
         )
     },
 
-    selAddress:function(e){
+    editOne:function(e){
         var id = e.currentTarget.dataset.id
-        console.log("selAddress",id)
-        var data = app.globalData.orderConfirmGotoAddressSavePara
-        data.selAddress = id
-        app.goto(1,5,data)
+        console.log("edit",id)
+        var data = {source:this.data.source,"editId":id}
+        app.goto(1,21,data)
     },
+
+    // selAddress:function(e){
+    //     var id = e.currentTarget.dataset.id
+    //     console.log("selAddress",id)
+    //     // var data = app.globalData.orderConfirmGotoAddressSavePara
+    //     // data.selAddress = id
+    //     // app.goto(1,5,data)
+    // },
 
 
     /**
@@ -62,7 +72,8 @@ Page({
     },
 
     addAddress : function(){
-        app.goto(1,18,null)
+        var data = {source:this.data.source,"editId":0}
+        app.goto(1,21,data)
     },
 
     initAddress: function () {

@@ -8,21 +8,23 @@ Page({
         share_uid :0,//分享者的UID，主要是用于佣金统计
         userCartCnt: 0,//用户购物车有多少个产品数
         headerTitle: "",//
-        num: 1,
-        pid: 0,
+        num: 1,//购买数量
+        pid: 0,//产品ID
         product: null,
-        selGoodsPCAP: 0,
-        userSelGoods: {},
-        userSelGoodsRow:{},
+        selGoodsPCAP: 0,//选择购买的产品规格
+        userSelGoods: {},//用户选择的商品 规格的组合-最终的商品ID
+        userSelGoodsRow:{},//用户选择的商品
         swiperList: [],//轮播图片地址
-        detailPicsList: {},
+        detailPicsList: {},//产品的详情图集
         swiperCurrent: 0,
+        commentMaxPic : 5,
         // 最近访客
         visitorList: [
             // { id: 1, imgUrl: 'https://img.yzcdn.cn/vant/cat.jpeg', name: 'A*范1' },
         ],
         // 最近购买记录
         buyList: [
+
             // {
             //   id: 1,
             //   imgUrl: 'https://img.yzcdn.cn/vant/cat.jpeg',
@@ -93,7 +95,6 @@ Page({
         // app.httpRequest("getShareQrCode",data)
 
     },
-
     // 推荐产品列表中的  图片点击
     onTapItemImg(e) {
         var pid = e.detail.id
@@ -301,11 +302,7 @@ Page({
             num--
         }
 
-        this.setData(
-            {
-                num : num
-            }
-        )
+        this.setData({num : num})
         // this.totalPrice()
     },
     //跳转到  <下单确认> 页面
@@ -366,13 +363,12 @@ Page({
         }else{
             pid = data.pid
         }
-
+        //测试 详情页 的来源
         var sendServerLogBack = function(r,res){
             console.log("sendServerLogBack",res)
         }
-
         app.httpRequest("sendServerLog",data,sendServerLogBack)
-
+        //测试 详情页 的来源---end
 
         // var scene = decodeURIComponent(data.scene)
 
@@ -386,17 +382,16 @@ Page({
         PromiseObj.then(
             function () {
                 console.log(" init login finish.")
-                parent.initData();
+                parent.initProductDetailData();
             }
         )
     },
     //请求 server 加载 数据
-    initData: function () {
+    initProductDetailData: function () {
         //先 - -更新下购物车里包含的商品数量
         this.setData({"userCartCnt": app.globalData.userCartCnt})
 
         var parentObj = this;
-
         //获取产品详情
         var ProductDetailCallback = function (resolve, res) {
             console.log("ProductDetailCallback callback", res)
@@ -554,9 +549,19 @@ Page({
                 // ],
                 // },
 
-                var tmp = {id: i + 1, imgUrl: res[i].avatar, name: res[i].nickname, 'desc': res[i].title}
+                var thumbs = []
+                if(res[i].pic){
+                    for (var j = 0; j <  res[i].pic.length; j++) {
+                        thumbs[j] = res[i].pic[j]
+                    }
+                }
+
+                var tmp = {id:res[i], imgUrl: res[i].avatar, name: res[i].nickname, 'desc': res[i].content , 'thumbs':thumbs}
                 data[i] = tmp
             }
+
+            console.log("thumbs",thumbs)
+
             console.log(" comment list :", data)
             parentObj.setData({"commentList": data})
         }

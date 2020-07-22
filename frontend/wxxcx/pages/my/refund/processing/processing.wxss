@@ -1,0 +1,177 @@
+.refundProcess .panel {
+  background-color: #fff;
+}
+
+.refundProcess .panel .title {
+  display: flex;
+  padding: 39rpx 32rpx;
+  background-color: #fff;
+  border-top: 2rpx solid #F9F9F9;
+}
+
+.refundProcess .panel .title .pic {
+  width: 36rpx;
+  height: 36rpx;
+  flex-basis: 36rpx;
+  margin-top: 3rpx;
+}
+
+.refundProcess .panel .title .main {
+  flex: 1;
+  padding-left: 20rpx;
+}
+
+.refundProcess .panel .title .main .txt {
+  font-size: 32rpx;
+  font-weight: bolder;
+  color: #333;
+  margin-bottom: 23rpx;
+}
+
+.refundProcess .panel .title .main .time {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.refundProcess .panel .title .main .time text {
+  color: #FF831B;
+}
+
+.refundProcess .panel .title .main .price {
+  font-size: 48rpx;
+  font-weight: bold;
+  position: relative;
+  left: -50rpx;
+}
+
+.refundProcess .panel .title .main .price text {
+  font-size: 32rpx;
+}
+
+.refundProcess .panel .brief {
+  padding-bottom: 40rpx;
+  margin-bottom: 16rpx;
+}
+
+.refundProcess .panel .brief .txt {
+  padding: 0 30rpx;
+  font-size: 24rpx;
+  color: #333;
+  line-height: 24rpx;
+  margin-top: 28rpx;
+}
+
+.links {
+  width: 100%;
+  position: relative;
+  float: left;
+}
+
+.links .link {
+  width: 100%;
+  padding: 0 33rpx;
+  min-height: 88rpx;
+  line-height: 88rpx;
+  float: left;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+}
+
+.links .link .label {
+  font-size: 28rpx;
+  color: #333;
+  float: left;
+}
+
+.links .link .label.shop {
+  padding: 28rpx 0;
+  line-height: 36rpx;
+  display: flex;
+}
+
+.links .link .label.shop text:first-child {
+  flex-basis: 144rpx;
+}
+
+.links .link .label.shop text:last-child {
+  flex: 1;
+}
+
+.links .link .btn {
+  width: 100%;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  background-color: transparent;
+  padding-left: 21rpx;
+  padding-right: 0;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.links .link .btn::after {
+  border: none;
+}
+
+.links .link .right {
+  float: right;
+}
+
+.links .link .right image {
+  width: 10rpx;
+  height: 18rpx;
+  position: absolute;
+  top:50%;
+  right:33rpx;
+  margin-top: -9rpx;
+}
+
+.links .link .right text {
+  color: #ff831b;
+  margin-right: 23rpx;
+}
+
+.links .link .copy {
+  width: 72rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+  color: #999;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  right: 112rpx;
+  margin-top: -19rpx;
+}
+
+.mt16 {
+  margin-top: 16rpx;
+}
+.mb16 {
+  margin-bottom: 16rpx;
+}
+
+.btns {
+  width: 100%;
+  padding: 44rpx 30rpx;
+  float: left;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.btns .btn {
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #333;
+  text-align: center;
+  border: 1rpx solid #ccc;
+  border-radius: 5rpx;
+}

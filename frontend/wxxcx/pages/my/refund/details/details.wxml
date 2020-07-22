@@ -1,0 +1,63 @@
+<view class="refundDetails pageBg">
+	<view class="links">
+		<view class="link">
+			<view class="line_top"></view>
+			<view class="label">申请类型：我要退款（无需退货）</view>
+			<view class="right">
+				<image src="../../../../images/arrow-right@2x.png" />
+			</view>
+			<view class="h_line"></view>
+		</view>
+		<view class="link">
+			<view class="label">申请原因：多拍、错拍、不想要</view>
+			<view class="right">
+				<image src="../../../../images/arrow-right@2x.png" />
+			</view>
+			<view class="h_line"></view>
+		</view>
+	</view>
+	<!-- //End 退款选项 -->
+
+	<view class="panelPrice">
+		<view class="label">退款金额</view>
+		<view class="info">
+			<view>¥</view>
+			<view>100</view>
+		</view>
+		<view class="tip">
+			<view class="line_top"></view>若退款成功，将退还给您100元现金
+		</view>
+	</view>
+	<!-- //End  -->
+
+	<view class="panelInfo">
+		<view class="tBar">
+			<view class="label">申请说明</view>
+			<view class="tip">您还可以输入170字</view>
+		</view>
+		<view class="panel">
+			<textarea class="textarea" placeholder-style="color:#ccc;">不满意不满意不满意不满意不满意不满意</textarea>
+		</view>
+		<view class="panel">
+			<view class="upload">
+				<image class="pic" src="./images/photo.png"></image>
+				<view class="txt">添加图片</view>
+			</view>
+			<view class="upload uploadImg">
+				<image class="pic" src="https://img13.360buyimg.com/babel/s590x470_jfs/t1/129085/17/2638/58120/5ec76890E61a57640/3f73269e4905df0f.jpg"></image>
+			</view>
+		</view>
+	</view>
+	<!-- //End -->
+
+	<view class="links">
+		<view class="link" bindtap="onCallTel">
+			<view class="label">联系电话： 00000000000</view>
+		</view>
+	</view>
+	<!-- //End 退款选项 -->
+
+	<view class="create">
+		<view class="text" bindtap="onSubmitApply">提交申请</view>
+	</view>
+</view>

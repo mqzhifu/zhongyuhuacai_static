@@ -1,15 +1,16 @@
 <view class="pageAddress pageBg">
     <view class="items">
         <view class="item" wx:for="{{addressList}}" wx:key="abcd">
-            <view class="title" bindtap="selAddress" data-id="{{item.id}}">
+            <view class="title" >
                 <text class="name">{{item.name}}</text>
                 <text class="tel">{{item.mobile}}</text>
-                <view class="default" wx:if="{{item.is_default}}">默认</view>
+                <view class="default" wx:if="{{item.is_default == 1}}">默认</view>
             </view>
             <view class="desc">{{item.province_cn}}_{{item.city_cn}}_{{item.county_cn}}_{{item.town_cn}}</view>
-            <view class="btn"><view class="line_left"></view>编辑</view>
+            <view class="btn" bindtap="editOne" data-id="{{item.id}}" ><view class="line_left"></view>编辑</view>
             <view class="h_line"></view>
         </view>
+
         <!--<view class="item">-->
             <!--<view class="title">-->
                 <!--<text class="name">唐某某</text>-->

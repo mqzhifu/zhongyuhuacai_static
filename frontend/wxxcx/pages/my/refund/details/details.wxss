@@ -1,0 +1,167 @@
+.links {
+  width: 100%;
+  position: relative;
+  float: left;
+  margin-bottom: 16rpx;
+}
+.links .link {
+  width: 100%;
+  padding: 0 33rpx;
+  line-height: 88rpx;
+  float: left;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+}
+.links .link .label {
+  font-size: 28rpx;
+  color: #333;
+  float: left;
+}
+.links .link .btn {
+  width: 100%;
+  font-size: 28rpx;
+  line-height: 88rpx;
+  background-color: transparent;
+  padding-left: 21rpx;
+  padding-right: 0;
+  text-align: left;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.links .link .btn::after{ border: none; }
+.links .link .right {
+  float: right;
+}
+.links .link .right image {
+  width: 10rpx;
+  height: 18rpx;
+}
+.links .link .right text {
+  color: #ff831b;
+  margin-right: 23rpx;
+}
+
+.panelPrice {
+  width: 100%;
+  background-color: #fff;
+  float: left;
+  margin-bottom: 16rpx;
+}
+
+.panelPrice .label {
+  font-size: 28rpx;
+  color: #333;
+  padding: 35rpx 30rpx;
+  box-sizing: border-box;
+}
+.panelPrice .info {
+  width: 100%;
+  float:left;
+  margin-bottom: 25rpx;
+  font-size: 48rpx;
+  color: #333;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.panelPrice .info view {
+  float: left;
+}
+.panelPrice .info view:first-child {
+  margin-right: 32rpx;
+}
+.panelPrice .tip {
+  width: 100%;
+  float: left;
+  font-size: 24rpx;
+  color: #333;
+  position: relative;
+  padding: 33rpx 30rpx 22rpx 30rpx;
+  box-sizing: border-box;
+}
+.panelInfo {
+  width:100%;
+  float: left;
+  margin-bottom: 16rpx;
+}
+.panelInfo .tBar {
+  width: 100%;
+  padding: 25rpx 30rpx 8rpx 30rpx;
+  float: left;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.panelInfo .tBar view {
+  font-size: 28rpx;
+  color: #333;
+}
+.panelInfo .tBar .label {
+  float: left;
+}
+.panelInfo .tBar .tip {
+  float: right;
+}
+.panelInfo .panel {
+  width: 100%;
+  padding: 20rpx 28rpx;
+  background-color: #fff;
+  float: left;
+  box-sizing: border-box;
+}
+.panelInfo .panel .textarea {
+  font-size: 28rpx;
+  color: #333;
+  height: 170rpx;
+}
+.panelInfo .panel .upload {
+  width: 160rpx;
+  height: 160rpx;
+  border: 2rpx dashed #ccc;
+  text-align: center;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 21rpx;
+  margin-bottom: 24rpx;
+}
+.panelInfo .panel .upload:first-child,
+.panelInfo .panel .upload:nth-child(4n+1) {
+  margin-left: 0;
+}
+.panelInfo .panel .upload:nth-child(4n) {
+  float: right;
+}
+
+.panelInfo .panel .upload .pic {
+  width: 60rpx;
+  height: 48rpx;
+  margin-top: 36rpx;
+  margin-bottom: 10rpx;
+}
+.panelInfo .panel .upload .txt {
+  font-size: 24rpx;
+  color: #ccc;
+}
+.panelInfo .panel .uploadImg {
+  border: 0;
+}
+.panelInfo .panel .uploadImg .pic {
+  width: 160rpx;
+  height: 160rpx;
+  margin-top: 0;
+}
+
+.create {
+  width: 100%;
+  padding:62rpx 28rpx 31rpx 28rpx;
+  float: left;
+  box-sizing: border-box ;
+}
+.create .text {
+  background: #ff831b;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 88rpx;
+  border-radius: 4rpx;
+}

@@ -8,8 +8,9 @@
       <view class="label">联系方式</view>
       <input class="ipt" name="tel" placeholder="请输入收货人手机号码"  value="{{mobile}}" bindinput='inputMobile'  />
     </view>
-    <view class="item">
-      <view class="label label2" bindtap="onShowCity">点击此处选择省，市，区，镇</view>
+    <view class="item" bindtap="onShowCity">
+      <view class="label" >所在区域</view>
+      <view>{{userSelArea}}</view>
       <image class="pic" src="./images/arrow-right@2x.png"></image>
     </view>
     <view class="item">
@@ -35,7 +36,8 @@
   <!-- //End -->
 
   <view class="btm-btn">
-    <view class="txt" bindtap="submitData">保存并使用</view>
+    <view class="txt" bindtap="submitData">保存</view>
+
   </view>
 
 

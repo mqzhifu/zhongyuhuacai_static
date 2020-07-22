@@ -18,7 +18,7 @@ Page({
         })
     },
 
-    goto_common:function(e){
+    goto_comment:function(e){
         console.log(e)
         var oid = e.target.dataset.id
         app.goto(1,19,{"oid":oid})
@@ -100,19 +100,24 @@ Page({
             }
 
             var i =0;
+            //待支付
             var waitPay = []
+            //待发货
             var waitShip = []
+            //待签收
             var waitSingin = []
+            //待评论
             var waitComment = []
             for (i = 0; i < res.length; i++) {
 
                 if(res[i].status == 1){
                     console.log()
-                    var length = waitPay.length
-                    if(!length){
-                        waitPay[length] = res[i]
+                    var waitPaylength = waitPay.length
+                    console.log(waitPaylength)
+                    if(!waitPaylength){
+                        waitPay[waitPaylength] = res[i]
                     }else{
-                        waitPay[++length] = res[i]
+                        waitPay[waitPaylength++] = res[i]
                     }
 
                 }
@@ -122,17 +127,18 @@ Page({
                     if(!length){
                         waitShip[length] = res[i]
                     }else{
-                        waitShip[++length] = res[i]
+                        waitShip[length++] = res[i]
                     }
 
                 }
+
 
                 if(res[i].status == 5){
                     var length = waitSingin.length
                     if(!length){
                         waitSingin[length] = res[i]
                     }else{
-                        waitSingin[++length] = res[i]
+                        waitSingin[length++] = res[i]
                     }
                 }
 
@@ -141,12 +147,12 @@ Page({
                     if(!length){
                         waitComment[length] = res[i]
                     }else{
-                        waitComment[++length] = res[i]
+                        waitComment[length++] = res[i]
                     }
-
                 }
 
             }
+
             parentObj.setData({"orderList": res})
             //待支付列表
             parentObj.setData({"payOrderList": waitPay})

@@ -1,0 +1,62 @@
+.pageConsult {
+  width: 100%;
+  float: left;
+  padding: 16rpx 24rpx;
+  box-sizing: border-box;
+}
+.card {
+  background-color: #fff;
+  border-radius:8rpx;
+  margin-bottom:21rpx;
+}
+.card .panel {
+  display: flex;
+  position: relative;
+  padding-top:33rpx;
+  padding-bottom:25rpx;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+}
+.card .panel .img {
+  width: 77rpx;
+  height: 77rpx;
+  flex-basis: 77rpx;
+}
+.card .panel .main {
+  flex: 1;
+  padding-left: 25rpx;
+}
+.card .panel .main .txt {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 5rpx;
+}
+.card .panel .main .time {
+  font-size: 24rpx;
+  color: #999;
+}
+.card .tip {
+  font-size: 24rpx;
+  color: #666;
+  padding-top: 28rpx;
+  padding-bottom: 36rpx;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+}
+.card .info {
+  padding-top: 40rpx;
+  padding-bottom: 30rpx;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+}
+.card .info view{
+  font-size: 24rpx;
+  line-height: 48rpx;
+  color: #666;
+}
+
+.nodata {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+}

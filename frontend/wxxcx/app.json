@@ -13,10 +13,19 @@
     "pages/my/index/index",
     "pages/my/edit/edit",
     "pages/my/address/address",
-    "pages/createAddress/createAddress",
+    "pages/my/address/createAddress",
+    "pages/address/address",
+    "pages/address/createAddress",
     "pages/my/orderConfirm/orderConfirm",
     "pages/my/orders/orders",
-    "pages/other/canvasShareImg/canvasShareImg"
+    "pages/other/canvasShareImg/canvasShareImg",
+
+
+    "pages/my/refund/details/details",
+    "pages/my/refund/processing/processing",
+    "pages/my/refund/success/success",
+    "pages/my/refund/money/money",
+    "pages/my/refund/consult/consult"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -79,7 +88,8 @@
     "van-popup": "vant-weapp/popup/index",
     "van-tag": "vant-weapp/tag/index",
     "van-area": "vant-weapp/area/index",
-    "van-loading": "vant-weapp/loading/index"
+    "van-loading": "vant-weapp/loading/index",
+    "van-rate": "vant-weapp/rate/index"
   },
 
 

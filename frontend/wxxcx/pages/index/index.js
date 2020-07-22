@@ -11,7 +11,7 @@ Page({
         showLoading:0,//获取数据时显示loading....icon
 
         recommendProductType : 1,//分类
-        recommendProductLimit : 3,//每页多少条记录
+        recommendProductLimit : 4,//每页多少条记录
         recommendProductList:[],//列表数据
         recommendProductCurrentPage :0,//当前页
         recommendProductMaxPage:0,//当前数据总页数
@@ -146,6 +146,7 @@ Page({
                 "swiperDataList":res//用于计算的数据
             })
         }
+
         //获取 - 分类列表
         var AllCategoryListCallback = function(resolve,res){
             console.log("getAllCategoryList callback")

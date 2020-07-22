@@ -1,0 +1,43 @@
+<view class="pageConsult pageBg">
+	<view class="card">
+		<view class="panel h_line">
+			<image class="img" src="./images/cart.png"></image>
+			<view class="main">
+				<view class="txt">退款成功</view>
+				<view class="time">2020-07-19 20:20:20</view>
+			</view>
+		</view>
+		<view class="tip">备注：退款成功</view>
+	</view>
+	<!-- //End -->
+	<view class="card">
+		<view class="panel h_line">
+			<image class="img" src="./images/cart.png"></image>
+			<view class="main">
+				<view class="txt">退款成功</view>
+				<view class="time">2020-07-19 20:20:20</view>
+			</view>
+		</view>
+		<view class="tip">备注：亲，您的退款申请已通过，欢迎再次光临本店。</view>
+	</view>
+	<!-- //End -->
+
+	<view class="card">
+		<view class="panel h_line">
+			<image class="img" src="./images/avatar.png"></image>
+			<view class="main">
+				<view class="txt">用户申请退款</view>
+				<view class="time">2020-07-19 20:20:20</view>
+			</view>
+		</view>
+    <view class="info">
+      <view>退款金额：¥100</view>
+      <view>申请原因：多拍、拍错、不想要</view>
+      <view>联系方式：000000000000</view>
+      <view>问题描述：不满意</view>
+    </view>
+	</view>
+  <!-- //End -->
+
+  <view class="nodata">没有更多协商详情了</view>
+</view>

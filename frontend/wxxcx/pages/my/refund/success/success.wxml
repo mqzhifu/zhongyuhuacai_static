@@ -1,0 +1,65 @@
+<view class="refundProcess pageBg">
+	<view class="panel">
+		<view class="title">
+			<image class="pic" src="./images/success.png"></image>
+			<view class="main">
+				<view class="txt">申请通过，退款中</view>
+				<view class="txt">退款成功</view>
+				<view class="price"><text>¥</text>100</view>
+			</view>
+		</view>
+		<view class="tInfo">申请通过，退款中，系统会在1-2天内提交微信处理，微信审核完 成后2-7天内自动原路退款纸您的支付账户。若超时未收到退款， 请联系客户核实。</view>
+		<!-- //End -->
+	</view>
+	<!-- //End -->
+
+	<view class="panel ">
+		<view class="links mt16 mb16">
+			<view class="link">
+				<view class="line_top"></view>
+				<view class="label">协商详情</view>
+				<view class="right">
+					<image src="../../../../images/arrow-right@2x.png" />
+				</view>
+				<view class="h_line"></view>
+			</view>
+		</view>
+	</view>
+	<!-- //End -->
+
+	<view class="panel">
+		<view class="links">
+			<view class="link h_line">
+				<!-- <view class="line_top"></view> -->
+				<view class="label">售后类型：退款 </view>
+			</view>
+			<view class="link h_line">
+				<view class="label">收货状态：未收到货 </view>
+			</view>
+			<view class="link h_line">
+				<view class="label">退款金额：¥30 </view>
+			</view>
+			<view class="link h_line">
+				<view class="label">退款原因：快递一直未送达 </view>
+			</view>
+			<view class="link h_line">
+				<view class="label shop">
+					<text>商品名称： </text>
+					<text>春夏亲肤棉四件套床单款全棉芦荟棉棉棉棉 棉绵绵</text>
+				</view>
+			</view>
+			<view class="link h_line">
+				<view class="label">订单编号：000000000000000 </view>
+				<view class="copy">复制</view>
+			</view>
+			<view class="link h_line">
+				<view class="label">申请时间：2020-07-17 11:20:20 </view>
+			</view>
+		</view>
+	</view>
+	<!-- //End -->
+
+	<view class="btns btnStyle1">
+		<view class="btn" bindtap="onRoutePrice">钱款去向</view>
+	</view>
+</view>
