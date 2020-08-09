@@ -80,13 +80,16 @@ Page({
         console.log("oid", oid)
 
 
-        var applyRefund = function (e) {
-            console.log("im applyRefund back", e)
-            parentObj.initOrderData()
-        }
 
-        var data = {id: oid}
-        app.httpRequest("applyRefund", data, applyRefund)
+        app.goto(1,22,{oid:oid})
+        // var parentObj = this
+        // var applyRefund = function (e) {
+        //     console.log("im applyRefund back", e)
+        //     parentObj.initOrderData()
+        // }
+        //
+        // var data = {id: oid}
+        // app.httpRequest("applyRefund", data, applyRefund)
     },
     //初始化页面数据
     initOrderData: function () {

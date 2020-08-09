@@ -10,6 +10,7 @@ Page({
         callMobileNumber:"4000000000",
         collect_cnt:0,
         view_product_history_cnt:0,
+        isGuest:0,
     },
     onRouteEdit() {
         wx.navigateTo({url: '/pages/my/edit/edit'})
@@ -54,6 +55,8 @@ Page({
                 parent.initUserData();
             }
         )
+
+
     },
 
     go_collect:function(){
@@ -68,9 +71,9 @@ Page({
         app.goto(1,13,null)
     },
 
-    goto_apply_refund:function(){
-        var data = {oid:32}
-        app.goto(1,22,data)
+    goto_refund_list:function(){
+        // var data = {oid:32}
+        app.goto(1,25,null)
     },
 
     initUserData: function () {
@@ -95,7 +98,14 @@ Page({
         app.httpRequest('getUserInfo', data, GetUserInfoCallback);
         app.httpRequest('orderTotalCnt', data, OrderTotalCntCallback);
 
+
+        this.setData({isGuest:app.globalData.isGuest})
     },
+
+    login : function(){
+        app.initUserInfo()
+    },
+
 
     gotoAddressList:function(){
         var data = {source:"my_index_2"}
@@ -121,6 +131,8 @@ Page({
             parentObj.setData({"collect_cnt":cnt})
         }
 
+
+        this.setData({isGuest:app.globalData.isGuest})
 
         app.httpRequest("getCollectListCnt",null,getCollectListCntCallback)
         app.httpRequest("viewProductHistoryCnt",null,viewProductHistoryCntCallback)

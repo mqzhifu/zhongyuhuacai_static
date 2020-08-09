@@ -5,13 +5,14 @@
                 <text class="name">{{userAddress.name}}</text>
                 <text class="tel">{{userAddress.mobile}}</text>
             </view>
-            <view class="desc">{{userAddress.county_code}}-{{userAddress.town_code}}</view>
+            <view class="desc">{{userAddress.province_cn}}-{{userAddress.city_cn}}-{{userAddress.county_cn}}-{{userAddress.town_code}}</view>
             <image class="img" src="../../../images/arrow-right@2x.png"></image>
         </view>
         <view wx:else class="item" bindtap="addAddress">
             添加新地址
         </view>
     </view>
+
 
     <!--//End--->
     <view class="goods" wx:for="{{productList}}" wx:key="ttt">

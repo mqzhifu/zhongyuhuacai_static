@@ -4,7 +4,8 @@
 			<image class="pic" src="./images/time.png"></image>
 			<view class="main">
 				<view class="txt">申请已提交，商家处理中</view>
-				<view class="time">剩<text>1</text>天<text>23</text>时<text>59</text>分</view>
+				<!--<view class="time">剩<text>1</text>天<text>23</text>时<text>59</text>分</view>-->
+				<view class="time">{{countDown}}</view>
 			</view>
 		</view>
 		<!-- //End -->
@@ -34,37 +35,38 @@
 		<view class="links">
 			<view class="link h_line">
 				<view class="line_top"></view>
-				<view class="label">售后类型：退款 </view>
+				<view class="label">售后类型：{{refundConst.type[item.type]}} </view>
 			</view>
 			<view class="link h_line">
-				<view class="label">收货状态：未收到货 </view>
+				<view class="label" wx:if="{{!order.signin_time}}">收货状态：未收到货 </view>
+				<view class="label" wx:if="{{order.signin_time}}">收货状态：已收到货 </view>
 			</view>
 			<view class="link h_line">
-				<view class="label">退款金额：¥30 </view>
+				<view class="label">退款金额：¥{{info.price}} </view>
 			</view>
 			<view class="link h_line">
-				<view class="label">退款原因：快递一直未送达 </view>
+				<view class="label">退款原因：{{info.content}} </view>
 			</view>
 			<view class="link h_line">
 				<view class="label shop">
           <text>商品名称： </text>
-          <text>春夏亲肤棉四件套床单款全棉芦荟棉棉棉棉 棉绵绵</text>
+          <text>{{order.title}}</text>
         </view>
 			</view>
 			<view class="link h_line">
-				<view class="label">订单编号：000000000000000 </view>
-				<view class="copy">复制</view>
+				<view class="label">订单编号：{{order.no}} </view>
+				<view class="copy" data-no="{{order.no}}" bindtap="copyOrderNo" >复制</view>
 			</view>
 			<view class="link h_line">
-				<view class="label">申请时间：2020-07-17 11:20:20 </view>
+				<view class="label">申请时间：{{info.dt}} </view>
 			</view>
 		</view>
 	</view>
 	<!-- //End -->
 
 	<view class="btns">
-		<view class="btn">修改申请</view>
-		<view class="btn">撤销申请</view>
+		<view class="btn" bindtap="go_money">修改申请</view>
+		<view class="btn" bindtap="refundCancel">撤销申请</view>
 		<view class="btn">在线客服</view>
 	</view>
 </view>

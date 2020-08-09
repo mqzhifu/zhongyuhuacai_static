@@ -15,6 +15,7 @@ Page({
         this.setData({process: vv})
     },
 
+
     onLoad: function (options) {
         Logs.onload("loading",options)
 

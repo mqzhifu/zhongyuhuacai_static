@@ -33,7 +33,8 @@ Page({
     // },
 
     addAddress() {
-        var data = {"source": order_comfirm}
+        var data = {"source": "order_confirm"}
+        app.globalData.orderConfirmGotoAddressSavePara = {"share_uid":this.data.share_uid ,'gidsNums':this.data.gidsNums}
         app.goto(1, 18, data)
     },
 
@@ -82,6 +83,7 @@ Page({
         var orderDoingCallback = function (resolve, res) {
             console.log("orderDoingCallback", res)
 
+
             // if(app.globalData.httpRequestCode == 200 || app.globalData.httpRequestCode == '200'){
             var oid = res
             app.pay(oid, obj.data.payType)
@@ -101,6 +103,8 @@ Page({
                 title: "请选择收货地址",
                 icon: 'success', //图标,
             })
+
+            return -1
         }
 
         var data = {

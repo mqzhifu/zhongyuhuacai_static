@@ -34,12 +34,14 @@
         </view>
     </view>
 
-    <view class="goods" wx:else>
-        <view>
-            客官，赶紧去添加几个商品吧....
-        </view>
+
+    <view class="nothing" wx:else>
+        <image class="pic" src="./images/nothing.png"></image>
+        <view class="name">购物车竟然是空的</view>
+        <view class="txt">再忙，也要记得买点什么犒赏自己~</view>
     </view>
-    <!-- //End -->
+
+
 
     <view class="list">
         <view class="titleDivider">你可能还想买</view>

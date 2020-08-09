@@ -22,10 +22,10 @@
 		<view class="label">退款金额</view>
 		<view class="info">
 			<view>¥</view>
-			<view>100</view>
+			<view>{{order.total_price}}</view>
 		</view>
 		<view class="tip">
-			<view class="line_top"></view>若退款成功，将退还给您100元现金
+			<view class="line_top"></view>若退款成功，将退还给您{{order.total_price}}元现金
 		</view>
 	</view>
 	<!-- //End  -->
@@ -33,26 +33,27 @@
 	<view class="panelInfo">
 		<view class="tBar">
 			<view class="label">申请说明</view>
-			<view class="tip">您还可以输入170字</view>
+			<view class="tip">您还可以输入{{inputWordCnt}}字</view>
 		</view>
 		<view class="panel">
-			<textarea class="textarea" placeholder-style="color:#ccc;">不满意不满意不满意不满意不满意不满意</textarea>
+			<textarea class="textarea" placeholder-style="color:#ccc;" bindinput="listenContentInput"></textarea>
 		</view>
 		<view class="panel">
-			<view class="upload">
+			<view class="upload" bindtap="uploadPic">
 				<image class="pic" src="./images/photo.png"></image>
-				<view class="txt">添加图片</view>
+				<view class="txt" >添加图片</view>
 			</view>
 			<view class="upload uploadImg">
-				<image class="pic" src="https://img13.360buyimg.com/babel/s590x470_jfs/t1/129085/17/2638/58120/5ec76890E61a57640/3f73269e4905df0f.jpg"></image>
+				<image class="pic" src="{{uploadPicUrl}}"></image>
 			</view>
 		</view>
 	</view>
 	<!-- //End -->
 
 	<view class="links">
-		<view class="link" bindtap="onCallTel">
-			<view class="label">联系电话： 00000000000</view>
+		<!--<view class="link" bindtap="onCallTel">-->
+			<view class="link">
+			<view class="label">联系电话： <input placeholder="请输入内容" bindinput="listenMobileInput" /></view>
 		</view>
 	</view>
 	<!-- //End 退款选项 -->

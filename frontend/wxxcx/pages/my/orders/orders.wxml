@@ -42,7 +42,9 @@
                     <view class="btn" bindtap="cancel" wx:if  ="{{item.status == 1}}" data-oid="{{item.id}}">取消</view>
                     <view class="btn"  wx:if  ="{{item.status == 5}}">查看物流</view>
                     <view class="btn" bindtap="confirmReceive" wx:if  ="{{item.status == 2}}"  data-oid="{{item.id}}">确认收货</view>
-                    <view class="btn" bindtap="refund" wx:if  ="{{item.status == 2 ||  item.status == 5 || item.status == 6}}"  data-oid="{{item.id}}">申请退款</view>
+                    <view class="btn" bindtap="refund" data-oid="{{item.id}}">申请退款</view>
+                    <!--<view class="btn" bindtap="refund" wx:if  ="{{item.status == 2 ||  item.status == 5 || item.status == 6}}"  data-oid="{{item.id}}">申请退款</view>-->
+
                     <view class="btn" wx:if  ="{{ ( item.status == 6 || item.status == 8 ) && !item.exist_comment }}" bindtap="goto_comment" data-id="{{item.id}}">评论</view>
                 </view>
                 <!-- //End -->

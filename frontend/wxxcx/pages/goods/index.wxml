@@ -36,7 +36,6 @@
             <!--<image class="arrow arrowDownDefault" src="images/arrow-down-active.png" mode="scaleToFill"></image>-->
           <!--</block>-->
 
-
         </view>
     </van-sticky>
 
@@ -45,6 +44,13 @@
       <view wx:if="{{!listData || listData.length <=0}}">抱歉，没有搜索到您要的宝贝~~~</view>
       <!--<view class="more">点击继续加载</view>-->
     </van-tab>
+
+    <!--<view class="main">-->
+      <!--<image class="img" src="./images/nothing.png" alt="" />-->
+      <!--<view class="txt">非常抱歉</view>-->
+      <!--<view class="txt">没有找到相关的宝贝</view>-->
+    <!--</view>-->
+
 
     <van-tab  wx:for="{{category}}" title="{{item.name}}" name="{{item.id}}" data-id="{{item.id}}" wx:key="goods_list_category">
       <card-item list="{{listData}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />

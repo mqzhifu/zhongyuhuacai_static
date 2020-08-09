@@ -198,3 +198,27 @@
   width: 100%;
   float: left;
 }
+
+.nothing {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding-top: 162rpx;
+  padding-bottom: 186rpx;
+  background-color: #fff;
+  text-align: center;
+}
+.nothing .pic {
+  width: 202rpx;
+  height: 204rpx;
+}
+.nothing .name {
+  font-size: 33rpx;
+  color: #FF831B;
+  margin-top: 46rpx;
+  margin-bottom: 28rpx;
+}
+.nothing .txt {
+  font-size: 24rpx;
+  color: #999;
+}

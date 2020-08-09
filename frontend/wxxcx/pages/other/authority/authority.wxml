@@ -1,3 +1,5 @@
-<button open-type="getUserInfo">授权用户信息</button>
+<button open-type="getUserInfo" bindgetuserinfo="userInfoHandler" >授权用户信息</button>
+
+
 
 <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">点击获取手机号</button>

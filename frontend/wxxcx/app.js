@@ -3,6 +3,14 @@ App({
     // onLaunch: function () {
     //
     // },
+
+    isEnvRelease : function(){
+        if(this.globalData.env && this.globalData.env == 'release'){
+            return 1
+        }
+        return 0
+    },
+
     //初始化 - 登陆
     loginInit : function(){
         //登陆/注册流行
@@ -14,6 +22,17 @@ App({
         //  (3)后端先判断当前用户是否存在，如果不存在就注册一个
         //  (4)生成TOKEN返回给C端
         //4拿到C端返回的token存到用户本地DB中
+
+
+        // var env =  __wxConfig.envVersion
+        var accountInfo = wx.getAccountInfoSync();
+        console.log('版本：', accountInfo);
+        var env = accountInfo.miniProgram.envVersion
+        if(!env || this.isUndefined(env)){
+            this.globalData.env = "unknow"
+        }else{
+            this.globalData.env = env
+        }
 
 
         //先查看  全局变量中 是否已经存在token,如果存在，之前就已经初始化过一次
@@ -48,10 +67,10 @@ App({
         // 先执行微信 - 登录
         wx.login({
             success: res => {
-                console.log(parentObj.globalData.moduleName,"wx.login ok")
+                console.log(parentObj.globalData.moduleName,"wx.login ok",res)
                 // 发送 res.code 到后台换取 openId, sessionKey, unionId
                 if (!res.code) {
-                    console.log(parentObj.globalData.moduleName,'wx 登录失败！' + res.errMsg)
+                    console.log(parentObj.globalData.moduleName,'wx.login 登录失败！' + res.errMsg)
                     return -1
                 }
 
@@ -69,8 +88,9 @@ App({
 
 
     userInfoToken : function(code){
+        console.log("code",code)
         var parentObj = this
-        // 获取用户信息
+        // 先获取用户已经授权的列表，判断之前有没有授权过 - 用户信息
         wx.getSetting({
             success: res => {
                 console.log(parentObj.globalData.moduleName,"user wx setting ok",res)
@@ -79,7 +99,7 @@ App({
                 var wxCode = code
                 //获取用户信息，必须得有，要拿code到server 换 sessionKey ，获取手机号数据解密的时候要用
                 if (res.authSetting['scope.userInfo']) {
-                    // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+                    // 之前，已经授过了，可以直接调用 getUserInfo 获取头像昵称，不会弹框
                     wx.getUserInfo({
                         success: res => {
                             console.log(parentObj.globalData.moduleName,"get wx userinfo ok",res)
@@ -90,24 +110,84 @@ App({
                         fail: function (res) {
                             wx.showToast({ title: 'err:'+"抱歉获取信息失败，因为下单会需要基础信息...", icon: 'none' })
                             console.log(parentObj.globalData.moduleName,' wx.getUserInfo is failed 1',res)
-                            parentObj.showUnAuthorityWin("wx.getUserInfo")
-
+                            if(!parentObj.isEnvRelease()){
+                                console.log(" env is release ,can goto authority Win")
+                                parentObj.showUnAuthorityWin("wx.getUserInfo")
+                            }
                         }
                     })
-                }else{
-
+                }else{//之前没有授权过的，1 大概率是新用户 2 老用户就不想授权
                     console.log(parentObj.globalData.moduleName,' wx.getUserInfo is failed 2',res)
-                    parentObj.showUnAuthorityWin('scope.userInfo')
+                    //操蛋的微信，不让卡死，必须支持游客模式
+                    // parentObj.showUnAuthorityWin('scope.userInfo')
+                    parentObj.initGuestServerToken(wxCode)
                 }
             },
             fail:res =>{
-                wx.showToast({ title: 'err:'+"抱歉获取授权信息失败，请手动授权...", icon: 'none' })
-                parentObj.showUnAuthorityWin("wx.setting")
+                wx.showToast({ title: 'err:'+"抱歉用户已取授权列表-失败，请手动授权...", icon: 'none' })
+                // parentObj.showUnAuthorityWin("wx.setting")
                 console.log(parentObj.globalData.moduleName,"get wx user setting fail",res)
             }
 
         })
 
+    },
+
+
+    wxUserInfoBind : function(){
+        console.log( "wxUserInfoBind")
+        // 可以将 res 发送给后台解码出 unionId
+        // parentObj.globalData.userInfo = res.userInfo
+
+        var initUserInfoBack = function(rs){
+            console.log("initUserInfoBack ",rs)
+        }
+
+
+        var dataRequest = {
+            encryptedData: res.encryptedData,
+            signature: res.signature,
+
+            rawData: res.rawData,
+            iv: res.iv,
+        }
+
+        this.httpRequest('wxUserInfoBind',dataRequest,initUserInfoBack)
+    },
+
+    initUserInfo : function(){
+        var parentObj = this
+        wx.getUserInfo({
+
+            success: res => {
+                console.log(parentObj.globalData.moduleName,"get wx userinfo ok",res)
+                // 可以将 res 发送给后台解码出 unionId
+                parentObj.globalData.userInfo = res.userInfo
+
+                var initUserInfoBack = function(rr,rs){
+                    console.log("initUserInfoBack ",rs)
+                    parentObj.globalData.isGuest = 0
+                }
+
+
+                var dataRequest = {
+                    encryptedData: res.encryptedData,
+                    signature: res.signature,
+                    rawData: res.rawData,
+                    iv: res.iv,
+                }
+
+                this.httpRequest('wxUserInfoBind',dataRequest,initUserInfoBack)
+
+
+            },
+            fail: function (res) {
+                wx.showToast({ title: 'err:'+"抱歉,获取用户信息失败，因为下单会需要基础信息...", icon: 'none' })
+                console.log(parentObj.globalData.moduleName,' wx.getUserInfo is failed 1',res)
+                parentObj.showUnAuthorityWin("wx.getUserInfo")
+
+            }
+        })
     },
 
     cleanToken:function(){
@@ -118,8 +198,36 @@ App({
         this.globalData.sessionKey = ''
     },
 
+
+    initGuestServerToken:function(wxLoginCode){
+        console.log(this.globalData.moduleName,"initGuestServerToken","wxLoginCode",wxLoginCode)
+
+        var parentObj = this
+        // console.log("server token"+this.globalData.serverToken)
+        //发起网络请求
+        var back = function(resolve,data){
+            console.log(parentObj.globalData.moduleName,"server login ok " , data)
+            parentObj.globalData.serverToken = data.token
+            // parentObj.globalData.sessionKey = data.session_key
+
+            wx.setStorageSync('serverToken',data.token)
+            // wx.setStorageSync('sessionKey',data.session_key)
+
+            console.log(parentObj.globalData.moduleName,"set <serverToken>  : globalData && local storage!")
+            resolve()
+            parentObj.initLoginAfter()
+        }
+
+        var dataRequest = {
+            code: wxLoginCode
+        }
+
+        this.httpRequest('login',dataRequest,back)
+    },
+
+
     initServerToken:function(wxBackInfo,wxCode){
-        console.log(this.globalData.moduleName,wxBackInfo,wxCode)
+        console.log(this.globalData.moduleName,wxBackInfo,"wxCode",wxCode)
         var parentObj = this
         // console.log("server token"+this.globalData.serverToken)
         //发起网络请求
@@ -138,11 +246,12 @@ App({
 
 
 
+
         var dataRequest = {
-            encryptedData: wxBackInfo.encryptedData,
-            signature: wxBackInfo.signature,
+            // encryptedData: wxBackInfo.encryptedData,
+            // signature: wxBackInfo.signature,
             rawData: wxBackInfo.rawData,
-            iv: wxBackInfo.iv,
+            // iv: wxBackInfo.iv,
             code: wxCode
         }
 
@@ -154,7 +263,16 @@ App({
         this.checkCartRedDot()
         this.initServerUserInfo()
         this.initClientInfo()
+        this.initConst();
+    },
 
+    initConst : function(){
+        var parentObj = this
+        var refundConstBack = function(rr,res){
+            parentObj.globalData.refundConst = res
+        }
+
+        this.httpRequest("getRefundConst",null,refundConstBack)
     },
 
     initClientInfo:function(){
@@ -172,6 +290,12 @@ App({
         var userinfoback = function(r,res){
             console.log("initServerUserInfo back ",res)
             parentObj.globalData.serverUserInfo = res ;
+            var subNickname = res.nickname.substr(0,2)
+            console.log(" substr nickname",subNickname)
+            if(subNickname != '游客'){
+                parentObj.globalData.isGuest = 0
+            }
+
         }
         this.httpRequest("getUserInfo",null,userinfoback)
     },
@@ -210,6 +334,14 @@ App({
         // console.log("im objToStr",str)
         str = str.substr(0,str.length-1)
         return str
+    },
+
+    strToJson:function(jsonStr){
+        jsonStr = jsonStr.replace(" ", "");
+        if (typeof jsonStr != 'object') {
+            jsonStr = jsonStr.replace(/\ufeff/g, "");
+            return JSON.parse(jsonStr);
+        }
     },
 
     httpRequest : function(urlKey,data,callback){
@@ -558,8 +690,16 @@ App({
         var data = {'type':payType,"oid":oid}
         this.httpRequest('orderPay',data,orderPayCallback)
     },
+    getNowTimestamp : function(){
+        var timestamp = Date.parse(new Date());
+        timestamp = timestamp / 1000;
+        console.log("当前时间戳为：" + timestamp);
+        return timestamp;
+    },
 
     globalData: {
+        env : "",//develop trial release
+        isGuest:1,//游客模式，操蛋的微信，让登陆，但不让强制获取用户信息，而实际上微信登陆没有用户信息毛用没有
         //用户基础信息
         serverUserInfo : {},
         //用户购物车里有多少件商品
@@ -584,22 +724,32 @@ App({
         // searchOrderType :0,
 
         //订单确认页，填写地址时，跳页面，得返回
-        orderConfirmGotoAddressSavePara :null,
+        orderConfirmGotoAddressSavePara : [],
+
+        //退款常量
+        refundConst : [],
+
 
         //所有 server http 请求地址
         serverUrl : {
-            'location':"index/wxPushLocation/",//推送用户GPS位置信息
-            "checkToken":"index/checkToken/",//检查token是否有效
-            "getShareQrCode":"/wxLittleCallback/getShareQrCode/",//获取产品详情页的，分享二维码的图片
-            "sendServerLog":"/wxLittleCallback/log/",//将客户端日志发推送到服务端
-            "login":"login/wxLittleLoginByCode/",//登陆
-            "decodeWxEncryptedData":"login/decodeWxEncryptedData/",//解析从微信获取的用户数据，目前没用
+            //推送用户GPS位置信息
+            'location':"index/wxPushLocation/",
+            //检查token是否有效
+            "checkToken":"index/checkToken/",
+            //获取产品详情页的，分享二维码的图片
+            "getShareQrCode":"/wxLittleCallback/getShareQrCode/",
+            //将客户端日志发推送到服务端
+            "sendServerLog":"/wxLittleCallback/log/",
+            //登陆
+            "login":"login/wxLittleLoginByCode/",
+            //解析从微信获取的用户数据，目前没用
+            "decodeWxEncryptedData":"login/decodeWxEncryptedData/",
             //========================================================
             //首页
             "getBannerList":"index/getBannerList/",//首页轮播
             "getRecommendProductList":"product/getRecommendList/",//首页推荐产品
             //产品列表-搜索
-            "search":"product/search/",//搜索产品
+            "search":"product/search/",
             'getAllCategory':"product/getAllCategory/",//获取所有产品分类
             'getSearchAttr':'product/getSearchAttr/',//获取搜索产品的筛选条件
             //详情页
@@ -626,32 +776,61 @@ App({
             'orderPay':"order/pay/",//唤起微信支付
             "orderCancel":"order/cancel/",//取消一个订单
             "confirmReceive":"order/confirmReceive/",//订单确认收货
-            "applyRefund":"order/applyRefund/",//申请退款
+
             'getGoodsIdByPcap':"order/getGoodsIdByPcap/",
+            //用户 订单总数
             'orderTotalCnt':'order/getUserCnt/',
+            'getOrderById':'order/getById/',
+
+
             //用户相关
+            "upInfo":"user/upInfo/",//改变用户信息
+            "wxUserInfoBind":"user/wxUserInfoBind/",//微信不允许强制登陆，需要先让用户登陆，再绑定
+
             'getUserAddressList':"user/getAddressList/",//获取用户收货地址列表
             'getUserAddressDefault':"user/getUserAddressDefault/",//获取用户默认-收货地址列表
             'getUserInfo':"user/getOneDetail/",//获取用户基础信息
             'upAvatar':"user/upAvatar/",//更新头像
+            //用户收藏的产品列表
             'getCollectList':"user/getCollectList/",
+            //用户查看的产品历史记录列表
             'viewProductHistory':"user/viewProductHistory/",
+            //智能识别 地址
             'parserAddressByStr':"index/parserAddressByStr/",
+            //添加一个地址
             "addAddress":"user/addAddress/",
+
+            //用户收藏的产品列表
+            "getCollectListCnt":"user/getCollectListCnt/",
+            //用户查看产品历史记录总数
+            "viewProductHistoryCnt":"user/viewProductHistoryCnt/",
+
+            "getAddressById":"user/getAddressById/",
+
+            "addComment":"product/comment/",//添加一条评论
+            "uploadCommentPic":"product/uploadCommentPic/",//添加一条评论,上传的图片
+            "uploadCommentVideo":"product/uploadCommentVideo/",//添加一条评论,上传的视频
+            "uploadCommentVideoTopPic":"product/uploadCommentVideoTopPic/",
+
+            "getRefundConst" :"order/getRefundConst/",//退款 - 常量值
+            "applyRefundUploadPic" :"order/applyRefundUploadPic/",//添加退款时，上传的图片
+
+
+            //用户退款列表
+            "getUserRefundList":"order/getUserRefundList/",
+            //获取一条退款记录的详细信息
+            "getUserRefundById":"order/getUserRefundById/",
+            //收集数据，提交申请退款
+            "applyRefund":"order/applyRefund/",
+            // "applyRefund":"order/applyRefund/",//申请退款
+
+
+            "refundCancel":"order/refundCancel/",//取消申请
+
             // "getProvince":"",
             // "getCityByProvinceCode":"",
             // "getCountyByCityCode":"",
             // "getTownByCountyCode":"",
-            "getCollectListCnt":"user/getCollectListCnt/",
-            "viewProductHistoryCnt":"user/viewProductHistoryCnt/",
-            "getAddressById":"user/getAddressById/",
-
-            "addComment":"product/comment/",
-            "uploadCommentPic":"product/uploadCommentPic/",
-            "uploadCommentVideo":"product/uploadCommentVideo/",
-            "uploadCommentVideoTopPic":"product/uploadCommentVideoTopPic/",
-            "getRefundConst" :"order/getRefundConst/",
-
         },
 
         map :{
@@ -677,7 +856,10 @@ App({
             19:{title:"添加评论",url:"/pages/my/comment/comment?oid=#oid#"},
             20:{title:"个人中心-地址管理",      url:"/pages/my/address/address?source=#source#"},
             21:{title:"个人中心-添加新收货地址",url:"/pages/my/address/createAddress?source=#source#&editId=#editId#"},
-            22:{title:"个人中心-申请退款",url:"/pages/my/refund/details/details?oid=#oid#"},
+            22:{title:"个人中心-申请退款-添加",url:"/pages/my/refund/details/details?oid=#oid#"},
+            23:{title:"个人中心-申请退款-退款进度",url:"/pages/my/refund/processing/processing?id=#id#"},
+            24:{title:"个人中心-申请退款-详情",url:"/pages/my/refund/money/money?id=#id#"},
+            25:{title:"个人中心-申请退款-列表",url:"/pages/my/refund/consult/consult"},
         },
     }
 })

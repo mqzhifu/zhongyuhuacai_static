@@ -8,7 +8,7 @@
         <view class="link">
             <view class="label">昵称</view>
             <view class="ipt">
-                <input wx:if="{{showNickNameInput}}" name="name" value="{{uinfo.nickname}}" />
+                <input wx:if="{{showNickNameInput}}" name="name" value="{{uinfo.nickname}}" bindinput="bindInputValue" />
                 <view wx:else class="name">{{uinfo.nickname}}</view>
             </view>
             <image wx:if="{{!showNickNameInput}}" bindtap="onEditName" class="icon-edit" src="./images/icon-edit.png" />
@@ -32,7 +32,7 @@
         <!--</view>-->
     </view>
     <!-- //End -->
-    <view class="btnSave">
+    <view class="btnSave" bindtap="upInfo">
         <view class="txt">保存</view>
     </view>
 </view>

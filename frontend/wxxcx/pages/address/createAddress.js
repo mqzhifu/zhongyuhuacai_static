@@ -125,6 +125,7 @@ Page({
             console.log("submitDataCallback",rs)
 
             var data = app.globalData.orderConfirmGotoAddressSavePara
+            console.log("orderConfirmGotoAddressSavePara ",data)
             data.selAddress = rs
             app.goto(1,5,data)
         }
