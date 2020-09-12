@@ -150,9 +150,8 @@ Page({
         var haulage = 0;
         for (var i = 0; i < productList.length; i++) {
             console.log(productList[i].price, productList[i].num, productList[i].haulage)
-            total += parseInt(productList[i].price) * parseInt(productList[i].num)
-            haulage += parseInt(productList[i].haulage)
-
+            total += parseFloat(productList[i].price) * parseFloat(productList[i].num)
+            haulage += parseFloat(productList[i].haulage)
         }
 
         console.log("totalHaulage", haulage, 'goodsTotalPrice', total, "total", total + haulage)

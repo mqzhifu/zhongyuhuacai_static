@@ -1,4 +1,4 @@
-import areaData from './data/area'
+// import areaData from './data/area'
 
 const app = getApp()
 const Logs = require("../../utils/log.js")
@@ -23,9 +23,12 @@ Page({
         userSelArea:"",//用户选择后的地址
 
         areaList: {
-            province_list : areaData.province_list,
-            city_list : areaData.city_list,
-            county_list : areaData.county_list,
+            province_list : [],
+            city_list : [],
+            county_list : [],
+            // province_list : areaData.province_list,
+            // city_list : areaData.city_list,
+            // county_list : areaData.county_list,
 
             // province_list: {
             //     110000: '北京市',
@@ -175,6 +178,31 @@ Page({
 
     initData: function () {
 
+        var parentObj = this
+        var province_listBack = function(rr,res) {
+            // console.log(res)
+
+            var areaList = parentObj.data.areaList
+            areaList.province_list = res.province_data
+            areaList.city_list = res.city_data
+
+            parentObj.setData({areaList:areaList})
+
+        }
+        app.httpRequest("getAreaProvinceCity",null,province_listBack)
+
+
+        var getAreaAllCountyBack = function(rr,res) {
+            // console.log(res)
+            var areaList = parentObj.data.areaList
+            areaList.county_list = res
+            parentObj.setData({areaList:areaList})
+
+        }
+        app.httpRequest("getAreaAllCounty",null,getAreaAllCountyBack)
+
+
+        // county_list
     },
 
     /**

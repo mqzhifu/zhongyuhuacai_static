@@ -1,0 +1,694 @@
+/* Write your styles */
+p,
+input {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+input::placeholder {
+  color: #999;
+}
+body {
+  background: #fff;
+}
+.bgColor {
+  position: relative;
+}
+.bgColor::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: #f2f2f2;
+}
+.am-header-default {
+  background: #fff;
+  box-shadow: 0px 1px 16px 0px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+}
+.am-header .am-header-title {
+  color: #333;
+  font-size: 18px;
+}
+.am-header .am-header-nav img {
+  height: 22px;
+}
+.am-datepicker-header {
+  background: #ff831b !important;
+}
+/* ---------------------header-------------------- */
+.pageMy .base {
+  display: flex;
+  padding: 20px 12px;
+  position: relative;
+}
+.pageMy .base .avatar {
+  flex-basis: 67px;
+  height: 67px;
+}
+.pageMy .base .info {
+  flex: 1;
+  padding-left: 5px;
+}
+.pageMy .base .info p {
+  font-size: 14px;
+  color: #666666;
+  line-height: 22px;
+  margin: 0;
+}
+.pageMy .base .info p.t {
+  font-size: 18px;
+  color: #333;
+  line-height: 27px;
+}
+.pageMy .base .tool {
+  flex-basis: 100px;
+  text-align: right;
+  margin-top: 13px;
+}
+.pageMy .base .tool img {
+  width: 44px;
+  float: left;
+}
+.pageMy .base .tool img:last-child {
+  float: right;
+}
+.pageMy .base::after {
+  content: '';
+  height: 1px;
+  background: #eee;
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+}
+.pageMy .infos {
+  display: flex;
+  position: relative;
+}
+.pageMy .infos .info {
+  flex: 1;
+  text-align: center;
+  padding: 20px 0;
+}
+.pageMy .infos .info p {
+  color: #999999;
+  font-size: 12px;
+  line-height: 17px;
+}
+.pageMy .infos .info p:first-child {
+  color: #333;
+  font-size: 18px;
+  line-height: 25px;
+}
+.pageMy .infos::after {
+  content: '';
+  height: 1px;
+  background: #eee;
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+}
+.pageMy .level {
+  width: 100%;
+  float: left;
+  padding: 10px 12px;
+  box-sizing: border-box;
+}
+.pageMy .level .tb img {
+  width: 28px;
+  height: 28px;
+  float: left;
+}
+.pageMy .level .tb span {
+  font-size: 15px;
+  color: #999999;
+  line-height: 28px;
+  float: left;
+  margin-left: 10px;
+}
+.pageMy .level .tb span.name {
+  font-size: 17px;
+  color: #666;
+  line-height: 28px;
+}
+.pageMy .tools {
+  width: 100%;
+  padding: 50px 0;
+  float: left;
+  display: flex;
+}
+.pageMy .tools .item {
+  flex: 1;
+  text-align: center;
+}
+.pageMy .tools .item img {
+  width: 44px;
+}
+.pageMy .tools .item p {
+  font-size: 13px;
+  color: #333;
+  line-height: 20px;
+}
+/* ------------//End 1个人资料-------- */
+.pageMyEdit .avatar {
+  text-align: center;
+  padding: 40px 0;
+}
+.pageMyEdit .avatar img {
+  width: 60px;
+}
+.pageMyEdit .avatar p {
+  font-size: 18px;
+  color: #333;
+  line-height: 25px;
+  margin: 8px 0;
+}
+.pageMyEdit .sex {
+  padding: 0 12px;
+}
+.pageMyEdit .sex span {
+  width: 49%;
+  line-height: 36px;
+  float: left;
+  text-align: center;
+  position: relative;
+  background: #f2f2f2;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.pageMyEdit .sex span img {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 38px;
+  margin-top: -8px;
+}
+.pageMyEdit .sex span:last-child {
+  float: right;
+}
+.pageMyEdit .sex span.active {
+  background: rgba(255, 131, 27, 0.2);
+}
+.pageMyEdit .sex span.active::before {
+  content: '';
+  background: url('../images/my/duihao.png') no-repeat;
+  width: 16px;
+  height: 16px;
+  background-size: 16px auto;
+  transform: rotate(-10deg);
+  position: absolute;
+  bottom: -1px;
+  right: -2px;
+  z-index: 2;
+}
+.pageMyEdit .sex span.active::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  background: #ff831b;
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+.pageMyEdit .sex span.selected {
+  background: rgba(255, 131, 27, 0.2);
+  color: #ff831b;
+}
+.pageMyEdit .sex span.selected::after {
+  content: '';
+  background: url('../images/my/selectedFlag.png') no-repeat;
+  width: 50px;
+  height: 45px;
+  background-size: 50px auto;
+  position: absolute;
+  bottom: -21px;
+  right: -25px;
+  z-index: 2;
+}
+.pageMyEdit .baseForm {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding: 32px 12px;
+}
+.pageMyEdit .baseForm .group {
+  width: 100%;
+  float: left;
+  padding: 10px 0;
+  display: flex;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.pageMyEdit .baseForm .group label {
+  font-size: 17px;
+  color: #333;
+  line-height: 27px;
+  font-weight: normal;
+  margin-bottom: 0;
+  float: left;
+  width: 90px;
+  flex-basis: 90px;
+}
+.pageMyEdit .baseForm .group .ipt {
+  flex: 1;
+  line-height: 27px;
+  border: 0;
+  float: left;
+}
+.pageMyEdit .baseForm .group div.ipt {
+  color: #999;
+}
+.pageMyEdit .baseForm .group .imgGo {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -9px;
+}
+.pageMyEdit .baseForm .group .file {
+  width: 72px;
+  line-height: 27px;
+  text-align: center;
+  font-size: 12px;
+  color: #ff831b;
+  border: 1px solid #ff831b;
+  border-radius: 100px;
+  position: relative;
+}
+.pageMyEdit .baseForm .group .file .iptFile {
+  width: 100%;
+  height: 27px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #f00;
+  opacity: 0;
+  z-index: 2;
+}
+.pageMyEdit .baseForm .group.vGroup .vCode {
+  width: 100px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 18px;
+  color: #ff831b;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -9px;
+}
+.pageMyEdit .baseForm .group.vGroup .vCode::before {
+  content: '';
+  width: 1px;
+  height: 18px;
+  position: absolute;
+  top: 0;
+  left: -10px;
+  background: #eee;
+}
+.pageMyEdit .baseForm .group.vGroup .vCode.msgs1 {
+  color: #999;
+}
+.pageMyEdit .baseForm .iptBtn {
+  width: 100%;
+  line-height: 40px;
+  font-size: 18px;
+  color: #fff;
+  background: #ff831b;
+  border-color: #ff831b;
+  margin-top: 20px;
+  float: left;
+  border-radius: 4px;
+  border: 0;
+}
+.pageMyEdit .baseForm .am-form-field {
+  padding: 0;
+  background: #fff;
+}
+/* ------------//End 1编辑个人资料-------- */
+.pageMyTx {
+  width: 100%;
+  float: left;
+  padding: 12px;
+}
+.pageMyTx .container {
+  width: 100%;
+  float: left;
+  padding: 0 12px 12px 12px;
+  background: #fff;
+  border-radius: 8px;
+}
+.pageMyTx .item {
+  width: 100%;
+  padding-bottom: 10px;
+  margin-top: 12px;
+  float: left;
+  border-bottom: 1px solid #eee;
+}
+.pageMyTx .item .num {
+  color: #333;
+  font-size: 15px;
+  line-height: 21px;
+}
+.pageMyTx .item .timeSq {
+  color: #333;
+  font-size: 13px;
+  line-height: 18px;
+}
+.pageMyTx .item .price {
+  font-size: 18px;
+  color: #de0000;
+  font-weight: bold;
+  position: relative;
+}
+.pageMyTx .item .price img {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -9px;
+}
+.pageMyTx .item .price img.go {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -11px;
+}
+.pageMyTx .item .timeDk {
+  color: #999;
+  font-size: 13px;
+}
+.pageMyTx .item .status span {
+  color: #ff831b;
+  font-size: 11px;
+  background: #ffece3;
+  border-radius: 2px;
+  padding: 0 2px;
+  line-height: 15px;
+}
+.pageMyTx .tools {
+  width: 100%;
+  padding: 12px;
+  box-shadow: 0px -2px 16px 0px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.pageMyTx .tools span {
+  width: 48%;
+  line-height: 40px;
+  font-size: 18px;
+  color: #333;
+  float: left;
+  text-align: center;
+  border-radius: 4px;
+}
+.pageMyTx .tools span.btnDefault {
+  border: 1px solid #ccc;
+}
+.pageMyTx .tools span.btnDefault img {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  margin-right: 5px;
+}
+.pageMyTx .tools span.btnDefault.textColor {
+  color: #ff831b;
+}
+.pageMyTx .tools span.btnSelected {
+  background: #ff831b;
+  border: 1px solid #ff831b;
+  color: #fff;
+  float: right;
+}
+/* ------------//End 2提现记录列表-------- */
+.pageMyShare {
+  padding-top: 78px;
+}
+.pageMyShare .tabs {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  float: left;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.pageMyShare .tabs .tab {
+  width: 32%;
+  line-height: 37px;
+  text-align: center;
+  background: #f2f2f2;
+  border-radius: 20px;
+  float: left;
+  font-size: 15px;
+  color: #333;
+}
+.pageMyShare .tabs .tab:nth-child(2) {
+  margin: 0 2%;
+}
+.pageMyShare .tabs .tab.active {
+  background: #ff831b;
+  color: #fff;
+}
+/* ------------//End 分享-------- */
+.pageMyXj .container {
+  background: transparent;
+  padding: 0;
+}
+.pageMyXj .item {
+  background: #fff;
+  width: 100%;
+  float: left;
+  position: relative;
+  border-bottom: 0;
+  padding: 12px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+.pageMyXj .item .num,
+.pageMyXj .item .timeSq {
+  margin-bottom: 4px;
+  color: #666;
+}
+.pageMyXj .item .pprice {
+  font-size: 15px;
+  color: #333;
+  font-weight: bold;
+}
+.pageMyXj .item .imgGo {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  margin-top: -11px;
+}
+/* ------------//End 我的下级-------- */
+.pageAgent .sex {
+  margin-top: 30px;
+}
+.pageAgent .baseForm {
+  padding-left: 0;
+  padding-right: 0;
+}
+.pageAgent .panel {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border-top: 1px solid #eee;
+  margin-bottom: 20px;
+}
+/* ------------//End 申请成为代理-------- */
+.baseFormC {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 0 12px;
+}
+.baseFormC .group {
+  width: 100%;
+  float: left;
+  padding: 10px 0;
+  display: flex;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.baseFormC .group label {
+  font-size: 17px;
+  color: #333;
+  line-height: 27px;
+  font-weight: normal;
+  margin-bottom: 0;
+  float: left;
+  flex-basis: 90px;
+}
+.baseFormC .group .ipt {
+  flex: 1;
+  line-height: 27px;
+  border: 0;
+  float: left;
+}
+.baseFormC .group div.ipt {
+  color: #333;
+  text-align: right;
+}
+.baseFormC .group.textarea {
+  padding-top: 20px;
+}
+.baseFormC .group.textarea .text p {
+  color: #ccc;
+  font-size: 17px;
+  line-height: 24px;
+}
+.baseFormC .group.textarea .text p.t1 {
+  color: #999999;
+  font-size: 15px;
+  line-height: 21px;
+}
+.baseFormC .btn {
+  width: 100%;
+  float: left;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid #ff831b;
+  font-size: 18px;
+  color: #ff831b;
+  line-height: 40px;
+  margin-top: 40px;
+}
+.baseFormB {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding: 32px 12px;
+}
+.baseFormB .group {
+  width: 100%;
+  float: left;
+  padding: 10px 0;
+  display: flex;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.baseFormB .group label {
+  font-size: 17px;
+  color: #333;
+  line-height: 27px;
+  font-weight: normal;
+  margin-bottom: 0;
+  float: left;
+  flex-basis: 90px;
+}
+.baseFormB .group .ipt {
+  flex: 1;
+  line-height: 27px;
+  border: 0;
+  float: left;
+}
+.baseFormB .group div.ipt {
+  color: #999;
+}
+.baseFormB .group .imgGo {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -9px;
+}
+.baseFormB .group .file {
+  width: 72px;
+  line-height: 27px;
+  text-align: center;
+  font-size: 12px;
+  color: #ff831b;
+  border: 1px solid #ff831b;
+  border-radius: 100px;
+  position: relative;
+}
+.baseFormB .group .file .iptFile {
+  width: 100%;
+  height: 27px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #f00;
+  opacity: 0;
+  z-index: 2;
+}
+.baseFormB .iptBtn {
+  width: 100%;
+  line-height: 40px;
+  font-size: 18px;
+  color: #fff;
+  background: #ff831b;
+  border-color: #ff831b;
+  margin-top: 20px;
+  float: left;
+  border-radius: 4px;
+  border: 0;
+}
+.baseFormA {
+  padding-top: 0 !important;
+}
+.baseFormA .group:first-child {
+  border-top: 1px solid #eee;
+}
+.baseFormA .btns span {
+  width: 48%;
+  float: left;
+  font-size: 18px;
+  color: #333;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 40px;
+}
+.baseFormA .btns span.btnbind {
+  float: right;
+  background: #ff831b;
+  border: 1px solid #ff831b;
+  color: #fff;
+}
+.am-modal-dialog {
+  background: #fff;
+  border-radius: 8px;
+}
+.am-modal-dialog .am-modal-hd img {
+  width: 64px;
+}
+.am-modal-dialog .am-modal-hd h4 {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 18px;
+  color: #333;
+  font-weight: normal;
+}
+.am-modal-dialog .am-modal-bd {
+  font-size: 13px;
+  color: #999;
+}
+.am-modal-dialog .am-modal-btn {
+  color: #ff831b;
+}

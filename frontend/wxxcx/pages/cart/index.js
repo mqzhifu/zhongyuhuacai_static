@@ -46,14 +46,15 @@ Page({
         for (var i = 0; i < checkBox.length; i++) {
             if (checkBox[i].check == true) {
                 selected = 1
-                var itemPrice = parseInt(cartList[i].lowest_price) * parseInt(checkBox[i].num)
+                var itemPrice = parseFloat(cartList[i].lowest_price) * parseInt(checkBox[i].num)
                 console.log("cart selected:", " i:", i, "num", checkBox[i].num, "price", cartList[i].lowest_price, "itemPrice", itemPrice)
 
-                total += parseInt(itemPrice)
+                total += parseFloat(itemPrice)
                 selCnt++
             }
         }
 
+        total = total.toFixed(2)
         console.log(total)
 
         if (selected) {
@@ -180,7 +181,7 @@ Page({
 
 
         if (noSelected) {
-            wx.showToast({title: '并没有选择端口', icon: 'none'})
+            wx.showToast({title: '至少选择一件商品', icon: 'none'})
             return -1
         }
 

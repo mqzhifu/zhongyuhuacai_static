@@ -2,6 +2,7 @@
 const app = getApp()
 const Logs = require("../../utils/log.js")
 Page({
+
     /**
      * 页面的初始数据
      */

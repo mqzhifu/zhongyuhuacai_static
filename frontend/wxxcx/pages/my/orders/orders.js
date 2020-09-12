@@ -11,6 +11,8 @@ Page({
         payType: 12,//微信支付
         tabPanel:{1:1,2:2,3:3,4:4,5:5},
     },
+
+    
     // 切换到标签
     onChangeTabs(e) {
         this.setData({

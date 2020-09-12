@@ -661,7 +661,8 @@ App({
 
         this.httpRequest("getUserCartCnt",{},getUserCartCntCallback)
     },
-
+    
+    
     pay :function(oid,payType){
 
         var parentObj = this
@@ -805,6 +806,8 @@ App({
             //用户查看产品历史记录总数
             "viewProductHistoryCnt":"user/viewProductHistoryCnt/",
 
+
+
             "getAddressById":"user/getAddressById/",
 
             "addComment":"product/comment/",//添加一条评论
@@ -826,6 +829,9 @@ App({
 
 
             "refundCancel":"order/refundCancel/",//取消申请
+
+            "getAreaProvinceCity":"system/getAreaProvinceCity/",//选择框里的，所有 省  市
+            "getAreaAllCounty":"system/getAreaAllCounty/",//选择框里的，所有 省  县
 
             // "getProvince":"",
             // "getCityByProvinceCode":"",
