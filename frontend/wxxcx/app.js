@@ -493,19 +493,37 @@ App({
         })
     },
 
-
-    shareMyApp:function(channel,source,title,content,data){
-        console.log(this.globalData.moduleName,"shareMyApp ",channel,source,title,content,data)
-        var url = this.globalData.map[channel].url
+    //pageChannel:分享后，用户点击跳转的页面地址
+    //source:来源页面
+    shareMyApp:function(pageChannel,source,title,content,data){
+        console.log(this.globalData.moduleName,"shareMyApp ",pageChannel,source,title,content,data)
+        var url = this.globalData.map[pageChannel].url
         console.log(url)
         if(data && !this.isUndefined(data)){
             url = this.replaceStr( url ,data)
         }
-        
 
-        if(channel == 2 ){//产品详情页做个特殊处理
-            url += "&share_uid="+this.globalData.serverUserInfo.id;
+        var requestServerShareLogData = {
+            'goto_page_path':url,
+            'source': this.globalData.map[source].title,
+            'pid':-1,
         }
+
+        if(pageChannel == 2 ){//产品详情页做个特殊处理
+            url += "&share_uid="+this.globalData.serverUserInfo.id;
+            requestServerShareLogData.pid = data.pid
+            requestServerShareLogData.goto_page_path = url
+        }
+
+
+
+        var requestServerShareLogDataCallback = function(a,b){
+
+        }
+
+        console.log(requestServerShareLogData);
+        this.httpRequest("share",requestServerShareLogData,requestServerShareLogDataCallback)
+
         console.log(" share final url",url)
         return {
             title: title + source,
@@ -756,6 +774,8 @@ App({
             //详情页
 
 
+
+
             'getOrderOneDetail':"order/getOneDetail/",//订单详情
             'productDetail':"product/getOneDetail/",//产品详情
             'getUserHistoryPVList':"product/getUserHistoryPVList/",//一个产品的，最近访客
@@ -833,6 +853,8 @@ App({
             "getAreaProvinceCity":"system/getAreaProvinceCity/",//选择框里的，所有 省  市
             "getAreaAllCounty":"system/getAreaAllCounty/",//选择框里的，所有 省  县
 
+
+            "share":"index/share/",
             // "getProvince":"",
             // "getCityByProvinceCode":"",
             // "getCountyByCityCode":"",

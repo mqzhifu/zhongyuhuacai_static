@@ -232,11 +232,15 @@ Page({
         }else{
             var UserAddressDefaultCallback = function (r, res) {
                 console.log("UserAddrListCallback", res,res['id'])
-                if (!res) {
+                if (!res || app.isEmptyArray(res) || app.isEmptyObject(res)) {
                     console.log("notice: user address is null")
+                    // app.showToast();
+                    // return -1;
+                }else{
+                    parentObj.setData({"userAddress": res})
+                    parentObj.setData({"userSelAddressId": res['id']})
                 }
-                parentObj.setData({"userAddress": res})
-                parentObj.setData({"userSelAddressId": res['id']})
+
             }
 
             app.httpRequest('getUserAddressDefault', [], UserAddressDefaultCallback)

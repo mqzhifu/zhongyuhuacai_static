@@ -6,8 +6,7 @@ Page({
     data: {
         swiperList:[],//轮播图，给控件用 k:v 形式，只能用于控件
         swiperDataList :[],//server 轮播图的数据，暂存，用于轮播图点击事件
-
-        //推荐-产品列表
+        //推荐-产品列表-start
         showLoading:0,//获取数据时显示loading....icon
 
         recommendProductType : 1,//分类
@@ -146,7 +145,6 @@ Page({
                 "swiperDataList":res//用于计算的数据
             })
         }
-
         //获取 - 分类列表
         var AllCategoryListCallback = function(resolve,res){
             console.log("getAllCategoryList callback")

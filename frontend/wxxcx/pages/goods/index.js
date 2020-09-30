@@ -101,7 +101,8 @@ Page({
     },
     // 点击 分类 ,重新搜索
     onTabsClick(event) {
-        var id = event.detail.index
+        // console.log("onTabsClick",event)
+        var id =  event.detail.name;
         this.data.searchCategory = id
         // this.setData({searchCategory:id})
         console.log("set searchCategory", id)

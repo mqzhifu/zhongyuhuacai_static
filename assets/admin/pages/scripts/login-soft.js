@@ -61,6 +61,8 @@ var Login = function () {
 							var d = eval( "(" + data+ ")" );
                             // var d = eval("("+data+")");
 							if(200 != d.code){
+								var r = Math.random();
+                                $("#verifyImg").attr("src","?ac=verifyImg&r="+r);
 								$('.alert-danger', $('.login-form')).show();
 							}else{
 								location.href="/";
