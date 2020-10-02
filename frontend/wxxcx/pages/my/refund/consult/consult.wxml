@@ -34,5 +34,5 @@
     <!--</view>-->
 	<!--</view>-->
 
-  <view class="nodata" wx:if="{{!list}}">没有更多协商详情了</view>
+  <view class="nodata" wx:if="{{!list || list.length == 0}}">记录为空!!!</view>
 </view>

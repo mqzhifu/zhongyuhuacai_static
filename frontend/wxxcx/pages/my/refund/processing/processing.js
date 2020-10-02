@@ -14,7 +14,8 @@ Page({
     },
 
     go_money: function () {
-        app.goto(1, 24, null)
+        var id = this.data.id
+        app.goto(1, 24, {id:id})
     },
 
     refundCancel: function () {
@@ -110,9 +111,13 @@ Page({
     },
 
     initCountDown : function(){
+        //超时时间，默认 - 2天
         var countTime = this.data.refundConst.cycle_time
+        //当前时间
         var now = app.getNowTimestamp()
+        //申请时间
         var a_time = this.data.info.a_time
+        //当前时间 -  申请时间 = 间隔
         var distance = now - a_time
 
         console.log("now",now,"a_time",a_time,"distance",distance)
@@ -126,6 +131,8 @@ Page({
             app.showToast("倒计时错误.. >= 2天 ")
             return -2
         }
+        //从申请时间 _ 超时时间的 间隔(秒)
+        distance = countTime - distance
 
         // var second = 0
 

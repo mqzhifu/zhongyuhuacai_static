@@ -128,7 +128,6 @@ Page({
                 console.log("upload avatar images is ok .", res);
                 // tempFilePath可以作为img标签的src属性显示图片
                 var tempFilePaths = res.tempFilePaths
-
                 parentObj.setData({uploadPicUrl:tempFilePaths})
 
                 console.log("tempFilePaths",tempFilePaths)

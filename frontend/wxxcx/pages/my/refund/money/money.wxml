@@ -6,7 +6,7 @@
                 <text>¥</text>
                 {{info.price}}
             </view>
-            <view class="txt2">已退到：微信</view>
+            <view class="txt2" wx:if="{{info.status == 2}}">已退到：微信</view>
         </view>
         <!-- //End -->
         <view class="info">
@@ -37,7 +37,7 @@
                 <view class="main h_line">
                     <view class="txt">
                         <text>商家同意退款</text>
-                        <text>2020-07-19 20:20:20</text>
+                        <text>{{info.audit_dt}}</text>
                     </view>
                     <view class="tip">系统会在1-2天内提交微信处理</view>
                 </view>
@@ -51,7 +51,7 @@
                 <view class="main h_line">
                     <view class="txt">
                         <text>已退款，微信处理种</text>
-                        <text>2020-07-19 20:20:20</text>
+                        <text>{{info.audit_dt}}</text>
                     </view>
                     <view class="tip">商家已将退款资金提交微信处理，通常情况下，退款会 原路退回您的支付账户，余额会在20分钟内到账。</view>
                 </view>
@@ -79,7 +79,7 @@
                 <view class="main h_line">
                     <view class="txt">
                         <text>{{refundConst.status[info.status]}}</text>
-                        <text>2020-07-19 20:20:20</text>
+                        <text>{{info.dt}}</text>
                     </view>
                     <view class="tip">请等待</view>
                 </view>
@@ -95,7 +95,7 @@
                 <view class="main h_line">
                     <view class="txt">
                         <text>{{refundConst.status[info.status]}}</text>
-                        <text>2020-07-19 20:20:20</text>
+                        <text>{{info.audit_dt}}</text>
                     </view>
                     <view class="tip">请联系客服</view>
                 </view>

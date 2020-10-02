@@ -15,6 +15,7 @@
             </view>
 
 
+
             <view class="name">
                 <text class="t1">注册时间：</text>
                 <text class="t2">{{uinfo.reg_dt}}</text>
@@ -104,6 +105,7 @@
             <view class="item" data-tabid="6" bindtap="gotoOrderList" bindtap="goto_refund_list">
                 <image src="./images/orders-icon5@2x.png" />
                 <view class="txt">退货/退款</view>
+                <view class="cusTag" wx:if="{{orderTotalCnt.wait_refund_audit}}">{{orderTotalCnt.wait_refund_audit}}</view>
             </view>
         </view>
     </view>

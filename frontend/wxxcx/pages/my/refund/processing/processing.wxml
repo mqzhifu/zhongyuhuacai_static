@@ -23,9 +23,9 @@
 			<view class="link">
 				<view class="line_top"></view>
 				<view class="label">协商详情</view>
-				<view class="right">
-					<image src="../../../../images/arrow-right@2x.png" />
-				</view>
+				<!--<view class="right">-->
+					<!--<image src="../../../../images/arrow-right@2x.png" />-->
+				<!--</view>-->
 			</view>
 		</view>
 	</view>
@@ -65,8 +65,11 @@
 	<!-- //End -->
 
 	<view class="btns">
-		<view class="btn" bindtap="go_money">修改申请</view>
+		<!--<view class="btn" bindtap="go_money">修改申请</view>-->
+		<view class="btn" bindtap="go_money">退款详情</view>
 		<view class="btn" bindtap="refundCancel">撤销申请</view>
+
 		<view class="btn">在线客服</view>
+		<!--<button class="btn" open-type="contact">在线客服</button>-->
 	</view>
 </view>
