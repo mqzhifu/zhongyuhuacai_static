@@ -24,6 +24,8 @@ Page({
 
 
     onLoad: function (para) {
+        this.setData({"masterAgentName":app.globalData.masterAgentName ,title:app.globalData.title, navBarRightText:app.globalData.navBarRightText})
+
         Logs.onload("index",para)
         //初始化 登陆信息
         var PromiseObj =  new Promise(function(resolve, reject) {

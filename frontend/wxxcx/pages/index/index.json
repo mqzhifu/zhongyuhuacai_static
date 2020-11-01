@@ -1,4 +1,10 @@
 {
+
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "新零售 云分享",
+  "navigationStyle": "custom",
+
   "usingComponents": {
     "v-search": "custom/citySearch/index",
     "v-swiper": "custom/swiper/index",

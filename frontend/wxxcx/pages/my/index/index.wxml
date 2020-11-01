@@ -127,10 +127,10 @@
             <!--<view class="img"><image src="./images/others-icon3.png" /></view>-->
             <!--<view class="txt">红包</view>-->
         <!--</view>-->
-        <!--<view class="item">-->
-            <!--<view class="img"><image src="./images/others-icon4.png" /></view>-->
-            <!--<view class="txt">我的公告</view>-->
-        <!--</view>-->
+        <view class="item">
+            <view class="img" bindtap="bindPhone"><image src="./images/others-icon4.png" /></view>
+            <view class="txt">绑定手机</view>
+        </view>
         <!--<view class="item">-->
             <!--<view class="img"><image src="./images/others-icon5.png" /></view>-->
             <!--<view class="txt">素材库</view>-->

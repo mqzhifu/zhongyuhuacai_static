@@ -87,12 +87,17 @@ Page({
     // 点击了右上角分享图标，这个是：以图片形式，分享朋友圈
     onTabShare() {
         // wx.showToast({ title: '已分享', icon: 'none' })
-        // var data = {
-        //     pid:this.data.pid,
-        //     share_uid:app.globalData.serverUserInfo.id
-        // }
-        app.goto(1,15,null)
-        // app.httpRequest("getShareQrCode",data)
+
+        var getShareQrCodeBack  = function(r,data){
+            console.log("getShareQrCodeBack",data)
+            app.goto(1,15,null)
+        }
+        var data = {
+            pid:this.data.pid,
+            share_uid:app.globalData.serverUserInfo.id,
+        }
+
+        app.httpRequest("getShareQrCode",data,getShareQrCodeBack)
 
     },
     // 推荐产品列表中的  图片点击
@@ -344,11 +349,20 @@ Page({
 
     },
 
+
     onLoad: function (data) {
         Logs.onload("goods_detail",data)
+        var pageViewData = {"page":"productDetail","entry_type":data.entry_type}
         if(!app.isUndefined(data.share_uid)){
             this.setData({share_uid:data.share_uid})
+            pageViewData.share_uid = data.share_uid
         }
+
+        console.log("pageViewData",pageViewData)
+        var pageViewDataCallback  = function(r,pageViewDataCallbackData){
+
+        }
+        app.httpRequest("pageView",pageViewData,pageViewDataCallback)
 
         var scene = ""
         var pid = 0

@@ -25,7 +25,8 @@
     "pages/my/refund/processing/processing",
     "pages/my/refund/success/success",
     "pages/my/refund/money/money",
-    "pages/my/refund/consult/consult"
+    "pages/my/refund/consult/consult",
+    "pages/my/index/bindPhone"
   ],
   "window": {
     "backgroundTextStyle": "light",

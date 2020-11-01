@@ -1,4 +1,6 @@
 <!--index.wxml-->
+<van-nav-bar  title="{{title}}" leftText="{{masterAgentName}}"  rightText="{{navBarRightText}}" />
+
 <view class="container">
   <!-- <v-header/> -->
 
@@ -21,8 +23,6 @@
       <text class="name">人气推荐</text>
     </view>
     <view class="items"  >
-
-
 
       <!-- <view class="item"  wx:if="{{!hostList}}">管理员开了小差，没设置推荐数据...</view> -->
       <view  class="item"  wx:for="{{recommendProductList}}" bindtap="productGoto" data-pid="{{item.id}}"  wx:key="index_product_list" wx:key="index_recommend">

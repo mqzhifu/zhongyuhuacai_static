@@ -38,6 +38,13 @@ Page({
         app.goto(1,7,{"tabId":tabId})
         // wx.navigateTo({url: '/pages/my/orders/orders'})
     },
+    bindPhone:function (e) {
+        // var tabId = e.currentTarget.dataset.tabid
+        // console.log(tabId,e)
+        // app.goto(1,26 )
+        // wx.navigateTo({url: '/pages/my/orders/orders'})
+        app.goto(1,10,null);
+    },
     /**
      * 生命周期函数--监听页面加载
      */

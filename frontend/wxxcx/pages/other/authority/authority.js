@@ -4,7 +4,9 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {},
+    data: {
+        bindWxPhone:"",
+    },
 
 
 
@@ -21,6 +23,7 @@ Page({
     },
 
     getPhoneNumber(e) {
+        var parentObj = this
         console.log(e.detail.errMsg)
         console.log(e.detail.iv)
         console.log(e.detail.encryptedData)
@@ -33,8 +36,10 @@ Page({
 
         }
 
-        var decodeCallback = function (res) {
+        var decodeCallback = function (j,res) {
             console.log("decodeCallback", res)
+            console.log(res.mobile)
+            parentObj.setData({"bindWxPhone":res.mobile})
         }
 
         app.httpRequest("decodeWxEncryptedData", data, decodeCallback)

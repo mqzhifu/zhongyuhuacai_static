@@ -1,8 +1,9 @@
 //app.js
 App({
-    // onLaunch: function () {
-    //
-    // },
+
+    onLaunch: function () {
+
+    },
 
     isEnvRelease : function(){
         if(this.globalData.env && this.globalData.env == 'release'){
@@ -11,8 +12,19 @@ App({
         return 0
     },
 
+    initNavigationBar : function(){
+        var title = "新零售 云分享"
+        if(this.globalData.isGuest){
+            title += " 登陆"
+        }
+        wx.setNavigationBarTitle({
+            title: title
+        })
+    },
+
     //初始化 - 登陆
     loginInit : function(){
+        // this.initNavigationBar()
         //登陆/注册流行
         //1检查变量是否有TOKEN
         //2检查用户手机本地数据库，是否有TOKEN
@@ -25,16 +37,14 @@ App({
 
 
         // var env =  __wxConfig.envVersion
-        var accountInfo = wx.getAccountInfoSync();
-        console.log('版本：', accountInfo);
+        var accountInfo = wx.getAccountInfoSync()
+        console.log('版本：', accountInfo)
         var env = accountInfo.miniProgram.envVersion
         if(!env || this.isUndefined(env)){
             this.globalData.env = "unknow"
         }else{
             this.globalData.env = env
         }
-
-
         //先查看  全局变量中 是否已经存在token,如果存在，之前就已经初始化过一次
         if(this.globalData.serverToken){
             console.log(this.globalData.moduleName," globalData has serverToken , no need init ")
@@ -45,7 +55,15 @@ App({
         var storageServerToken = wx.getStorageSync('serverToken')
         var storageSessionKey  = wx.getStorageSync('sessionKey')
 
+
+        // if(storageServerToken && !this.isUndefined(storageServerToken) && storageSessionKey && !this.isUndefined(storageServerToken)){//不敢这么用，因为sess 可能 用户不授权，但是微信不允许你卡死
         if(storageServerToken && !this.isUndefined(storageServerToken)){
+        // if(0){
+            if(!storageSessionKey || this.isUndefined(storageServerToken) ){
+                //用户没有授权个人信息，session即为空，且不能用于获取手机号
+                console.log("notice: storageServerToken is null , user not authority userInfo");
+            }
+
             console.log(this.globalData.moduleName,"user local Storage has serverToken ",storageServerToken , " has sessionKey",storageSessionKey)
 
             this.checkToken(storageServerToken)
@@ -119,6 +137,8 @@ App({
                 }else{//之前没有授权过的，1 大概率是新用户 2 老用户就不想授权
                     console.log(parentObj.globalData.moduleName,' wx.getUserInfo is failed 2',res)
                     //操蛋的微信，不让卡死，必须支持游客模式
+                    //先弹出一次授权框，如果还是不行，直接走游客模式，但失败了，不允许这么干
+                    //只能走guest模式
                     // parentObj.showUnAuthorityWin('scope.userInfo')
                     parentObj.initGuestServerToken(wxCode)
                 }
@@ -208,10 +228,11 @@ App({
         var back = function(resolve,data){
             console.log(parentObj.globalData.moduleName,"server login ok " , data)
             parentObj.globalData.serverToken = data.token
-            // parentObj.globalData.sessionKey = data.session_key
+            parentObj.globalData.sessionKey = data.session_key
+
 
             wx.setStorageSync('serverToken',data.token)
-            // wx.setStorageSync('sessionKey',data.session_key)
+            wx.setStorageSync('sessionKey',data.session_key)
 
             console.log(parentObj.globalData.moduleName,"set <serverToken>  : globalData && local storage!")
             resolve()
@@ -294,6 +315,11 @@ App({
             console.log(" substr nickname",subNickname)
             if(subNickname != '游客'){
                 parentObj.globalData.isGuest = 0
+            }
+
+            if(res.master_agent){
+                parentObj.globalData.masterAgentName = res.master_agent.real_name + "为您服务"
+                // console.log("服务",parentObj.globalData.masterAgentName)
             }
 
         }
@@ -508,20 +534,19 @@ App({
             'source': this.globalData.map[source].title,
             'pid':-1,
         }
-
-        if(pageChannel == 2 ){//产品详情页做个特殊处理
-            url += "&share_uid="+this.globalData.serverUserInfo.id;
+        //产品详情页做个特殊处理，加入分享人、<进入类型>1正常小程序内跳转，2分享点击后进入
+        if(pageChannel == 2 ){
+            url += "&share_uid="+this.globalData.serverUserInfo.id + "&entry_type=2";
             requestServerShareLogData.pid = data.pid
             requestServerShareLogData.goto_page_path = url
         }
 
 
 
-        var requestServerShareLogDataCallback = function(a,b){
-
-        }
+        var requestServerShareLogDataCallback = function(a,b){}
 
         console.log(requestServerShareLogData);
+        //推送服务端 - 所有分享记录
         this.httpRequest("share",requestServerShareLogData,requestServerShareLogDataCallback)
 
         console.log(" share final url",url)
@@ -549,6 +574,8 @@ App({
             if(!this.isUndefined(data.selAddress)){
                 url += "&selAddress="+data.selAddress
             }
+        }else if(channel == 2){
+            url += "&entry_type=1"
         }
 
         console.log(url)
@@ -716,7 +743,17 @@ App({
         return timestamp;
     },
 
+    getMasterAgentName:function(){
+        return this.globalData.masterAgentName
+    },
+
     globalData: {
+        //状态栏标题
+        title:"新零售",
+        //状态栏左侧
+        masterAgentName:"", //当前用户归属的代理名称
+        //状态栏右侧
+        navBarRightText:"",
         env : "",//develop trial release
         isGuest:1,//游客模式，操蛋的微信，让登陆，但不让强制获取用户信息，而实际上微信登陆没有用户信息毛用没有
         //用户基础信息
@@ -724,7 +761,6 @@ App({
         //用户购物车里有多少件商品
         userCartCnt:0,
         moduleName :"app",
-        // headerTitle:"新零售 云分享2",
         noImgUrl : "https://api.day900.com/noimg.png",
         userInfo: null,
         serverToken:"",
@@ -772,9 +808,6 @@ App({
             'getAllCategory':"product/getAllCategory/",//获取所有产品分类
             'getSearchAttr':'product/getSearchAttr/',//获取搜索产品的筛选条件
             //详情页
-
-
-
 
             'getOrderOneDetail':"order/getOneDetail/",//订单详情
             'productDetail':"product/getOneDetail/",//产品详情
@@ -855,6 +888,7 @@ App({
 
 
             "share":"index/share/",
+            "pageView":"index/pageView/",
             // "getProvince":"",
             // "getCityByProvinceCode":"",
             // "getCountyByCityCode":"",
@@ -888,6 +922,7 @@ App({
             23:{title:"个人中心-申请退款-退款进度",url:"/pages/my/refund/processing/processing?id=#id#"},
             24:{title:"个人中心-申请退款-详情",url:"/pages/my/refund/money/money?id=#id#"},
             25:{title:"个人中心-申请退款-列表",url:"/pages/my/refund/consult/consult"},
+            26:{title:"个人中心绑定手机",url:"/pages/my/index/bindPhone"},//暂时没用到这个页面，使用的authority
         },
     }
 })
