@@ -49,17 +49,16 @@ Page({
             //   ],
             // },
         ],
-        // 产品推荐列表
-        recommendProductList: [
-            // {
-            //   id: 1,
-            //   imgUrl:
-            //     'https://img14.360buyimg.com/n1/jfs/t3682/362/1363475238/559844/ab37eb62/58229915N5796455e.jpg',
-            //   title: '春夏亲肤棉四件套床单款全棉芦荟棉11',
-            //   price: 11,
-            //   payment: 111,
-            // }
-        ],
+
+        //推荐-产品列表
+        showLoading:0,//获取数据时显示loading....icon
+
+        recommendProductType : 2,//分类
+        recommendProductLimit : 3,//每页多少条记录
+        recommendProductList:[],//列表数据
+        recommendProductCurrentPage :0,//当前页
+        recommendProductMaxPage:0,//当前数据总页数
+        //推荐-产品列表-end
     },
     // // 点击左上角返回,暂不用
     // onClickLeft() {
@@ -493,30 +492,30 @@ Page({
             parentObj.setData({"visitorList": data})
 
         }
-        //推荐产品
-        var getRecommendProductListCallback = function (resolve, res) {
-            console.log("getRecommendProductListCallback callback", res)
-            if (!res) {
-                console.log("notice:get getRecommendProductListCallback is null.")
-                return -4
-            }
-            var data = []
-            for (var i = 0; i < res.list.length; i++) {
-                var tmp = {
-                    id: i + 1,
-                    imgUrl: res.list[i].pic,
-                    title: res.list[i].title,
-                    price: res.list[i].lowest_price
-                }
-                data[i] = tmp
-            }
-            console.log("recommend data", data)
-
-
-            parentObj.setData({"recommendProductList": data})
-            console.log("recommend", parentObj.data.recommendProductList)
-
-        }
+        // //推荐产品
+        // var getRecommendProductListCallback = function (resolve, res) {
+        //     console.log("getRecommendProductListCallback callback", res)
+        //     if (!res) {
+        //         console.log("notice:get getRecommendProductListCallback is null.")
+        //         return -4
+        //     }
+        //     var data = []
+        //     for (var i = 0; i < res.list.length; i++) {
+        //         var tmp = {
+        //             id: i + 1,
+        //             imgUrl: res.list[i].pic,
+        //             title: res.list[i].title,
+        //             price: res.list[i].lowest_price
+        //         }
+        //         data[i] = tmp
+        //     }
+        //     console.log("recommend data", data)
+        //
+        //
+        //     parentObj.setData({"recommendProductList": data})
+        //     console.log("recommend", parentObj.data.recommendProductList)
+        //
+        // }
         //最近购买用户
         var getNearUserBuyHistoryCallback = function (resolve, res) {
             console.log("getNearUserBuyHistoryCallback callback", res)
@@ -586,12 +585,15 @@ Page({
         //用户浏览记录
         app.httpRequest('getUserHistoryPVList', data, getUserHistoryPVListCallback);
         // 推荐产品列表
-        app.httpRequest('getRecommendProductList', data, getRecommendProductListCallback);
+        // app.httpRequest('getRecommendProductList', data, getRecommendProductListCallback);
         //最近购买记录
         var data = {'pid': this.data.pid}
         app.httpRequest('getNearUserBuyHistory', data, getNearUserBuyHistoryCallback);
         //评论列表
         app.httpRequest('getCommentList', data, getCommentListCallback);
+
+
+        this.getRecommendProductListPage();
 
     },
 
@@ -601,5 +603,62 @@ Page({
     onShow: function (data) {
         console.log("im onShow",data)
         this.setData({"userCartCnt": app.globalData.userCartCnt})
-    }
+    },
+
+    onReachBottom: function () {
+        console.log("oh no ~ bottom","max page",this.data.recommendProductMaxPage)
+        if(this.data.recommendProductCurrentPage  >= this.data.recommendProductMaxPage ){
+            console.log("recommendProductMaxPage >= recommendProductCurrentPage")
+            return -3
+        }
+
+        this.getRecommendProductListPage()
+    },
+
+    //获取推荐产品数据
+    getRecommendProductListPage:function(){
+        // if(this.data.recommendProductCurrentPage >= this.data.recommendProductMaxPage){
+        //     console.log(" RecommendProductList is null don't request server. ")
+        //     return -2
+        // }
+        //获取 推荐产品 列表
+        var parentObj = this
+        var RecommendProductListCallback = function(resolve,res){
+            console.log("RecommendProductListCallback callback", res)
+            if(app.weakCheckscalarEmpty(res.list) || app.isEmptyArray(res.list)){
+                console.log("notice:getRecommendProductList is null")
+                // parentObj.setData({"recommendProductList":[],"recommendProductCurrentPage":-1})
+                return -1
+            }
+
+
+            var data = []
+            for (var i = 0; i < res.list.length; i++) {
+                var tmp = {id: res.list[i].id, imgUrl: res.list[i].pic, title: res.list[i].title,price:res.list[i].lowest_price,'payment':res.list[i].user_buy_total ,"has_cart":res.list[i].has_cart}
+                data[i] = tmp
+            }
+
+            if( app.isEmptyArray(parentObj.data.recommendProductList ) ){
+                console.log("recommendProductList is null ,first set data")
+                parentObj.setData({"recommendProductList":data})
+            }else{
+                console.log("recommendProductList is exist ,append data",data)
+                var tmp = parentObj.data.recommendProductList.concat(data);
+                parentObj.setData({"recommendProductList":tmp})
+            }
+
+            parentObj.setData({"recommendProductMaxPage":res.page_cnt})//最大页数
+            parentObj.setData({"showLoading":0})//关闭loading...icon
+        }
+
+        parentObj.setData({"recommendProductCurrentPage":parentObj.data.recommendProductCurrentPage + 1})
+        var data = {
+            'page':parentObj.data.recommendProductCurrentPage,
+            'limit':this.data.recommendProductLimit,
+            'type':this.data.recommendProductType,
+        }
+
+        parentObj.setData({"showLoading":1})//显示 loading....icon
+        app.httpRequest('getRecommendProductList',data,RecommendProductListCallback);
+    },
 })

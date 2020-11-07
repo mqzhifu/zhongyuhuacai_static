@@ -118,6 +118,8 @@
             </view>
         </view>
     </view>
+
+
     <!-- //End 评论 -->
     <view class="bd">
         <view class="titleDivider">详情</view>
@@ -129,10 +131,10 @@
 
     </view>
      <!--//End 详情-->
-    <view class="bd">
-        <view class="titleDivider">更多推荐</view>
-        <card-item list="{{recommendProductList}}" bind:imgClick="onTapItemImg" bind:cartClick="onTapItemImg" />
-        <view class="more">点击继续加载</view>
+    <view class="list">
+        <view class="titleDivider">你可能还想买</view>
+        <card-item list="{{recommendProductList}}" bind:imgClick="onItemImgClick" bind:cartClick="onItemCartClick" />
+        <view wx:if="{{recommendProductCurrentPage == recommendProductMaxPage}}" class="more">不能再拖动了~我也是有底线的，好不啦!!!</view>
     </view>
     <!-- //End 更多推荐 -->
     <view class="tools">

@@ -27,7 +27,7 @@ Page({
         //推荐-产品列表
         showLoading:0,//获取数据时显示loading....icon
 
-        recommendProductType : 1,//分类
+        recommendProductType : 2,//分类
         recommendProductLimit : 3,//每页多少条记录
         recommendProductList:[],//列表数据
         recommendProductCurrentPage :0,//当前页

@@ -747,6 +747,8 @@ App({
         return this.globalData.masterAgentName
     },
 
+
+
     globalData: {
         //状态栏标题
         title:"新零售",
@@ -761,10 +763,10 @@ App({
         //用户购物车里有多少件商品
         userCartCnt:0,
         moduleName :"app",
-        noImgUrl : "https://api.day900.com/noimg.png",
+        noImgUrl : "https://api-dev.xlsyfx.cn/noimg.png",
         userInfo: null,
         serverToken:"",
-        serverHost :"https://api.day900.com/",
+        serverHost :"https://api-dev.xlsyfx.cn/",
         promiseResolve : null,
         //用户登陆成功后，把CODE给SERVER，SERVER获取用户信息，所得到的值
         //此值，主要给前端用于获取手机号
