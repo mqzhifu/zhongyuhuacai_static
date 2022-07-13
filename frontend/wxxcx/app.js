@@ -4,6 +4,7 @@ App({
     onLaunch: function () {
 
     },
+    
 
     isEnvRelease : function(){
         if(this.globalData.env && this.globalData.env == 'release'){
@@ -389,10 +390,13 @@ App({
                 // 'X-CLIENT-DATA':this.globalData.systemInfo,
             },
 
+            
+
             success:function(callbackData){
                 console.log(parentObj.globalData.moduleName,"first callback data",callbackData,urlKey)
                 // parentObj.globalData.httpRequestCode = callbackData.data.code
-                if( (callbackData instanceof Array) || ( callbackData instanceof Object ) ){
+                // console.log(callbackData.data)
+                // if( (callbackData instanceof Array) || ( callbackData instanceof Object ) ){
                     //这里有个特殊的处理，要把SERVER端的返回数据原封不动的给到调用者，其它情况，都只返回data
                     if(urlKey == 'checkToken'){
                         callback(promiseResolve,callbackData.data)
@@ -409,11 +413,13 @@ App({
 
 
 
-                }else{
-                    console.log(parentObj.globalData.moduleName,"fatal err server error!!!",callbackData)
-                }
+                // }else{
+                //     console.log(parentObj.globalData.moduleName,"fatal err server error!!!",callbackData)
+                // }
 
             },
+
+
             fail:function(res){
                 console.log("err httpRequest:",res)
             }
@@ -549,9 +555,11 @@ App({
         //推送服务端 - 所有分享记录
         this.httpRequest("share",requestServerShareLogData,requestServerShareLogDataCallback)
 
+        
         console.log(" share final url",url)
         return {
-            title: title + source,
+            title :" ",
+            // title: title + source,
             desc: content,
             path: url
         }
@@ -760,6 +768,8 @@ App({
         isGuest:1,//游客模式，操蛋的微信，让登陆，但不让强制获取用户信息，而实际上微信登陆没有用户信息毛用没有
         //用户基础信息
         serverUserInfo : {},
+    
+        
         //用户购物车里有多少件商品
         userCartCnt:0,
         moduleName :"app",

@@ -5,6 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        tapTimes:0,//这里麻烦的是，按钮：立即购买，第一次点击，得弹出选择参数规格，在没有关闭的前提下，再次点击就是跳转到下单页，如果这具时候关闭这个要置成0
         share_uid :0,//分享者的UID，主要是用于佣金统计
         userCartCnt: 0,//用户购物车有多少个产品数
         headerTitle: "",//
@@ -12,8 +13,8 @@ Page({
         pid: 0,//产品ID
         product: null,
         selGoodsPCAP: 0,//选择购买的产品规格
-        userSelGoods: {},//用户选择的商品 规格的组合-最终的商品ID
-        userSelGoodsRow:{},//用户选择的商品
+        userSelGoods: {},//用户选择的商品:规格的组合-最终的商品ID
+        userSelGoodsRow:{},//用户选择的商品，上面主要是存ID相关信息，下面是存该商品ID对应的属性值，如：销售价、最低价、库存
         swiperList: [],//轮播图片地址
         detailPicsList: {},//产品的详情图集
         swiperCurrent: 0,
@@ -183,8 +184,11 @@ Page({
         }
         this.setData({specsShow: true})
     },
+    
     // 关闭规格弹出层
     tapSpecsClose() {
+        this.setData({tapTimes: 0})
+        
         if (this.data.product.category_attr_null == 1) {
             wx.showToast({title: '该产品没有属性参数,可直接购买', icon: 'none'})
         }
@@ -235,6 +239,10 @@ Page({
         console.log(e)
         var pcapid = e.currentTarget.dataset.pcapid
         var pcaid = e.currentTarget.dataset.pcaid
+        this.selGoodsCalc(pcaid,pcapid)
+    },
+    //因为，默认计算选中的值，也和更新价格，但是，点击的时候，是绑定了当前点击那个element，值是绑定到这个element上的，得拆分一个函数出来
+    selGoodsCalc : function(pcaid  , pcapid){
 
         this.data.userSelGoods[pcaid] = pcapid
         this.setData(
@@ -243,6 +251,7 @@ Page({
             }
         )
 
+    
         var i=0
         var j=0
         var z=0
@@ -313,6 +322,24 @@ Page({
     buyGotoOrder: function () {
         var parentObj = this
         var goods = ""
+
+        var userSelGoodsRow = this.data.userSelGoodsRow
+        console.log("this.data.tapTimes : ",this.data.tapTimes)
+        if(!this.data.tapTimes){//证明是第一次点击
+            this.setData({tapTimes: 1})
+            this.tapSpecs()
+            return -1
+        }
+        
+        if(!userSelGoodsRow || JSON.stringify(userSelGoodsRow) == "{}"){
+            var errMsg = "请先-选择-产品的参数规格"
+            console.log(errMsg)
+            app.showToast(errMsg)
+            this.tapSpecs()
+            return 1
+        }
+        
+
 
         if (this.data.userSelGoods) {
             for (let key  in this.data.userSelGoods) {
@@ -425,7 +452,7 @@ Page({
             //轮播图集
             parentObj.setData({"swiperList": picObj})
             //默认选中的商品
-            parentObj.setData({"userSelGoodsRow": res.goodsLowPriceRow})
+            // parentObj.setData({"userSelGoodsRow": res.goodsLowPriceRow})
 
 
             if (res.has_up) {
@@ -441,14 +468,21 @@ Page({
             }
 
             if (res.category_attr_null == 2) {
+                //默认是不给选择参数规格的，但是如果参数规格只有一个才，给默认选择一个
+                // if (res.pcap,res.pcap.length != 1){
+                //     return false;
+                // }
                 var i = 0
                 var j = 0
                 console.log("pcap", res.pcap,res.pcap.length)
+                //pcap:一级大分类，如：颜色、大小等
                 for (i = 0; i < res.pcap.length; i++) {
                     // console.log("pcap for loop",res.pcap[i])
+                    //遍历该分类下的，所有子属性参数，找出黑夜最低价的那个参数属性值
                     for(j=0;j< res.pcap[i]['category_attr_para'].length;j++){
                         // console.log("debug userSelGoods",res.pcap[i]['id'], res.pcap[i]['category_attr_para'][j]['default_low_sel'])
                         if(res.pcap[i]['category_attr_para'][j]['default_low_sel'] == 1){
+                            //颜色、尺寸ID =》黑色、XL
                             parentObj.data.userSelGoods[res.pcap[i]['id'] ] = res.pcap[i]['category_attr_para'][j]['id']
                             parentObj.setData(
                                 {
@@ -459,18 +493,24 @@ Page({
                         }
                     }
 
-                    // console.log("set ",res.pcap[i]['id'] ," value ", res.pcap[i]['category_attr_para'][0]['id'])
+                    console.log("set ",res.pcap[i]['id'] ," value ", res.pcap[i]['category_attr_para'][0]['id'])
+                    //这行代码里多了个 "a"  不知道干什么用的，但是传到PHP` 会报错，先注释了吧
                     // parentObj.data.userSelGoods["a"+res.pcap[i]['id']] = res.pcap[i]['category_attr_para'][0]['id']
-                    // console.log("default goods ids:",parentObj.data.userSelGoods)
+                    parentObj.data.userSelGoods[res.pcap[i]['id']] = res.pcap[i]['category_attr_para'][0]['id']
+                    console.log("default goods ids:",parentObj.data.userSelGoods)
 
-                    // var pca_id = res.pcap[i]['id']
-                    // var pcap_id = res.pcap[i]['category_attr_para'][0]['id']
-                    // parentObj.data.userSelGoods[pca_id] = pcap_id
-                    // parentObj.setData(
-                    //     {
-                    //         userSelGoods: parentObj.data.userSelGoods
-                    //     }
-                    // )
+                    var pca_id = res.pcap[i]['id']
+                    var pcap_id = res.pcap[i]['category_attr_para'][0]['id']
+                    parentObj.data.userSelGoods[pca_id] = pcap_id
+                    parentObj.setData(
+                        {
+
+                            
+
+                            userSelGoods: parentObj.data.userSelGoods
+                        }
+                    )
+                    parentObj.selGoodsCalc(pca_id  , pcap_id)
                 }
             }else{
                 console.log(" notice category_attr_null")
@@ -478,66 +518,42 @@ Page({
 
         }
         //最近访问
-        var getUserHistoryPVListCallback = function (resolve, res) {
-            console.log("getUserHistoryPVListCallback callback", res)
-            if (!res) {
-                console.log("notice:get getUserHistoryPVListCallback is null.")
-                return -3
-            }
-            var data = []
-            for (var i = 0; i < res.length; i++) {
-                var tmp = {id: i + 1, imgUrl: res[i].avatar, name: res[i].nickname}
-                data[i] = tmp
-            }
-            parentObj.setData({"visitorList": data})
-
-        }
-        // //推荐产品
-        // var getRecommendProductListCallback = function (resolve, res) {
-        //     console.log("getRecommendProductListCallback callback", res)
+        // var getUserHistoryPVListCallback = function (resolve, res) {
+        //     console.log("getUserHistoryPVListCallback callback", res)
         //     if (!res) {
-        //         console.log("notice:get getRecommendProductListCallback is null.")
-        //         return -4
+        //         console.log("notice:get getUserHistoryPVListCallback is null.")
+        //         return -3
         //     }
         //     var data = []
-        //     for (var i = 0; i < res.list.length; i++) {
-        //         var tmp = {
-        //             id: i + 1,
-        //             imgUrl: res.list[i].pic,
-        //             title: res.list[i].title,
-        //             price: res.list[i].lowest_price
-        //         }
+        //     for (var i = 0; i < res.length; i++) {
+        //         var tmp = {id: i + 1, imgUrl: res[i].avatar, name: res[i].nickname}
         //         data[i] = tmp
         //     }
-        //     console.log("recommend data", data)
-        //
-        //
-        //     parentObj.setData({"recommendProductList": data})
-        //     console.log("recommend", parentObj.data.recommendProductList)
+        //     parentObj.setData({"visitorList": data})
         //
         // }
         //最近购买用户
-        var getNearUserBuyHistoryCallback = function (resolve, res) {
-            console.log("getNearUserBuyHistoryCallback callback", res)
-            if (!res) {
-                console.log("notice:get getNearUserBuyHistoryCallback is null.")
-                return -5
-            }
-
-
-            var data = []
-            for (var i = 0; i < res.length; i++) {
-                // id: 1,
-                //     imgUrl: 'https://img.yzcdn.cn/vant/cat.jpeg',
-                // name: 'A*范11',
-                // size: '180x200cm',
-                // time: '2020-0528  13:50',
-
-                var tmp = {id: i + 1, imgUrl: res[i].avatar, name: res[i].nickname, size: '180x200cm', time: res[i].dt}
-                data[i] = tmp
-            }
-            parentObj.setData({"buyList": data})
-        }
+        // var getNearUserBuyHistoryCallback = function (resolve, res) {
+        //     console.log("getNearUserBuyHistoryCallback callback", res)
+        //     if (!res) {
+        //         console.log("notice:get getNearUserBuyHistoryCallback is null.")
+        //         return -5
+        //     }
+        //
+        //
+        //     var data = []
+        //     for (var i = 0; i < res.length; i++) {
+        //         // id: 1,
+        //         //     imgUrl: 'https://img.yzcdn.cn/vant/cat.jpeg',
+        //         // name: 'A*范11',
+        //         // size: '180x200cm',
+        //         // time: '2020-0528  13:50',
+        //
+        //         var tmp = {id: i + 1, imgUrl: res[i].avatar, name: res[i].nickname, size: '180x200cm', time: res[i].dt}
+        //         data[i] = tmp
+        //     }
+        //     parentObj.setData({"buyList": data})
+        // }
         //评论列表
         var getCommentListCallback = function (resolve, res) {
             console.log("getCommentListCallback callback", res)
@@ -583,15 +599,15 @@ Page({
         //产品详情
         app.httpRequest('productDetail', data, ProductDetailCallback)
         //用户浏览记录
-        app.httpRequest('getUserHistoryPVList', data, getUserHistoryPVListCallback);
+        // app.httpRequest('getUserHistoryPVList', data, getUserHistoryPVListCallback);
         // 推荐产品列表
         // app.httpRequest('getRecommendProductList', data, getRecommendProductListCallback);
         //最近购买记录
+
         var data = {'pid': this.data.pid}
-        app.httpRequest('getNearUserBuyHistory', data, getNearUserBuyHistoryCallback);
+        // app.httpRequest('getNearUserBuyHistory', data, getNearUserBuyHistoryCallback);
         //评论列表
         app.httpRequest('getCommentList', data, getCommentListCallback);
-
 
         this.getRecommendProductListPage();
 

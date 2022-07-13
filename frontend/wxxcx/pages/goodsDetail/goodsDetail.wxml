@@ -58,23 +58,23 @@
 
 
 
-    <view class="panel2 visitor">
+    <!-- <view class="panel2 visitor">
         <view class="title">最近访客</view>
         <view class="peps">
             <view class="items">
                 <view class="item" wx:for="{{visitorList}}" wx:key="unique">
-                    <van-image width="40" height="40" lazy-load round src="{{item.imgUrl}}" />
+                    <van-image width="40" height="40" lazy-load round src="{{item.imgUrl}}" /> -->
                     <!--<view class="name">{{item.name}}</view>-->
 
-                </view>
+                <!-- </view>
             </view>
             <view class="moreRound">
                 <image class="img" src="./images/arrow-right@2x.png" mode="scaleToFill" />
             </view>
         </view>
-    </view>
+    </view> -->
     <!-- //End 最近访客 -->
-    <view class="panel2 buy">
+    <!-- <view class="panel2 buy">
         <view class="title">最近购买记录</view>
         <view class="items">
             <view class="item" wx:for="{{buyList}}" wx:key="unique">
@@ -90,7 +90,7 @@
                 <view class="txt">点击查看更多</view>
             </view>
         </view>
-    </view>
+    </view> -->
     <!-- //End 最近购买记录 -->
     <view class="bd">
         <view class="titleDivider">评论</view>

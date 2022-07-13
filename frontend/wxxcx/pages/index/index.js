@@ -2,6 +2,7 @@
 const app = getApp()
 const Logs = require("../../utils/log.js")
 
+
 Page({
     data: {
         swiperList:[],//轮播图，给控件用 k:v 形式，只能用于控件
@@ -9,6 +10,7 @@ Page({
         //推荐-产品列表-start
         showLoading:0,//获取数据时显示loading....icon
 
+        
         recommendProductType : 1,//分类
         recommendProductLimit : 4,//每页多少条记录
         recommendProductList:[],//列表数据
@@ -155,6 +157,11 @@ Page({
             var data = []
             for(var i=0;i<res.length ;i++){
                 data[i] = res[i]
+
+                
+
+
+
             }
             parentObj.setData({"categoryList":data})
         }

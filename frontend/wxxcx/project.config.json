@@ -21,18 +21,23 @@
     "checkSiteMap": false,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
-    "useMultiFrameRuntime": false,
+    "useMultiFrameRuntime": true,
     "useApiHook": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
+    "enableEngineNative": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
-    "packNpmRelationList": []
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "bundle": false,
+    "useApiHostProcess": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.11.1",
@@ -46,11 +51,9 @@
   "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
-      "current": -1,
       "list": []
     },
     "conversation": {
-      "current": -1,
       "list": []
     },
     "game": {
@@ -58,7 +61,6 @@
       "list": []
     },
     "miniprogram": {
-      "current": -1,
       "list": []
     }
   }

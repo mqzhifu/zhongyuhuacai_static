@@ -84,29 +84,7 @@ Page({
     },
 
     initUserData: function () {
-        var parentObj = this
-        var GetUserInfoCallback = function (resolve, res) {
-            console.log("GetUserInfoCallback callback", res)
 
-            parentObj.setData({"collect_cnt":res.collect_cnt,"view_product_history_cnt":res.view_product_history_cnt})
-            parentObj.setData({uinfo: res})
-        }
-
-        var OrderTotalCntCallback = function (resolve, res) {
-            console.log("OrderTotalCntCallback", res)
-
-            parentObj.setData({orderTotalCnt: res})
-        }
-
-
-
-        // parentObj.setData({"hotListPage":parentObj.data.hotListPage + 1})
-        var data = {}
-        app.httpRequest('getUserInfo', data, GetUserInfoCallback);
-        app.httpRequest('orderTotalCnt', data, OrderTotalCntCallback);
-
-
-        this.setData({isGuest:app.globalData.isGuest})
     },
 
     login : function(){
@@ -143,6 +121,25 @@ Page({
 
         app.httpRequest("getCollectListCnt",null,getCollectListCntCallback)
         app.httpRequest("viewProductHistoryCnt",null,viewProductHistoryCntCallback)
+
+
+        var parentObj = this
+        var GetUserInfoCallback = function (resolve, res) {
+            console.log("GetUserInfoCallback callback", res)
+
+            parentObj.setData({"collect_cnt":res.collect_cnt,"view_product_history_cnt":res.view_product_history_cnt})
+            parentObj.setData({uinfo: res})
+        }
+
+        var OrderTotalCntCallback = function (resolve, res) {
+            console.log("OrderTotalCntCallback", res)
+            parentObj.setData({orderTotalCnt: res})
+        }
+        // parentObj.setData({"hotListPage":parentObj.data.hotListPage + 1})
+        var data = {}
+        app.httpRequest('getUserInfo', data, GetUserInfoCallback);
+        app.httpRequest('orderTotalCnt', data, OrderTotalCntCallback);
+        this.setData({isGuest:app.globalData.isGuest})
     },
 
     /**

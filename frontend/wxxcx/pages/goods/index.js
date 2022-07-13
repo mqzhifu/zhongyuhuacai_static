@@ -145,7 +145,7 @@ Page({
         // app.setData({'searchKeyword':keyword})
         this.setData({searchKeyword: keyword})
         console.log("set searchKeyword", keyword)
-        this.searchProduct()
+        this.searchProduct(1)
     },
 
 
@@ -160,6 +160,7 @@ Page({
         this.setData({"searchCategory": app.globalData.searchCategory})
     },
 
+    
     initData: function () {
         console.log("start init  <goods> page data.")
         var parentObj = this

@@ -7,7 +7,7 @@ Page({
     data: {
         productList: [],
         totalPrice: 0,
-        goodsTotalPrice: 0,
+        goodsTotalPrice: 0, 
         totalHaulage: 0,
         userAddress: [],
         userSelAddressId: 0,
@@ -82,7 +82,7 @@ Page({
         var obj = this
         var orderDoingCallback = function (resolve, res) {
             console.log("orderDoingCallback", res)
-
+            
 
             // if(app.globalData.httpRequestCode == 200 || app.globalData.httpRequestCode == '200'){
             var oid = res
@@ -150,16 +150,18 @@ Page({
         var haulage = 0;
         for (var i = 0; i < productList.length; i++) {
             console.log(productList[i].price, productList[i].num, productList[i].haulage)
-            total += parseFloat(productList[i].price) * parseFloat(productList[i].num)
+            total += ( parseFloat(productList[i].price) * parseFloat(productList[i].num))
             haulage += parseFloat(productList[i].haulage)
         }
 
-        console.log("totalHaulage", haulage, 'goodsTotalPrice', total, "total", total + haulage)
+        var finalTotal = this.keepTwoDecimal( parseFloat(total) + parseFloat(haulage))
+
+        console.log("totalHaulage", haulage, 'goodsTotalPrice', total, "total", total ,"finalTotal",finalTotal)
 
         this.setData({
             "totalHaulage": haulage,
             "goodsTotalPrice": total,
-            'totalPrice': total + haulage,
+            'totalPrice': finalTotal,
         })
 
     },
@@ -251,6 +253,15 @@ Page({
     },
     onShareAppMessage: function () {
         return app.shareMyApp(1, 5, '首页~','首页的内容',null)
-    }
+    },
+    keepTwoDecimal:function (num) {
+          var result = parseFloat(num);
+          if (isNaN(result)) {
+            alert('传递参数错误，请检查！');
+            return false;
+          }
+          result = Math.round(num * 100) / 100;
+          return result;
+        }
 
 })

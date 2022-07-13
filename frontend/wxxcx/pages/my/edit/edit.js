@@ -93,6 +93,11 @@ Page({
     },
 
     upInfo : function(){
+        var nickname = this.data.inputNicknameValue
+        if(!nickname){
+            console.log("nickname is null")
+            return -1
+        }
         var upInfoBack = function(rr,rs){
             console.log("  upInfoBack ",rs)
             app.showToast("保存成功")
